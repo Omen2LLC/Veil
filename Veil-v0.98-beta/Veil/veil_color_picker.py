@@ -6,6 +6,7 @@ from pathlib import Path
 
 from studio_controls import Button, Field, image
 from window_chrome import theme_caption
+from studio_menu import clip_rounded
 
 
 def parse_hex(text):
@@ -38,7 +39,7 @@ class ColorPicker:
         self.h, self.s, self.v = colorsys.rgb_to_hsv(*(v/255 for v in color_rgb(initial)))
         self.window = tk.Toplevel(app.root)
         self.window.withdraw()
-        self.window.title('Veil · Color')
+        self.window.title('')
         icon=Path(__file__).resolve().parent/'veil-icon.ico'
         if icon.is_file():
             try:self.window.iconbitmap(str(icon))
@@ -91,6 +92,7 @@ class ColorPicker:
                                highlightthickness=0, bg=c['panel'], takefocus=True,
                                cursor='crosshair')
         self.field.pack()
+        self.field.bind('<Configure>',lambda e:clip_rounded(self.field,e.width,e.height,p(10)))
         self.field.bind('<Button-1>', self.select_sv)
         self.field.bind('<B1-Motion>', self.select_sv)
         self.field.bind('<Key>', self.sv_key)
@@ -100,6 +102,7 @@ class ColorPicker:
                              highlightthickness=0, bg=c['panel'], takefocus=True,
                              cursor='hand2')
         self.hue.pack(pady=(p(12), 0))
+        self.hue.bind('<Configure>',lambda e:clip_rounded(self.hue,e.width,e.height,p(13)))
         self.hue.bind('<Button-1>', self.select_hue)
         self.hue.bind('<B1-Motion>', self.select_hue)
         self.hue.bind('<Key>', self.hue_key)
@@ -169,9 +172,9 @@ class ColorPicker:
 
     def draw_hue(self):
         colors = ['#%02X%02X%02X' % tuple(round(a*255) for a in colorsys.hsv_to_rgb(x/(self.w-1),1,1)) for x in range(self.w)]
-        self.hue_image = tk.PhotoImage(master=self.window,width=self.w,height=self.app.p(16))
-        self.hue_image.put(' '.join('{'+' '.join(colors)+'}' for _ in range(self.app.p(16))))
-        self.hue.create_image(0,self.app.p(5),image=self.hue_image,anchor='nw',tags='gradient')
+        self.hue_image = tk.PhotoImage(master=self.window,width=self.w,height=self.app.p(26))
+        self.hue_image.put(' '.join('{'+' '.join(colors)+'}' for _ in range(self.app.p(26))))
+        self.hue.create_image(0,0,image=self.hue_image,anchor='nw',tags='gradient')
 
     def draw_markers(self):
         p = self.app.p
@@ -181,12 +184,15 @@ class ColorPicker:
         for color, width in (('#111111',4),('#FFFFFF',2)):
             self.field.create_oval(x-radius,y-radius,x+radius,y+radius,outline=color,width=p(width),tags='marker')
         x = self.h*(self.w-1)
-        self.hue.create_rectangle(x-p(3),p(2),x+p(3),p(24),outline='#111111',width=p(4),tags='marker')
-        self.hue.create_rectangle(x-p(3),p(2),x+p(3),p(24),outline='#FFFFFF',width=p(2),tags='marker')
+        self.hue.create_line(x,p(5),x,p(21),fill='#111111',width=p(7),capstyle='round',tags='marker')
+        self.hue.create_line(x,p(5),x,p(21),fill='#FFFFFF',width=p(3),capstyle='round',tags='marker')
         for widget in (self.field,self.hue):
             if self.window.focus_get() is widget:
-                widget.create_rectangle(1,1,int(widget.cget('width'))-1,int(widget.cget('height'))-1,
-                                        outline=self.app.c['focus'],width=p(2),tags='marker')
+                w,h=int(widget.cget('width'))-1,int(widget.cget('height'))-1
+                r=p(10) if widget is self.field else h/2
+                widget.create_polygon(r,1,w-r,1,w,1,w,r,w,h-r,w,h,w-r,h,r,h,1,h,1,h-r,1,r,1,1,
+                                      smooth=True,splinesteps=24,fill='',outline=self.app.c['focus'],
+                                      width=p(2),tags='marker')
 
     def sync(self, source=None):
         color = self.color
