@@ -164,6 +164,7 @@ def main():
             root.update_idletasks()
             try:app.install_system_about()
             except Exception:logging.exception('Could not add About Veil to the title-bar icon menu')
+            app.update_caption()
         show_startup(root,open_main_window,HERE)
         root.mainloop()
     finally:

@@ -118,6 +118,9 @@ class App(LegacyApp):
         self.page_content.place(relx=.5,y=0,anchor='n',width=self.p(1200),relheight=1)
         self.viewport.bind('<Configure>',lambda e:self.page_content.place_configure(width=min(e.width,self.p(1200))))
         self.root.after_idle(self.update_caption)
+        if not getattr(self.root,'_veil_caption_map_binding',None):
+            self.root._veil_caption_map_binding=self.root.bind('<Map>',
+                lambda event:self.root.after_idle(self.update_caption) if event.widget is self.root else None,add='+')
         self.show_page();self.sync_chrome()
     def show_about(self):
         from veil_about import show_about
