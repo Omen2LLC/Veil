@@ -5,9 +5,7 @@ from types import SimpleNamespace
 def component_layout(signature, name, baseline, byte_fields=(), byte_maps=()):
     supplied = signature.get(name)
     if supplied is None:
-        if signature['version'] != '21.1.0.14':
-            raise RuntimeError(f'No verified {name} layout for this Resolve build.')
-        return SimpleNamespace(**baseline)
+        raise RuntimeError(f'No verified {name} layout for this Resolve build.')
     if not isinstance(supplied, dict) or set(supplied) != set(baseline):
         raise RuntimeError(f'Incomplete {name} compatibility profile.')
     values = dict(supplied)
