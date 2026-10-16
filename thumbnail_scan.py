@@ -1,5 +1,6 @@
 import ctypes,struct
 from resolve_palette import MODULEENTRY32W
+from resolve_profiles import component_layout
 
 def scan(session):
     k=session.k;pid=session.pid;base=session.base
@@ -73,8 +74,10 @@ def scan(session):
     if ptr(manager)!=tree or read(tree,8)!=header[:8]:raise ValueError('Map changed during inspection')
     result=dict(pid=pid,module=hex(ui),manager=hex(manager),map_size=size,visited=len(seen),read_bytes=total,dots=dots)
     normal_dots=dots
-    if read(base+0x248ea12,7)!=bytes.fromhex('488b050fd1f718'):raise ValueError('Composite cache signature mismatch')
-    tree=ptr(base+0x1b40bb28);header=read(tree,32)
+    cache=component_layout(session.signature,'dot_cache',dict(instruction_rva=0x248ea12,
+        instruction=bytes.fromhex('488b050fd1f718'),table_rva=0x1b40bb28),byte_fields=('instruction',))
+    if read(base+cache.instruction_rva,7)!=cache.instruction:raise ValueError('Composite cache signature mismatch')
+    tree=ptr(base+cache.table_rva);header=read(tree,32)
     ref,size=struct.unpack_from('<ii',header)
     if not 0<=size<=2048:raise ValueError('Composite cache size is unexpected')
     stack=[struct.unpack_from('<Q',header,16)[0]];seen=set();entries=[];composite_names=[]

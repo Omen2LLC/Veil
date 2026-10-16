@@ -1,0 +1,15 @@
+{
+  "version": "21.1.1.10",
+  "project": "Veil_Palette_QA_20261015_03",
+  "media": "Resolve Solid Color generator and generated 64x64 PNG; no user media",
+  "checks": [
+    "all component fingerprints, layouts and stock values passed read-only",
+    "Vivid: native Apply, component readback and unchanged clip ID passed",
+    "Vivid: native Restore returned every component to its original bytes",
+    "Soft: native Apply, component readback and unchanged clip ID passed",
+    "Soft: native Restore returned every component to its original bytes",
+    "custom native menu names restored to original source instructions"
+  ],
+  "loaded_thumbnail_records": 3,
+  "status": "passed actual native memory Apply/Restore; visual rendering not inspected"
+}

@@ -7,6 +7,7 @@ from pathlib import Path
 from palette_core import LABELS, atomic_json
 from palette_names import validate_names
 from resolve_palette import MODULEENTRY32W
+from resolve_profiles import component_layout
 
 SOURCE_RVAS = {
     'Green': 0x248EE3A, 'Teal': 0x248EE46, 'Blue': 0x248EE52,
@@ -44,6 +45,9 @@ class NativeMenuNames:
     def __init__(self, session):
         self.s = session
         self.k = session.k
+        self.layout = component_layout(session.signature, 'menu_names', {
+            name: globals()[name] for name in ('SOURCE_RVAS', 'SOURCE_STOCK', 'HELPER_RVA', 'HELPER_SIGNATURE')},
+            byte_fields=('HELPER_SIGNATURE',), byte_maps=('SOURCE_STOCK',))
         self.names = list(STOCK_NAMES)
         self.page = None
         self.offsets = {}
@@ -67,7 +71,7 @@ class NativeMenuNames:
                                                 ctypes.c_size_t]
         self.k.FlushInstructionCache.restype = ctypes.c_int
 
-        if self.s.read(self.s.base + HELPER_RVA, len(HELPER_SIGNATURE)) != HELPER_SIGNATURE:
+        if self.s.read(self.s.base + self.layout.HELPER_RVA, len(self.layout.HELPER_SIGNATURE)) != self.layout.HELPER_SIGNATURE:
             raise RuntimeError('Resolve native menu name helper differs from the verified build.')
         self._recover_interrupted_session()
         self._verify_stock_sources()
@@ -98,18 +102,18 @@ class NativeMenuNames:
                 raise RuntimeError('Qt menu layout signature changed. Restart Resolve.')
 
     def _verify_stock_sources(self):
-        if self.s.read(self.s.base + HELPER_RVA, len(HELPER_SIGNATURE)) != HELPER_SIGNATURE:
+        if self.s.read(self.s.base + self.layout.HELPER_RVA, len(self.layout.HELPER_SIGNATURE)) != self.layout.HELPER_SIGNATURE:
             raise RuntimeError('Resolve native menu name helper differs from the verified build.')
         for label in LABELS:
-            if self.s.read(self.s.base + SOURCE_RVAS[label], 7) != SOURCE_STOCK[label]:
+            if self.s.read(self.s.base + self.layout.SOURCE_RVAS[label], 7) != self.layout.SOURCE_STOCK[label]:
                 raise RuntimeError('Resolve menu name source changed. Restart Resolve before continuing.')
 
     def _read_instruction(self, label):
-        return self.s.read(self.s.base + SOURCE_RVAS[label], 7)
+        return self.s.read(self.s.base + self.layout.SOURCE_RVAS[label], 7)
 
     def _code_page_write(self, entries, use_original=False):
-        start = min(SOURCE_RVAS.values())
-        end = max(SOURCE_RVAS.values()) + 7
+        start = min(self.layout.SOURCE_RVAS.values())
+        end = max(self.layout.SOURCE_RVAS.values()) + 7
         page_start = (self.s.base + start) & ~0xFFF
         length = ((self.s.base + end - page_start + 0xFFF) & ~0xFFF)
         old = ctypes.c_ulong()
@@ -127,7 +131,7 @@ class NativeMenuNames:
                     raise RuntimeError('Native menu source changed during update.')
             for label in LABELS:
                 value = entries[label]['original' if use_original else 'replacement']
-                self.s.write(self.s.base + SOURCE_RVAS[label] + 3, bytes.fromhex(value)[3:7])
+                self.s.write(self.s.base + self.layout.SOURCE_RVAS[label] + 3, bytes.fromhex(value)[3:7])
             if not self.k.FlushInstructionCache(self.s.handle, page_start, length):
                 raise ctypes.WinError(ctypes.get_last_error())
             for label in LABELS:
@@ -155,12 +159,12 @@ class NativeMenuNames:
                 current = self._read_instruction(label)
             except (KeyError, TypeError, ValueError):
                 return False
-            if original != SOURCE_STOCK[label] or len(replacement) != 7:
+            if original != self.layout.SOURCE_STOCK[label] or len(replacement) != 7:
                 return False
             if replacement[:3] != original[:3] or current not in (original, replacement):
                 return False
             displacement = struct.unpack('<i', replacement[3:])[0]
-            target = self.s.base + SOURCE_RVAS[label] + 7 + displacement
+            target = self.s.base + self.layout.SOURCE_RVAS[label] + 7 + displacement
             if not page <= target < page + PAGE_SIZE:
                 return False
         return True
@@ -203,7 +207,7 @@ class NativeMenuNames:
         return bytes(result), offsets
 
     def _allocate_near_helper(self):
-        origin = self.s.base + HELPER_RVA
+        origin = self.s.base + self.layout.HELPER_RVA
         for delta in range(0x26000000, 0x70000000, 0x1000000):
             candidate = self.k.VirtualAllocEx(self.s.handle, self.s.base + delta,
                                               PAGE_SIZE, 0x3000, 0x04)
@@ -217,8 +221,8 @@ class NativeMenuNames:
     def _make_journal(self, page, offsets, names):
         entries = {}
         for label, name in zip(LABELS, names):
-            rva = SOURCE_RVAS[label]
-            original = SOURCE_STOCK[label]
+            rva = self.layout.SOURCE_RVAS[label]
+            original = self.layout.SOURCE_STOCK[label]
             target = page + offsets[label]
             displacement = target - (self.s.base + rva + 7)
             if not -(1 << 31) <= displacement < (1 << 31):

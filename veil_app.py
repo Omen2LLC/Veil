@@ -40,12 +40,13 @@ def complete_update(instructions):
             or pointer!=root/'Veil-Launcher'/'current-release.txt'
             or current.parent.parent!=root):
         raise UpdateError('Invalid update instructions.')
-    process=ctypes.windll.kernel32.OpenProcess(0x100000,False,int(data['wait_pid']))
+    k=kernel()
+    process=k.OpenProcess(0x100000,False,int(data['wait_pid']))
     if process:
         try:
-            if ctypes.windll.kernel32.WaitForSingleObject(process,90000)!=0:
+            if k.WaitForSingleObject(process,90000)!=0:
                 raise UpdateError('Veil did not close; update was not installed.')
-        finally:ctypes.windll.kernel32.CloseHandle(process)
+        finally:k.CloseHandle(process)
     with archive.open('rb') as stream:
         if hashlib.file_digest(stream,'sha256').hexdigest()!=data['sha256']:
             raise UpdateError('Staged release checksum changed; update was not installed.')
@@ -54,7 +55,7 @@ def complete_update(instructions):
         entry=app/'omen_studio.py' if (app/'omen_studio.py').is_file() else app/'veil_app.py'
         return [sys.executable,str(entry),*extra]
     def smoke(app):
-        result=subprocess.run(command(app,['--update-smoke']),cwd=str(app),timeout=20,
+        result=subprocess.run(command(app,['--update-smoke','--expected-version',data['version']]),cwd=str(app),timeout=20,
                               creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
         if result.returncode:raise UpdateError('The new Veil program failed its startup check.')
     previous=pointer.read_bytes() if pointer.exists() else None
@@ -76,9 +77,22 @@ def complete_update(instructions):
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--demo',action='store_true');ap.add_argument('--check',action='store_true')
     ap.add_argument('--update-smoke',action='store_true')
+    ap.add_argument('--expected-version')
     ap.add_argument('--apply-update',metavar='INSTRUCTIONS')
     args=ap.parse_args()
     if args.update_smoke:
+        if args.expected_version and args.expected_version!=VERSION:
+            raise RuntimeError('Executable version does not match the release tag.')
+        root=tk.Tk();root.withdraw();app=None
+        try:
+            load_fonts(root)
+            app=App(root,demo=True)
+            root.update_idletasks()
+            if app.storage_error or app.preference_error:
+                raise RuntimeError(app.storage_error or app.preference_error)
+        finally:
+            if app:app.worker.shutdown()
+            root.destroy()
         return 0
     if args.apply_update:
         return complete_update(Path(args.apply_update))
@@ -174,7 +188,7 @@ if __name__=='__main__':
     try:main()
     except Exception as exc:
         logging.exception('Startup failed')
-        if '--check' in sys.argv:
+        if '--check' in sys.argv or '--update-smoke' in sys.argv:
             print('Connection check failed:',exc,file=sys.stderr)
             sys.exit(1)
         try:messagebox.showerror('Veil','Could not start. See veil.log in this folder.')

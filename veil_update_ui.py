@@ -107,18 +107,26 @@ def show_update(app, release: dict) -> None:
                     for child in controls.winfo_children():
                         child.configure(state="normal")
                     return
-                app.close()
-                if app.root.winfo_exists():
-                    status.configure(text="Close Veil to finish the upgrade.")
-                    for child in controls.winfo_children():
-                        child.configure(state="normal")
-                    return
                 executable = [sys.executable]
                 if not getattr(sys, "frozen", False):
                     executable.append(str(here / "omen_studio.py" if (here / "omen_studio.py").is_file()
                                           else here / "veil_app.py"))
-                subprocess.Popen(executable + ["--apply-update", str(instruction)],
-                                 cwd=str(here), creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
+                app.after_successful_close = lambda: subprocess.Popen(
+                    executable + ["--apply-update", str(instruction)], cwd=str(here),
+                    creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
+                app.close()
+                try:
+                    alive = bool(app.root.winfo_exists())
+                except tk.TclError:
+                    alive = False
+                if alive:
+                    waiting = bool(app.closing)
+                    status.configure(text="Waiting for Veil to restore and close…" if waiting
+                                     else "Upgrade paused. Your current version is still open.")
+                    if not waiting:
+                        app.after_successful_close = None
+                        for child in controls.winfo_children():
+                            child.configure(state="normal")
             try:
                 app.root.after(0, complete)
             except tk.TclError:

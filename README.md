@@ -1,11 +1,7 @@
-# Veil
+# Veil v0.95-beta
 
-Veil is an offline-capable Windows palette editor for DaVinci Resolve Studio.
-The current beta includes 15 named palettes and a preview-only Themes page.
-Its native palette Apply/Restore is restricted to an exact, verified Resolve
-build; see [SUPPORTED_RESOLVE.md](SUPPORTED_RESOLVE.md).
+Extract the whole Windows package to a writable folder and open Veil.exe. Keep its files together. Python is bundled in the Windows package. The separate source package needs 64-bit Python 3.11+ with Tkinter.
 
-This is a curated beta source snapshot. Historical distributable ZIPs and
-checksums are prepared separately as GitHub Release assets. Personal settings,
-recovery records, logs, user media, and Resolve projects are not part of this
-repository.
+The 15 starter palettes include Peachy Pop, Afterhours and Retrocal. Personal palettes and appearance settings are preserved during upgrades. Updates offer Upgrade, Later and Skip, and retain the prior version for rollback.
+
+Palette Apply/Restore supports exact Windows Resolve Studio builds 21.1.0.14 and 21.1.1.10. Other builds remain blocked until tested. Normal close restores the native palette. Themes are a preview during beta.

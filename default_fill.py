@@ -11,6 +11,7 @@ import json
 import struct
 
 from palette_core import DISPLAY_ORDER, LABELS, STOCK, atomic_json, validate_palette
+from resolve_profiles import component_layout
 
 
 RESOLVER_RVA = 0x24A3510
@@ -50,6 +51,12 @@ class DefaultTimelineFills:
     def __init__(self, session):
         self.s = session
         self.k = session.k
+        self.layout = component_layout(session.signature, 'default_fills', {
+            name: globals()[name] for name in (
+                'RESOLVER_RVA', 'RESOLVER_SIZE', 'RESOLVER_SHA256',
+                'VIDEO_CALLSITE_RVA', 'VIDEO_CALLSITE', 'VIDEO_VTABLE_ENTRY_RVA', 'VIDEO_FUNCTION_RVA',
+                'AUDIO_CALLSITE_RVA', 'AUDIO_CALLSITE', 'AUDIO_VTABLE_ENTRY_RVA', 'AUDIO_FUNCTION_RVA',
+                'INSTRUCTION_RVAS')}, byte_fields=('VIDEO_CALLSITE', 'AUDIO_CALLSITE'))
         self.recovery = session.folder / 'timeline_default_recovery.json'
         self.original = STOCK_INSTRUCTIONS
         self.expected = STOCK_INSTRUCTIONS
@@ -80,30 +87,28 @@ class DefaultTimelineFills:
     def _verify_context(self):
         if not self.s.alive():
             raise RuntimeError('Resolve closed. Reconnect after opening it again.')
-        if self.s.signature['version'] != '21.1.0.14':
-            raise RuntimeError('Unsupported Resolve build for timeline default fills.')
-        if self.s.read(self.s.base + VIDEO_CALLSITE_RVA, len(VIDEO_CALLSITE)) != VIDEO_CALLSITE:
+        if self.s.read(self.s.base + self.layout.VIDEO_CALLSITE_RVA, len(self.layout.VIDEO_CALLSITE)) != self.layout.VIDEO_CALLSITE:
             raise RuntimeError('Ordinary video-clip color callsite changed. Restart Resolve.')
-        function = struct.unpack('<Q', self.s.read(self.s.base + VIDEO_VTABLE_ENTRY_RVA, 8))[0]
-        if function != self.s.base + VIDEO_FUNCTION_RVA:
+        function = struct.unpack('<Q', self.s.read(self.s.base + self.layout.VIDEO_VTABLE_ENTRY_RVA, 8))[0]
+        if function != self.s.base + self.layout.VIDEO_FUNCTION_RVA:
             raise RuntimeError('Ordinary video-clip class layout changed. Restart Resolve.')
-        if self.s.read(self.s.base + AUDIO_CALLSITE_RVA, len(AUDIO_CALLSITE)) != AUDIO_CALLSITE:
+        if self.s.read(self.s.base + self.layout.AUDIO_CALLSITE_RVA, len(self.layout.AUDIO_CALLSITE)) != self.layout.AUDIO_CALLSITE:
             raise RuntimeError('Ordinary audio-clip color callsite changed. Restart Resolve.')
-        function = struct.unpack('<Q', self.s.read(self.s.base + AUDIO_VTABLE_ENTRY_RVA, 8))[0]
-        if function != self.s.base + AUDIO_FUNCTION_RVA:
+        function = struct.unpack('<Q', self.s.read(self.s.base + self.layout.AUDIO_VTABLE_ENTRY_RVA, 8))[0]
+        if function != self.s.base + self.layout.AUDIO_FUNCTION_RVA:
             raise RuntimeError('Ordinary audio-clip class layout changed. Restart Resolve.')
 
     def _read_entries(self):
-        return tuple(self.s.read(self.s.base + rva, 5) for rva in INSTRUCTION_RVAS)
+        return tuple(self.s.read(self.s.base + rva, 5) for rva in self.layout.INSTRUCTION_RVAS)
 
     def _verify_resolver(self):
-        blob = bytearray(self.s.read(self.s.base + RESOLVER_RVA, RESOLVER_SIZE))
-        for rva, stock in zip(INSTRUCTION_RVAS, self.original):
-            offset = rva - RESOLVER_RVA
+        blob = bytearray(self.s.read(self.s.base + self.layout.RESOLVER_RVA, self.layout.RESOLVER_SIZE))
+        for rva, stock in zip(self.layout.INSTRUCTION_RVAS, self.original):
+            offset = rva - self.layout.RESOLVER_RVA
             if blob[offset] != 0xBA:
                 raise RuntimeError('Timeline default instruction opcode changed. Restart Resolve.')
             blob[offset + 1:offset + 5] = stock[1:]
-        if hashlib.sha256(blob).hexdigest() != RESOLVER_SHA256:
+        if hashlib.sha256(blob).hexdigest() != self.layout.RESOLVER_SHA256:
             raise RuntimeError('Timeline default resolver differs from the verified build. Restart Resolve.')
 
     def _read_journal(self):
@@ -166,8 +171,8 @@ class DefaultTimelineFills:
         if not all(allowed(now, before, after)
                    for now, before, after in zip(current, previous, attempted)):
             raise RuntimeError('Timeline default source changed during update. Restart Resolve.')
-        page = (self.s.base + RESOLVER_RVA) & ~(PAGE_SIZE - 1)
-        if any((self.s.base + rva) & ~(PAGE_SIZE - 1) != page for rva in INSTRUCTION_RVAS):
+        page = (self.s.base + self.layout.RESOLVER_RVA) & ~(PAGE_SIZE - 1)
+        if any((self.s.base + rva) & ~(PAGE_SIZE - 1) != page for rva in self.layout.INSTRUCTION_RVAS):
             raise RuntimeError('Timeline default instructions no longer share the verified code page.')
         old_protection = w.DWORD()
         if not self.k.VirtualProtectEx(self.s.handle, page, PAGE_SIZE, 0x40,
@@ -177,7 +182,7 @@ class DefaultTimelineFills:
         flush_error = None
         protection_error = None
         try:
-            for rva, new, before, after in zip(INSTRUCTION_RVAS, target, previous, attempted):
+            for rva, new, before, after in zip(self.layout.INSTRUCTION_RVAS, target, previous, attempted):
                 now = self.s.read(self.s.base + rva, 5)
                 if not allowed(now, before, after):
                     raise RuntimeError('Timeline default source changed while writing. Restart Resolve.')

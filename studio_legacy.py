@@ -688,6 +688,9 @@ class App(ResolveActions):
             if not self.session:self.worker.shutdown()
         finally:
             self.finishing_close=False;self.closing=False
+            try:
+                if self.root.winfo_exists():self.after_successful_close=None
+            except tk.TclError:pass
             try:self.sync_chrome()
             except tk.TclError:pass # Successful close destroyed the window.
     def wheel(self,event):

@@ -120,3 +120,6 @@ class ResolveActions:
         for job in self.root.tk.call('after','info'):
             self.root.after_cancel(job)
         self.root.destroy()
+        after_close=getattr(self,'after_successful_close',None)
+        self.after_successful_close=None
+        if after_close:after_close()
