@@ -20,7 +20,7 @@ INSTALL = Path('C:/Program Files/Blackmagic Design/DaVinci Resolve')
 EXPECTED_VERSION = '21.1.0.14'
 EXPECTED_SOURCE = '0a8f20c70851e629c1753ed537801d1df0b5162ad98a5ab399e4abc7b77df236'
 # Set to the independently verified staged recipe before releasing this build.
-EXPECTED_RECIPE = 'dfec44bb113ba46bde7c804121c1da52d2a4deb3111be0c82cc55d984a877021'
+EXPECTED_RECIPE = '5c37d716a5e9ac784b62116f5a141cb43704ae63639d81081cf72143633a3419'
 STARTUP_TIMEOUT = 90
 COLORS = {(230, 206, 213), (221, 176, 188), (217, 160, 176),
           (217, 130, 155), (212, 105, 134)}
@@ -196,11 +196,16 @@ def _validate_edits(original, proposed, edits, added_rules=()):
             before.append((selector, declarations))
             added_selectors.add(selector)
             continue
-        from fairlight_stylesheet_bridge import RULES as fairlight_rules
-        if selector in fairlight_rules:
+        direct_labels = {'UiQInspectorOFXPluginNameLabel:enabled': 'white',
+                         'QLabel[SkinId="FilmstripClipInfoNameLabel"]:enabled': 'white',
+                         'QLabel[SkinId="FilmstripClipInfoDuration"]:enabled': 'COLOR_SMOKE_GRAY'}
+        if selector in direct_labels:
             declarations = [tuple(pair) for pair in rule['declarations']]
-            if declarations != fairlight_rules[selector]:
-                raise ApplicationThemeUnavailable('Unreviewed late Fairlight color rule.')
+            native = dict(dict(_qss_blocks(original)).get(selector.removesuffix(':enabled'), []))
+            if (native.get('color') != direct_labels[selector] or
+                    'background-color' in native or
+                    declarations != [('color', 'COLOR_TINT_GRAY'), ('background-color', '#E6CED5')]):
+                raise ApplicationThemeUnavailable('Unreviewed direct enabled label pair.')
             before.append((selector, declarations))
             added_selectors.add(selector)
             continue
@@ -297,8 +302,6 @@ def load_recipe(folder, expected_digest=None):
             recipe.get('source_sha256') != EXPECTED_SOURCE or
             not 1 <= len(recipe.get('resources', [])) <= 29):
         raise ApplicationThemeUnavailable('Application theme belongs to another Resolve build.')
-    from fairlight_stylesheet_bridge import validate_evidence
-    validate_evidence(folder)
     slots, names = [], set()
     for item in recipe['resources']:
         if item['resource'] in names or not item['resource'].startswith(':/StyleSheet/'):
@@ -322,9 +325,6 @@ def load_recipe(folder, expected_digest=None):
         packed = struct.unpack_from('>I', proposed)[0]
         if proposed[packed + 4:] != original[packed + 4:]:
             raise ApplicationThemeUnavailable('Application theme exceeds its resource slot.')
-        from fairlight_stylesheet_bridge import RULES as fairlight_rules
-        if any(rule['selector'] in fairlight_rules for rule in item.get('added_color_rules', [])) and item['resource'] != ':/StyleSheet/KeyFrame':
-            raise ApplicationThemeUnavailable('Fairlight bridge is outside its reviewed late carrier.')
         _validate_edits(*raw_values, item['edits'], item.get('added_color_rules', []))
         slots.append((item, original, proposed))
     for key in ('offset', 'rva'):
@@ -429,8 +429,6 @@ def _preflight(folder, runtime, validate_source=True, expected_digest=None):
     recipe, slots = load_recipe(folder, expected_digest)
     if runtime.version() != EXPECTED_VERSION or (validate_source and _file_sha(runtime.exe) != EXPECTED_SOURCE):
         raise ApplicationThemeUnavailable('Resolve differs from reviewed build ' + EXPECTED_VERSION + '.')
-    from fairlight_stylesheet_bridge import validate_installed
-    validate_installed(folder, runtime.exe, _file_sha, fresh=validate_source)
     _verify_image_ranges(runtime.exe, slots)
     return username, recipe, slots
 
@@ -528,8 +526,6 @@ def launch_theme(folder, progress=lambda message: None, *, _runtime=None,
                     raise ApplicationThemeUnavailable('Final application resource readback failed.')
             if _file_sha(runtime.exe) != EXPECTED_SOURCE:
                 raise ApplicationThemeUnavailable('Resolve changed during preparation. The suspended session was cancelled.')
-            from fairlight_stylesheet_bridge import validate_installed
-            validate_installed(folder, runtime.exe, _file_sha, fresh=True)
             if any(pid != identity['pid'] for pid in runtime.active_pids()):
                 raise ApplicationThemeUnavailable('Another Resolve instance opened during preparation. The suspended theme session was cancelled.')
             state['status'] = 'starting'

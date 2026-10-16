@@ -51,7 +51,7 @@ def build_themes(app):
     heading.columnconfigure(0,weight=1)
     title=app.label(heading,'Cherry Blossom · Step 3 test',size=18,bold=True,bg=app.c['panel']);title.grid(row=0,column=0,sticky='w')
     scope=app.label(heading,'Experimental · Resolve + Fusion',size=10,muted=True,bg=app.c['panel']);scope.grid(row=0,column=1,sticky='e')
-    desc=app.label(panel,'Step 3 test: Color node-canvas backing and a limited Fairlight stylesheet bridge, alongside the working Inspector, Fusion and segmented button changes. The working parameter-label and Fusion canvas changes are retained. Full-program coverage remains unverified.',muted=True,bg=app.c['panel'])
+    desc=app.label(panel,'Step 3 direct-label test: Inspector headings, Media filmstrip labels and enabled segmented text buttons with Cherry Blossom interaction states. The working parameter-label and Fusion canvas changes are retained. Full-program coverage remains unverified.',muted=True,bg=app.c['panel'])
     desc.pack(fill='x',pady=(app.p(6),app.p(20)))
     preview=ThemePreview(panel,app,profile);preview.pack(fill='x');app.theme_preview=preview
     caption=app.label(panel,'Approved workspace concept · not a Resolve capture or a guarantee of complete coverage',size=9,muted=True,bg=app.c['panel'])
@@ -156,7 +156,7 @@ def build_themes(app):
                  'Fusion and the earlier menu/page-bar appearance were confirmed by the user. This larger workspace expansion still needs live verification.',
                  'Apply Theme changes two Fusion skin definition files and starts a themed Resolve session. Session startup changes reviewed stylesheet colors in its own new process; Resolve.exe on disk stays unchanged.',
                  'Application changes include larger sidebar, inspector, Media, Deliver, Color container and Project Manager backgrounds, plus the previous menu/page-bar accents, SoundLibrary keyword field and Inspector caption timecode field.',
-                 'This build tests a Color node-canvas background and limited Fairlight named widgets. Custom-painted timelines/viewers, meters, grading visuals, menus and unreviewed controls still need coverage work. Full coverage is unverified.',
+                 'Menu popup backgrounds and rows, custom-painted timeline/viewer areas, grading visuals, Fairlight DLL surfaces and unreviewed controls retain their native appearance. This is not a complete application theme.',
                  'Recipes change colors only. Narrow enabled Metadata rules pair petal backgrounds with native dark text; broad descendant text overrides are removed. Native dark button backing is retained. Native fonts, bitmap icons, dimensions, semantic color declarations and interaction properties remain unchanged; runtime behavior still needs live verification.',
                  'Version/hash checks, original backup and atomic replacement guard Fusion installation and restoration. Startup refuses restricted Codex accounts and an already-running Resolve.',
                  'Apply Theme and Start Resolve launch only when Resolve is closed. Neither application is minimized or closed automatically. A startup timeout is reported without interrupting a possibly opening project.',

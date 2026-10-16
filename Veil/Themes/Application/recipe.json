@@ -29,8 +29,7 @@
     "Step 3 Inspector enabled parameter/group labels paired with themed panel; native disabled and highlighted states retained",
     "Step 3 property-qualified filmstrip backing/labels and ordinary Inspector header title; active coral header state unchanged",
     "Step 3 enabled segmented text buttons: six native button classes, idle/hover/pressed/selected states; disabled rules and geometry unchanged; native test pending",
-    "Step 3 Color node-canvas backing; nodes, footage, scopes and grading/data colors unchanged; native test pending",
-    "Step 3 late Fairlight stylesheet bridge: timeline mixer container and enabled Timecode/Bar-Beat grid buttons; native reach unverified"
+    "Step 3 direct enabled ordinary Inspector heading and filmstrip label pairs; disabled and active semantic label styles unchanged; native test pending"
   ],
   "unsupported": [
     "Complete native workspace coverage",
@@ -199,11 +198,11 @@
       "original_file": "Inspector.original.bin",
       "proposed_file": "Inspector.cherry.bin",
       "original_sha256": "392d6942f9700205e6791280c726404f5d71e20f49a847f8a5f24b7812c759e2",
-      "proposed_sha256": "b5c5e52045fdfcf8daad19bf4c316f11039828b8f2900320664855956da3052c",
+      "proposed_sha256": "c23ff027d94c7947cf3484b22122684d8c4fba27c34175b7bce3bdf436403d01",
       "raw_original_sha256": "a4905a9bda8e3d5b8560beb908314f5e0c71614bcb587697bf9f7d550807bb41",
-      "raw_proposed_sha256": "6b646ce53713ca576f601622a36713983aa2ff7788d5788cc26488ef95f86d59",
+      "raw_proposed_sha256": "ea17dde9e2a81495f98e85279dfc75bdf84c4f3becea4676409a20770bf11de2",
       "original_packed_bytes": 5178,
-      "proposed_packed_bytes": 4857,
+      "proposed_packed_bytes": 4826,
       "edits": [
         {
           "selector": "UiQInspectorSubtitleContainerCaptionTimeCodeLineEdit",
@@ -289,11 +288,15 @@
           ]
         },
         {
-          "selector": "QWidget[resolve_widget_style_sheet=\"UiQInspectorEffectHeaderWidget\"] QWidget[resolve_widget_style_sheet=\"UiQInspectorOFXPluginNameLabel\"]:enabled",
+          "selector": "UiQInspectorOFXPluginNameLabel:enabled",
           "declarations": [
             [
               "color",
               "COLOR_TINT_GRAY"
+            ],
+            [
+              "background-color",
+              "#E6CED5"
             ]
           ]
         }
@@ -837,11 +840,11 @@
       "original_file": "MediaPage.original.bin",
       "proposed_file": "MediaPage.cherry.bin",
       "original_sha256": "f6c534333ef1221b51c15458c2e8a2cc1cfbcd66d1f50dd5359e47df491c2af4",
-      "proposed_sha256": "50437217b4a72b29ae4bfc1dd6bd66a49adbc372ea6d08daad4ee74f090773ee",
+      "proposed_sha256": "e1f9e46565de699c86ad4526566be545bdf64d89a53ce7665295efb43a27883c",
       "raw_original_sha256": "5054caecb5532ca6c1dd3511c49ed51fca4f27165786c50be87ed670bc022d88",
-      "raw_proposed_sha256": "977ec3ab7d42a02e7b0180d42b5587afe900af7878cfe14f051deb571e90eedf",
+      "raw_proposed_sha256": "5e0e9b65a3d6e853ee807e76086b245ebf3594bbe01406a85f85859b83f25586",
       "original_packed_bytes": 2034,
-      "proposed_packed_bytes": 1865,
+      "proposed_packed_bytes": 1828,
       "edits": [
         {
           "selector": "UiQMediaPoolClipViewContainer",
@@ -876,29 +879,28 @@
       ],
       "added_color_rules": [
         {
-          "selector": "QFrame[PseudoStyleClassName=\"UiQFilmstripClipInfoOuterContainer\"]",
+          "selector": "QLabel[SkinId=\"FilmstripClipInfoNameLabel\"]:enabled",
           "declarations": [
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ],
             [
               "background-color",
-              "#DDB0BC"
+              "#E6CED5"
             ]
           ]
         },
         {
-          "selector": "QFrame[PseudoStyleClassName=\"UiQFilmstripClipInfoOuterContainer\"] QLabel[SkinId=\"FilmstripClipInfoNameLabel\"]:enabled",
+          "selector": "QLabel[SkinId=\"FilmstripClipInfoDuration\"]:enabled",
           "declarations": [
             [
               "color",
               "COLOR_TINT_GRAY"
-            ]
-          ]
-        },
-        {
-          "selector": "QFrame[PseudoStyleClassName=\"UiQFilmstripClipInfoOuterContainer\"] QLabel[SkinId=\"FilmstripClipInfoDuration\"]:enabled",
-          "declarations": [
+            ],
             [
-              "color",
-              "COLOR_TINT_GRAY"
+              "background-color",
+              "#E6CED5"
             ]
           ]
         }
@@ -967,11 +969,11 @@
       "original_file": "ColorPage.original.bin",
       "proposed_file": "ColorPage.cherry.bin",
       "original_sha256": "542e0b91568ba23b1e5a9cabf1cb6d383394b50e80b7a2f2a07276a9a05d7a55",
-      "proposed_sha256": "ea2e745ccaaaa036fe907a6f20dc1743c559c7ecd3e1770795beb53b0a8590c9",
+      "proposed_sha256": "905b1f7cb6b84230f65826ec7ea633aba36fe473d6de6a083ba00d2375ffae72",
       "raw_original_sha256": "68e6e76c020abbaf80274e9f666b94ae0ec11cf54ed145b188652db1418da05b",
-      "raw_proposed_sha256": "2afdcf8157ce5bc00acfb4dcf89d4f1421f3b288eceedf68a022b9ee3848d574",
+      "raw_proposed_sha256": "8ee14238cae1c9d242ed28db4d14384d8802fd4876dd9a590ceddb5509601a39",
       "original_packed_bytes": 15540,
-      "proposed_packed_bytes": 14013,
+      "proposed_packed_bytes": 14014,
       "edits": [
         {
           "selector": "UiQColorPalettePanelsContainer",
@@ -996,12 +998,6 @@
           "property": "background-color",
           "original": "COLOR_PENGUIN_GRAY",
           "proposed": "#E6CED5"
-        },
-        {
-          "selector": "UiQColorCanvasGraphicsView",
-          "property": "background-color",
-          "original": "COLOR_PENGUIN_GRAY",
-          "proposed": "#DDB0BC"
         }
       ],
       "added_color_rules": [],
@@ -1173,188 +1169,6 @@
         }
       ],
       "added_color_rules": []
-    },
-    {
-      "resource": ":/StyleSheet/KeyFrame",
-      "offset": 170775724,
-      "rva": 170780844,
-      "size": 1939,
-      "original_file": "KeyFrame.original.bin",
-      "proposed_file": "KeyFrame.cherry.bin",
-      "original_sha256": "4f505d4ca2763c25b046982508b250c9d8f0b5e5da35bb1bc7557842dac90c4e",
-      "proposed_sha256": "c9f61f99d63e29c9727de86382b640010d0f318e40675a0ef3ae3632c02f1d6f",
-      "raw_original_sha256": "c73c54a444f19a81ea08c733c8f23920596e8de1402971f667a6d197636916b5",
-      "raw_proposed_sha256": "ccf20d012ab1fb5dc9f8533703eb7824b7b40cd448674c1d404ec4de6ef3d14a",
-      "original_packed_bytes": 1935,
-      "proposed_packed_bytes": 1926,
-      "edits": [],
-      "added_color_rules": [
-        {
-          "selector": "UiQFLGridoptionButtonTimeCode:enabled",
-          "declarations": [
-            [
-              "background-color",
-              "#E6CED5"
-            ],
-            [
-              "color",
-              "COLOR_TINT_GRAY"
-            ]
-          ]
-        },
-        {
-          "selector": "UiQFLGridoptionButtonTimeCode:enabled:hover",
-          "declarations": [
-            [
-              "background-color",
-              "#DDB0BC"
-            ],
-            [
-              "color",
-              "COLOR_TINT_GRAY"
-            ]
-          ]
-        },
-        {
-          "selector": "UiQFLGridoptionButtonTimeCode:enabled:pressed",
-          "declarations": [
-            [
-              "background-color",
-              "#D9A0B0"
-            ],
-            [
-              "color",
-              "COLOR_TINT_GRAY"
-            ]
-          ]
-        },
-        {
-          "selector": "UiQFLGridoptionButtonTimeCode:enabled:checked",
-          "declarations": [
-            [
-              "background-color",
-              "#D9829B"
-            ],
-            [
-              "color",
-              "COLOR_TINT_GRAY"
-            ]
-          ]
-        },
-        {
-          "selector": "UiQFLGridoptionButtonTimeCode:enabled:checked:hover",
-          "declarations": [
-            [
-              "background-color",
-              "#D9A0B0"
-            ],
-            [
-              "color",
-              "COLOR_TINT_GRAY"
-            ]
-          ]
-        },
-        {
-          "selector": "UiQFLGridoptionButtonTimeCode:enabled:checked:pressed",
-          "declarations": [
-            [
-              "background-color",
-              "#D46986"
-            ],
-            [
-              "color",
-              "COLOR_TINT_GRAY"
-            ]
-          ]
-        },
-        {
-          "selector": "UiQFLGridoptionButtonBarBeat:enabled",
-          "declarations": [
-            [
-              "background-color",
-              "#E6CED5"
-            ],
-            [
-              "color",
-              "COLOR_TINT_GRAY"
-            ]
-          ]
-        },
-        {
-          "selector": "UiQFLGridoptionButtonBarBeat:enabled:hover",
-          "declarations": [
-            [
-              "background-color",
-              "#DDB0BC"
-            ],
-            [
-              "color",
-              "COLOR_TINT_GRAY"
-            ]
-          ]
-        },
-        {
-          "selector": "UiQFLGridoptionButtonBarBeat:enabled:pressed",
-          "declarations": [
-            [
-              "background-color",
-              "#D9A0B0"
-            ],
-            [
-              "color",
-              "COLOR_TINT_GRAY"
-            ]
-          ]
-        },
-        {
-          "selector": "UiQFLGridoptionButtonBarBeat:enabled:checked",
-          "declarations": [
-            [
-              "background-color",
-              "#D9829B"
-            ],
-            [
-              "color",
-              "COLOR_TINT_GRAY"
-            ]
-          ]
-        },
-        {
-          "selector": "UiQFLGridoptionButtonBarBeat:enabled:checked:hover",
-          "declarations": [
-            [
-              "background-color",
-              "#D9A0B0"
-            ],
-            [
-              "color",
-              "COLOR_TINT_GRAY"
-            ]
-          ]
-        },
-        {
-          "selector": "UiQFLGridoptionButtonBarBeat:enabled:checked:pressed",
-          "declarations": [
-            [
-              "background-color",
-              "#D46986"
-            ],
-            [
-              "color",
-              "COLOR_TINT_GRAY"
-            ]
-          ]
-        },
-        {
-          "selector": "UiQFLTimelineMixerContainer",
-          "declarations": [
-            [
-              "background-color",
-              "#E6CED5"
-            ]
-          ]
-        }
-      ]
     }
   ],
   "state_audit": {
@@ -1366,15 +1180,5 @@
   },
   "palette_notes": "New surfaces use only Cherry Blossom; existing TintGray text and OrcaGray icon backings are retained native exceptions.",
   "color_rule_source": "https://doc.qt.io/qt-6/stylesheet-syntax.html#inheritance",
-  "coverage_notes": "User screenshots confirm partial coverage and contrast problems. Broad descendant text overrides removed. Populated Metadata, settings group cards, custom-painted timelines/viewers, Fairlight and bitmap toolbars are not verified as fully themed.",
-  "fairlight_bridge": {
-    "mode": "Late application stylesheet rules only; DLL unchanged",
-    "module_sha256": "b91d58be937ad5a378026e866a0bc6d31e136044e46d8b63872052c0fad7dabc",
-    "source_slot_offset": 24546449,
-    "source_slot_bytes": 8526,
-    "source_slot_sha256": "9ad74c21e766ed1d49286f203e115ce171ddad71c6bddab4e63e22d509ad1a07",
-    "evidence_file": "FairlightWidgets.evidence.bin",
-    "carrier": ":/StyleSheet/KeyFrame",
-    "native_effect_verified": false
-  }
+  "coverage_notes": "User screenshots confirm partial coverage and contrast problems. Broad descendant text overrides removed. Populated Metadata, settings group cards, custom-painted timelines/viewers, Fairlight and bitmap toolbars are not verified as fully themed."
 }
