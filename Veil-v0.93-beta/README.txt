@@ -1,15 +1,14 @@
-Veil v0.93-beta — offline shareable build
+Veil v0.93-beta — private offline release
 
-1. Extract the entire ZIP to a writable folder on a Windows 11 PC.
-2. Install 64-bit Python 3.11 or newer with Tcl/Tk before going offline.
-3. Double-click Veil/Veil.vbs to start Veil. No account or internet is needed.
+Extract the whole ZIP to a writable folder on Windows 11. Install 64-bit
+Python 3.11 or newer with Tcl/Tk, then double-click Veil/Veil.vbs. No internet
+or account is required. To use palettes, open DaVinci Resolve Studio 21.1.0.14.
 
-The palette editor requires DaVinci Resolve Studio 21.1.0.14. Cherry Blossom
-is a read-only Fusion concept preview in this beta; theme application and
-restoration controls are unavailable. Veil stores local
-settings, user palettes, and recovery records beside the extracted app; keep
-that folder if you want to retain them. Do not extract over an older Veil copy.
+The library includes 15 named Veil palettes, including Peachy Pop, Afterhours,
+and Retrocal. Cherry Blossom is preview-only; theme controls are unavailable
+in this beta. Your own palettes, settings, and recovery files are stored beside
+Veil after use. Extract into a new folder, never over an existing installation.
 
-This archive contains no project files, media, user palettes, settings,
-backups, operation logs, or recovery records from the developer's PC.
-The existing installed/pinned Veil release is unaffected by this archive.
+This package contains no developer projects, media, personal settings, logs,
+or backups. The included starter library was generated solely from the 15
+shipped named HEX presets.

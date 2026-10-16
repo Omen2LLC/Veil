@@ -6,7 +6,7 @@ import shutil
 
 def release_version(folder):
     folder=Path(folder)
-    if not all((folder/name).is_file() for name in ('omen_studio.py','studio_ui.py','studio_version.py','splash-640.png')):return None
+    if not all((folder/name).is_file() for name in ('veil_app.py','studio_ui.py','studio_version.py','splash-640.png')):return None
     try:
         tree=ast.parse((folder/'studio_version.py').read_text(encoding='utf-8-sig'))
         value=next(ast.literal_eval(n.value) for n in tree.body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='VERSION' for t in n.targets))
@@ -35,7 +35,7 @@ def ensure_launcher(folder):
     folder=Path(folder).resolve();destination=release_root(folder)/'Veil-Launcher'
     destination.mkdir(exist_ok=True)
     # The router is outside numbered releases, so pins do not change on upgrades.
-    for name in ('Veil.vbs','launch_silent.cmd','start_omen_studio.py','studio_launcher.py'):
+    for name in ('Veil.vbs','launch_silent.cmd','veil_start.py','studio_launcher.py'):
         source=folder/name;target=destination/name
         if source.read_bytes()!=(target.read_bytes() if target.exists() else b''):shutil.copyfile(source,target)
     (destination/'current-release.txt').write_text(str(folder),encoding='utf-8')

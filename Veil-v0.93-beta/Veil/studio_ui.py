@@ -203,10 +203,12 @@ class App(LegacyApp):
                 photo=image(max(2,pw-self.p(8)),ph,left,right,radius=ph/2);canvas.photos.append(photo)
                 canvas.create_image(self.p(18)+col*pw,self.p(28)+row*self.p(36),image=photo,anchor='nw')
         else:
-            from studio_themes import preview_photo
-            photo=preview_photo(max(2,w-self.p(16)),max(2,h-self.p(8)))
-            canvas.photos.append(photo)
-            canvas.create_image(w/2,h/2,image=photo,anchor='center')
+            photo=image(max(2,w-self.p(24)),max(2,h-self.p(24)),self.c['field'],radius=self.p(12));canvas.photos.append(photo)
+            canvas.create_image(self.p(12),self.p(12),image=photo,anchor='nw')
+            canvas.create_line(self.p(26),self.p(42),w-self.p(26),self.p(42),fill=self.c['muted'],width=2)
+            for row in range(3):
+                canvas.create_rectangle(self.p(28),self.p(61+31*row),self.p(73),self.p(78+31*row),fill=self.c['control'],outline='')
+                canvas.create_rectangle(self.p(91),self.p(61+31*row),w-self.p(28),self.p(78+31*row),fill=self.c['selected'],outline='')
     def palette_page(self):
         if self.current_tab=='Library':
             self.library_page()

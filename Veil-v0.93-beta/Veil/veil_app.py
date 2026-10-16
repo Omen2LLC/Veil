@@ -47,8 +47,8 @@ def main():
     except Exception:
         logging.exception('Could not load Windows window icon; using PNG fallback')
         try:
-            root._omen_studio_icon=tk.PhotoImage(file=str(HERE/'veil-icon.png'))
-            root.iconphoto(True,root._omen_studio_icon)
+            root._veil_icon=tk.PhotoImage(file=str(HERE/'veil-icon.png'))
+            root.iconphoto(True,root._veil_icon)
         except Exception:logging.exception('Could not load Tk window icon')
     k=kernel();mutex=None
     if not args.demo:
