@@ -4,7 +4,7 @@ UiQSectionHeaderIconButton[SkinId="GalleryMemories"]:pressed{image:url(:/Common/
 UiQSectionHeaderIconButton[SkinId="GalleryMemories"]:checked{image:url(:/Common/Headers/Memories_active);}
 UiQSectionHeaderIconButton[SkinId="GalleryMemories"]:checked:hover{image:url(:/Common/Headers/Memories_active_hover);}
 UiQSectionHeaderIconButton[SkinId="GalleryMemories"]:checked:pressed{image:url(:/Common/Headers/Memories_active_push);}
-UiQColorCanvasGraphicsView{background-color:COLOR_PENGUIN_GRAY;border:none;}
+UiQColorCanvasGraphicsView{background-color:#DDB0BC;border:none;}
 UiQColorNodeGraphFrame{min-width:490px;}
 UiQColorNodeGraphFrame[SkinSizeMode="Large"], UiQColorNodeGraphFrame[SkinSizeMode="Medium"]{min-width:370px;}
 UiQColorNodeGraphFrame[SkinSizeMode="Small"]{min-width:370px;}

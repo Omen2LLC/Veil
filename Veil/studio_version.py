@@ -1,1 +1,1 @@
-VERSION = "v0.88 preview"
+VERSION = "v0.89 preview"
