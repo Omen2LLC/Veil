@@ -62,8 +62,7 @@ def show_about(app):
     def close(event=None):
         app.about_window=None
         splash.destroy()
-        button=getattr(app,'brand_button',None)
-        if button is not None and button.winfo_exists():button.focus_set()
+        if root.winfo_exists():root.focus_set()
         return 'break'
     splash.protocol('WM_DELETE_WINDOW',close)
     splash.bind('<Escape>',close);splash.bind('<Return>',close)

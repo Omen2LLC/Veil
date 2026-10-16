@@ -129,8 +129,8 @@ class Button(tk.Canvas):
             self.create_line(x-self.app.p(3),y-self.app.p(2),x,y+self.app.p(1),x+self.app.p(3),y-self.app.p(2),fill=foreground,width=self.app.p(1.5),capstyle='round',joinstyle='round')
 
 class Field(tk.Frame):
-    def __init__(self,parent,app,variable,width=18,polished=False):
-        super().__init__(parent,bg=surface_background(parent,app))
+    def __init__(self,parent,app,variable,width=18,polished=False,defer_entry=False):
+        super().__init__(parent,bg=app.c['field'])
         self.app=app;self.polished=polished;self.back=tk.Canvas(self,bg=app.c['field'],highlightthickness=0)
         self.back.place(relwidth=1,relheight=1)
         self.entry=tk.Entry(self,textvariable=variable,width=width,bg=app.c['field'],fg=app.c['text'],
@@ -138,8 +138,15 @@ class Field(tk.Frame):
             font=(REGULAR,11),bd=0,relief='flat',highlightthickness=0)
         self.entry.pack(fill='x',expand=True,padx=app.p(12),pady=app.p(9))
         self.focused=False;self.bind('<Configure>',self.draw)
+        if defer_entry:
+            self.tk.call('raise',self.back._w)
+            self.bind('<Map>',lambda event:self.after_idle(self.reveal_entry) if event.widget is self else None,add='+')
         self.entry.bind('<FocusIn>',lambda e:self.focus(True));self.entry.bind('<FocusOut>',lambda e:self.focus(False))
         self.bind('<Destroy>',lambda e:setattr(self,'images',[]))
+    def reveal_entry(self):
+        if self.winfo_exists():
+            self.draw()
+            self.entry.lift()
     def focus(self,value):self.focused=value;self.draw()
     def draw(self,event=None):
         self.back.delete('all');w,h=max(2,self.winfo_width()),max(2,self.winfo_height());self.images=[]

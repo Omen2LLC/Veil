@@ -102,14 +102,6 @@ class App(LegacyApp):
         self.separator(self.shell)
         header=self.frame(self.shell,c['panel']);header.pack(fill='x')
         header.columnconfigure(0,weight=1,uniform='header-edge');header.columnconfigure(2,weight=1,uniform='header-edge')
-        brand=self.frame(header,c['panel']);brand.grid(row=0,column=0,sticky='w',padx=self.p(16))
-        self.brand_button=tk.Button(brand,text='About Veil',
-            command=self.show_about,font=(SEMIBOLD,11),bg=c['panel'],fg=c['text'],
-            activebackground=c['hover'],activeforeground=c['text'],bd=0,relief='flat',
-            highlightthickness=1,highlightbackground=c['panel'],highlightcolor=c['focus'],
-            padx=self.p(8),pady=self.p(2),cursor='hand2',takefocus=True)
-        self.brand_button.pack()
-        self.brand_button.bind('<Return>',lambda event:self.show_about())
         pages=self.frame(header,c['panel']);pages.grid(row=0,column=1,pady=self.p(8))
         self.nav={}
         for index,name in enumerate(('Dashboard','Palettes','Themes','Settings')):
@@ -132,6 +124,10 @@ class App(LegacyApp):
         self.root.title(f'Veil · {VERSION}')
         from window_chrome import theme_caption
         self.caption_results=theme_caption(self.root,self.effective_mode()=='Dark',self.c['panel'],self.c['text'])
+    def install_system_about(self):
+        if not hasattr(self.root,'_veil_system_about'):
+            from veil_system_menu import SystemAboutMenu
+            self.root._veil_system_about=SystemAboutMenu(self.root,self.show_about)
     def navigate(self,page):
         self.outlined_page=page
         super().navigate(page)
@@ -221,7 +217,7 @@ class App(LegacyApp):
         toolbar=self.frame(self.page_content);toolbar.pack(fill='x',pady=(0,self.p(16)))
         self.library_toolbar=toolbar
         self.label(toolbar,'Search',size=10,muted=True).pack(side='left',padx=(0,self.p(12)))
-        self.library_search=self.field(toolbar,self.filter,width=16)
+        self.library_search=Field(toolbar,self,self.filter,width=16,defer_entry=True)
         search=self.library_search;search.pack(side='left')
         search.entry.bind('<KeyRelease>',lambda e:self.render_library())
         self.restore_button=self.button(toolbar,'Restore Defaults',self.restore,focus_outline=False)
