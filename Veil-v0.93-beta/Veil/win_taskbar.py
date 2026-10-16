@@ -3,6 +3,7 @@
 import ctypes
 import uuid
 import os
+import sys
 from pathlib import Path
 
 
@@ -87,10 +88,13 @@ class WindowTaskbarIdentity:
 
     def configure(self, folder):
         folder = Path(folder).resolve()
-        from studio_launcher import ensure_launcher
-        launcher=ensure_launcher(folder)
-        wscript=Path(os.environ.get('SystemRoot',r'C:\Windows'))/'System32'/'wscript.exe'
-        self._set(2, f'"{wscript}" "{launcher}"')
+        if getattr(sys, 'frozen', False):
+            self._set(2, f'"{Path(sys.executable).resolve()}"')
+        else:
+            from studio_launcher import ensure_launcher
+            launcher=ensure_launcher(folder)
+            wscript=Path(os.environ.get('SystemRoot',r'C:\Windows'))/'System32'/'wscript.exe'
+            self._set(2, f'"{wscript}" "{launcher}"')
         self._set(3, f'{folder / "veil-icon.ico"},0')
         self._set(4, 'Veil')
         # Set the ID last: this tells the taskbar to refresh the window's pin data.

@@ -62,16 +62,31 @@ class SystemAboutMenu:
             raise c.WinError(c.get_last_error())
         self.installed = True
         u.DrawMenuBar(self.hwnd)
+        self._pending_about = False
+        self._poll_job = root.after(40, self._poll)
         root.bind('<Destroy>', self._on_destroy, add='+')
 
     def _window_proc(self, hwnd, message, wparam, lparam, subclass_id, data):
         if message == WM_SYSCOMMAND and (wparam & 0xFFF0) == ABOUT_COMMAND:
-            try:
-                self.root.after_idle(self.show_about)
-            except Exception:
-                pass
+            # A native window procedure must not call into Tcl/Tk. Let the
+            # ordinary Tk event loop open About after the system menu closes.
+            self._pending_about = True
             return 0
         return self.comctl32.DefSubclassProc(hwnd, message, wparam, lparam)
+
+    def _poll(self):
+        self._poll_job = None
+        if not self.installed:
+            return
+        if self._pending_about:
+            self._pending_about = False
+            try:
+                self.show_about()
+            finally:
+                if self.installed:
+                    self._poll_job = self.root.after(40, self._poll)
+        elif self.installed:
+            self._poll_job = self.root.after(40, self._poll)
 
     def _on_destroy(self, event):
         if event.widget is self.root:
@@ -80,6 +95,9 @@ class SystemAboutMenu:
     def close(self):
         if not self.installed:
             return
+        if self._poll_job is not None:
+            self.root.after_cancel(self._poll_job)
+            self._poll_job = None
         if self.user32.IsWindow(self.hwnd):
             self.comctl32.RemoveWindowSubclass(self.hwnd, self.callback, _SUBCLASS_ID)
             self.user32.DeleteMenu(self.menu, 1, MF_BYPOSITION)

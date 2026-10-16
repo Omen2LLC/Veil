@@ -40,7 +40,7 @@
     "splash-800.png": "a69cd3d9e9a1675b8b1abd572e07a8358d0b9b7ba890e878164877737c09d3f0",
     "splash-960.png": "5382d763daadc742032f2d7f87007adaac739cd94f73434404c2a57740e45777",
     "studio_controls.py": "4596332d2dac248104513505056d0f7d6b87940ad410539c820a7c07b43f731f",
-    "studio_fonts.py": "c9d76185b9b01f0c78a0b54c43ac26a58f384b3a23e0091362ab7aa3eb3e7295",
+    "studio_fonts.py": "4d8b78c9e606506311f470d927be0c7d8853ae0ac522c9300d28ce0e31d56662",
     "studio_launcher.py": "8031de68bf1c9aabcf8710ca7cf4aa139f94ef1b205906b523949fc67a0c0fbb",
     "studio_legacy.py": "6828225903e843d66d42f5c3fa2fdc377d5d8246764fc0612526d12d17a61af4",
     "studio_menu.py": "bb923a1bbf7c2e2df2c6fe6b60653f18900ca0b1b4659f3ccdcde5ab8c215de8",
@@ -78,8 +78,8 @@
     "veil_app.py": "b3db209734d50968822bbeec465a48b3749f7f1b05853c60409fde7f276e2e80",
     "veil_start.py": "e9490d5785ccd95a927338be442efb9da90f895af77501d2853c44e9aa2a9f47",
     "veil_startup.py": "913d6ddebe845fc065dbd4fef198d065624be07e3f5d4ed1bfc403a65f1dbdd9",
-    "veil_system_menu.py": "05820d73e251eda6cd657e05d1cc943e8a8fa4b31aa0b67abd10587885aa3e10",
-    "win_taskbar.py": "e44cee2e6a587243364672fc584d8c3a507713e49fb99812ba2ca0e41fcc85d8",
+    "veil_system_menu.py": "f2f35da89002386f6d805b984b28cd2c487948639bc54312209cbc135e22bd23",
+    "win_taskbar.py": "aa9d26135691e03844d966cd57321e02de8499e2a5655eb61817d24ab2ebb386",
     "window_chrome.py": "f11b8c867a95d3d0f8b360a0aebe0a5fd8ca13f6e2e5abae58b01134dcfee30b"
   },
   "starter_palettes": [
