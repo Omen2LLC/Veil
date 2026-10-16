@@ -51,7 +51,7 @@ def build_themes(app):
     heading.columnconfigure(0,weight=1)
     title=app.label(heading,'Cherry Blossom · Step 3 test',size=18,bold=True,bg=app.c['panel']);title.grid(row=0,column=0,sticky='w')
     scope=app.label(heading,'Experimental · Resolve + Fusion',size=10,muted=True,bg=app.c['panel']);scope.grid(row=0,column=1,sticky='e')
-    desc=app.label(panel,'Step 3 test: Inspector section headings and Media filmstrip labels, using exact native style properties. The working parameter-label and Fusion canvas changes are retained. Full-program coverage remains unverified.',muted=True,bg=app.c['panel'])
+    desc=app.label(panel,'Step 3 test: Inspector headings, Media filmstrip labels and enabled segmented text buttons with Cherry Blossom interaction states. The working parameter-label and Fusion canvas changes are retained. Full-program coverage remains unverified.',muted=True,bg=app.c['panel'])
     desc.pack(fill='x',pady=(app.p(6),app.p(20)))
     preview=ThemePreview(panel,app,profile);preview.pack(fill='x');app.theme_preview=preview
     caption=app.label(panel,'Approved workspace concept · not a Resolve capture or a guarantee of complete coverage',size=9,muted=True,bg=app.c['panel'])

@@ -27,7 +27,8 @@
     "Quick Export preset information header, paired foreground/background test",
     "Step 3 Media filmstrip information chrome; enabled name and duration labels paired with rose backing",
     "Step 3 Inspector enabled parameter/group labels paired with themed panel; native disabled and highlighted states retained",
-    "Step 3 property-qualified filmstrip backing/labels and ordinary Inspector header title; active coral header state unchanged"
+    "Step 3 property-qualified filmstrip backing/labels and ordinary Inspector header title; active coral header state unchanged",
+    "Step 3 enabled segmented text buttons: six native button classes, idle/hover/pressed/selected states; disabled rules and geometry unchanged; native test pending"
   ],
   "unsupported": [
     "Complete native workspace coverage",
@@ -305,11 +306,11 @@
       "original_file": "Common.original.bin",
       "proposed_file": "Common.cherry.bin",
       "original_sha256": "f74b4002373bce685eb6b3b502af881ca5c4210faf626c1555473cd2cd968b1c",
-      "proposed_sha256": "7c704f7f392c1dd2e3e98de6a9be71a41e800aa202a324650e961ea5d38983e5",
+      "proposed_sha256": "2214008ae8d49c881783289cc8198ca168e8fc5ea8f8b75e749104544db11762",
       "raw_original_sha256": "216900972a2d3e3004080e11c3c2b84b8b1f7101eee71cab795432b4d5a03b30",
-      "raw_proposed_sha256": "4e77487efb5ea1d768766828c0eca3f12b91d37909173a352c99eb68651c32d8",
+      "raw_proposed_sha256": "38e250fa24c16e84ba6cc0efdc39310946ddda0a6b31071a8b0ab6d0f6054d65",
       "original_packed_bytes": 9890,
-      "proposed_packed_bytes": 8320,
+      "proposed_packed_bytes": 8512,
       "edits": [
         {
           "selector": "UiQSidebar, UiQSidebarWithLeftBorder, UiQSidebarWithRightBorder",
@@ -349,6 +350,474 @@
         {
           "selector": "UiQInspectorContentsContainer UiQDefaultWhiteLabel:enabled, UiQInspectorEffectHeaderWidget UiQDefaultWhiteLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQDefaultWhiteLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQDefaultWhiteLabel:enabled",
           "declarations": [
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupLeftButton:enabled",
+          "declarations": [
+            [
+              "background-color",
+              "#E6CED5"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupLeftButton:enabled:hover",
+          "declarations": [
+            [
+              "background-color",
+              "#DDB0BC"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupLeftButton:enabled:pressed",
+          "declarations": [
+            [
+              "background-color",
+              "#D9A0B0"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupLeftButton:enabled:checked",
+          "declarations": [
+            [
+              "background-color",
+              "#D9829B"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupLeftButton:enabled:checked:hover",
+          "declarations": [
+            [
+              "background-color",
+              "#D9A0B0"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupLeftButton:enabled:checked:pressed",
+          "declarations": [
+            [
+              "background-color",
+              "#D46986"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupMidButton:enabled",
+          "declarations": [
+            [
+              "background-color",
+              "#E6CED5"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupMidButton:enabled:hover",
+          "declarations": [
+            [
+              "background-color",
+              "#DDB0BC"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupMidButton:enabled:pressed",
+          "declarations": [
+            [
+              "background-color",
+              "#D9A0B0"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupMidButton:enabled:checked",
+          "declarations": [
+            [
+              "background-color",
+              "#D9829B"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupMidButton:enabled:checked:hover",
+          "declarations": [
+            [
+              "background-color",
+              "#D9A0B0"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupMidButton:enabled:checked:pressed",
+          "declarations": [
+            [
+              "background-color",
+              "#D46986"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupRightButton:enabled",
+          "declarations": [
+            [
+              "background-color",
+              "#E6CED5"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupRightButton:enabled:hover",
+          "declarations": [
+            [
+              "background-color",
+              "#DDB0BC"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupRightButton:enabled:pressed",
+          "declarations": [
+            [
+              "background-color",
+              "#D9A0B0"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupRightButton:enabled:checked",
+          "declarations": [
+            [
+              "background-color",
+              "#D9829B"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupRightButton:enabled:checked:hover",
+          "declarations": [
+            [
+              "background-color",
+              "#D9A0B0"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupRightButton:enabled:checked:pressed",
+          "declarations": [
+            [
+              "background-color",
+              "#D46986"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupTinyLeftButton:enabled",
+          "declarations": [
+            [
+              "background-color",
+              "#E6CED5"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupTinyLeftButton:enabled:hover",
+          "declarations": [
+            [
+              "background-color",
+              "#DDB0BC"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupTinyLeftButton:enabled:pressed",
+          "declarations": [
+            [
+              "background-color",
+              "#D9A0B0"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupTinyLeftButton:enabled:checked",
+          "declarations": [
+            [
+              "background-color",
+              "#D9829B"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupTinyLeftButton:enabled:checked:hover",
+          "declarations": [
+            [
+              "background-color",
+              "#D9A0B0"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupTinyLeftButton:enabled:checked:pressed",
+          "declarations": [
+            [
+              "background-color",
+              "#D46986"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupTinyMidButton:enabled",
+          "declarations": [
+            [
+              "background-color",
+              "#E6CED5"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupTinyMidButton:enabled:hover",
+          "declarations": [
+            [
+              "background-color",
+              "#DDB0BC"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupTinyMidButton:enabled:pressed",
+          "declarations": [
+            [
+              "background-color",
+              "#D9A0B0"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupTinyMidButton:enabled:checked",
+          "declarations": [
+            [
+              "background-color",
+              "#D9829B"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupTinyMidButton:enabled:checked:hover",
+          "declarations": [
+            [
+              "background-color",
+              "#D9A0B0"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupTinyMidButton:enabled:checked:pressed",
+          "declarations": [
+            [
+              "background-color",
+              "#D46986"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupTinyRightButton:enabled",
+          "declarations": [
+            [
+              "background-color",
+              "#E6CED5"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupTinyRightButton:enabled:hover",
+          "declarations": [
+            [
+              "background-color",
+              "#DDB0BC"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupTinyRightButton:enabled:pressed",
+          "declarations": [
+            [
+              "background-color",
+              "#D9A0B0"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupTinyRightButton:enabled:checked",
+          "declarations": [
+            [
+              "background-color",
+              "#D9829B"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupTinyRightButton:enabled:checked:hover",
+          "declarations": [
+            [
+              "background-color",
+              "#D9A0B0"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQGroupTinyRightButton:enabled:checked:pressed",
+          "declarations": [
+            [
+              "background-color",
+              "#D46986"
+            ],
             [
               "color",
               "COLOR_TINT_GRAY"

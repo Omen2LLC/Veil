@@ -20,7 +20,7 @@ INSTALL = Path('C:/Program Files/Blackmagic Design/DaVinci Resolve')
 EXPECTED_VERSION = '21.1.0.14'
 EXPECTED_SOURCE = '0a8f20c70851e629c1753ed537801d1df0b5162ad98a5ab399e4abc7b77df236'
 # Set to the independently verified staged recipe before releasing this build.
-EXPECTED_RECIPE = '6e26d713b0d5b78a739488a702b80c7ecba8254a18dc2f25830e4519e485f10c'
+EXPECTED_RECIPE = '90875ba0c61a9b55e11ef97145b2736883c0b134290291ad2713d41686a6953d'
 STARTUP_TIMEOUT = 90
 COLORS = {(230, 206, 213), (221, 176, 188), (217, 160, 176),
           (217, 130, 155), (212, 105, 134)}
@@ -180,6 +180,22 @@ def _validate_edits(original, proposed, edits, added_rules=()):
         selector = ' '.join(rule['selector'].split())
         if selector in original_selectors or selector in added_selectors:
             raise ApplicationThemeUnavailable('Duplicate appended color selector.')
+        group_match = re.fullmatch(r'(UiQGroup(?:Tiny)?(?:Left|Mid|Right)Button):enabled((?::checked)?(?::hover|:pressed)?)', selector)
+        if group_match:
+            native_class, state = group_match.groups()
+            approved_states = {'': '#E6CED5', ':hover': '#DDB0BC', ':pressed': '#D9A0B0', ':checked': '#D9829B', ':checked:hover': '#D9A0B0', ':checked:pressed': '#D46986'}
+            source_blocks = dict(_qss_blocks(original))
+            native = dict(source_blocks.get(native_class, []))
+            native_states = [values for name, values in source_blocks.items() if name.split(':')[0] == native_class]
+            declarations = [tuple(pair) for pair in rule['declarations']]
+            if (state not in approved_states or native.get('background-color') != 'COLOR_ORCA_GRAY' or
+                    not any(name in source_blocks for name in (native_class + ':disabled', native_class + ':checked:disabled')) or
+                    any(key in ('image', 'background-image') for values in native_states for key, value in values) or
+                    declarations != [('background-color', approved_states[state]), ('color', 'COLOR_TINT_GRAY')]):
+                raise ApplicationThemeUnavailable('Unreviewed segmented text button state.')
+            before.append((selector, declarations))
+            added_selectors.add(selector)
+            continue
         metadata_fields = {
             'QTextEdit[SkinId="MediaMetadataScrollAreaTextEdit"]:enabled',
             'QPlainTextEdit[SkinId="MediaMetadataScrollAreaPlainTextEdit"]:enabled',
