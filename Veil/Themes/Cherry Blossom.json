@@ -27,7 +27,7 @@
     "error": "#E64B3D"
   },
   "approved_direction": "Petal",
-  "preview": "Themes/Cherry Blossom workspace concept.png",
+  "preview": "Themes/Fusion-preview/1152.png",
   "preserved_native_foreground": "TintGray (9, 9, 9); dark native foreground reused for readable pink surfaces",
   "constraints": [
     "Only five supplied colors for new surfaces and accents; native foregrounds and semantic colors preserved",
@@ -35,5 +35,6 @@
     "Close Resolve normally before Apply, Start or Restore; Apply/Start launch a new themed session",
     "Application changes are session-only; Fusion skin persists until Restore Original",
     "Clip palette data and Omen dark/light appearance unchanged"
-  ]
+  ],
+  "preview_kind": "AI-edited Fusion concept; viewers hidden; not native verification"
 }

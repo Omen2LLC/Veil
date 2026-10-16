@@ -47,7 +47,7 @@ def direct_operation(folder,action,progress=lambda message:None,guard=lambda:Non
     import shutil
     from theme_transaction import digest,atomic_bytes,SkinTransaction,require_resolve_closed
     from resolve_palette import file_version
-    from fusion_skin_patch import build_candidate
+    from fusion_skin_patch import verify_reviewed_candidate
     guard()
     folder=Path(folder);recipe=json.loads((folder/'Themes/Skin recipe.json').read_text())
     progress('Checking that Resolve is closed…')
@@ -68,8 +68,12 @@ def direct_operation(folder,action,progress=lambda message:None,guard=lambda:Non
     upgrading=action=='apply' and current in REVIEWED_UPGRADE_SKINS and current in legacy_hashes
     if action=='apply':
         if current in legacy_hashes and not upgrading:raise ThemeUnavailable('Restore the previous theme first, then apply Cherry Blossom.')
-        guard();progress('Building and verifying the Fusion theme…')
-        build_candidate(backup,candidate,load_profile(folder)['tokens'])
+        guard();progress('Verifying the packaged Fusion theme…')
+        reviewed=folder/'Themes/Fusion/Cherry-Blossom.fuskin'
+        if digest(reviewed)!=recipe['candidate_sha256']:
+            raise ThemeUnavailable('Packaged Fusion theme differs from the reviewed candidate.')
+        verify_reviewed_candidate(backup,reviewed,load_profile(folder)['tokens'])
+        atomic_bytes(candidate,reviewed.read_bytes())
         if digest(candidate)!=recipe['candidate_sha256']:raise ThemeUnavailable('Generated patch differs from the reviewed candidate.')
     candidate_hash=current if action=='restore' and current in legacy_hashes else recipe['candidate_sha256']
     def checked_closed():guard();require_resolve_closed()

@@ -102,6 +102,15 @@ class App(LegacyApp):
         self.separator(self.shell)
         header=self.frame(self.shell,c['panel']);header.pack(fill='x')
         header.columnconfigure(0,weight=1,uniform='header-edge');header.columnconfigure(2,weight=1,uniform='header-edge')
+        brand=self.frame(header,c['panel']);brand.grid(row=0,column=0,sticky='w',padx=self.p(16))
+        self.brand_image=self.logo.subsample(2,2)
+        self.brand_button=tk.Button(brand,image=self.brand_image,text='Veil',compound='left',
+            command=self.show_about,font=(SEMIBOLD,11),bg=c['panel'],fg=c['text'],
+            activebackground=c['hover'],activeforeground=c['text'],bd=0,relief='flat',
+            highlightthickness=1,highlightbackground=c['panel'],highlightcolor=c['focus'],
+            padx=self.p(8),pady=self.p(2),cursor='hand2',takefocus=True)
+        self.brand_button.pack()
+        self.brand_button.bind('<Return>',lambda event:self.show_about())
         pages=self.frame(header,c['panel']);pages.grid(row=0,column=1,pady=self.p(8))
         self.nav={}
         for index,name in enumerate(('Dashboard','Palettes','Themes','Settings')):
@@ -116,9 +125,12 @@ class App(LegacyApp):
         self.viewport.bind('<Configure>',lambda e:self.page_content.place_configure(width=min(e.width,self.p(1200))))
         self.root.after_idle(self.update_caption)
         self.show_page();self.sync_chrome()
+    def show_about(self):
+        from veil_about import show_about
+        return show_about(self)
     def update_caption(self):
         if not self.root.winfo_exists():return
-        self.root.title('Veil · v0.91')
+        self.root.title('Veil · v0.92')
         from window_chrome import theme_caption
         self.caption_results=theme_caption(self.root,self.effective_mode()=='Dark',self.c['panel'],self.c['text'])
     def navigate(self,page):

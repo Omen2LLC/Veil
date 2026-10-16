@@ -139,3 +139,31 @@ def build_candidate(source,destination,tokens):
             expected=transform(before,tokens)[0] if name in ('Fusion.skin','Neutral.skin') else before
             if after!=expected:raise RuntimeError('Unexpected resource change: '+name)
     return changes
+
+
+def verify_reviewed_candidate(source, reviewed, tokens):
+    """Check exact archive contents against the allowlisted source transform.
+
+    Compression bytes can differ across Python versions. Callers separately
+    verify the reviewed archive's exact hash before installing its original bytes.
+    """
+    changes = {}
+    with ZipFile(source) as original, ZipFile(reviewed) as candidate:
+        names = original.namelist()
+        if (names != candidate.namelist() or len(names) != len(set(names)) or
+                original.comment != candidate.comment or candidate.testzip() is not None):
+            raise RuntimeError('Reviewed Fusion archive structure differs from the original.')
+        for native, proposed in zip(original.infolist(), candidate.infolist()):
+            for field in ('filename', 'date_time', 'compress_type', 'comment', 'extra',
+                          'create_system', 'external_attr', 'internal_attr'):
+                if getattr(native, field) != getattr(proposed, field):
+                    raise RuntimeError('Reviewed Fusion archive metadata changed: '+native.filename)
+            payload = original.read(native)
+            if native.filename in ('Fusion.skin', 'Neutral.skin'):
+                expected, edits = transform(payload, tokens)
+                changes[native.filename] = edits
+            else:
+                expected = payload
+            if candidate.read(proposed) != expected:
+                raise RuntimeError('Reviewed Fusion resource differs from the allowlisted transform: '+native.filename)
+    return changes

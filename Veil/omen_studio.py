@@ -14,58 +14,13 @@ from dot_palette import PaletteSession
 from palette_names import validate_names,decode,encode
 from menu_names import NativeMenuNames
 from media_pool_refresh import MediaPoolRefresh
-from win_taskbar import APP_ID,configure_window,round_splash_window
+from win_taskbar import APP_ID,configure_window
+from veil_startup import show_startup
 
 HERE=Path(__file__).resolve().parent
 from studio_version import VERSION
 from studio_fonts import load_fonts,REGULAR
-SPLASH_DURATION_MS=3000
 
-def show_splash(root, on_done):
-    """Display the versionless artwork, then open the app after three seconds."""
-    screen_w, screen_h = root.winfo_screenwidth(), root.winfo_screenheight()
-    image=None
-    for width in (960, 800, 640):
-        candidate=HERE/f'splash-{width}.png'
-        if not candidate.exists():continue
-        photo=tk.PhotoImage(file=str(candidate))
-        if photo.width()<=screen_w*.65 and photo.height()<=screen_h*.55:
-            image=photo
-            break
-    if image is None:
-        smallest=HERE/'splash-640.png'
-        if not smallest.exists():
-            raise FileNotFoundError('Splash artwork is missing')
-        source=tk.PhotoImage(file=str(smallest))
-        image=source.subsample(2,2)
-    width,height=image.width(),image.height()
-    splash=tk.Toplevel(root)
-    splash.withdraw()
-    splash.overrideredirect(True)
-    splash.geometry(f'{width}x{height}+{(screen_w-width)//2}+{(screen_h-height)//2}')
-    splash.attributes('-topmost',True)
-    canvas=tk.Canvas(splash,width=width,height=height,bg='black',highlightthickness=0,borderwidth=0)
-    canvas.pack()
-    canvas.create_image(0,0,anchor='nw',image=image)
-    # Overlay the supplied mark as an untouched brand asset, never a redraw.
-    logo_path=HERE/f'veil-splash-logo-{width}.png'
-    if logo_path.exists():
-        logo=tk.PhotoImage(file=str(logo_path))
-    else:
-        logo=tk.PhotoImage(file=str(HERE/'veil-splash-logo-640.png')).subsample(2,2)
-    canvas.create_image(round(width*.5),round(height*.39),image=logo,anchor='center',tags='veil-logo')
-    canvas.create_text(round(width*.5),round(height*.71),text='Veil',fill='#F5EDED',
-                       font=(REGULAR,-max(18,round(height*.12))),anchor='center',tags='veil-wordmark')
-    splash._logo=logo
-    canvas.create_text(round(width*.041),round(height*.85),anchor='nw',
-                       text=VERSION.split()[0],fill='#C7C7C7',
-                       font=(REGULAR,-max(12,round(height*.029))))
-    splash._image=image
-    splash.update_idletasks()
-    round_splash_window(splash,width,height,max(12,round(width*.019)))
-    splash.deiconify()
-    splash.lift()
-    root.after(SPLASH_DURATION_MS,lambda:(splash.destroy(),on_done()))
 from studio_ui import App
 
 def main():
@@ -110,22 +65,20 @@ def main():
         else:messagebox.showerror('Veil',str(value),parent=root)
     root.report_callback_exception=callback_error
     try:
+        # Build and lay out the workspace while withdrawn, before playback starts.
+        # Completion only reveals this ready window; it never holds the last logo
+        # frame while constructing the application.
+        app=App(root,demo=args.demo)
+        root.update_idletasks()
+        try:root._taskbar_identity=configure_window(root,HERE)
+        except Exception:
+            logging.exception('Could not configure Veil taskbar pin identity')
+            root.after(3500,lambda:messagebox.showwarning('Veil taskbar icon',
+                       'Windows could not set Veil pin name and icon. See veil.log.',parent=root))
         def open_main_window():
-            nonlocal app
-            try:
-                app=App(root,demo=args.demo)
-                root.update_idletasks()
-                try:root._taskbar_identity=configure_window(root,HERE)
-                except Exception:
-                    logging.exception('Could not configure Veil taskbar pin identity')
-                    root.after(200,lambda:messagebox.showwarning('Veil taskbar icon',
-                               'Windows could not set Veilâ€™s pin name and icon. See veil.log.',parent=root))
-                root.deiconify()
-            except Exception:
-                logging.exception('Could not open main window after splash')
-                root.destroy()
-                raise
-        show_splash(root,open_main_window)
+            root.deiconify()
+            root.update_idletasks()
+        show_startup(root,open_main_window,HERE)
         root.mainloop()
     finally:
         if app:app.worker.shutdown()
