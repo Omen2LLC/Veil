@@ -1,7 +1,10 @@
-Veil v0.84 — iridescent rebrand
+Veil v0.85 — Cherry Blossom integration
 
-Open Veil.vbs to start without a console. Existing compatible Omen Studio launchers remain supported. The splash uses your original V logo and approximately 2.35:1 iridescent artwork for three seconds. The app title, icon, Settings copy and dialogs now use Veil.
+Close Veil normally and reopen through your usual launcher, or open Veil/Veil.vbs.
+Save your work and close Resolve normally. In Veil, open Themes > Cherry Blossom > Apply Theme.
+Apply checks both layers, installs or reuses Cherry Blossom Fusion, and starts a themed Resolve session.
+Windows may request administrator approval for the Fusion helper, identified as Python.
+To revert, close Resolve normally and choose Restore Original. Native restoration of this expanded candidate still needs verification.
 
-All palette editing, named HEX import/export, settings and reviewed Resolve integration remain from the working v0.82 release. No new experimental full-coverage theme mechanism is activated. The v0.83 coverage investigation remains separate and staged.
-
-This update does not modify Resolve installations or pinned shortcuts. Windows may cache the old pinned icon; opening Veil.vbs exposes the new window identity for pinning if desired.
+Coverage remains partial: reviewed stylesheet surfaces and Fusion are integrated; custom-painted timelines, node areas, meters and some panels retain native styling. No full-program coverage is claimed.
+Original resources, palette data and recovery guards are retained. Your ordinary Resolve shortcut is unchanged.

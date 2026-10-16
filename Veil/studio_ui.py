@@ -1,4 +1,4 @@
-"""Monochrome Veil workspace; Resolve transactions remain in studio_legacy."""
+"""Monochrome Omen workspace; Resolve transactions remain in studio_legacy."""
 import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
 from pathlib import Path

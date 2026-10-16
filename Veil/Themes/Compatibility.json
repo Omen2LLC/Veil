@@ -14,13 +14,14 @@
     ":/StyleSheet/DeliverPage in new owned session memory only",
     ":/StyleSheet/ColorPage in new owned session memory only",
     ":/StyleSheet/ProjectManager in new owned session memory only",
-    ":/StyleSheet/Dialogs in new owned session memory only"
+    ":/StyleSheet/Dialogs in new owned session memory only",
+    ":/StyleSheet/Metadata in new owned session memory only"
   ],
   "live_activation_verified": true,
   "whole_application_verified": false,
   "restart_required": true,
   "verified_theme_surfaces": [
-    "Fusion appearance: user said it worked very well; installed hash matches Cherry Blossom"
+    "Historical user confirmation: Fusion theme worked. Current read-only inspection: original Fusion skin installed."
   ],
   "source_colors": [
     "#E6CED5",
@@ -43,7 +44,7 @@
   ],
   "original_backup": "Backup/Themes/Original-Fusion.fuskin; verified original digest",
   "migration": "Known previous theme resources can be restored using the original backup; previous themes are no longer offered",
-  "limitation": "Workspace concept is illustrative. This expansion has not been observed natively. Custom paint and bitmap artwork limit coverage; no complete theme is claimed.",
+  "limitation": "Current screenshots confirm partial application coverage and contrast regressions. Coverage update is staged, unactivated and not yet live verified.",
   "restore_fix": "Windows progress-file read denial previously cancelled Restore before commit. Progress is advisory; mandatory guards/results use finite read retries. Native-sharing-lock and fixture restoration tests passed; live retry remains pending.",
   "application_live_activation_verified": false,
   "application_scope": [
@@ -53,7 +54,8 @@
     "Inspector content and effect header containers",
     "Deliver render settings and queue footer",
     "Color tool container backgrounds (grading visuals unchanged)",
-    "Project Manager database/projects/body containers"
+    "Project Manager database/projects/body containers",
+    "Empty Metadata panel with directly paired foreground/background"
   ],
   "application_unsupported": [
     "Complete native workspace coverage",
@@ -67,5 +69,7 @@
   "application_restore": "Close themed session normally; use regular Resolve shortcut. Restore Original also restores persistent Fusion skin.",
   "application_mechanism": "Reviewed resource slots in a fresh suspended child; no installed Resolve.exe or shortcut changes",
   "restart_behavior": "User closes normally; Apply/Start explicitly opens the themed session. No automatic close or restart of an existing session.",
-  "prior_application_live_activation_verified": true
+  "prior_application_live_activation_verified": true,
+  "metadata_enabled_fields_staged": 3,
+  "debugger_startup_strategy_approved": false
 }

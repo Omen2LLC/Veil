@@ -21,7 +21,9 @@
     "Inspector content and effect header containers",
     "Deliver render settings and queue footer",
     "Color tool container backgrounds (grading visuals unchanged)",
-    "Project Manager database/projects/body containers"
+    "Project Manager database/projects/body containers",
+    "Empty Metadata panel with directly paired foreground/background",
+    "Three explicitly named enabled Metadata text fields with paired foreground/background; native disabled and selection declarations retained"
   ],
   "unsupported": [
     "Complete native workspace coverage",
@@ -190,11 +192,11 @@
       "original_file": "Inspector.original.bin",
       "proposed_file": "Inspector.cherry.bin",
       "original_sha256": "392d6942f9700205e6791280c726404f5d71e20f49a847f8a5f24b7812c759e2",
-      "proposed_sha256": "44e2b0e6222e3224d3323ac04930ce4ebab40fe8473d15be68626aa5a9130e72",
+      "proposed_sha256": "a2c813d8952e7467f1a795dba45ed9249e11b322866e6e19f0f295eeb24a6b90",
       "raw_original_sha256": "a4905a9bda8e3d5b8560beb908314f5e0c71614bcb587697bf9f7d550807bb41",
-      "raw_proposed_sha256": "09c566e70a82ae0b286f5f09e3f9e55b24fa5ac4015e571bcea0aa292956f98a",
+      "raw_proposed_sha256": "3d58591beede1f1a8bae671c93159d7695ded347ffaecd8f692cb66fbfa6aa9a",
       "original_packed_bytes": 5178,
-      "proposed_packed_bytes": 5039,
+      "proposed_packed_bytes": 4749,
       "edits": [
         {
           "selector": "UiQInspectorSubtitleContainerCaptionTimeCodeLineEdit",
@@ -251,17 +253,7 @@
           "proposed": "#E6CED5"
         }
       ],
-      "added_color_rules": [
-        {
-          "selector": "UiQInspectorContentsContainer UiQInspectorParamLabel:enabled, UiQInspectorContentsContainer UiQInspectorHighlightedParamLabel:enabled, UiQInspectorContentsContainer UiQInspectorTransitionDurationWidgetLabel:enabled, UiQInspectorContentsContainer UiQInspectorPointParamLabel:enabled, UiQInspectorContentsContainer UiQInspectorGroupTitleLabel:enabled, UiQInspectorContentsContainer UiQInspectorOFXPluginNameLabel:enabled, UiQInspectorContentsContainer UiQInspectorOFXPluginEffectNameLabel:enabled, UiQInspectorContentsContainer UiQInspectorOFXWidgetParamLabel:enabled, UiQInspectorContentsContainer UiQInspectorOFXWidgetCoordinatesLabel:enabled, UiQInspectorContentsContainer UiQInspectorOFXWidgetNDParamLabel:enabled, UiQInspectorContentsContainer UiQInspectorOFXWidgetGroupTitleLabel:enabled, UiQInspectorContentsContainer UiQInspectorSubtitleContainerCaptionCharCountLabel:enabled, UiQInspectorEffectHeaderWidget UiQInspectorParamLabel:enabled, UiQInspectorEffectHeaderWidget UiQInspectorHighlightedParamLabel:enabled, UiQInspectorEffectHeaderWidget UiQInspectorTransitionDurationWidgetLabel:enabled, UiQInspectorEffectHeaderWidget UiQInspectorPointParamLabel:enabled, UiQInspectorEffectHeaderWidget UiQInspectorGroupTitleLabel:enabled, UiQInspectorEffectHeaderWidget UiQInspectorOFXPluginNameLabel:enabled, UiQInspectorEffectHeaderWidget UiQInspectorOFXPluginEffectNameLabel:enabled, UiQInspectorEffectHeaderWidget UiQInspectorOFXWidgetParamLabel:enabled, UiQInspectorEffectHeaderWidget UiQInspectorOFXWidgetCoordinatesLabel:enabled, UiQInspectorEffectHeaderWidget UiQInspectorOFXWidgetNDParamLabel:enabled, UiQInspectorEffectHeaderWidget UiQInspectorOFXWidgetGroupTitleLabel:enabled, UiQInspectorEffectHeaderWidget UiQInspectorSubtitleContainerCaptionCharCountLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQInspectorParamLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQInspectorHighlightedParamLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQInspectorTransitionDurationWidgetLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQInspectorPointParamLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQInspectorGroupTitleLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQInspectorOFXPluginNameLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQInspectorOFXPluginEffectNameLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQInspectorOFXWidgetParamLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQInspectorOFXWidgetCoordinatesLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQInspectorOFXWidgetNDParamLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQInspectorOFXWidgetGroupTitleLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQInspectorSubtitleContainerCaptionCharCountLabel:enabled, UiFusionHeaderImp_ChildContainerNotExpanded UiQInspectorParamLabel:enabled, UiFusionHeaderImp_ChildContainerNotExpanded UiQInspectorHighlightedParamLabel:enabled, UiFusionHeaderImp_ChildContainerNotExpanded UiQInspectorTransitionDurationWidgetLabel:enabled, UiFusionHeaderImp_ChildContainerNotExpanded UiQInspectorPointParamLabel:enabled, UiFusionHeaderImp_ChildContainerNotExpanded UiQInspectorGroupTitleLabel:enabled, UiFusionHeaderImp_ChildContainerNotExpanded UiQInspectorOFXPluginNameLabel:enabled, UiFusionHeaderImp_ChildContainerNotExpanded UiQInspectorOFXPluginEffectNameLabel:enabled, UiFusionHeaderImp_ChildContainerNotExpanded UiQInspectorOFXWidgetParamLabel:enabled, UiFusionHeaderImp_ChildContainerNotExpanded UiQInspectorOFXWidgetCoordinatesLabel:enabled, UiFusionHeaderImp_ChildContainerNotExpanded UiQInspectorOFXWidgetNDParamLabel:enabled, UiFusionHeaderImp_ChildContainerNotExpanded UiQInspectorOFXWidgetGroupTitleLabel:enabled, UiFusionHeaderImp_ChildContainerNotExpanded UiQInspectorSubtitleContainerCaptionCharCountLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQInspectorParamLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQInspectorHighlightedParamLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQInspectorTransitionDurationWidgetLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQInspectorPointParamLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQInspectorGroupTitleLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQInspectorOFXPluginNameLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQInspectorOFXPluginEffectNameLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQInspectorOFXWidgetParamLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQInspectorOFXWidgetCoordinatesLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQInspectorOFXWidgetNDParamLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQInspectorOFXWidgetGroupTitleLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQInspectorSubtitleContainerCaptionCharCountLabel:enabled",
-          "declarations": [
-            [
-              "color",
-              "COLOR_TINT_GRAY"
-            ]
-          ]
-        }
-      ],
+      "added_color_rules": [],
       "formatting": "Whitespace/comment compaction only; original parsed selectors and declarations retained except reviewed color edits"
     },
     {
@@ -272,11 +264,11 @@
       "original_file": "Common.original.bin",
       "proposed_file": "Common.cherry.bin",
       "original_sha256": "f74b4002373bce685eb6b3b502af881ca5c4210faf626c1555473cd2cd968b1c",
-      "proposed_sha256": "1669f137534bfe2ea9d064758285fdddc0e957ee03d2236072f6e5dcb091593d",
+      "proposed_sha256": "5cf72b979f57aeb46a28884e50ab1e3bdf1f076ee8e9666828699d517708936d",
       "raw_original_sha256": "216900972a2d3e3004080e11c3c2b84b8b1f7101eee71cab795432b4d5a03b30",
-      "raw_proposed_sha256": "ba83e9517ab770fe3a3eaf0683e26a324f2a3a02d27c8b046d26cfd0c9b27af3",
+      "raw_proposed_sha256": "f503afffdb9ede77ffb26198efeb76f563446ddb3a7fd4321fb87c630b519bbc",
       "original_packed_bytes": 9890,
-      "proposed_packed_bytes": 8500,
+      "proposed_packed_bytes": 8228,
       "edits": [
         {
           "selector": "UiQSidebar, UiQSidebarWithLeftBorder, UiQSidebarWithRightBorder",
@@ -303,17 +295,7 @@
           "proposed": "#E6CED5"
         }
       ],
-      "added_color_rules": [
-        {
-          "selector": "UiQSidebar UiQParamLabel:enabled, UiQSidebar UiQDefaultWhiteLabel:enabled, UiQSidebar UiQEmptyBannerHeadingLabel:enabled, UiQSidebar UiQEmptyBannerSubHeadingLabel:enabled, UiQSidebar UiQWhiteColorTextLabel:enabled, UiQSidebar UiQSmokeGrayColorTextLabel:enabled, UiQSidebar UiQFoggyGrayColorTextLabel:enabled, UiQSidebar UiQMagnetoWhiteColorTextLabel:enabled, UiQSidebar UiQActiveTrimLabel:enabled, UiQSidebarWithLeftBorder UiQParamLabel:enabled, UiQSidebarWithLeftBorder UiQDefaultWhiteLabel:enabled, UiQSidebarWithLeftBorder UiQEmptyBannerHeadingLabel:enabled, UiQSidebarWithLeftBorder UiQEmptyBannerSubHeadingLabel:enabled, UiQSidebarWithLeftBorder UiQWhiteColorTextLabel:enabled, UiQSidebarWithLeftBorder UiQSmokeGrayColorTextLabel:enabled, UiQSidebarWithLeftBorder UiQFoggyGrayColorTextLabel:enabled, UiQSidebarWithLeftBorder UiQMagnetoWhiteColorTextLabel:enabled, UiQSidebarWithLeftBorder UiQActiveTrimLabel:enabled, UiQSidebarWithRightBorder UiQParamLabel:enabled, UiQSidebarWithRightBorder UiQDefaultWhiteLabel:enabled, UiQSidebarWithRightBorder UiQEmptyBannerHeadingLabel:enabled, UiQSidebarWithRightBorder UiQEmptyBannerSubHeadingLabel:enabled, UiQSidebarWithRightBorder UiQWhiteColorTextLabel:enabled, UiQSidebarWithRightBorder UiQSmokeGrayColorTextLabel:enabled, UiQSidebarWithRightBorder UiQFoggyGrayColorTextLabel:enabled, UiQSidebarWithRightBorder UiQMagnetoWhiteColorTextLabel:enabled, UiQSidebarWithRightBorder UiQActiveTrimLabel:enabled, UiQDialogBody UiQParamLabel:enabled, UiQDialogBody UiQDefaultWhiteLabel:enabled, UiQDialogBody UiQEmptyBannerHeadingLabel:enabled, UiQDialogBody UiQEmptyBannerSubHeadingLabel:enabled, UiQDialogBody UiQWhiteColorTextLabel:enabled, UiQDialogBody UiQSmokeGrayColorTextLabel:enabled, UiQDialogBody UiQFoggyGrayColorTextLabel:enabled, UiQDialogBody UiQMagnetoWhiteColorTextLabel:enabled, UiQDialogBody UiQActiveTrimLabel:enabled, UiQDialogBodyWithoutPadding UiQParamLabel:enabled, UiQDialogBodyWithoutPadding UiQDefaultWhiteLabel:enabled, UiQDialogBodyWithoutPadding UiQEmptyBannerHeadingLabel:enabled, UiQDialogBodyWithoutPadding UiQEmptyBannerSubHeadingLabel:enabled, UiQDialogBodyWithoutPadding UiQWhiteColorTextLabel:enabled, UiQDialogBodyWithoutPadding UiQSmokeGrayColorTextLabel:enabled, UiQDialogBodyWithoutPadding UiQFoggyGrayColorTextLabel:enabled, UiQDialogBodyWithoutPadding UiQMagnetoWhiteColorTextLabel:enabled, UiQDialogBodyWithoutPadding UiQActiveTrimLabel:enabled, UiQDialogContentFrame UiQParamLabel:enabled, UiQDialogContentFrame UiQDefaultWhiteLabel:enabled, UiQDialogContentFrame UiQEmptyBannerHeadingLabel:enabled, UiQDialogContentFrame UiQEmptyBannerSubHeadingLabel:enabled, UiQDialogContentFrame UiQWhiteColorTextLabel:enabled, UiQDialogContentFrame UiQSmokeGrayColorTextLabel:enabled, UiQDialogContentFrame UiQFoggyGrayColorTextLabel:enabled, UiQDialogContentFrame UiQMagnetoWhiteColorTextLabel:enabled, UiQDialogContentFrame UiQActiveTrimLabel:enabled",
-          "declarations": [
-            [
-              "color",
-              "COLOR_TINT_GRAY"
-            ]
-          ]
-        }
-      ],
+      "added_color_rules": [],
       "formatting": "Whitespace/comment compaction only; original parsed selectors and declarations retained except reviewed color edits"
     },
     {
@@ -324,11 +306,11 @@
       "original_file": "MediaPage.original.bin",
       "proposed_file": "MediaPage.cherry.bin",
       "original_sha256": "f6c534333ef1221b51c15458c2e8a2cc1cfbcd66d1f50dd5359e47df491c2af4",
-      "proposed_sha256": "591c1c3cf2dc5155f48c4588a376739888ed9b31959fb096121da62c9fc021bf",
+      "proposed_sha256": "cb7e895bac5a7ce2fbe1d3441963fe6c87327b3b02df8c30ff6f45e732ba11cd",
       "raw_original_sha256": "5054caecb5532ca6c1dd3511c49ed51fca4f27165786c50be87ed670bc022d88",
-      "raw_proposed_sha256": "b8b73142c14a27b32b5370eb56c1e3bb42365a1a45d07235e1645df7c61e1ebc",
+      "raw_proposed_sha256": "4a3e842440a58d5a7bea2102556ca5a841f06172a81795ed63ae988f1ed4115f",
       "original_packed_bytes": 2034,
-      "proposed_packed_bytes": 1888,
+      "proposed_packed_bytes": 1810,
       "edits": [
         {
           "selector": "UiQMediaPoolClipViewContainer",
@@ -355,17 +337,7 @@
           "proposed": "#E6CED5"
         }
       ],
-      "added_color_rules": [
-        {
-          "selector": "UiQMediaPoolClipViewContainer UiQCintelParamLabel:enabled, UiQMediaPoolClipViewContainer UiQVTRIngestDeviceMessageLabel:enabled, UiQMediaPoolClipViewContainer UiQVTRIngestConnectionMessageLabel:enabled, UiQCloneToolEmptyStackedWidget UiQCintelParamLabel:enabled, UiQCloneToolEmptyStackedWidget UiQVTRIngestDeviceMessageLabel:enabled, UiQCloneToolEmptyStackedWidget UiQVTRIngestConnectionMessageLabel:enabled, UiQCloneToolProgressFrame UiQCintelParamLabel:enabled, UiQCloneToolProgressFrame UiQVTRIngestDeviceMessageLabel:enabled, UiQCloneToolProgressFrame UiQVTRIngestConnectionMessageLabel:enabled, UiQCloneToolWidgetBottomBarFrame UiQCintelParamLabel:enabled, UiQCloneToolWidgetBottomBarFrame UiQVTRIngestDeviceMessageLabel:enabled, UiQCloneToolWidgetBottomBarFrame UiQVTRIngestConnectionMessageLabel:enabled",
-          "declarations": [
-            [
-              "color",
-              "COLOR_TINT_GRAY"
-            ]
-          ]
-        }
-      ],
+      "added_color_rules": [],
       "formatting": "Whitespace/comment compaction only; original parsed selectors and declarations retained except reviewed color edits"
     },
     {
@@ -376,11 +348,11 @@
       "original_file": "DeliverPage.original.bin",
       "proposed_file": "DeliverPage.cherry.bin",
       "original_sha256": "d6f1a80ffd5afe6ae3b2cdd587670999158ce4262bdf1640d004c88b74eed6e3",
-      "proposed_sha256": "4380bf92d1c9b1894cee2acf687def1c48a01f1e3bdb70d4a7772bab5f7a8841",
+      "proposed_sha256": "2bbe288ff3ee300a1cad03677fd24d14ab0a0c306f39e2744b6e58d227d288b7",
       "raw_original_sha256": "002d12f7052f9e092c1331d323a809e764de04cfe96586186bab17503f5c90d4",
-      "raw_proposed_sha256": "7b7ab98c4812519567ddde564992fa62bf9329cf40938c6a72ea5ef0836746c5",
+      "raw_proposed_sha256": "e275301c7f3e12e23ac7f1d34b7e1299c191c6844fbfee06f0bce3739c951cfc",
       "original_packed_bytes": 1901,
-      "proposed_packed_bytes": 1651,
+      "proposed_packed_bytes": 1601,
       "edits": [
         {
           "selector": "UiQDeliverPanelRenderSettingsFrame, UiQDeliverPanelDeckSettingsFrame",
@@ -419,17 +391,7 @@
           "proposed": "#E6CED5"
         }
       ],
-      "added_color_rules": [
-        {
-          "selector": "UiQDeliverPanelRenderSettingsFrame UiQDeliverPanelRenderQueueRenderProgressLabel:enabled, UiQDeliverPanelDeckSettingsFrame UiQDeliverPanelRenderQueueRenderProgressLabel:enabled, UiDeliverPanelRenderSettingsWidget UiQDeliverPanelRenderQueueRenderProgressLabel:enabled, UiQDeliverPanelRenderSettingsTargetFileDetailsFrame UiQDeliverPanelRenderQueueRenderProgressLabel:enabled, UiQDeliverPanelTapeSettingsBottomFrame UiQDeliverPanelRenderQueueRenderProgressLabel:enabled, UiVideoAudioSettingsWidget UiQDeliverPanelRenderQueueRenderProgressLabel:enabled, UiQDeliverPanelRenderQueueBottomBarFrame UiQDeliverPanelRenderQueueRenderProgressLabel:enabled",
-          "declarations": [
-            [
-              "color",
-              "COLOR_TINT_GRAY"
-            ]
-          ]
-        }
-      ],
+      "added_color_rules": [],
       "formatting": "Whitespace/comment compaction only; original parsed selectors and declarations retained except reviewed color edits"
     },
     {
@@ -440,11 +402,11 @@
       "original_file": "ColorPage.original.bin",
       "proposed_file": "ColorPage.cherry.bin",
       "original_sha256": "542e0b91568ba23b1e5a9cabf1cb6d383394b50e80b7a2f2a07276a9a05d7a55",
-      "proposed_sha256": "afdff8d8351c1db3e5fbba1acfa0c3717f3dbf34290f10113a562cb94b6792c1",
+      "proposed_sha256": "905b1f7cb6b84230f65826ec7ea633aba36fe473d6de6a083ba00d2375ffae72",
       "raw_original_sha256": "68e6e76c020abbaf80274e9f666b94ae0ec11cf54ed145b188652db1418da05b",
-      "raw_proposed_sha256": "8015a4960a510dafe8003ac1dd8086a042c3d00f78db784ef231fba30f43d1f3",
+      "raw_proposed_sha256": "8ee14238cae1c9d242ed28db4d14384d8802fd4876dd9a590ceddb5509601a39",
       "original_packed_bytes": 15540,
-      "proposed_packed_bytes": 14167,
+      "proposed_packed_bytes": 14014,
       "edits": [
         {
           "selector": "UiQColorPalettePanelsContainer",
@@ -471,17 +433,7 @@
           "proposed": "#E6CED5"
         }
       ],
-      "added_color_rules": [
-        {
-          "selector": "UiQColorPalettePanelsContainer UiQColorPaletteWhiteLabel:enabled, UiQColorPalettePanelsContainer UiQColorPaletteHDRWheelsPivotLabel:enabled, UiQColorPalettePanelsContainer UiQColorPaletteHDRZoneLabel:enabled, UiQColorPalettePanelsContainer UiQColorPaletteHDRAddNewZoneLabel:enabled, UiQColorPalettePanelsContainer UiQColorPaletteInfoDarkSysInfoLabel:enabled, UiQColorPalettePanelsContainer UiQColorPaletteInfoLightSysInfoNormalLabel:enabled, UiQColorPalettePanelPenguinGrayBackgroundFrame UiQColorPaletteWhiteLabel:enabled, UiQColorPalettePanelPenguinGrayBackgroundFrame UiQColorPaletteHDRWheelsPivotLabel:enabled, UiQColorPalettePanelPenguinGrayBackgroundFrame UiQColorPaletteHDRZoneLabel:enabled, UiQColorPalettePanelPenguinGrayBackgroundFrame UiQColorPaletteHDRAddNewZoneLabel:enabled, UiQColorPalettePanelPenguinGrayBackgroundFrame UiQColorPaletteInfoDarkSysInfoLabel:enabled, UiQColorPalettePanelPenguinGrayBackgroundFrame UiQColorPaletteInfoLightSysInfoNormalLabel:enabled, UiQColorPaletteSizingHeaderFrame UiQColorPaletteWhiteLabel:enabled, UiQColorPaletteSizingHeaderFrame UiQColorPaletteHDRWheelsPivotLabel:enabled, UiQColorPaletteSizingHeaderFrame UiQColorPaletteHDRZoneLabel:enabled, UiQColorPaletteSizingHeaderFrame UiQColorPaletteHDRAddNewZoneLabel:enabled, UiQColorPaletteSizingHeaderFrame UiQColorPaletteInfoDarkSysInfoLabel:enabled, UiQColorPaletteSizingHeaderFrame UiQColorPaletteInfoLightSysInfoNormalLabel:enabled, UiQColorPaletteSizingBlankingInternalFrame UiQColorPaletteWhiteLabel:enabled, UiQColorPaletteSizingBlankingInternalFrame UiQColorPaletteHDRWheelsPivotLabel:enabled, UiQColorPaletteSizingBlankingInternalFrame UiQColorPaletteHDRZoneLabel:enabled, UiQColorPaletteSizingBlankingInternalFrame UiQColorPaletteHDRAddNewZoneLabel:enabled, UiQColorPaletteSizingBlankingInternalFrame UiQColorPaletteInfoDarkSysInfoLabel:enabled, UiQColorPaletteSizingBlankingInternalFrame UiQColorPaletteInfoLightSysInfoNormalLabel:enabled",
-          "declarations": [
-            [
-              "color",
-              "COLOR_TINT_GRAY"
-            ]
-          ]
-        }
-      ],
+      "added_color_rules": [],
       "formatting": "Whitespace/comment compaction only; original parsed selectors and declarations retained except reviewed color edits"
     },
     {
@@ -492,11 +444,11 @@
       "original_file": "ProjectManager.original.bin",
       "proposed_file": "ProjectManager.cherry.bin",
       "original_sha256": "5bd1359b3fd139644cd60f2d3a1ba739c5ebaa1c634e0685d4def07404ac0a28",
-      "proposed_sha256": "020a1f8c0a04ba4c11be5702779e6496ea0cf4e65e1e1c072f2bc08e95ffe411",
+      "proposed_sha256": "6cb8fb3a7c86db1d6fd4fe12b94971c410e9ea59a65a990802de6bbe312a5c64",
       "raw_original_sha256": "9336dbcb4f78dfebd9228e82b1e32702699cefc1c008f1639dec6df0a86f2602",
-      "raw_proposed_sha256": "cd46e92f9f8392af7366600e14e535d2105bd96d975f268b38a6076e7980bf53",
+      "raw_proposed_sha256": "8c9daf87dffba176b7e24e41ac676a01a9da5421535b8e326788b71b2388daa5",
       "original_packed_bytes": 2272,
-      "proposed_packed_bytes": 2190,
+      "proposed_packed_bytes": 2059,
       "edits": [
         {
           "selector": "UiQProjectManagerDatabaseContainer",
@@ -523,17 +475,7 @@
           "proposed": "#E6CED5"
         }
       ],
-      "added_color_rules": [
-        {
-          "selector": "UiQProjectManagerDatabaseContainer UiQProjectManagerSelectAccountLabel:enabled, UiQProjectManagerDatabaseContainer UiQProjectManagerAccountTextItemLabel:enabled, UiQProjectManagerDatabaseContainer UiQProjectManagerDBKeyLabel:enabled, UiQProjectManagerDatabaseContainer UiQProjectManagerProjectLibrariesTitleLabel:enabled, UiQProjectManagerDatabaseContainer UiQProjectManagerDbInfoTitleLabel:enabled, UiQProjectManagerDatabaseContainer UiQProjectManagerDbInfoValueLabel:enabled, UiQProjectManagerProjectsContainer UiQProjectManagerSelectAccountLabel:enabled, UiQProjectManagerProjectsContainer UiQProjectManagerAccountTextItemLabel:enabled, UiQProjectManagerProjectsContainer UiQProjectManagerDBKeyLabel:enabled, UiQProjectManagerProjectsContainer UiQProjectManagerProjectLibrariesTitleLabel:enabled, UiQProjectManagerProjectsContainer UiQProjectManagerDbInfoTitleLabel:enabled, UiQProjectManagerProjectsContainer UiQProjectManagerDbInfoValueLabel:enabled, UiQProjectManagerBottomContainer UiQProjectManagerSelectAccountLabel:enabled, UiQProjectManagerBottomContainer UiQProjectManagerAccountTextItemLabel:enabled, UiQProjectManagerBottomContainer UiQProjectManagerDBKeyLabel:enabled, UiQProjectManagerBottomContainer UiQProjectManagerProjectLibrariesTitleLabel:enabled, UiQProjectManagerBottomContainer UiQProjectManagerDbInfoTitleLabel:enabled, UiQProjectManagerBottomContainer UiQProjectManagerDbInfoValueLabel:enabled, UiQProjectManagerBackupRestoreTreeWidgetContainer UiQProjectManagerSelectAccountLabel:enabled, UiQProjectManagerBackupRestoreTreeWidgetContainer UiQProjectManagerAccountTextItemLabel:enabled, UiQProjectManagerBackupRestoreTreeWidgetContainer UiQProjectManagerDBKeyLabel:enabled, UiQProjectManagerBackupRestoreTreeWidgetContainer UiQProjectManagerProjectLibrariesTitleLabel:enabled, UiQProjectManagerBackupRestoreTreeWidgetContainer UiQProjectManagerDbInfoTitleLabel:enabled, UiQProjectManagerBackupRestoreTreeWidgetContainer UiQProjectManagerDbInfoValueLabel:enabled",
-          "declarations": [
-            [
-              "color",
-              "COLOR_TINT_GRAY"
-            ]
-          ]
-        }
-      ],
+      "added_color_rules": [],
       "formatting": "Whitespace/comment compaction only; original parsed selectors and declarations retained except reviewed color edits"
     },
     {
@@ -544,22 +486,13 @@
       "original_file": "Dialogs.original.bin",
       "proposed_file": "Dialogs.cherry.bin",
       "original_sha256": "f8038b02bfe9e183500507855981ac5636ecaf99be61dad80db5330a0f3c3d01",
-      "proposed_sha256": "86e156e4d4a70e3a20abf14d5705cf5aa64737df4f156409f16455523c6e4887",
+      "proposed_sha256": "9f9f5b64a11a315a8bbbb74f518ba5cd29a804646079c4c61f868e008b8138f0",
       "raw_original_sha256": "e3e2f7584096fdd7c7039e42fa963a859a30c09ce18837efbfed2ad4db64b7a3",
-      "raw_proposed_sha256": "e6cc07627b2b842f412451e26515f52cf8a7429065465df0b2f72779832148f1",
+      "raw_proposed_sha256": "04e4ba34406ad6fb318cf92fdfc627a0cc22739ad62c249b146eb0e26258f139",
       "original_packed_bytes": 8871,
-      "proposed_packed_bytes": 8143,
+      "proposed_packed_bytes": 7732,
       "edits": [],
       "added_color_rules": [
-        {
-          "selector": "UiQSidebar UiQParamLabel:enabled, UiQSidebar UiQDefaultWhiteLabel:enabled, UiQSidebar UiQDefaultColorLabel:enabled, UiQSidebarWithLeftBorder UiQParamLabel:enabled, UiQSidebarWithLeftBorder UiQDefaultWhiteLabel:enabled, UiQSidebarWithLeftBorder UiQDefaultColorLabel:enabled, UiQSidebarWithRightBorder UiQParamLabel:enabled, UiQSidebarWithRightBorder UiQDefaultWhiteLabel:enabled, UiQSidebarWithRightBorder UiQDefaultColorLabel:enabled, UiQDialogBody UiQParamLabel:enabled, UiQDialogBody UiQDefaultWhiteLabel:enabled, UiQDialogBody UiQDefaultColorLabel:enabled, UiQDialogBodyWithoutPadding UiQParamLabel:enabled, UiQDialogBodyWithoutPadding UiQDefaultWhiteLabel:enabled, UiQDialogBodyWithoutPadding UiQDefaultColorLabel:enabled, UiQDialogContentFrame UiQParamLabel:enabled, UiQDialogContentFrame UiQDefaultWhiteLabel:enabled, UiQDialogContentFrame UiQDefaultColorLabel:enabled, UiQMediaPoolClipViewContainer UiQParamLabel:enabled, UiQMediaPoolClipViewContainer UiQDefaultWhiteLabel:enabled, UiQMediaPoolClipViewContainer UiQDefaultColorLabel:enabled, UiQCloneToolEmptyStackedWidget UiQParamLabel:enabled, UiQCloneToolEmptyStackedWidget UiQDefaultWhiteLabel:enabled, UiQCloneToolEmptyStackedWidget UiQDefaultColorLabel:enabled, UiQCloneToolProgressFrame UiQParamLabel:enabled, UiQCloneToolProgressFrame UiQDefaultWhiteLabel:enabled, UiQCloneToolProgressFrame UiQDefaultColorLabel:enabled, UiQCloneToolWidgetBottomBarFrame UiQParamLabel:enabled, UiQCloneToolWidgetBottomBarFrame UiQDefaultWhiteLabel:enabled, UiQCloneToolWidgetBottomBarFrame UiQDefaultColorLabel:enabled, UiQInspectorContentsContainer UiQParamLabel:enabled, UiQInspectorContentsContainer UiQDefaultWhiteLabel:enabled, UiQInspectorContentsContainer UiQDefaultColorLabel:enabled, UiQInspectorEffectHeaderWidget UiQParamLabel:enabled, UiQInspectorEffectHeaderWidget UiQDefaultWhiteLabel:enabled, UiQInspectorEffectHeaderWidget UiQDefaultColorLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQParamLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQDefaultWhiteLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQDefaultColorLabel:enabled, UiFusionHeaderImp_ChildContainerNotExpanded UiQParamLabel:enabled, UiFusionHeaderImp_ChildContainerNotExpanded UiQDefaultWhiteLabel:enabled, UiFusionHeaderImp_ChildContainerNotExpanded UiQDefaultColorLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQParamLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQDefaultWhiteLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQDefaultColorLabel:enabled, UiQDeliverPanelRenderSettingsFrame UiQParamLabel:enabled, UiQDeliverPanelRenderSettingsFrame UiQDefaultWhiteLabel:enabled, UiQDeliverPanelRenderSettingsFrame UiQDefaultColorLabel:enabled, UiQDeliverPanelDeckSettingsFrame UiQParamLabel:enabled, UiQDeliverPanelDeckSettingsFrame UiQDefaultWhiteLabel:enabled, UiQDeliverPanelDeckSettingsFrame UiQDefaultColorLabel:enabled, UiDeliverPanelRenderSettingsWidget UiQParamLabel:enabled, UiDeliverPanelRenderSettingsWidget UiQDefaultWhiteLabel:enabled, UiDeliverPanelRenderSettingsWidget UiQDefaultColorLabel:enabled, UiQDeliverPanelRenderSettingsTargetFileDetailsFrame UiQParamLabel:enabled, UiQDeliverPanelRenderSettingsTargetFileDetailsFrame UiQDefaultWhiteLabel:enabled, UiQDeliverPanelRenderSettingsTargetFileDetailsFrame UiQDefaultColorLabel:enabled, UiQDeliverPanelTapeSettingsBottomFrame UiQParamLabel:enabled, UiQDeliverPanelTapeSettingsBottomFrame UiQDefaultWhiteLabel:enabled, UiQDeliverPanelTapeSettingsBottomFrame UiQDefaultColorLabel:enabled, UiVideoAudioSettingsWidget UiQParamLabel:enabled, UiVideoAudioSettingsWidget UiQDefaultWhiteLabel:enabled, UiVideoAudioSettingsWidget UiQDefaultColorLabel:enabled, UiQDeliverPanelRenderQueueBottomBarFrame UiQParamLabel:enabled, UiQDeliverPanelRenderQueueBottomBarFrame UiQDefaultWhiteLabel:enabled, UiQDeliverPanelRenderQueueBottomBarFrame UiQDefaultColorLabel:enabled, UiQColorPalettePanelsContainer UiQParamLabel:enabled, UiQColorPalettePanelsContainer UiQDefaultWhiteLabel:enabled, UiQColorPalettePanelsContainer UiQDefaultColorLabel:enabled, UiQColorPalettePanelPenguinGrayBackgroundFrame UiQParamLabel:enabled, UiQColorPalettePanelPenguinGrayBackgroundFrame UiQDefaultWhiteLabel:enabled, UiQColorPalettePanelPenguinGrayBackgroundFrame UiQDefaultColorLabel:enabled, UiQColorPaletteSizingHeaderFrame UiQParamLabel:enabled, UiQColorPaletteSizingHeaderFrame UiQDefaultWhiteLabel:enabled, UiQColorPaletteSizingHeaderFrame UiQDefaultColorLabel:enabled, UiQColorPaletteSizingBlankingInternalFrame UiQParamLabel:enabled, UiQColorPaletteSizingBlankingInternalFrame UiQDefaultWhiteLabel:enabled, UiQColorPaletteSizingBlankingInternalFrame UiQDefaultColorLabel:enabled, UiQProjectManagerDatabaseContainer UiQParamLabel:enabled, UiQProjectManagerDatabaseContainer UiQDefaultWhiteLabel:enabled, UiQProjectManagerDatabaseContainer UiQDefaultColorLabel:enabled, UiQProjectManagerProjectsContainer UiQParamLabel:enabled, UiQProjectManagerProjectsContainer UiQDefaultWhiteLabel:enabled, UiQProjectManagerProjectsContainer UiQDefaultColorLabel:enabled, UiQProjectManagerBottomContainer UiQParamLabel:enabled, UiQProjectManagerBottomContainer UiQDefaultWhiteLabel:enabled, UiQProjectManagerBottomContainer UiQDefaultColorLabel:enabled, UiQProjectManagerBackupRestoreTreeWidgetContainer UiQParamLabel:enabled, UiQProjectManagerBackupRestoreTreeWidgetContainer UiQDefaultWhiteLabel:enabled, UiQProjectManagerBackupRestoreTreeWidgetContainer UiQDefaultColorLabel:enabled",
-          "declarations": [
-            [
-              "color",
-              "COLOR_TINT_GRAY"
-            ]
-          ]
-        },
         {
           "selector": "UiQSidebar QAbstractButton, UiQSidebarWithLeftBorder QAbstractButton, UiQSidebarWithRightBorder QAbstractButton, UiQDialogBody QAbstractButton, UiQDialogBodyWithoutPadding QAbstractButton, UiQDialogContentFrame QAbstractButton, UiQMediaPoolClipViewContainer QAbstractButton, UiQCloneToolEmptyStackedWidget QAbstractButton, UiQCloneToolProgressFrame QAbstractButton, UiQCloneToolWidgetBottomBarFrame QAbstractButton, UiQInspectorContentsContainer QAbstractButton, UiQInspectorEffectHeaderWidget QAbstractButton, UiEffectParameterHeaderImp_ChildContainerExpanded QAbstractButton, UiFusionHeaderImp_ChildContainerNotExpanded QAbstractButton, UiEffectParameterHeaderImp_ChildContainerNotExpanded QAbstractButton, UiQDeliverPanelRenderSettingsFrame QAbstractButton, UiQDeliverPanelDeckSettingsFrame QAbstractButton, UiDeliverPanelRenderSettingsWidget QAbstractButton, UiQDeliverPanelRenderSettingsTargetFileDetailsFrame QAbstractButton, UiQDeliverPanelTapeSettingsBottomFrame QAbstractButton, UiVideoAudioSettingsWidget QAbstractButton, UiQDeliverPanelRenderQueueBottomBarFrame QAbstractButton, UiQColorPalettePanelsContainer QAbstractButton, UiQColorPalettePanelPenguinGrayBackgroundFrame QAbstractButton, UiQColorPaletteSizingHeaderFrame QAbstractButton, UiQColorPaletteSizingBlankingInternalFrame QAbstractButton, UiQProjectManagerDatabaseContainer QAbstractButton, UiQProjectManagerProjectsContainer QAbstractButton, UiQProjectManagerBottomContainer QAbstractButton, UiQProjectManagerBackupRestoreTreeWidgetContainer QAbstractButton",
           "declarations": [
@@ -571,6 +504,75 @@
         }
       ],
       "formatting": "Whitespace/comment compaction only; original parsed selectors and declarations retained except reviewed color edits"
+    },
+    {
+      "resource": ":/StyleSheet/Metadata",
+      "offset": 170782210,
+      "rva": 170787330,
+      "size": 1897,
+      "original_file": "Metadata.original.bin",
+      "proposed_file": "Metadata.cherry.bin",
+      "original_sha256": "9ee37c68afc816be0b5383cbbeb220453e9d0c0f5b8ff436096186165b0dbd72",
+      "proposed_sha256": "f1441e597230e214bfc6cd30b37929d051c661126e125c63765a9f675b3a6c67",
+      "raw_original_sha256": "fbf2364756b6541c282310b1278a8ad830c216d2ee233d267893ea907e99e74e",
+      "raw_proposed_sha256": "053b9513c98b0aef4fe8b87d958cd33715f7ccac2e8c2582c1b9725bd4e47414",
+      "original_packed_bytes": 1893,
+      "proposed_packed_bytes": 1803,
+      "edits": [
+        {
+          "selector": "UiQMediaMetadataEmptyClipViewFrame",
+          "property": "background-color",
+          "original": "COLOR_PENGUIN_GRAY",
+          "proposed": "#E6CED5"
+        },
+        {
+          "selector": "UiQMediaMetadataEmptyClipViewFrame",
+          "property": "color",
+          "original": "rgb(198, 198, 198)",
+          "proposed": "COLOR_TINT_GRAY"
+        }
+      ],
+      "added_color_rules": [
+        {
+          "selector": "QTextEdit[SkinId=\"MediaMetadataScrollAreaTextEdit\"]:enabled",
+          "declarations": [
+            [
+              "background-color",
+              "#E6CED5"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "QPlainTextEdit[SkinId=\"MediaMetadataScrollAreaPlainTextEdit\"]:enabled",
+          "declarations": [
+            [
+              "background-color",
+              "#E6CED5"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "QLineEdit[SkinId=\"MediaMetadataScrollAreaLineEdit\"]:enabled",
+          "declarations": [
+            [
+              "background-color",
+              "#E6CED5"
+            ],
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        }
+      ]
     }
   ],
   "state_audit": {
@@ -581,5 +583,6 @@
     "Inspector caption timecode field": "Own base, !read-only:focus and :disabled rules exist. Change base/focus foreground and base opaque background. Original disabled BG/FG retained. Own SkinSizeMode variants are geometry only."
   },
   "palette_notes": "New surfaces use only Cherry Blossom; existing TintGray text and OrcaGray icon backings are retained native exceptions.",
-  "color_rule_source": "https://doc.qt.io/qt-6/stylesheet-syntax.html#inheritance"
+  "color_rule_source": "https://doc.qt.io/qt-6/stylesheet-syntax.html#inheritance",
+  "coverage_notes": "User screenshots confirm partial coverage and contrast problems. Broad descendant text overrides removed. Populated Metadata, settings group cards, custom-painted timelines/viewers, Fairlight and bitmap toolbars are not verified as fully themed."
 }

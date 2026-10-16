@@ -1,50 +1,11 @@
 {
-  "recipe_sha256": "5822d97d90c1083ef92d03f9b0fac282546044554ef84c70ec570cf5efd9a564",
+  "recipe_sha256": "d171269b65acaccc64d1b7f40c26dd77ba82a1cce9d7c4f0d9aa86f50f04c79a",
   "checked_resources": 29,
-  "modified_resources": 10,
-  "unchanged_resources": 19,
-  "original_color_edits": 46,
-  "added_scoped_color_rules": 8,
-  "neutral_label_types": [
-    "UiQActiveTrimLabel:enabled",
-    "UiQCintelParamLabel:enabled",
-    "UiQColorPaletteHDRAddNewZoneLabel:enabled",
-    "UiQColorPaletteHDRWheelsPivotLabel:enabled",
-    "UiQColorPaletteHDRZoneLabel:enabled",
-    "UiQColorPaletteInfoDarkSysInfoLabel:enabled",
-    "UiQColorPaletteInfoLightSysInfoNormalLabel:enabled",
-    "UiQColorPaletteWhiteLabel:enabled",
-    "UiQDefaultColorLabel:enabled",
-    "UiQDefaultWhiteLabel:enabled",
-    "UiQDeliverPanelRenderQueueRenderProgressLabel:enabled",
-    "UiQEmptyBannerHeadingLabel:enabled",
-    "UiQEmptyBannerSubHeadingLabel:enabled",
-    "UiQFoggyGrayColorTextLabel:enabled",
-    "UiQInspectorGroupTitleLabel:enabled",
-    "UiQInspectorHighlightedParamLabel:enabled",
-    "UiQInspectorOFXPluginEffectNameLabel:enabled",
-    "UiQInspectorOFXPluginNameLabel:enabled",
-    "UiQInspectorOFXWidgetCoordinatesLabel:enabled",
-    "UiQInspectorOFXWidgetGroupTitleLabel:enabled",
-    "UiQInspectorOFXWidgetNDParamLabel:enabled",
-    "UiQInspectorOFXWidgetParamLabel:enabled",
-    "UiQInspectorParamLabel:enabled",
-    "UiQInspectorPointParamLabel:enabled",
-    "UiQInspectorSubtitleContainerCaptionCharCountLabel:enabled",
-    "UiQInspectorTransitionDurationWidgetLabel:enabled",
-    "UiQMagnetoWhiteColorTextLabel:enabled",
-    "UiQParamLabel:enabled",
-    "UiQProjectManagerAccountTextItemLabel:enabled",
-    "UiQProjectManagerDBKeyLabel:enabled",
-    "UiQProjectManagerDbInfoTitleLabel:enabled",
-    "UiQProjectManagerDbInfoValueLabel:enabled",
-    "UiQProjectManagerProjectLibrariesTitleLabel:enabled",
-    "UiQProjectManagerSelectAccountLabel:enabled",
-    "UiQSmokeGrayColorTextLabel:enabled",
-    "UiQVTRIngestConnectionMessageLabel:enabled",
-    "UiQVTRIngestDeviceMessageLabel:enabled",
-    "UiQWhiteColorTextLabel:enabled"
-  ],
+  "modified_resources": 11,
+  "unchanged_resources": 18,
+  "original_color_edits": 48,
+  "added_scoped_color_rules": 4,
+  "neutral_label_types": [],
   "declared_foreground_contrast": {
     "#E6CED5": 13.42,
     "#DDB0BC": 10.44,
@@ -56,20 +17,20 @@
     {
       "resource": ":/StyleSheet/ColorPage",
       "color_edits": 4,
-      "scoped_rules": 1,
+      "scoped_rules": 0,
       "original_rules": 1118,
       "original_disabled_rules_unchanged": 79,
       "native_fonts_geometry_artwork_and_semantic_declarations_unchanged": true,
-      "slot_spare_bytes": 1373
+      "slot_spare_bytes": 1526
     },
     {
       "resource": ":/StyleSheet/Common",
       "color_edits": 4,
-      "scoped_rules": 1,
+      "scoped_rules": 0,
       "original_rules": 626,
       "original_disabled_rules_unchanged": 86,
       "native_fonts_geometry_artwork_and_semantic_declarations_unchanged": true,
-      "slot_spare_bytes": 1390
+      "slot_spare_bytes": 1662
     },
     {
       "resource": ":/StyleSheet/Default",
@@ -83,38 +44,47 @@
     {
       "resource": ":/StyleSheet/DeliverPage",
       "color_edits": 6,
-      "scoped_rules": 1,
+      "scoped_rules": 0,
       "original_rules": 54,
       "original_disabled_rules_unchanged": 5,
       "native_fonts_geometry_artwork_and_semantic_declarations_unchanged": true,
-      "slot_spare_bytes": 250
+      "slot_spare_bytes": 300
     },
     {
       "resource": ":/StyleSheet/Dialogs",
       "color_edits": 0,
-      "scoped_rules": 2,
+      "scoped_rules": 1,
       "original_rules": 417,
       "original_disabled_rules_unchanged": 21,
       "native_fonts_geometry_artwork_and_semantic_declarations_unchanged": true,
-      "slot_spare_bytes": 728
+      "slot_spare_bytes": 1139
     },
     {
       "resource": ":/StyleSheet/Inspector",
       "color_edits": 9,
-      "scoped_rules": 1,
+      "scoped_rules": 0,
       "original_rules": 334,
       "original_disabled_rules_unchanged": 62,
       "native_fonts_geometry_artwork_and_semantic_declarations_unchanged": true,
-      "slot_spare_bytes": 139
+      "slot_spare_bytes": 429
     },
     {
       "resource": ":/StyleSheet/MediaPage",
       "color_edits": 4,
-      "scoped_rules": 1,
+      "scoped_rules": 0,
       "original_rules": 85,
       "original_disabled_rules_unchanged": 5,
       "native_fonts_geometry_artwork_and_semantic_declarations_unchanged": true,
-      "slot_spare_bytes": 146
+      "slot_spare_bytes": 224
+    },
+    {
+      "resource": ":/StyleSheet/Metadata",
+      "color_edits": 2,
+      "scoped_rules": 3,
+      "original_rules": 89,
+      "original_disabled_rules_unchanged": 3,
+      "native_fonts_geometry_artwork_and_semantic_declarations_unchanged": true,
+      "slot_spare_bytes": 90
     },
     {
       "resource": ":/StyleSheet/PageSwitcher",
@@ -128,11 +98,11 @@
     {
       "resource": ":/StyleSheet/ProjectManager",
       "color_edits": 4,
-      "scoped_rules": 1,
+      "scoped_rules": 0,
       "original_rules": 109,
       "original_disabled_rules_unchanged": 5,
       "native_fonts_geometry_artwork_and_semantic_declarations_unchanged": true,
-      "slot_spare_bytes": 82
+      "slot_spare_bytes": 213
     },
     {
       "resource": ":/StyleSheet/SoundLibrary",

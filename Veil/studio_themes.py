@@ -4,7 +4,7 @@ import queue,logging
 from studio_controls import Button,image
 from studio_fonts import REGULAR,SEMIBOLD
 from resolve_theme import load_profile,capability,apply_cherry_theme,restore_cherry_original
-from application_theme import capability as application_capability,launch_theme,cleanup_failed_start
+from application_theme import capability as application_capability,cleanup_failed_start
 
 STATES=('Normal','Hover','Selected','Disabled','Warning','Error')
 
@@ -36,6 +36,9 @@ class ThemePreview(tk.Canvas):
         self.create_image(w/2,y,image=self.photos[-1],anchor='n')
         self.create_text(w/2,y+sample_h/2,text=state+' sample',fill=t['text'],font=(REGULAR,9))
 
+def fusion_start_allowed(support):
+    return bool(support.get('can_apply') or support.get('status', '').startswith('Cherry Blossom installed'))
+
 def build_themes(app):
     # Late import avoids a cycle with studio_ui.ScrollArea.
     from studio_ui import ScrollArea
@@ -48,7 +51,7 @@ def build_themes(app):
     heading.columnconfigure(0,weight=1)
     title=app.label(heading,'Cherry Blossom',size=18,bold=True,bg=app.c['panel']);title.grid(row=0,column=0,sticky='w')
     scope=app.label(heading,'Experimental · Resolve + Fusion',size=10,muted=True,bg=app.c['panel']);scope.grid(row=0,column=1,sticky='e')
-    desc=app.label(panel,'Petal workspace panels, dark readable text, and the approved Cherry Blossom Fusion look.',muted=True,bg=app.c['panel'])
+    desc=app.label(panel,'Cherry Blossom workspace test with coordinated Fusion startup. Coverage and readability remain partial.',muted=True,bg=app.c['panel'])
     desc.pack(fill='x',pady=(app.p(6),app.p(20)))
     preview=ThemePreview(panel,app,profile);preview.pack(fill='x');app.theme_preview=preview
     caption=app.label(panel,'Approved workspace concept · not a Resolve capture or a guarantee of complete coverage',size=9,muted=True,bg=app.c['panel'])
@@ -63,7 +66,7 @@ def build_themes(app):
         button.grid(row=0,column=STATES.index(name),padx=(0,app.p(6)),pady=(0,app.p(6)))
         app.theme_state_buttons[name]=button
     app.label(panel,'Coverage',bold=True,bg=app.c['panel']).pack(fill='x',pady=(app.p(20),app.p(6)))
-    reason=app.label(panel,'This workspace test adds petal backgrounds to shared sidebars, inspector content, Media containers, Deliver settings, Color tool containers and Project Manager bodies. Known neutral labels get dark text. Native button backing and icon artwork remain intact. Custom-painted timelines, grading displays, viewers and some panels still retain Resolve’s native appearance. Live readability and behavior checks are still required.',size=10,muted=True,bg=app.c['panel'])
+    reason=app.label(panel,'This workspace test adds petal backgrounds to shared sidebars, inspector content, Media containers, Deliver settings, Color tool containers and Project Manager bodies. Broad descendant text overrides have been removed after contrast problems in native captures. The empty Metadata panel now has directly paired colors. Native button backing and icon artwork remain intact. Custom-painted timelines, grading displays, viewers and some panels still retain Resolve’s native appearance. Live readability and behavior checks are still required.',size=10,muted=True,bg=app.c['panel'])
     reason.pack(fill='x')
     def status_text(fusion,main):
         fusion_text=fusion['reason'] if fusion['status']=='Unavailable' else fusion['status']
@@ -109,11 +112,11 @@ def build_themes(app):
             except Exception:
                 logging.exception('Cherry Blossom completion UI failed')
                 if app.alive_widget('theme_status_label'):app.theme_status_label.configure(text='Theme operation ended. Reopen Themes to check its status.')
-        tasks={'apply':lambda:apply_cherry_theme(folder,progress.put),'start':lambda:launch_theme(folder,progress.put),'restore':lambda:restore_cherry_original(folder,progress.put),'cleanup':lambda:cleanup_failed_start(folder,confirm_no_project=True)}
+        tasks={'apply':lambda:apply_cherry_theme(folder,progress.put),'start':lambda:apply_cherry_theme(folder,progress.put),'restore':lambda:restore_cherry_original(folder,progress.put),'cleanup':lambda:cleanup_failed_start(folder,confirm_no_project=True)}
         app.root.after(100,show_progress)
         app.worker.submit('Cherry Blossom '+action,tasks[action],complete)
     app.theme_apply_button=app.button(row,'Apply Theme',lambda:operation('apply'),state='normal' if support['can_apply'] and application['can_start'] and not app.busy else 'disabled')
-    app.theme_start_button=app.button(row,'Start Resolve',lambda:operation('start'),state='normal' if application['can_start'] and not app.busy else 'disabled')
+    app.theme_start_button=app.button(row,'Start Resolve',lambda:operation('start'),state='normal' if application['can_start'] and fusion_start_allowed(support) and not app.busy else 'disabled')
     app.theme_restore_button=app.button(row,'Restore Original',lambda:operation('restore'),state='normal' if (support['can_restore'] or application['can_restore']) and not app.busy else 'disabled')
     app.theme_recovery_button=app.button(row,'Clear stalled startup',lambda:operation('cleanup'),state='normal' if application.get('can_cleanup') and not app.busy else 'disabled')
     action_buttons=(app.theme_apply_button,app.theme_start_button,app.theme_restore_button,app.theme_recovery_button)
@@ -127,14 +130,14 @@ def build_themes(app):
             button.grid(row=action_row,column=action_column,sticky='w',padx=(0,app.p(8)),pady=(0,app.p(6)))
             used+=button_width;action_column+=1
     layout_actions(app.p(1000))
-    note=app.label(panel,'Save your work and close Resolve normally first. Apply Theme installs the Fusion look and starts a themed session; Windows approval identifies the Fusion helper as Python. Use Start Resolve for later themed sessions. Your regular shortcut uses original application styling; the Fusion skin persists until Restore Original.',size=9,muted=True,bg=app.c['panel'])
+    note=app.label(panel,'Save your work and close Resolve normally first. Apply Theme installs the Fusion look and starts a themed session; Windows approval identifies the Fusion helper as Python. Start Resolve checks both layers and installs the Fusion skin if it is original; this can also request Windows approval. Your regular shortcut uses original application styling; the Fusion skin persists until Restore Original.',size=9,muted=True,bg=app.c['panel'])
     note.pack(fill='x',before=preview,pady=(0,app.p(18)))
     def update_controls(result=None,main=None):
         if result is None:result=capability(folder)
         if main is None:main=application_capability(folder)
         app.theme_capability=result;app.application_theme_capability=main
         app.theme_apply_button.configure(state='normal' if result['can_apply'] and main['can_start'] and not app.busy else 'disabled')
-        app.theme_start_button.configure(state='normal' if main['can_start'] and not app.busy else 'disabled')
+        app.theme_start_button.configure(state='normal' if main['can_start'] and fusion_start_allowed(result) and not app.busy else 'disabled')
         app.theme_restore_button.configure(state='normal' if (result['can_restore'] or main['can_restore']) and not app.busy else 'disabled')
         app.theme_recovery_button.configure(state='normal' if main.get('can_cleanup') and not app.busy else 'disabled')
         layout_actions(max(app.p(120),panel.winfo_width()-app.p(48)))
@@ -154,7 +157,7 @@ def build_themes(app):
                  'Apply Theme changes two Fusion skin definition files and starts a themed Resolve session. Session startup changes reviewed stylesheet colors in its own new process; Resolve.exe on disk stays unchanged.',
                  'Application changes include larger sidebar, inspector, Media, Deliver, Color container and Project Manager backgrounds, plus the previous menu/page-bar accents, SoundLibrary keyword field and Inspector caption timecode field.',
                  'Menu popup backgrounds and rows, custom-painted timeline/viewer areas, grading visuals, Fairlight DLL surfaces and unreviewed controls retain their native appearance. This is not a complete application theme.',
-                 'Recipes change colors only. Added descendant rules pair known neutral labels with pink backgrounds and retain native dark button backing. Native fonts, bitmap icons, dimensions, semantic color declarations and interaction properties remain unchanged; runtime behavior still needs live verification.',
+                 'Recipes change colors only. Narrow enabled Metadata rules pair petal backgrounds with native dark text; broad descendant text overrides are removed. Native dark button backing is retained. Native fonts, bitmap icons, dimensions, semantic color declarations and interaction properties remain unchanged; runtime behavior still needs live verification.',
                  'Version/hash checks, original backup and atomic replacement guard Fusion installation and restoration. Startup refuses restricted Codex accounts and an already-running Resolve.',
                  'Apply Theme and Start Resolve launch only when Resolve is closed. Neither application is minimized or closed automatically. A startup timeout is reported without interrupting a possibly opening project.',
                  'All Resolve pages, menus, dialogs, interaction states and playback: comprehensive verification not performed.',

@@ -1,0 +1,527 @@
+UiQMediaMetadataEmptyClipViewFrame
+{
+    border-style: none;
+    background-color: COLOR_PENGUIN_GRAY;
+    color: rgb(198, 198, 198);
+}
+
+UiQMediaMetadataScrollArea,
+UiQMediaMetadataClipInfoFrame,
+UiQMediaMetadataTitleFrame,
+UiQMediaMetadataScrollAreaWidget
+{
+    background-color: COLOR_PENGUIN_GRAY;
+}
+
+UiQMediaMetadataClipInfoFrame
+{
+    border-style: none;
+    border-bottom: 1px solid COLOR_JELLYFISH_GRAY;
+}
+
+UiQMediaMetadataFileNameLabel
+{
+    min-height: 17px;
+    max-height: 17px;
+
+    color: white;
+    font-preset-name: FONT_MAGNETO;
+}
+
+UiQMediaMetadataTitleLabel,
+UiQMediaMetadataDurationLabel
+{
+    color: white;
+    font-preset-name: FONT_MAGNETO;
+}
+UiQMediaMetadataDurationLabel
+{
+    min-width: 90px;
+    max-width: 90px;
+}
+UiQMediaMetadataDurationLabel[SkinSizeMode="Small"]
+{
+    min-width: 82px;
+    max-width: 82px;
+}
+
+UiQMediaMetadataDirectoryLabel
+{
+    min-height: 15px;
+    max-height: 15px;
+
+    color: COLOR_SMOKE_GRAY;
+    font-preset-name: FONT_PSYLOCKE;
+}
+
+UiQMediaMetadataCodecLabel,
+UiQMediaMetadataAudioCodecLabel,
+UiQMediaMetadataFrameRateLabel,
+UiQMediaMetadataFrequencyLabel,
+UiQMediaMetadataResolutionLabel,
+UiQMediaMetadataAudioChannelsLabel
+{
+    color: white;
+}
+UiQMediaMetadataCodecLabel:disabled,
+UiQMediaMetadataAudioCodecLabel:disabled
+{
+    color: rgb(83, 83, 87);
+}
+
+UiQMediaMetadataResolutionContainer,
+UiQMediaMetadataAudioChannelsContainer
+{
+    min-width: 90px;
+    max-width: 90px;
+}
+UiQMediaMetadataResolutionContainer[SkinSizeMode="Large"],
+UiQMediaMetadataAudioChannelsContainer[SkinSizeMode="Large"],
+UiQMediaMetadataResolutionContainer[SkinSizeMode="Medium"],
+UiQMediaMetadataAudioChannelsContainer[SkinSizeMode="Medium"]
+{
+    min-width: 90px;
+    max-width: 90px;
+}
+UiQMediaMetadataResolutionContainer[SkinSizeMode="Small"],
+UiQMediaMetadataAudioChannelsContainer[SkinSizeMode="Small"]
+{
+    min-width: 82px;
+    max-width: 82px;
+}
+
+UiQMediaMetadataFrequencyContainer,
+UiQMediaMetadataFrameRateContainer
+{
+    min-width: 108px;
+    max-width: 108px;
+}
+UiQMediaMetadataFrequencyContainer[SkinSizeMode="Large"],
+UiQMediaMetadataFrameRateContainer[SkinSizeMode="Large"],
+UiQMediaMetadataFrequencyContainer[SkinSizeMode="Medium"],
+UiQMediaMetadataFrameRateContainer[SkinSizeMode="Medium"]
+{
+    min-width: 108px;
+    max-width: 108px;
+}
+UiQMediaMetadataFrequencyContainer[SkinSizeMode="Small"],
+UiQMediaMetadataFrameRateContainer[SkinSizeMode="Small"]
+{
+    min-width: 92px;
+    max-width: 92px;
+}
+
+UiQMediaMetadataClipInfoIconLabel
+{
+    min-width: 20px;
+    max-width: 20px;
+    min-height: 15px;
+    max-height: 15px;
+}
+
+UiQMediaMetadataClipInfoIconLabel[SkinId="Codec"]
+{
+    image: url(:/Media/Common/ClipList_Active);
+}
+UiQMediaMetadataClipInfoIconLabel[SkinId="Codec"]:disabled
+{
+    image: url(:/Media/Common/ClipList);
+}
+
+UiQMediaMetadataClipInfoIconLabel[SkinId="AudioCodec"]
+{
+    image: url(:/Media/Common/AudioList_Active);
+}
+UiQMediaMetadataClipInfoIconLabel[SkinId="AudioCodec"]:disabled
+{
+    image: url(:/Media/Common/AudioList);
+}
+
+UiQMediaMetadataClipColorButton
+{
+    min-width: 16px;
+    max-width: 16px;
+    min-height: 16px;
+    max-height: 16px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background-color: transparent;
+    image-position: center center;
+}
+
+UiQMediaMetadataSmartBinClipColorButton
+{
+    min-width: 16px;
+    max-width: 16px;
+    min-height: 16px;
+    max-height: 16px;
+    border: 0px solid transparent;
+    border-radius: 0px;
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+}
+
+UiQMediaMetadataPhotoPlayerClipColorButton
+{
+    min-width: 37px;
+    max-width: 37px;
+    min-height: 18px;
+    max-height: 18px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background-color: transparent;
+    image-position: left center;
+}
+
+UiQMediaMetadataClipColorButton:hover,
+UiQMediaMetadataClipColorButton:pressed,
+UiQMediaMetadataClipColorButton:checked,
+UiQMediaMetadataSmartBinClipColorButton:hover,
+UiQMediaMetadataSmartBinClipColorButton:pressed,
+UiQMediaMetadataSmartBinClipColorButton:checked
+{
+    border-color: COLOR_HURRICANE_GRAY;
+    background-color: COLOR_HURRICANE_GRAY;
+    border-radius: 3px;
+}
+
+UiQMediaMetadataClipColorButton[SkinId="ResolveClipColorClearAll"],
+UiQMediaMetadataSmartBinClipColorButton[SkinId="ResolveClipColorClearAll"]
+{
+    image: url(:/Common/FlagsAndMarkers/NoneSmall);
+}
+UiQMediaMetadataClipColorButton[SkinId="ResolveClipColorClearAll"]:checked,
+UiQMediaMetadataClipColorButton[SkinId="ResolveClipColorClearAll"]:hover,
+UiQMediaMetadataClipColorButton[SkinId="ResolveClipColorClearAll"]:pressed,
+UiQMediaMetadataSmartBinClipColorButton[SkinId="ResolveClipColorClearAll"]:checked,
+UiQMediaMetadataSmartBinClipColorButton[SkinId="ResolveClipColorClearAll"]:hover,
+UiQMediaMetadataSmartBinClipColorButton[SkinId="ResolveClipColorClearAll"]:pressed
+{
+    image: url(:/Common/FlagsAndMarkers/NoneSmall_active);
+}
+UiQMediaMetadataClipColorButton[SkinId="ClipColorNone"],
+UiQMediaMetadataSmartBinClipColorButton[SkinId="ClipColorNone"],
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="ClipColorNone"]
+{
+    image: url(:/Common/FlagsAndMarkers/ClipColorNone);
+}
+UiQMediaMetadataClipColorButton[SkinId="ClipColorBlue"],
+UiQMediaMetadataSmartBinClipColorButton[SkinId="ClipColorBlue"],
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="ClipColorBlue"]
+{
+    image: url(:/Common/FlagsAndMarkers/ClipColorBlue);
+}
+UiQMediaMetadataClipColorButton[SkinId="ClipColorBrown"],
+UiQMediaMetadataSmartBinClipColorButton[SkinId="ClipColorBrown"],
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="ClipColorBrown"]
+{
+    image: url(:/Common/FlagsAndMarkers/ClipColorBrown);
+}
+UiQMediaMetadataClipColorButton[SkinId="ClipColorGreen"],
+UiQMediaMetadataSmartBinClipColorButton[SkinId="ClipColorGreen"],
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="ClipColorGreen"]
+{
+    image: url(:/Common/FlagsAndMarkers/ClipColorGreen);
+}
+UiQMediaMetadataClipColorButton[SkinId="ClipColorGrey"],
+UiQMediaMetadataSmartBinClipColorButton[SkinId="ClipColorGrey"],
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="ClipColorGrey"]
+{
+    image: url(:/Common/FlagsAndMarkers/ClipColorGrey);
+}
+UiQMediaMetadataClipColorButton[SkinId="ClipColorPink"],
+UiQMediaMetadataSmartBinClipColorButton[SkinId="ClipColorPink"],
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="ClipColorPink"]
+{
+    image: url(:/Common/FlagsAndMarkers/ClipColorPink);
+}
+UiQMediaMetadataClipColorButton[SkinId="ClipColorPurple"],
+UiQMediaMetadataSmartBinClipColorButton[SkinId="ClipColorPurple"],
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="ClipColorPurple"]
+{
+    image: url(:/Common/FlagsAndMarkers/ClipColorPurple);
+}
+UiQMediaMetadataClipColorButton[SkinId="ClipColorTan"],
+UiQMediaMetadataSmartBinClipColorButton[SkinId="ClipColorTan"],
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="ClipColorTan"]
+{
+    image: url(:/Common/FlagsAndMarkers/ClipColorTan);
+}
+UiQMediaMetadataClipColorButton[SkinId="ClipColorTeal"],
+UiQMediaMetadataSmartBinClipColorButton[SkinId="ClipColorTeal"],
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="ClipColorTeal"]
+{
+    image: url(:/Common/FlagsAndMarkers/ClipColorTeal);
+}
+UiQMediaMetadataClipColorButton[SkinId="ClipColorApricot"],
+UiQMediaMetadataSmartBinClipColorButton[SkinId="ClipColorApricot"],
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="ClipColorApricot"]
+{
+    image: url(:/Common/FlagsAndMarkers/ClipColorApricot);
+}
+UiQMediaMetadataClipColorButton[SkinId="ClipColorBeige"],
+UiQMediaMetadataSmartBinClipColorButton[SkinId="ClipColorBeige"],
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="ClipColorBeige"]
+{
+    image: url(:/Common/FlagsAndMarkers/ClipColorBeige);
+}
+UiQMediaMetadataClipColorButton[SkinId="ClipColorChocolate"],
+UiQMediaMetadataSmartBinClipColorButton[SkinId="ClipColorChocolate"],
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="ClipColorChocolate"]
+{
+    image: url(:/Common/FlagsAndMarkers/ClipColorChocolate);
+}
+UiQMediaMetadataClipColorButton[SkinId="ClipColorLime"],
+UiQMediaMetadataSmartBinClipColorButton[SkinId="ClipColorLime"],
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="ClipColorLime"]
+{
+    image: url(:/Common/FlagsAndMarkers/ClipColorLime);
+}
+UiQMediaMetadataClipColorButton[SkinId="ClipColorNavy"],
+UiQMediaMetadataSmartBinClipColorButton[SkinId="ClipColorNavy"],
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="ClipColorNavy"]
+{
+    image: url(:/Common/FlagsAndMarkers/ClipColorNavy);
+}
+UiQMediaMetadataClipColorButton[SkinId="ClipColorOlive"],
+UiQMediaMetadataSmartBinClipColorButton[SkinId="ClipColorOlive"],
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="ClipColorOlive"]
+{
+    image: url(:/Common/FlagsAndMarkers/ClipColorOlive);
+}
+UiQMediaMetadataClipColorButton[SkinId="ClipColorOrange"],
+UiQMediaMetadataSmartBinClipColorButton[SkinId="ClipColorOrange"],
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="ClipColorOrange"]
+{
+    image: url(:/Common/FlagsAndMarkers/ClipColorOrange);
+}
+UiQMediaMetadataClipColorButton[SkinId="ClipColorViolet"],
+UiQMediaMetadataSmartBinClipColorButton[SkinId="ClipColorViolet"],
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="ClipColorViolet"]
+{
+    image: url(:/Common/FlagsAndMarkers/ClipColorViolet);
+}
+UiQMediaMetadataClipColorButton[SkinId="ClipColorYellow"],
+UiQMediaMetadataSmartBinClipColorButton[SkinId="ClipColorYellow"],
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="ClipColorYellow"]
+{
+    image: url(:/Common/FlagsAndMarkers/ClipColorYellow);
+}
+
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="MarkerBlue"]
+{
+    image: url(:/Common/FlagsAndMarkers/MarkerBlue);
+}
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="MarkerCyan"]
+{
+    image: url(:/Common/FlagsAndMarkers/MarkerCyan);
+}
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="MarkerGreen"]
+{
+    image: url(:/Common/FlagsAndMarkers/MarkerGreen);
+}
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="MarkerYellow"]
+{
+    image: url(:/Common/FlagsAndMarkers/MarkerYellow);
+}
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="MarkerRed"]
+{
+    image: url(:/Common/FlagsAndMarkers/MarkerRed);
+}
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="MarkerPink"]
+{
+    image: url(:/Common/FlagsAndMarkers/MarkerPink);
+}
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="MarkerPurple"]
+{
+    image: url(:/Common/FlagsAndMarkers/MarkerPurple);
+}
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="MarkerFuchsia"]
+{
+    image: url(:/Common/FlagsAndMarkers/MarkerFuchsia);
+}
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="MarkerRose"]
+{
+    image: url(:/Common/FlagsAndMarkers/MarkerRose);
+}
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="MarkerLavender"]
+{
+    image: url(:/Common/FlagsAndMarkers/MarkerLavender);
+}
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="MarkerSky"]
+{
+    image: url(:/Common/FlagsAndMarkers/MarkerSky);
+}
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="MarkerMint"]
+{
+    image: url(:/Common/FlagsAndMarkers/MarkerMint);
+}
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="MarkerLemon"]
+{
+    image: url(:/Common/FlagsAndMarkers/MarkerLemon);
+}
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="MarkerSand"]
+{
+    image: url(:/Common/FlagsAndMarkers/MarkerSand);
+}
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="MarkerCocoa"]
+{
+    image: url(:/Common/FlagsAndMarkers/MarkerCocoa);
+}
+UiQMediaMetadataPhotoPlayerClipColorButton[SkinId="MarkerCream"]
+{
+    image: url(:/Common/FlagsAndMarkers/MarkerCream);
+}
+
+UiQMediaMetadataPhotoPlayerClipColorButton::menu-indicator
+{
+    subcontrol-origin: content;
+    subcontrol-position: right center;
+    margin: 0px 2px 0px 0px;
+    padding: 0px;
+    image: url(:/Common/Widgets/Arrow);
+}
+
+UiQMediaMetadataPhotoPlayerClipColorButton::menu-indicator:hover
+{
+    image: url(:/Common/Widgets/Arrow_hover);
+}
+UiQMediaMetadataPhotoPlayerClipColorButton::menu-indicator:pressed
+{
+    image: url(:/Common/Widgets/Arrow_push);
+}
+
+UiQMediaMetadataClipFlagButton
+{
+    min-width: 14px;
+    max-width: 14px;
+    min-height: 14px;
+    max-height: 14px;
+
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    padding: 0px;
+    margin: 0px;
+}
+UiQMediaMetadataClipFlagButton:hover,
+UiQMediaMetadataClipFlagButton:pressed,
+UiQMediaMetadataClipFlagButton:checked
+{
+    border-color: COLOR_HURRICANE_GRAY;
+    background-color: COLOR_HURRICANE_GRAY;
+    border-radius: 3px;
+}
+
+UiQMediaMetadataClipFlagButton[SkinId="ClearAll"]
+{
+    image: url(:/Common/FlagsAndMarkers/NoneSmall);
+}
+UiQMediaMetadataClipFlagButton[SkinId="ClearAll"]:checked,
+UiQMediaMetadataClipFlagButton[SkinId="ClearAll"]:hover,
+UiQMediaMetadataClipFlagButton[SkinId="ClearAll"]:pressed
+{
+    image: url(:/Common/FlagsAndMarkers/NoneSmall_active);
+}
+UiQMediaMetadataClipFlagButton[SkinId="Blue"]
+{
+    image: url(:/Common/FlagsAndMarkers/FlagBlueSmall);
+}
+UiQMediaMetadataClipFlagButton[SkinId="Cyan"]
+{
+    image: url(:/Common/FlagsAndMarkers/FlagCyanSmall);
+}
+UiQMediaMetadataClipFlagButton[SkinId="Green"]
+{
+    image: url(:/Common/FlagsAndMarkers/FlagGreenSmall);
+}
+UiQMediaMetadataClipFlagButton[SkinId="Pink"]
+{
+    image: url(:/Common/FlagsAndMarkers/FlagPinkSmall);
+}
+UiQMediaMetadataClipFlagButton[SkinId="Purple"]
+{
+    image: url(:/Common/FlagsAndMarkers/FlagPurpleSmall);
+}
+UiQMediaMetadataClipFlagButton[SkinId="Red"]
+{
+    image: url(:/Common/FlagsAndMarkers/FlagRedSmall);
+}
+UiQMediaMetadataClipFlagButton[SkinId="Yellow"]
+{
+    image: url(:/Common/FlagsAndMarkers/FlagYellowSmall);
+}
+UiQMediaMetadataClipFlagButton[SkinId="Fuchsia"]
+{
+    image: url(:/Common/FlagsAndMarkers/FlagFuchsiaSmall);
+}
+UiQMediaMetadataClipFlagButton[SkinId="Rose"]
+{
+    image: url(:/Common/FlagsAndMarkers/FlagRoseSmall);
+}
+UiQMediaMetadataClipFlagButton[SkinId="Lavender"]
+{
+    image: url(:/Common/FlagsAndMarkers/FlagLavenderSmall);
+}
+UiQMediaMetadataClipFlagButton[SkinId="Sky"]
+{
+    image: url(:/Common/FlagsAndMarkers/FlagSkySmall);
+}
+UiQMediaMetadataClipFlagButton[SkinId="Mint"]
+{
+    image: url(:/Common/FlagsAndMarkers/FlagMintSmall);
+}
+UiQMediaMetadataClipFlagButton[SkinId="Lemon"]
+{
+    image: url(:/Common/FlagsAndMarkers/FlagLemonSmall);
+}
+UiQMediaMetadataClipFlagButton[SkinId="Sand"]
+{
+    image: url(:/Common/FlagsAndMarkers/FlagSandSmall);
+}
+UiQMediaMetadataClipFlagButton[SkinId="Cocoa"]
+{
+    image: url(:/Common/FlagsAndMarkers/FlagCocoaSmall);
+}
+UiQMediaMetadataClipFlagButton[SkinId="Cream"]
+{
+    image: url(:/Common/FlagsAndMarkers/FlagCreamSmall);
+}
+
+UiQMediaMetadataContentFrame
+{
+    background-color: COLOR_PENGUIN_GRAY;
+    border: 1px solid black;
+    padding: 12px;
+    margin-right: 4px;
+}
+
+UiQMediaMetadataFieldsScrollArea
+{
+    background-color: COLOR_PENGUIN_GRAY;
+}
+
+UiQMediaMetadataBottomButtonsFrame
+{
+    background-color: COLOR_PENGUIN_GRAY;
+    min-height: 36px; /** = 38 - 2 (top) */
+    max-height: 36px;
+    margin: 0px;
+    border-style: none;
+    border-top: 1px solid COLOR_TINT_GRAY;
+}
+
+QTextEdit[SkinId="MediaMetadataScrollAreaTextEdit"],
+QPlainTextEdit[SkinId="MediaMetadataScrollAreaPlainTextEdit"],
+QLineEdit[SkinId="MediaMetadataScrollAreaLineEdit"]
+{
+    color: rgb(143, 143, 143);
+    font-preset-name: FONT_DEFAULT;
+}
+
+UiQMediaMetadataScrollAreaLabel
+{
+    color: rgb(107, 107, 107);
+    font-preset-name: FONT_DEFAULT;
+}

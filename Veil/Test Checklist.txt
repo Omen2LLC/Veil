@@ -1,18 +1,15 @@
-To try:
-1. Close and reopen Veil normally using your existing pin. Confirm v0.82.
-2. Save your project and close Resolve normally.
-3. Open Themes. If Cherry Blossom's Fusion skin is already installed, use Start
-   Resolve. If Original skin is installed, use Apply Theme for both layers.
-4. Check Edit, Media, Color, Deliver and Project Manager. Note which containers
-   changed and whether all text, disabled/selected states, icons and controls
-   remain readable and usable. The Fusion layer is unchanged from the working test.
-5. Close Resolve normally, then Restore Original to restore the Fusion skin and
-   disable this build's future application session state. The regular Resolve
-   shortcut always uses original main-application styling; Fusion persists until
-   Restore Original. No active session is closed, minimized or patched in place.
+Cherry Blossom coverage staging — not automatically activated
 
-Resolve version: 21.1.0.14; exact native executable hash is checked before startup.
-No installed Resolve files or shortcuts were changed during preparation. No Resolve
-process was created. Theme activation is initiated only from your desktop account.
-The previous v0.81 release is kept beside this release for recovery.
+The full coverage audit is beside this folder. Full-program coverage and native
+readability are not verified. This stage fixes coordinated Fusion startup, removes
+potentially leaking text overrides, and adds the empty Metadata panel.
 
+The existing Omen taskbar route still uses v0.82. This stage has not been applied
+to Resolve. Save projects and close Resolve normally before any user-initiated
+test. Start Resolve and Apply Theme both check both layers. If Fusion is original,
+Windows approval for the existing Python helper is required. Restore Original
+uses the existing verified backup and disables future main themed sessions.
+
+Do not use this stage as evidence of completed timeline, Fairlight, viewer, dialog
+or settings coverage. Controls, typography, layout and semantic colors are retained
+in source; live functionality and readability still require verification.

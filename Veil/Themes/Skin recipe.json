@@ -6,7 +6,9 @@
   "candidate_sha256": "76aecbdfa83c367f19fcfaf2480af0c32250ebfb15b814c07f983453dd3b9eca",
   "legacy_candidate_sha256": [
     "a331261b4c92fd32f2014e0a58b2bc428c9cc17d87a8fd9e4359b915e808798f",
-    "019cd21fa2c8bef1dc21da289ade71f7c74a9a91631d55c5dafbf1624e6fd295"
+    "019cd21fa2c8bef1dc21da289ade71f7c74a9a91631d55c5dafbf1624e6fd295",
+    "dfd01ab2d90c085571343e7c714cbba2462497951ca36baf8da0ed6a51670442",
+    "232f8019ba6b08207daeb16b64095a710ef9b7f03db5344ccaf9e91eafc09599"
   ],
   "modified_entries": {
     "Fusion.skin": [

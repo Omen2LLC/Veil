@@ -20,7 +20,7 @@ INSTALL = Path('C:/Program Files/Blackmagic Design/DaVinci Resolve')
 EXPECTED_VERSION = '21.1.0.14'
 EXPECTED_SOURCE = '0a8f20c70851e629c1753ed537801d1df0b5162ad98a5ab399e4abc7b77df236'
 # Set to the independently verified staged recipe before releasing this build.
-EXPECTED_RECIPE = '5822d97d90c1083ef92d03f9b0fac282546044554ef84c70ec570cf5efd9a564'
+EXPECTED_RECIPE = 'd171269b65acaccc64d1b7f40c26dd77ba82a1cce9d7c4f0d9aa86f50f04c79a'
 STARTUP_TIMEOUT = 90
 COLORS = {(230, 206, 213), (221, 176, 188), (217, 160, 176),
           (217, 130, 155), (212, 105, 134)}
@@ -180,6 +180,20 @@ def _validate_edits(original, proposed, edits, added_rules=()):
         selector = ' '.join(rule['selector'].split())
         if selector in original_selectors or selector in added_selectors:
             raise ApplicationThemeUnavailable('Duplicate appended color selector.')
+        metadata_fields = {
+            'QTextEdit[SkinId="MediaMetadataScrollAreaTextEdit"]:enabled',
+            'QPlainTextEdit[SkinId="MediaMetadataScrollAreaPlainTextEdit"]:enabled',
+            'QLineEdit[SkinId="MediaMetadataScrollAreaLineEdit"]:enabled',
+        }
+        declarations = [tuple(pair) for pair in rule['declarations']]
+        if selector in metadata_fields:
+            native_parts = {part.strip() for native_selector in original_selectors for part in native_selector.split(',')}
+            if (selector.removesuffix(':enabled') not in native_parts or
+                    declarations != [('background-color', '#E6CED5'), ('color', 'COLOR_TINT_GRAY')]):
+                raise ApplicationThemeUnavailable('Unreviewed Metadata field color pair.')
+            before.append((selector, declarations))
+            added_selectors.add(selector)
+            continue
         parts = selector.split(', ')
         if not parts or any(not re.fullmatch(r'Ui\w+ (?:Ui\w+Label:enabled|QAbstractButton)', part) for part in parts):
             raise ApplicationThemeUnavailable('Unreviewed descendant color selector.')
@@ -324,7 +338,7 @@ def require_user_account(runtime):
             username.casefold() in ('system', 'local service', 'network service')):
         raise ApplicationThemeUnavailable(
             'Start Veil from your normal Windows desktop account. '
-            'Resolve cannot be launched from CodexÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s restricted diagnostic account. '
+            'Resolve cannot be launched from CodexÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢s restricted diagnostic account. '
             'No Resolve process was created.')
     return username
 
@@ -363,7 +377,7 @@ def capability(folder):
         if pids:
             result.update(status='Resolve is running', reason='Save your work and close Resolve normally before starting a themed session.')
         else:
-            result.update(can_start=True, status='Ready Ãƒâ€šÃ‚Â· session-only application test',
+            result.update(can_start=True, status='Ready ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· session-only application test',
                           reason='Supported shared interface surfaces only; complete application coverage is unverified.')
         return result
     except (OSError, ValueError, KeyError, RuntimeError, TypeError) as exc:
@@ -407,13 +421,13 @@ def launch_theme(folder, progress=lambda message: None, *, _runtime=None,
         state = _load_state(folder)
         previous_enabled = bool(state.get('enabled'))
         try:
-            progress('Checking the reviewed Resolve build and application resourcesÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦')
+            progress('Checking the reviewed Resolve build and application resourcesÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦')
             username, recipe, slots = _preflight(folder, runtime, expected_digest=_expected_digest)
             if runtime.active_pids():
                 raise ApplicationThemeUnavailable('Resolve is running or finishing shutdown. Save your work and close it normally before starting Cherry Blossom.')
             # A final active-process check precedes creation. Existing processes are
             # never attached to, patched, minimized, restarted or terminated here.
-            progress('Preparing a new Cherry Blossom sessionÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦')
+            progress('Preparing a new Cherry Blossom sessionÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦')
             if runtime.active_pids():
                 raise ApplicationThemeUnavailable('Resolve opened during preparation. No theme session was created.')
             child = runtime.child()
@@ -438,7 +452,7 @@ def launch_theme(folder, progress=lambda message: None, *, _runtime=None,
             child.resume()
             resumed = child.resumed
             deadline = runtime.monotonic() + max(0, min(float(_startup_timeout), STARTUP_TIMEOUT))
-            progress('Starting Resolve and waiting for its normal interfaceÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦')
+            progress('Starting Resolve and waiting for its normal interfaceÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦')
             while True:
                 observation = runtime.observe(child)
                 if not observation['alive']:
@@ -447,7 +461,7 @@ def launch_theme(folder, progress=lambda message: None, *, _runtime=None,
                 if observation.get('main_window'):
                     state.update(status='window_detected', window=observation['main_window'])
                     _advisory_state(folder, state)
-                    return 'ResolveÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s interface opened with the Cherry Blossom session resources. Appearance coverage still needs a live check.'
+                    return 'ResolveÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢s interface opened with the Cherry Blossom session resources. Appearance coverage still needs a live check.'
                 if runtime.monotonic() >= deadline:
                     state['status'] = 'startup_timeout'
                     raise ApplicationThemeStartupError(
