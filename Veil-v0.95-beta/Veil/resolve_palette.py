@@ -104,6 +104,12 @@ def require_supported_version(detected,signature):
 class PaletteSession:
     def __init__(self,folder,writable=True):
         self.folder=Path(folder);self.signature=json.loads((self.folder/'build_signature.json').read_text())
+        self.profiles={self.signature['version']:self.signature}
+        additional=self.folder/'compatibility_profiles.json'
+        if additional.is_file():
+            for version,profile in json.loads(additional.read_text(encoding='utf-8')).items():
+                if profile.get('native_verified') is True and profile.get('version')==version:
+                    self.profiles[version]=profile
         self.recovery=self.folder/'session_recovery.json'
         self.k=kernel();self.handle=None;self.writable=writable
         self.original=None;self.expected=None;self.recovered=False
@@ -112,7 +118,16 @@ class PaletteSession:
         if self.handle:raise RuntimeError('Already connected. Close this session before reconnecting.')
         self.pid,self.base,path=discover(self.k)
         self.version=file_version(path)
+        profiles=getattr(self,'profiles',{self.signature['version']:self.signature})
+        if self.version not in profiles:
+            raise UnsupportedResolveVersion(self.version,', '.join(sorted(profiles)))
+        self.signature=profiles[self.version]
         require_supported_version(self.version,self.signature)
+        expected_hash=self.signature.get('executable_sha256')
+        if expected_hash:
+            with Path(path).open('rb') as executable:
+                if hashlib.file_digest(executable,'sha256').hexdigest()!=expected_hash:
+                    raise RuntimeError('Resolve executable hash differs from the verified profile. No changes made.')
         self.handle=self.k.OpenProcess(0x1010|(0x28 if self.writable else 0),False,self.pid)
         if not self.handle:
             raise RuntimeError('Windows denied access to Resolve. Run this app locally, using the same Windows account and privilege level as Resolve.')

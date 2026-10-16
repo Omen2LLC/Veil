@@ -1,5 +1,6 @@
 import ctypes,struct
 from resolve_palette import MODULEENTRY32W
+from resolve_profiles import component_layout
 
 def scan(session):
     k=session.k;pid=session.pid;base=session.base
@@ -29,15 +30,15 @@ def scan(session):
     manager=ptr(ui+0x297d40);tree=ptr(manager);header=read(tree,32)
     ref,size=struct.unpack_from('<ii',header)
     if not 0<size<20000:raise ValueError('Unexpected map size')
-    stack=[struct.unpack_from('<Q',header,16)[0]];seen=set();dots=[];all_names=[]
+    stack=[struct.unpack_from('<Q',header,16)[0]];seen=set();dots=[]
     while stack:
         node=stack.pop()
         if not node:continue
         if node in seen or len(seen)>=size:raise ValueError('Map changed or invalid tree')
         seen.add(node);raw=read(node,48)
         parent,left,right,key,obj,control=struct.unpack('<6Q',raw)
-        stack.extend((left,right));name=qstring(node+24);all_names.append(name)
-        if '/ThumbnailClipColorOverlay/' in name or '/FlagsAndMarkers/Thumbnail_' in name:
+        stack.extend((left,right));name=qstring(node+24)
+        if '/FlagsAndMarkers/ClipColor' in name:
             resource=read(obj,16);data=struct.unpack_from('<Q',resource,8)[0]
             resource_header=read(data,120)
             dot=dict(name=name,node=hex(node),object=hex(obj),data=hex(data),header=resource_header.hex(),images=[])
@@ -73,22 +74,24 @@ def scan(session):
     if ptr(manager)!=tree or read(tree,8)!=header[:8]:raise ValueError('Map changed during inspection')
     result=dict(pid=pid,module=hex(ui),manager=hex(manager),map_size=size,visited=len(seen),read_bytes=total,dots=dots)
     normal_dots=dots
-    if read(base+0x248ea12,7)!=bytes.fromhex('488b050fd1f718'):raise ValueError('Composite cache signature mismatch')
-    tree=ptr(base+0x1b40bb28);header=read(tree,32)
+    cache=component_layout(session.signature,'dot_cache',dict(instruction_rva=0x248ea12,
+        instruction=bytes.fromhex('488b050fd1f718'),table_rva=0x1b40bb28),byte_fields=('instruction',))
+    if read(base+cache.instruction_rva,7)!=cache.instruction:raise ValueError('Composite cache signature mismatch')
+    tree=ptr(base+cache.table_rva);header=read(tree,32)
     ref,size=struct.unpack_from('<ii',header)
     if not 0<=size<=2048:raise ValueError('Composite cache size is unexpected')
-    stack=[struct.unpack_from('<Q',header,16)[0]];seen=set();entries=[];composite_names=[]
+    stack=[struct.unpack_from('<Q',header,16)[0]];seen=set();entries=[]
     while stack:
         node=stack.pop()
         if not node:continue
         if node in seen or len(seen)>=size:raise ValueError('Composite tree changed')
         seen.add(node);raw=read(node,48)
         left,right=struct.unpack_from('<QQ',raw,8);stack.extend((left,right))
-        name=qstring(node+24);composite_names.append(name)
+        name=qstring(node+24)
         entry_result=dict(name=name,node=hex(node),value=raw[32:48].hex())
         entries.append(entry_result)
         obj=struct.unpack_from('<Q',raw,32)[0]
-        if ('/ThumbnailClipColorOverlay/' in name or '/FlagsAndMarkers/Thumbnail_' in name) and obj:
+        if '/FlagsAndMarkers/ClipColor' in name and obj:
             resource=read(obj,16);data=struct.unpack_from('<Q',resource,8)[0]
             resource_header=read(data,120)
             dot=dict(name=name,node=hex(node),object=hex(obj),data=hex(data),header=resource_header.hex(),images=[])
@@ -123,4 +126,4 @@ def scan(session):
             entry_result.update(dot)
     if read(tree,8)!=header[:8]:raise ValueError('Composite cache changed during read')
     result=dict(pid=pid,map_size=size,visited=len(seen),entries=entries)
-    return normal_dots,entries,all_names,composite_names
+    return normal_dots,entries

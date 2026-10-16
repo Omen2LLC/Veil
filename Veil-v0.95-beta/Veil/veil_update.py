@@ -173,13 +173,20 @@ def install_staged(archive_path: Path, tag: str, current_app: Path,
                         try:
                             old = json.loads(source.read_text(encoding="utf-8"))
                             fresh = json.loads((app / name).read_text(encoding="utf-8"))
-                            if old.get("schema") != 2 or fresh.get("schema") != 2:
+                            if (old.get("schema") not in (1, 2) or fresh.get("schema") != 2
+                                    or not isinstance(old.get('palettes'), dict)
+                                    or not isinstance(fresh.get('palettes'), dict)):
                                 raise ValueError("Unknown palette library schema")
-                            fresh["palettes"].update(old["palettes"])
+                            previous = old['palettes']
+                            if old['schema'] == 1:
+                                from palette_core import LABELS
+                                previous = {name: {'colors': colors, 'display_names': list(LABELS)}
+                                            for name, colors in previous.items()}
+                            fresh["palettes"].update(previous)
                             (app / name).write_text(json.dumps(fresh, indent=2, ensure_ascii=False) + "\n",
                                                     encoding="utf-8")
-                        except (OSError, ValueError, TypeError, KeyError):
-                            shutil.copy2(source, app / "previous-saved-palettes.json")
+                        except (OSError, ValueError, TypeError, KeyError) as error:
+                            raise UpdateError('Your palette library could not be migrated; current Veil kept intact.') from error
                     else:
                         shutil.copy2(source, app / name)
             if smoke_check is not None:
