@@ -6,7 +6,10 @@ import shutil
 
 def release_version(folder):
     folder=Path(folder)
-    if not all((folder/name).is_file() for name in ('veil_app.py','studio_ui.py','studio_version.py','splash-640.png')):return None
+    if not (folder/'studio_version.py').is_file() or not (folder/'splash-640.png').is_file():return None
+    source=all((folder/name).is_file() for name in ('veil_app.py','studio_ui.py'))
+    standalone=(folder/'Veil.exe').is_file()
+    if not (source or standalone):return None
     try:
         tree=ast.parse((folder/'studio_version.py').read_text(encoding='utf-8-sig'))
         value=next(ast.literal_eval(n.value) for n in tree.body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='VERSION' for t in n.targets))

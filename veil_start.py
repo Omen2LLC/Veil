@@ -21,8 +21,16 @@ def main():
     if args.check_runtime:return 0
     from studio_launcher import newest_release
     folder=newest_release(Path(__file__).resolve().parent)
+    standalone=folder/'Veil.exe'
     entry=folder/'veil_app.py'
-    if not entry.is_file():raise RuntimeError('Extract the entire ZIP and keep all Veil files together.')
+    if not standalone.is_file() and not entry.is_file():
+        raise RuntimeError('Extract the entire ZIP and keep all Veil files together.')
+    if standalone.is_file():
+        command=[str(standalone)]
+        if args.check:command.append('--check')
+        if args.check:return subprocess.call(command,cwd=str(folder))
+        subprocess.Popen(command,cwd=str(folder),creationflags=subprocess.CREATE_NO_WINDOW)
+        return 0
     if args.check:
         return subprocess.call([sys.executable,str(entry),'--check'],cwd=str(folder))
     windowed=Path(sys.executable).with_name('pythonw.exe')

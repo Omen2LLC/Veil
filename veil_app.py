@@ -82,6 +82,20 @@ def main():
         return 0
     if args.apply_update:
         return complete_update(Path(args.apply_update))
+    if getattr(sys,'frozen',False) and not args.check and not args.demo:
+        # A Windows taskbar pin may point directly at an older standalone EXE.
+        # Follow only a complete release beside this one; never run an arbitrary
+        # path from a modified pointer file.
+        from studio_launcher import release_version
+        root=HERE.parent.parent
+        pointer=root/'Veil-Launcher'/'current-release.txt'
+        if HERE.name=='Veil' and HERE.parent.name.startswith('Veil-v') and pointer.is_file():
+            chosen=Path(pointer.read_text(encoding='utf-8').strip()).resolve()
+            if (chosen!=HERE and chosen.parent.parent==root and release_version(chosen)
+                    and (chosen/'Veil.exe').is_file()):
+                subprocess.Popen([str(chosen/'Veil.exe')],cwd=str(chosen),
+                                 creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
+                return 0
     logging.basicConfig(filename=HERE/'veil.log',level=logging.INFO,format='%(asctime)s %(levelname)s %(message)s')
     if args.check:
         session=PaletteSession(HERE,writable=False)

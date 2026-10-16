@@ -7,7 +7,10 @@
   recovery, logs, screenshots, media, installers and secrets are excluded.
 - `outputs/GitHub-Release-Prep` contains 15 historical tags from v0.84-preview
   through v0.93-beta-r7, plus v0.94-beta. Each has release notes and SHA-256
-  checksums. The original ZIPs remain untouched. v0.93-beta-r5 has no
+  checksums. The original ZIPs remain untouched. Most historical ZIPs are
+  source-based Windows packages and still require Python; only the later
+  standalone builds bundle Python. No missing standalone build has been
+  recreated or relabeled. v0.93-beta-r5 has no
   recoverable distributable ZIP and must not be reconstructed or labeled as one.
 - Stable in-app update checks use the public GitHub Releases endpoint and
   require a matching Windows ZIP plus `SHA256SUMS.txt`. A private repository
