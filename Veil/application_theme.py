@@ -20,7 +20,7 @@ INSTALL = Path('C:/Program Files/Blackmagic Design/DaVinci Resolve')
 EXPECTED_VERSION = '21.1.0.14'
 EXPECTED_SOURCE = '0a8f20c70851e629c1753ed537801d1df0b5162ad98a5ab399e4abc7b77df236'
 # Set to the independently verified staged recipe before releasing this build.
-EXPECTED_RECIPE = '5c37d716a5e9ac784b62116f5a141cb43704ae63639d81081cf72143633a3419'
+EXPECTED_RECIPE = '5bbef6cd76191df9c2ca3e81d272827ac41c7a497d438b49c16edcdb71eb9406'
 STARTUP_TIMEOUT = 90
 COLORS = {(230, 206, 213), (221, 176, 188), (217, 160, 176),
           (217, 130, 155), (212, 105, 134)}
@@ -451,12 +451,18 @@ def capability(folder):
         result['report'] = recipe
         pids = runtime.active_pids()
         session = state.get('session')
+        late_main_window = False
         if (session and state.get('status') == 'startup_timeout' and
                 session.get('account', '').casefold() == username.casefold()):
             observed = runtime.inspect_session(session)
             result['can_cleanup'] = observed['matches'] and observed['alive'] and not observed['visible_windows']
+            late_main_window = bool(observed['matches'] and observed['alive'] and observed.get('main_window'))
         if pids:
             result.update(status='Resolve process still active (PID: '+', '.join(map(str,pids))+')', reason='Save your work and close Resolve normally. If its window is already closed, wait for shutdown; a leftover Resolve.exe background process must exit before Apply Theme or Start Resolve can run.')
+            if late_main_window:
+                result.update(status='Resolve interface detected after startup timeout',
+                              reason='The owned Resolve session has now opened its normal interface. Theme appearance, project behavior and restoration remain unverified.',
+                              can_cleanup=False)
         else:
             result.update(can_start=True, status='Ready ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· session-only application test',
                           reason='Supported shared interface surfaces only; complete application coverage is unverified.')

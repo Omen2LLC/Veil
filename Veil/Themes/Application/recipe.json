@@ -29,7 +29,8 @@
     "Step 3 Inspector enabled parameter/group labels paired with themed panel; native disabled and highlighted states retained",
     "Step 3 property-qualified filmstrip backing/labels and ordinary Inspector header title; active coral header state unchanged",
     "Step 3 enabled segmented text buttons: six native button classes, idle/hover/pressed/selected states; disabled rules and geometry unchanged; native test pending",
-    "Step 3 direct enabled ordinary Inspector heading and filmstrip label pairs; disabled and active semantic label styles unchanged; native test pending"
+    "Step 3 direct enabled ordinary Inspector heading and filmstrip label pairs; disabled and active semantic label styles unchanged; native test pending",
+    "Step 3 Edit timeline toolbar and shared viewer toolbar/transport backing; native images, geometry and states retained; custom timeline canvas not covered"
   ],
   "unsupported": [
     "Complete native workspace coverage",
@@ -1169,6 +1170,93 @@
         }
       ],
       "added_color_rules": []
+    },
+    {
+      "resource": ":/StyleSheet/EditPage",
+      "offset": 170743224,
+      "rva": 170748344,
+      "size": 5269,
+      "original_file": "EditPage.original.bin",
+      "proposed_file": "EditPage.cherry.bin",
+      "original_sha256": "1aef19b29a4172b63e1f9eb73d0680938f55e6ea21512d83f1e63e8ffaf8947c",
+      "proposed_sha256": "d8e6be871dccd46541c72f8735d0eff9aaacf560bf42ec88157559e6b7191818",
+      "raw_original_sha256": "81d61a4a5aa4c144f2ed9f625c2d2828a3bb4d8cd983c9075622e73d5667191f",
+      "raw_proposed_sha256": "1f4f8bb76423d2c4562d5e0ea7c83708dd15cefaad88a04e4147fb6db86efa1d",
+      "original_packed_bytes": 5265,
+      "proposed_packed_bytes": 4852,
+      "edits": [
+        {
+          "selector": "UiQEditTimelineToolbarFrame",
+          "property": "background-color",
+          "original": "COLOR_ORCA_GRAY",
+          "proposed": "#DDB0BC"
+        },
+        {
+          "selector": "UiQEditTimelineToolbarSplitterHandleBuddyFrame",
+          "property": "background-color",
+          "original": "COLOR_ORCA_GRAY",
+          "proposed": "#DDB0BC"
+        }
+      ],
+      "added_color_rules": [
+        {
+          "selector": "UiQEditTimelineToolbarFrame QAbstractButton",
+          "declarations": [
+            [
+              "background-color",
+              "COLOR_ORCA_GRAY"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "resource": ":/StyleSheet/Player",
+      "offset": 170724902,
+      "rva": 170730022,
+      "size": 13591,
+      "original_file": "Player.original.bin",
+      "proposed_file": "Player.cherry.bin",
+      "original_sha256": "567d877468347fc6b95ce33e7e07b994bcacb9bc9d09fadb5b0fb5eddcf15532",
+      "proposed_sha256": "0c41f241641fe9549f7af6a01219e9404d896dc1652a75bb0e6528728accf2ac",
+      "raw_original_sha256": "0aaf4db113d6eb565a878343125cfe99061a29db9112cb81220477d5783a06d4",
+      "raw_proposed_sha256": "580dba0c14fdb999433e2dcdff88fb2dddaa15a73eeceb5141983e7392031b2d",
+      "original_packed_bytes": 13587,
+      "proposed_packed_bytes": 12414,
+      "edits": [
+        {
+          "selector": "UiQPlayerControlContainer",
+          "property": "background-color",
+          "original": "COLOR_ORCA_GRAY",
+          "proposed": "#DDB0BC"
+        },
+        {
+          "selector": "UiQMainViewerToolbarWidget",
+          "property": "background-color",
+          "original": "COLOR_ORCA_GRAY",
+          "proposed": "#DDB0BC"
+        }
+      ],
+      "added_color_rules": [
+        {
+          "selector": "UiQPlayerControlContainer QAbstractButton",
+          "declarations": [
+            [
+              "background-color",
+              "COLOR_ORCA_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQMainViewerToolbarWidget QAbstractButton",
+          "declarations": [
+            [
+              "background-color",
+              "COLOR_ORCA_GRAY"
+            ]
+          ]
+        }
+      ]
     }
   ],
   "state_audit": {
