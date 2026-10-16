@@ -185,9 +185,9 @@ class App(LegacyApp):
         self.connect_button.pack(side='left')
         area=ScrollArea(self.page_content,self);area.pack(fill='both',expand=True)
         host=area.body;host.columnconfigure(0,weight=1,uniform='module');host.columnconfigure(1,weight=1,uniform='module')
-        for index,(name,desc,action) in enumerate((('Palettes','Color your editing workspace.','Explore palettes'),('Themes','A new look for Resolve.','Preview themes'))):
+        for index,(name,desc,action) in enumerate((('Palettes','Color your editing workspace.','Explore palettes'),('Themes','Cherry Blossom for the Fusion workspace.','View preview'))):
             tile=self.card(host,padding=22);tile.grid(row=0,column=index,sticky='nsew',padx=(0,self.p(18) if index==0 else 0))
-            canvas=tk.Canvas(tile,height=self.p(190),bg=self.c['panel'],highlightthickness=0);canvas.pack(fill='x')
+            canvas=tk.Canvas(tile,height=self.p(200),bg=self.c['panel'],highlightthickness=0);canvas.pack(fill='x')
             canvas.bind('<Destroy>',lambda e,c=canvas:setattr(c,'photos',[]))
             canvas.bind('<Configure>',lambda e,c=canvas,n=name:self.draw_art(c,n))
             self.label(tile,name,size=18,bold=True,bg=self.c['panel']).pack(fill='x',pady=(self.p(18),self.p(6)))
@@ -203,12 +203,10 @@ class App(LegacyApp):
                 photo=image(max(2,pw-self.p(8)),ph,left,right,radius=ph/2);canvas.photos.append(photo)
                 canvas.create_image(self.p(18)+col*pw,self.p(28)+row*self.p(36),image=photo,anchor='nw')
         else:
-            photo=image(max(2,w-self.p(24)),max(2,h-self.p(24)),self.c['field'],radius=self.p(12));canvas.photos.append(photo)
-            canvas.create_image(self.p(12),self.p(12),image=photo,anchor='nw')
-            canvas.create_line(self.p(26),self.p(42),w-self.p(26),self.p(42),fill=self.c['muted'],width=2)
-            for row in range(3):
-                canvas.create_rectangle(self.p(28),self.p(61+31*row),self.p(73),self.p(78+31*row),fill=self.c['control'],outline='')
-                canvas.create_rectangle(self.p(91),self.p(61+31*row),w-self.p(28),self.p(78+31*row),fill=self.c['selected'],outline='')
+            from studio_themes import preview_photo
+            photo=preview_photo(max(2,w-self.p(16)),max(2,h-self.p(8)))
+            canvas.photos.append(photo)
+            canvas.create_image(w/2,h/2,image=photo,anchor='center')
     def palette_page(self):
         if self.current_tab=='Library':
             self.library_page()

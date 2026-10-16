@@ -150,8 +150,8 @@
     "studio_legacy.py": "6828225903e843d66d42f5c3fa2fdc377d5d8246764fc0612526d12d17a61af4",
     "studio_menu.py": "bb923a1bbf7c2e2df2c6fe6b60653f18900ca0b1b4659f3ccdcde5ab8c215de8",
     "studio_model.py": "82cdc6a0eab2a93d2103132de4980f9063dcdb6ed899905f168fd7ace6e6ae7d",
-    "studio_themes.py": "ae9a9586c31a446793c8ba9a2e6c361145dad10f2217647448bb106b831745d3",
-    "studio_ui.py": "a2903a9fe2ee85a9ad5a034a2ec56932dd6236e53a9a33258262dbcadd700ee1",
+    "studio_themes.py": "362ec461471c89ccc2b29a4a4f2fc4c5ab9b4256aeba684a1ae5b943b3bc6fcd",
+    "studio_ui.py": "ef955a7017f0004f5a8f30f6286c342a4e599675626c797055e4ef559df8bc30",
     "studio_version.py": "cbbc73c7130b3c52b920bfb8cd6ddd1692b7cdd9a53e81893e079878fa2a2774",
     "theme_elevation.py": "851ffebccbeef563c1f1b36c0ecf336093e458e176f9a795455b146f141bcd5e",
     "theme_transaction.py": "8e26ef387dd32206c24f8d81c853c9a67db4558c3043caaa7dd2a7e4d0d8cbc5",
@@ -168,9 +168,9 @@
     "veil-startup.vaf": "44eff5bc9a32779390c5a15b06d1e8316bcb51f75cde6f79b89c7816bc7f4973",
     "veil_about.py": "3f2bf76cead6a0c9972902b206ec1fea67fec060c6877931e2aada7de9112018",
     "veil_startup.py": "913d6ddebe845fc065dbd4fef198d065624be07e3f5d4ed1bfc403a65f1dbdd9",
+    "veil_system_menu.py": "05820d73e251eda6cd657e05d1cc943e8a8fa4b31aa0b67abd10587885aa3e10",
     "win_taskbar.py": "e44cee2e6a587243364672fc584d8c3a507713e49fb99812ba2ca0e41fcc85d8",
-    "window_chrome.py": "f11b8c867a95d3d0f8b360a0aebe0a5fd8ca13f6e2e5abae58b01134dcfee30b",
-    "veil_system_menu.py": "5afea1aa36b027b2bf24be2f723a7138b57d7f84e38a1106aa6c57fd11455eda"
+    "window_chrome.py": "f11b8c867a95d3d0f8b360a0aebe0a5fd8ca13f6e2e5abae58b01134dcfee30b"
   },
   "native_resolve_tested": false,
   "published_release_modified": false,
