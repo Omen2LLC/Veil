@@ -61,14 +61,17 @@ class App(LegacyApp):
         load_fonts(root)
         super().__init__(root,demo)
         name=next(iter(self.visible_palettes()),None)
-        self.loading=True;self.selection.set(name or 'New palette')
+        self.loading=True;self.selection.set(name or 'New Palette')
         if name:
             self.show_palette(self.palettes[name])
             for label,alias in zip(LABELS,self.palette_names.get(name,LABELS)):self.names[label].set(alias)
         self.loading=False;self.baseline=self.raw_snapshot()
         self.reset_undo()
         root.bind('<Control-z>',self.undo_shortcut)
-        root.bind('<Control-Z>',self.undo_shortcut)
+        root.bind('<Control-Z>',self.redo_shortcut)
+        root.bind('<Control-Shift-z>',self.redo_shortcut)
+        root.bind('<Control-Shift-Z>',self.redo_shortcut)
+        root.bind('<Control-Shift-s>',lambda e:self.shortcut(self.save_as))
         if not demo:
             self.root.after(1800,lambda:veil_update_ui.check_in_background(self))
     def styles(self):
@@ -137,7 +140,7 @@ class App(LegacyApp):
     def install_system_about(self):
         if not hasattr(self.root,'_veil_system_about'):
             from veil_system_menu import SystemAboutMenu
-            self.root._veil_system_about=SystemAboutMenu(self.root,self.show_about)
+            self.root._veil_system_about=SystemAboutMenu(self.root,self.show_about,app=self)
     def navigate(self,page):
         self.outlined_page=page
         super().navigate(page)
@@ -308,21 +311,23 @@ class App(LegacyApp):
         ready=not self.busy and not self.closing
         valid=ready and self.valid(); stored=ready and not self.storage_error
         self.open_editor_menu(self.actions_button,[
-            ('New palette',self.new_palette,ready),
+            ('New Palette',self.new_palette,ready),
             ('Rename',lambda:self.start_rename(self.selection.get()),stored and self.selection.get() in self.palettes),None,
-            ('Undo  ·  Ctrl+Z',self.undo_edit,ready and bool(getattr(self,'undo_stack',[]))),None,
-            ('Save',self.save,valid and stored),
-            ('Save As',self.save_as,valid and stored),None,
+            ('Undo  ·  Ctrl+Z',self.undo_edit,ready and bool(getattr(self,'undo_stack',[]))),
+            ('Redo  ·  Ctrl+Shift+Z',self.redo_edit,ready and bool(getattr(self,'redo_stack',[]))),None,
+            ('Save  ·  Ctrl+S',self.save,valid and stored),
+            ('Save As  ·  Ctrl+Shift+S',self.save_as,valid and stored),None,
             ('Import',self.import_palette,ready),
             ('Export',self.export_palette,valid),None,
             ('Delete',lambda:self.delete_palette(self.selection.get()),stored and self.selection.get() in self.users)])
     def reset_undo(self):
-        self.undo_stack=[];self.undo_snapshot=self.raw_snapshot()
+        self.undo_stack=[];self.redo_stack=[];self.undo_snapshot=self.raw_snapshot()
         self.undo_key=None;self.undo_time=0
     def edited(self,*args):
         if not self.loading and hasattr(self,'undo_snapshot'):
             state=self.raw_snapshot();now=time.monotonic();key=args[0] if args else None
             if state!=self.undo_snapshot:
+                self.redo_stack=[]
                 if key!=self.undo_key or now-self.undo_time>.65:
                     self.undo_stack.append(self.undo_snapshot)
                     self.undo_stack=self.undo_stack[-100:]
@@ -333,7 +338,17 @@ class App(LegacyApp):
             self.undo_edit();return 'break'
     def undo_edit(self):
         if self.busy or self.closing or not getattr(self,'undo_stack',[]):return
-        colors,names=self.undo_stack.pop()
+        self.redo_stack.append(self.raw_snapshot())
+        self.restore_edit(self.undo_stack.pop(),'Undid the last palette edit.')
+    def redo_shortcut(self,event=None):
+        if self.current_page=='Palettes' and self.current_tab=='Editor':
+            self.redo_edit();return 'break'
+    def redo_edit(self):
+        if self.busy or self.closing or not getattr(self,'redo_stack',[]):return
+        self.undo_stack.append(self.raw_snapshot())
+        self.restore_edit(self.redo_stack.pop(),'Redid the last palette edit.')
+    def restore_edit(self,state,message):
+        colors,names=state
         self.loading=True
         try:
             for label,pair,name in zip(LABELS,colors,names):
@@ -341,7 +356,7 @@ class App(LegacyApp):
                 self.names[label].set(name)
         finally:self.loading=False
         self.undo_snapshot=self.raw_snapshot();self.undo_key=None;self.undo_time=0
-        self.refresh_editor();self.set_status('Undid the last palette edit.')
+        self.refresh_editor();self.set_status(message)
     def choose_palette(self,name):
         before=(self.selection.get(),self.baseline)
         super().choose_palette(name)
@@ -358,9 +373,9 @@ class App(LegacyApp):
         finally:self.loading=False
         self.baseline=None;self.reset_undo();self.active_slot=DISPLAY_ORDER[0]
         self.current_page='Palettes';self.current_tab='Editor';self.outlined_page='Palettes'
-        self.show_page();self.set_status('New palette. Choose your colors, then Save As to add it to the Library.')
+        self.show_page();self.set_status('New Palette. Choose your colors, then Save As to add it to the Library.')
     def editor_page(self):
-        if self.selection.get() in builtin_palettes():self.selection.set('New palette')
+        if self.selection.get() in builtin_palettes():self.selection.set('New Palette')
         toolbar=self.frame(self.page_content);toolbar.pack(fill='x',pady=(0,self.p(16)))
         self.palette_selector=self.editor_button(toolbar,self.selection.get(),self.show_palette_menu,dropdown=True,text_align='left')
         self.palette_selector.configure(width=self.p(200));self.palette_selector.pack(side='left')
