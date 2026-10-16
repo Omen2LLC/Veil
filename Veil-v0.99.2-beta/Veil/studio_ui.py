@@ -58,6 +58,8 @@ class App(LegacyApp):
     def visible_palettes(self):
         return {name:colors for name,colors in self.palettes.items() if name not in builtin_palettes()}
     def __init__(self,root,demo=False):
+        self.api_status=tk.StringVar(root,value='Not checked')
+        self.api_pending=False
         load_fonts(root)
         super().__init__(root,demo)
         name=next(iter(self.visible_palettes()),None)
@@ -541,10 +543,24 @@ class App(LegacyApp):
         for mode in APPEARANCES:Button(row,self,mode,lambda m=mode:self.appearance.set(m),selected=self.appearance.get()==mode).pack(side='left',padx=(0,self.p(8)))
         updates=self.card(area.body,padding=20);updates.pack(fill='x',pady=(self.p(14),0))
         self.label(updates,'Updates',size=12,bold=True,bg=self.c['panel']).pack(anchor='w')
-        self.label(updates,'Stable releases from Omen2LLC on GitHub.',size=10,muted=True,bg=self.c['panel']).pack(anchor='w',pady=(self.p(4),self.p(12)))
+        self.label(updates,'Releases from Omen2LLC on GitHub.',size=10,muted=True,bg=self.c['panel']).pack(anchor='w',pady=(self.p(4),self.p(12)))
         self.button(updates,'Check for updates',lambda:veil_update_ui.check_in_background(self,manual=True)).pack(anchor='w')
+        api=self.card(area.body,padding=20);api.pack(fill='x',pady=(self.p(14),0))
+        self.label(api,'Resolve API',size=12,bold=True,bg=self.c['panel']).pack(anchor='w')
+        self.label(api,var=self.api_status,size=10,muted=True,bg=self.c['panel'],wraplength=self.p(850)).pack(anchor='w',pady=(self.p(4),self.p(12)))
+        self.label(api,'Read-only connection diagnostics. Palette Apply uses its verified build profile.',size=10,muted=True,bg=self.c['panel']).pack(anchor='w',pady=(0,self.p(12)))
+        self.button(api,'Check API connection',self.check_public_api).pack(anchor='w')
         self.diagnostic_button=self.button(area.body,'Show compatibility & recovery',self.toggle_diagnostics,compact=True);self.diagnostic_button.pack(anchor='w',pady=(self.p(20),self.p(8)))
         self.diagnostics=self.frame(area.body);self.diagnostics_open=False
+    def check_public_api(self):
+        if self.demo or self.api_pending or self.closing or self.busy or self.worker.jobs:return
+        import resolve_api
+        self.api_pending=True;self.api_status.set('Checking…')
+        def complete(report,error):
+            self.api_pending=False
+            self.api_status.set(resolve_api.describe(report or {'status':'unavailable'}))
+        self.worker.submit('public API check',resolve_api.check_connection,complete)
+
     def toggle_diagnostics(self):
         self.diagnostics_open=not self.diagnostics_open
         if not self.diagnostics_open:self.diagnostics.pack_forget();self.diagnostic_button.configure(text='Show compatibility & recovery');return
