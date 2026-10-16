@@ -6,11 +6,14 @@ import shutil
 
 def release_version(folder):
     folder=Path(folder)
-    if not all((folder/name).is_file() for name in ('veil_app.py','studio_ui.py','studio_version.py','splash-640.png')):return None
+    if not (folder/'studio_version.py').is_file() or not (folder/'splash-640.png').is_file():return None
+    source=all((folder/name).is_file() for name in ('veil_app.py','studio_ui.py'))
+    standalone=(folder/'Veil.exe').is_file()
+    if not (source or standalone):return None
     try:
         tree=ast.parse((folder/'studio_version.py').read_text(encoding='utf-8-sig'))
         value=next(ast.literal_eval(n.value) for n in tree.body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='VERSION' for t in n.targets))
-        match=re.fullmatch(r'v(\d+(?:\.\d+)+)(?:-beta| preview)?',value)
+        match=re.fullmatch(r'v(\d+(?:\.\d+)+)(?:-beta(?:-r\d+)?| preview)?',value)
         return tuple(int(part) for part in match[1].split('.')) if match else None
     except (OSError,ValueError,SyntaxError,StopIteration,TypeError):return None
 
@@ -21,6 +24,13 @@ def release_root(folder):
 def newest_release(launcher_folder):
     launcher_folder=Path(launcher_folder).resolve()
     root=release_root(launcher_folder) if launcher_folder.name in ('Veil','Omen Studio') else launcher_folder.parent
+    # A pinned launcher is an explicit choice. Do not silently switch it to a
+    # numerically newer folder merely because another release was extracted.
+    current=root/'Veil-Launcher'/'current-release.txt'
+    if current.is_file():
+        chosen=Path(current.read_text(encoding='utf-8').strip())
+        if release_version(chosen) is not None:
+            return chosen
     candidates=[launcher_folder,root/'Veil',root/'Omen Studio']
     current=launcher_folder/'current-release.txt'
     if current.exists():candidates.append(Path(current.read_text(encoding='utf-8').strip()))

@@ -100,7 +100,7 @@ class App(ResolveActions):
         self.filter=tk.StringVar(root,value='')
         self.connection=tk.StringVar(root,value='Disconnected')
         self.status=tk.StringVar(root,value='Choose a palette to edit. Connect when you are ready to apply.')
-        self.status_kind='info';self.busy=False;self.operation_error=None;self.connection_problem=False
+        self.status_kind='info';self.busy=False;self.operation_error=None;self.connection_problem=False;self.incompatible_version=None
         self.render_job=None;self.poll_count=0
         self.worker=ResolveWorker();self.closing=False;self.busy_label='Working…'
         root.after(40,self.drain_resolve_jobs)
@@ -225,6 +225,7 @@ class App(ResolveActions):
     def state_label(self):
         if self.demo:return 'Preview only'
         if self.busy:return self.busy_label
+        if self.incompatible_version:return f'Resolve {self.incompatible_version} · Apply unavailable'
         if self.failed or self.connection_problem:return 'Connection error'
         return 'Connected' if self.session else 'Disconnected'
     def sync_chrome(self):
@@ -562,13 +563,13 @@ class App(ResolveActions):
 
     def connect(self):
         if self.demo or self.busy or self.worker.jobs or self.closing:return
-        self.operation_error=None;self.connection_problem=False;self.set_status('Connecting to Resolve…')
+        self.operation_error=None;self.connection_problem=False;self.incompatible_version=None;self.set_status('Connecting to Resolve…')
         self.root.update_idletasks();ResolveActions.connect(self)
         if self.session:
             self.applied=fingerprint(STOCK,LABELS) if not self.session.recovered else None
             self.applied_name='Resolve Original' if not self.session.recovered else 'Recovered session'
             self.set_status('Connected. Apply a saved palette from the Library.','success')
-        else:self.connection_problem=True
+        elif not self.incompatible_version:self.connection_problem=True
         self.sync_chrome()
     def apply(self):
         try:

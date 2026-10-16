@@ -5,6 +5,7 @@ from pathlib import Path
 from palette_core import LABELS, STOCK
 from palette_names import validate_names
 from dot_palette import PaletteSession
+from resolve_palette import UnsupportedResolveVersion
 from menu_names import NativeMenuNames
 HERE=Path(__file__).resolve().parent
 
@@ -14,10 +15,14 @@ class ResolveActions:
         session=PaletteSession(HERE)
         try:
             session.connect();self.menu_names=NativeMenuNames(session);self.session=session;self.failed=False
-            self.connection.set('Connected · Resolve 21.1.0.14 · ready to apply')
+            self.connection.set(f'Connected · Resolve {session.version} · ready to apply')
             self.connect_button.configure(state='disabled')
             self.restore_button.configure(state='normal')
             self.status.set('Previous session detected. Restore Defaults is available.' if session.recovered else 'Connected. Choose a palette and click Apply.')
+        except UnsupportedResolveVersion as exc:
+            session.close();self.incompatible_version=exc.detected
+            self.connection.set(f'Resolve {exc.detected} · palette Apply unavailable')
+            self.set_status(str(exc))
         except Exception as exc:session.close();self.error(exc)
 
     def schedule_refresh(self):

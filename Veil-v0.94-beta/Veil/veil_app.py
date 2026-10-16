@@ -1,9 +1,14 @@
 """Veil â€” experimental, build-locked Windows prototype."""
 import argparse
 import ctypes
+import hashlib
 import json
 import logging
+import os
+import subprocess
 import sys
+import threading
+import time
 import tkinter as tk
 from tkinter import ttk,colorchooser,messagebox,simpledialog,filedialog
 from pathlib import Path
@@ -23,9 +28,74 @@ from studio_fonts import load_fonts,REGULAR
 
 from studio_ui import App
 
+def complete_update(instructions):
+    """Run from a separate Veil process after the GUI exits."""
+    from veil_update import UpdateError, install_staged
+    data=json.loads(instructions.read_text(encoding='utf-8'))
+    root=Path(data['root']).resolve()
+    archive=Path(data['archive']).resolve()
+    pointer=Path(data['pointer']).resolve()
+    current=Path(data['current']).resolve()
+    if (data.get('schema')!=1 or archive.parent!=root/'Veil-Updates'
+            or pointer!=root/'Veil-Launcher'/'current-release.txt'
+            or current.parent.parent!=root):
+        raise UpdateError('Invalid update instructions.')
+    process=ctypes.windll.kernel32.OpenProcess(0x100000,False,int(data['wait_pid']))
+    if process:
+        try:
+            if ctypes.windll.kernel32.WaitForSingleObject(process,90000)!=0:
+                raise UpdateError('Veil did not close; update was not installed.')
+        finally:ctypes.windll.kernel32.CloseHandle(process)
+    with archive.open('rb') as stream:
+        if hashlib.file_digest(stream,'sha256').hexdigest()!=data['sha256']:
+            raise UpdateError('Staged release checksum changed; update was not installed.')
+    def command(app,extra=()):
+        if (app/'Veil.exe').is_file():return [str(app/'Veil.exe'),*extra]
+        entry=app/'omen_studio.py' if (app/'omen_studio.py').is_file() else app/'veil_app.py'
+        return [sys.executable,str(entry),*extra]
+    def smoke(app):
+        result=subprocess.run(command(app,['--update-smoke']),cwd=str(app),timeout=20,
+                              creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
+        if result.returncode:raise UpdateError('The new Veil program failed its startup check.')
+    previous=pointer.read_bytes() if pointer.exists() else None
+    new_app=install_staged(archive,data['version'],current,root,pointer,smoke_check=smoke)
+    try:
+        launched=subprocess.Popen(command(new_app),cwd=str(new_app),
+                                  creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
+        time.sleep(5)
+        if launched.poll() is not None:
+            raise UpdateError('The new Veil program exited during startup; launcher restored.')
+        threading.Thread(target=launched.wait,daemon=True,name='Veil update launch').start()
+    except Exception:
+        if previous is None:pointer.unlink(missing_ok=True)
+        else:pointer.write_bytes(previous)
+        raise
+    instructions.unlink(missing_ok=True)
+    return 0
+
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--demo',action='store_true');ap.add_argument('--check',action='store_true')
+    ap.add_argument('--update-smoke',action='store_true')
+    ap.add_argument('--apply-update',metavar='INSTRUCTIONS')
     args=ap.parse_args()
+    if args.update_smoke:
+        return 0
+    if args.apply_update:
+        return complete_update(Path(args.apply_update))
+    if getattr(sys,'frozen',False) and not args.check and not args.demo:
+        # A Windows taskbar pin may point directly at an older standalone EXE.
+        # Follow only a complete release beside this one; never run an arbitrary
+        # path from a modified pointer file.
+        from studio_launcher import release_version
+        root=HERE.parent.parent
+        pointer=root/'Veil-Launcher'/'current-release.txt'
+        if HERE.name=='Veil' and HERE.parent.name.startswith('Veil-v') and pointer.is_file():
+            chosen=Path(pointer.read_text(encoding='utf-8').strip()).resolve()
+            if (chosen!=HERE and chosen.parent.parent==root and release_version(chosen)
+                    and (chosen/'Veil.exe').is_file()):
+                subprocess.Popen([str(chosen/'Veil.exe')],cwd=str(chosen),
+                                 creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
+                return 0
     logging.basicConfig(filename=HERE/'veil.log',level=logging.INFO,format='%(asctime)s %(levelname)s %(message)s')
     if args.check:
         session=PaletteSession(HERE,writable=False)

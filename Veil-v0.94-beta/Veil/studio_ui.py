@@ -10,6 +10,7 @@ from studio_model import fingerprint,APPEARANCES,PaletteLibrary
 from studio_version import VERSION
 from studio_menu import RoundedMenu
 from studio_fonts import load_fonts,REGULAR,MEDIUM,SEMIBOLD
+import veil_update_ui
 
 HERE=Path(__file__).resolve().parent
 THEMES={
@@ -64,6 +65,8 @@ class App(LegacyApp):
             self.show_palette(self.palettes[name])
             for label,alias in zip(LABELS,self.palette_names.get(name,LABELS)):self.names[label].set(alias)
         self.loading=False;self.baseline=self.raw_snapshot()
+        if not demo:
+            self.root.after(1800,lambda:veil_update_ui.check_in_background(self))
     def styles(self):
         super().styles()
         s=ttk.Style(self.root)
@@ -155,9 +158,9 @@ class App(LegacyApp):
     def sync_chrome(self):
         if self.alive_widget('connection_indicator'):
             connected=bool(self.session and not self.failed and not self.connection_problem)
-            color=('#82BD93' if self.effective_mode()=='Dark' else '#39784C') if connected else ('#E78282' if self.effective_mode()=='Dark' else '#A33B3B')
+            color=('#82BD93' if self.effective_mode()=='Dark' else '#39784C') if connected else ('#D7AE70' if self.effective_mode()=='Dark' else '#9A651D') if self.incompatible_version else ('#E78282' if self.effective_mode()=='Dark' else '#A33B3B')
             self.connection_indicator.itemconfigure('status',fill=color)
-            text='Connected to DaVinci Resolve' if connected else 'Connect to DaVinci Resolve'
+            text='Connected to DaVinci Resolve' if connected else f'Resolve {self.incompatible_version} · Apply unavailable' if self.incompatible_version else 'Connect to DaVinci Resolve'
             if self.busy and not self.session:text='Connecting…'
             self.connect_button.configure(text=text,state='disabled' if self.session or self.demo or self.busy or self.closing else 'normal')
         enabled=bool(self.session and not self.failed and not self.busy and not self.demo and not self.closing)
@@ -185,7 +188,7 @@ class App(LegacyApp):
         self.connect_button.pack(side='left')
         area=ScrollArea(self.page_content,self);area.pack(fill='both',expand=True)
         host=area.body;host.columnconfigure(0,weight=1,uniform='module');host.columnconfigure(1,weight=1,uniform='module')
-        for index,(name,desc,action) in enumerate((('Palettes','Color your editing workspace.','Explore palettes'),('Themes','Cherry Blossom for the Fusion workspace.','View preview'))):
+        for index,(name,desc,action) in enumerate((('Palettes','Color your editing workspace.','Explore palettes'),('Themes','A new look for Resolve.','View preview'))):
             tile=self.card(host,padding=22);tile.grid(row=0,column=index,sticky='nsew',padx=(0,self.p(18) if index==0 else 0))
             canvas=tk.Canvas(tile,height=self.p(200),bg=self.c['panel'],highlightthickness=0);canvas.pack(fill='x')
             canvas.bind('<Destroy>',lambda e,c=canvas:setattr(c,'photos',[]))
@@ -452,6 +455,10 @@ class App(LegacyApp):
         self.label(panel,'Changes Veil’s appearance. Resolve themes are separate.',size=10,muted=True,bg=self.c['panel']).pack(anchor='w',pady=(self.p(4),self.p(14)))
         row=self.frame(panel,self.c['panel']);row.pack(fill='x')
         for mode in APPEARANCES:Button(row,self,mode,lambda m=mode:self.appearance.set(m),selected=self.appearance.get()==mode).pack(side='left',padx=(0,self.p(8)))
+        updates=self.card(area.body,padding=20);updates.pack(fill='x',pady=(self.p(14),0))
+        self.label(updates,'Updates',size=12,bold=True,bg=self.c['panel']).pack(anchor='w')
+        self.label(updates,'Stable releases from Omen2LLC on GitHub.',size=10,muted=True,bg=self.c['panel']).pack(anchor='w',pady=(self.p(4),self.p(12)))
+        self.button(updates,'Check for updates',lambda:veil_update_ui.check_in_background(self,manual=True)).pack(anchor='w')
         self.diagnostic_button=self.button(area.body,'Show compatibility & recovery',self.toggle_diagnostics,compact=True);self.diagnostic_button.pack(anchor='w',pady=(self.p(20),self.p(8)))
         self.diagnostics=self.frame(area.body);self.diagnostics_open=False
     def toggle_diagnostics(self):
@@ -462,5 +469,5 @@ class App(LegacyApp):
         self.diagnostics.pack(fill='x')
         self.label(self.diagnostics,'Latest operation',bold=True).pack(anchor='w',pady=(self.p(4),self.p(5)))
         self.label(self.diagnostics,var=self.status,size=10,muted=True,wraplength=self.p(900)).pack(anchor='w',pady=(0,self.p(10)))
-        for text in ('Experimental · Resolve Studio 21.1.0.14','Normal close restores colors, menu names and dots. Keep the Clip Color menu closed during Apply or Restore.','Palettes replace 16 existing slots. Unassigned audio follows slot 6; video follows slot 9.','Run Check Connection.cmd for read-only diagnostics. If recovery fails, restart Resolve before continuing.','Operation timings and errors: veil.log','Shortcuts: Ctrl+S Save · Ctrl+Shift+S Save As · Ctrl+O Import · Alt+1–4 Navigation'):
+        for text in ('Native Apply verified for Resolve Studio 21.1.0.14. Other builds can open Veil and edit palettes, but require a verified profile before Apply.','Normal close restores colors, menu names and dots. Keep the Clip Color menu closed during Apply or Restore.','Palettes replace 16 existing slots. Unassigned audio follows slot 6; video follows slot 9.','Run Check Connection.cmd for read-only diagnostics. If recovery fails, restart Resolve before continuing.','Operation timings and errors: veil.log','Shortcuts: Ctrl+S Save · Ctrl+Shift+S Save As · Ctrl+O Import · Alt+1–4 Navigation'):
             self.label(self.diagnostics,text,size=10,muted=True,wraplength=self.p(900)).pack(anchor='w',pady=self.p(5))

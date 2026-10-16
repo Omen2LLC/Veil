@@ -87,6 +87,20 @@ def file_version(path):
     if signature!=0xFEEF04BD:raise RuntimeError('Invalid version signature.')
     return '.'.join(map(str,[ms>>16,ms&65535,ls>>16,ls&65535]))
 
+class UnsupportedResolveVersion(RuntimeError):
+    """The app may run, but its native palette writer is not verified for this build."""
+    def __init__(self,detected,supported):
+        self.detected=detected;self.supported=supported
+        super().__init__(
+            f'DaVinci Resolve {detected} detected. Palette editing and export remain available; '
+            f'Apply is disabled because this build has no verified native profile. '
+            f'Verified build: {supported}. No changes made.')
+
+def require_supported_version(detected,signature):
+    """Fail before opening a writable process handle for an unverified build."""
+    supported=signature['version']
+    if detected!=supported:raise UnsupportedResolveVersion(detected,supported)
+
 class PaletteSession:
     def __init__(self,folder,writable=True):
         self.folder=Path(folder);self.signature=json.loads((self.folder/'build_signature.json').read_text())
@@ -97,8 +111,8 @@ class PaletteSession:
     def connect(self):
         if self.handle:raise RuntimeError('Already connected. Close this session before reconnecting.')
         self.pid,self.base,path=discover(self.k)
-        if file_version(path)!=self.signature['version']:
-            raise RuntimeError('This version supports Resolve 21.1.0.14 only. No changes made.')
+        self.version=file_version(path)
+        require_supported_version(self.version,self.signature)
         self.handle=self.k.OpenProcess(0x1010|(0x28 if self.writable else 0),False,self.pid)
         if not self.handle:
             raise RuntimeError('Windows denied access to Resolve. Run this app locally, using the same Windows account and privilege level as Resolve.')
