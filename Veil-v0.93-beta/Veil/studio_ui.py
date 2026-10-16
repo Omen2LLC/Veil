@@ -103,8 +103,7 @@ class App(LegacyApp):
         header=self.frame(self.shell,c['panel']);header.pack(fill='x')
         header.columnconfigure(0,weight=1,uniform='header-edge');header.columnconfigure(2,weight=1,uniform='header-edge')
         brand=self.frame(header,c['panel']);brand.grid(row=0,column=0,sticky='w',padx=self.p(16))
-        self.brand_image=self.logo.subsample(2,2)
-        self.brand_button=tk.Button(brand,image=self.brand_image,text='Veil',compound='left',
+        self.brand_button=tk.Button(brand,text='About Veil',
             command=self.show_about,font=(SEMIBOLD,11),bg=c['panel'],fg=c['text'],
             activebackground=c['hover'],activeforeground=c['text'],bd=0,relief='flat',
             highlightthickness=1,highlightbackground=c['panel'],highlightcolor=c['focus'],
@@ -130,7 +129,7 @@ class App(LegacyApp):
         return show_about(self)
     def update_caption(self):
         if not self.root.winfo_exists():return
-        self.root.title('Veil · v0.92')
+        self.root.title(f'Veil · {VERSION}')
         from window_chrome import theme_caption
         self.caption_results=theme_caption(self.root,self.effective_mode()=='Dark',self.c['panel'],self.c['text'])
     def navigate(self,page):
@@ -197,7 +196,7 @@ class App(LegacyApp):
             canvas.bind('<Configure>',lambda e,c=canvas,n=name:self.draw_art(c,n))
             self.label(tile,name,size=18,bold=True,bg=self.c['panel']).pack(fill='x',pady=(self.p(18),self.p(6)))
             self.label(tile,desc,muted=True,bg=self.c['panel']).pack(fill='x')
-            self.button(tile,action,lambda n=name:self.navigate(n),primary=name=='Palettes').pack(anchor='w',pady=(self.p(22),0))
+            self.button(tile,action,lambda n=name:self.navigate(n)).pack(anchor='w',pady=(self.p(22),0))
     def draw_art(self,canvas,name):
         canvas.delete('all');w,h=canvas.winfo_width(),canvas.winfo_height();canvas.photos=[]
         if name=='Palettes':

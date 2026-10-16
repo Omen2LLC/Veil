@@ -131,7 +131,7 @@ class Button(tk.Canvas):
 class Field(tk.Frame):
     def __init__(self,parent,app,variable,width=18,polished=False):
         super().__init__(parent,bg=surface_background(parent,app))
-        self.app=app;self.polished=polished;self.back=tk.Canvas(self,bg=self.cget('bg'),highlightthickness=0)
+        self.app=app;self.polished=polished;self.back=tk.Canvas(self,bg=app.c['field'],highlightthickness=0)
         self.back.place(relwidth=1,relheight=1)
         self.entry=tk.Entry(self,textvariable=variable,width=width,bg=app.c['field'],fg=app.c['text'],
             insertbackground=app.c['text'],selectbackground=app.c['selected'],selectforeground=app.c['text'],

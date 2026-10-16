@@ -10,7 +10,7 @@ def release_version(folder):
     try:
         tree=ast.parse((folder/'studio_version.py').read_text(encoding='utf-8-sig'))
         value=next(ast.literal_eval(n.value) for n in tree.body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='VERSION' for t in n.targets))
-        match=re.fullmatch(r'v(\d+(?:\.\d+)+)(?: preview)?',value)
+        match=re.fullmatch(r'v(\d+(?:\.\d+)+)(?:-beta| preview)?',value)
         return tuple(int(part) for part in match[1].split('.')) if match else None
     except (OSError,ValueError,SyntaxError,StopIteration,TypeError):return None
 
