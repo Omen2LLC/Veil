@@ -96,20 +96,24 @@ class UnsupportedResolveVersion(RuntimeError):
             f'Apply is disabled because this build has no verified native profile. '
             f'Verified build: {supported}. No changes made.')
 
+ACTIVE_RESOLVE_BUILDS=frozenset({'21.1.1.10'})
+
 def require_supported_version(detected,signature):
     """Fail before opening a writable process handle for an unverified build."""
     supported=signature['version']
-    if detected!=supported:raise UnsupportedResolveVersion(detected,supported)
+    if detected not in ACTIVE_RESOLVE_BUILDS or detected!=supported:
+        raise UnsupportedResolveVersion(detected,', '.join(sorted(ACTIVE_RESOLVE_BUILDS)))
 
 class PaletteSession:
     def __init__(self,folder,writable=True):
-        self.folder=Path(folder);self.signature=json.loads((self.folder/'build_signature.json').read_text())
-        self.profiles={self.signature['version']:self.signature}
+        self.folder=Path(folder)
+        self.profiles={}
         additional=self.folder/'compatibility_profiles.json'
         if additional.is_file():
             for version,profile in json.loads(additional.read_text(encoding='utf-8')).items():
-                if profile.get('native_verified') is True and profile.get('version')==version:
+                if version in ACTIVE_RESOLVE_BUILDS and profile.get('native_verified') is True and profile.get('version')==version:
                     self.profiles[version]=profile
+        self.signature=self.profiles.get('21.1.1.10',{'version':'21.1.1.10'})
         self.recovery=self.folder/'session_recovery.json'
         self.k=kernel();self.handle=None;self.writable=writable
         self.original=None;self.expected=None;self.recovered=False

@@ -1,6 +1,6 @@
 # Resolve compatibility and release gate
 
-Checked 2026-10-15 against the [Blackmagic Design support page](https://www.blackmagicdesign.com/support).
+Checked 2026-10-16 against the [Blackmagic Design support page](https://www.blackmagicdesign.com/support).
 The newest listed Windows Studio release is DaVinci Resolve Studio 21.1.1
 (posted 2026-10-02). The executable installed on this test PC reports the exact
 Windows file version **21.1.1.10**.
@@ -10,7 +10,7 @@ recorded in `compatibility/latest_windows_studio.json`.
 
 | Exact executable version | Veil palette status | Evidence |
 | --- | --- | --- |
-| 21.1.0.14 | Existing exact native profile | `build_signature.json`, function fingerprint and read-before-write guards. This task has not repeated native Apply/Restore. |
+| 21.1.0.14 | Retired; Apply/Restore disabled | Removed from the active allowlist at the user's request. Old local profile files cannot reactivate it. |
 | 21.1.1.10 | Native Apply/Restore verified | Exact executable SHA-256, six relocated function comparisons, all live component signatures/layouts, two native palette transactions and full byte restoration on generated test data. Three loaded media-pool marker records and custom menu names included. Clip/media color IDs unchanged. |
 | 21.0.4.5, Resolve 20, later builds | Apply/Restore disabled | No verified native profile or live disposable-session test in this release. |
 
@@ -23,4 +23,5 @@ support listing for each Veil release and repeat this review when Resolve change
 
 Evidence: `compatibility/verified/21.1.1.10.json`. Actual native operations passed;
 visual rendering, high-DPI variants and other Windows machines remain manual checks.
-The original 21.1.0.14 profile is retained, but this pass only exercised 21.1.1.10.
+Only 21.1.1.10 is enabled in current Veil releases. Historical releases retain their
+original behavior and are preserved as archives; use the current release.
