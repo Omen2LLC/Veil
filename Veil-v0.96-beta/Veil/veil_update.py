@@ -20,7 +20,7 @@ import zipfile
 
 OWNER = "Omen2LLC"
 REPOSITORY = "Veil"
-API_URL = f"https://api.github.com/repos/{OWNER}/{REPOSITORY}/releases/latest"
+API_URL = f"https://api.github.com/repos/{OWNER}/{REPOSITORY}/releases?per_page=100"
 MAX_ARCHIVE_BYTES = 300_000_000
 MAX_EXTRACTED_BYTES = 700_000_000
 USER_FILES = ("saved_palettes.json", "studio-settings.json", "veil-update.json")
@@ -55,6 +55,36 @@ def newer_stable_release(payload: dict, current: str) -> dict | None:
             "archive": assets[archive_name], "checksums": assets["SHA256SUMS.txt"]}
 
 
+def release_order(tag):
+    match = re.fullmatch(r'v(\d+)\.(\d+)(?:\.(\d+))?(?:-beta(?:-r(\d+))?)?', tag)
+    if not match:
+        return None
+    major, minor, patch, revision = match.groups()
+    return (int(major), int(minor), int(patch or 0), int('-beta' not in tag), int(revision or 0))
+
+
+def newer_available_release(records, current):
+    """Beta installs receive newer betas and stable releases; stable stays stable."""
+    baseline = release_order(current)
+    if baseline is None:
+        return None
+    candidates = []
+    for record in records:
+        tag = record.get('tag_name', '')
+        order = release_order(tag)
+        beta = '-beta' in tag
+        if (order is None or order <= baseline or record.get('draft')
+                or (beta and '-beta' not in current)
+                or bool(record.get('prerelease')) != beta):
+            continue
+        assets = {a.get('name'): a for a in record.get('assets', [])}
+        name = f'Veil-{tag}-windows.zip'
+        if name in assets and 'SHA256SUMS.txt' in assets:
+            candidates.append((order, {'version': tag, 'notes': str(record.get('body') or '').strip(),
+                                      'archive': assets[name], 'checksums': assets['SHA256SUMS.txt']}))
+    return max(candidates, key=lambda entry: entry[0])[1] if candidates else None
+
+
 def _github_asset_url(asset: dict, tag: str) -> str:
     name = asset.get("name", "")
     expected = f"https://github.com/{OWNER}/{REPOSITORY}/releases/download/{tag}/{name}"
@@ -82,7 +112,9 @@ def check_latest(current: str) -> dict | None:
         if response.url != API_URL:
             raise UpdateError("Release API redirected unexpectedly.")
         payload = json.load(response)
-    return newer_stable_release(payload, current)
+    if not isinstance(payload, list):
+        raise UpdateError('GitHub returned an invalid release list.')
+    return newer_available_release(payload, current)
 
 
 def verified_download(release: dict, destination: Path) -> Path:
@@ -147,8 +179,8 @@ def install_staged(archive_path: Path, tag: str, current_app: Path,
     Call from a helper after Veil exits. The smoke check should start the new
     app in a disposable/read-only mode; any failure leaves the pointer intact.
     """
-    if version_tuple(tag) is None:
-        raise UpdateError("Only stable version tags can be installed.")
+    if release_order(tag) is None:
+        raise UpdateError("Only valid stable or beta version tags can be installed.")
     archive_path, current_app = Path(archive_path), Path(current_app)
     releases_root, pointer = Path(releases_root), Path(pointer)
     target = releases_root / f"Veil-{tag}"

@@ -46,7 +46,8 @@ def check_in_background(app, manual: bool = False) -> None:
             if release and (manual or release["version"] != _skipped(app)):
                 show_update(app, release)
             elif manual:
-                messagebox.showinfo("Veil updates", "You have the latest available stable release.", parent=app.root)
+                channel = "beta or stable" if '-beta' in VERSION else "stable"
+                messagebox.showinfo("Veil updates", f"No newer {channel} release is available.", parent=app.root)
         try:
             app.root.after(0, complete)
         except tk.TclError:
