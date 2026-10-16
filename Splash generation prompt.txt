@@ -1,0 +1,3 @@
+Built-in imagegen used for the iridescent background plate. Original supplied logo preserved separately and overlaid by the native splash layout.
+
+Production software splash background plate only for Veil. Extra-wide cinematic landscape, 2.35:1, opaque near-black charcoal center. Large pearlescent iridescent satin ribbons flow along the far left and right edges and upper right corner, with peach, platinum, lavender and cool cyan refractions. Photographic sculptural silk material, warm rim highlights, ample quiet dark center for the supplied original V and live DM Sans Veil wordmark. No text, letters, logos, symbols, UI elements, frames or extra objects. Not rainbow clouds or neon cyberpunk.

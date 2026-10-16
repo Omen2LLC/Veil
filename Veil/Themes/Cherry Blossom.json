@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "name": "Cherry Blossom",
+  "source_palette": "Cherry Blossom",
+  "status": "experimental_workspace_expansion",
+  "source_colors": [
+    "#E6CED5",
+    "#DDB0BC",
+    "#D9A0B0",
+    "#D9829B",
+    "#D46986"
+  ],
+  "tokens": {
+    "background": "#E6CED5",
+    "panel": "#E6CED5",
+    "raised": "#DDB0BC",
+    "border": "#D9A0B0",
+    "hover": "#D9829B",
+    "selected": "#D46986",
+    "accent": "#D46986",
+    "viewer": "#D9A0B0",
+    "text": "#090909",
+    "muted": "#090909",
+    "disabled": "#090909",
+    "on_accent": "#090909",
+    "warning": "#E64B3D",
+    "error": "#E64B3D"
+  },
+  "approved_direction": "Petal",
+  "preview": "Themes/Cherry Blossom workspace concept.png",
+  "preserved_native_foreground": "TintGray (9, 9, 9); dark native foreground reused for readable pink surfaces",
+  "constraints": [
+    "Only five supplied colors for new surfaces and accents; native foregrounds and semantic colors preserved",
+    "Scoped workspace containers plus Fusion; complete native coverage is not verified",
+    "Close Resolve normally before Apply, Start or Restore; Apply/Start launch a new themed session",
+    "Application changes are session-only; Fusion skin persists until Restore Original",
+    "Clip palette data and Omen dark/light appearance unchanged"
+  ]
+}

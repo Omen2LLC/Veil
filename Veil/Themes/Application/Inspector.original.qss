@@ -1,0 +1,1902 @@
+/**************************************************************/
+/*  Inspector Header and Sub Header                           */
+/**************************************************************/
+UiQInspectorTabButtonsContainer
+{
+    border-style: none;
+    border-bottom: 1px solid COLOR_TINT_GRAY;
+    padding: 0px;
+    background-color: COLOR_ORCA_GRAY;
+}
+
+UiQInspectorTabIconTextButton
+{
+    min-width: 44px;
+    image-position: center top;
+    border-image: none;
+    border-style: none;
+    border-bottom: 2px solid transparent;
+    padding: 0px 10px 2px 10px;
+    color: COLOR_SMOKE_GRAY;
+    text-align: center bottom;
+    font-preset-name: FONT_PSYLOCKE;
+}
+UiQInspectorTabIconTextButton:hover,
+UiQInspectorTabIconTextButton:pressed
+{
+    padding: 0px 10px 2px 10px;
+    border-bottom-color: COLOR_SMOKE_GRAY;
+}
+UiQInspectorTabIconTextButton:disabled
+{
+    color: COLOR_DEFAULT_DISABLED;
+}
+UiQInspectorTabIconTextButton:checked
+{
+    border-left-color: COLOR_NIGHTSKY_GRAY;
+    border-right-color: COLOR_NIGHTSKY_GRAY;
+    border-bottom-color: COLOR_CORAL_RED;
+    color: white;
+}
+UiQInspectorTabIconTextButton:checked:disabled
+{
+    color: COLOR_DEFAULT_DISABLED;
+    border-bottom-color: transparent;
+}
+
+UiQInspectorTabIconTextButton[SkinId="Video"]
+{
+    image: url(:/Common/InspectorTabs/Video);
+}
+UiQInspectorTabIconTextButton[SkinId="Video"]:hover
+{
+    image: url(:/Common/InspectorTabs/Video_hover);
+}
+UiQInspectorTabIconTextButton[SkinId="Video"]:pressed
+{
+    image: url(:/Common/InspectorTabs/Video_push);
+}
+UiQInspectorTabIconTextButton[SkinId="Video"]:checked
+{
+    image: url(:/Common/InspectorTabs/Video_active);
+}
+UiQInspectorTabIconTextButton[SkinId="Video"]:disabled
+{
+    image: url(:/Common/InspectorTabs/Video_disabled);
+}
+UiQInspectorTabIconTextButton[SkinId="Audio"]
+{
+    image: url(:/Common/InspectorTabs/Audio);
+}
+UiQInspectorTabIconTextButton[SkinId="Audio"]:hover
+{
+    image: url(:/Common/InspectorTabs/Audio_hover);
+}
+UiQInspectorTabIconTextButton[SkinId="Audio"]:pressed
+{
+    image: url(:/Common/InspectorTabs/Audio_push);
+}
+UiQInspectorTabIconTextButton[SkinId="Audio"]:checked
+{
+    image: url(:/Common/InspectorTabs/Audio_active);
+}
+UiQInspectorTabIconTextButton[SkinId="Audio"]:disabled
+{
+    image: url(:/Common/InspectorTabs/Audio_disabled);
+}
+UiQInspectorTabIconTextButton[SkinId="Image"]
+{
+    image: url(:/Common/InspectorTabs/Image);
+}
+UiQInspectorTabIconTextButton[SkinId="Image"]:hover
+{
+    image: url(:/Common/InspectorTabs/Image_hover);
+}
+UiQInspectorTabIconTextButton[SkinId="Image"]:pressed
+{
+    image: url(:/Common/InspectorTabs/Image_push);
+}
+UiQInspectorTabIconTextButton[SkinId="Image"]:checked
+{
+    image: url(:/Common/InspectorTabs/Image_active);
+}
+UiQInspectorTabIconTextButton[SkinId="Image"]:disabled
+{
+    image: url(:/Common/InspectorTabs/Image_disabled);
+}
+UiQInspectorTabIconTextButton[SkinId="Effects"]
+{
+    image: url(:/Common/InspectorTabs/Effects);
+}
+UiQInspectorTabIconTextButton[SkinId="Effects"]:hover
+{
+    image: url(:/Common/InspectorTabs/Effects_hover);
+}
+UiQInspectorTabIconTextButton[SkinId="Effects"]:pressed
+{
+    image: url(:/Common/InspectorTabs/Effects_push);
+}
+UiQInspectorTabIconTextButton[SkinId="Effects"]:checked
+{
+    image: url(:/Common/InspectorTabs/Effects_active);
+}
+UiQInspectorTabIconTextButton[SkinId="Effects"]:disabled
+{
+    image: url(:/Common/InspectorTabs/Effects_disabled);
+}
+UiQInspectorTabIconTextButton[SkinId="File"]
+{
+    image: url(:/Common/InspectorTabs/File);
+}
+UiQInspectorTabIconTextButton[SkinId="File"]:hover
+{
+    image: url(:/Common/InspectorTabs/File_hover);
+}
+UiQInspectorTabIconTextButton[SkinId="File"]:pressed
+{
+    image: url(:/Common/InspectorTabs/File_push);
+}
+UiQInspectorTabIconTextButton[SkinId="File"]:checked
+{
+    image: url(:/Common/InspectorTabs/File_active);
+}
+UiQInspectorTabIconTextButton[SkinId="File"]:disabled
+{
+    image: url(:/Common/InspectorTabs/File_disabled);
+}
+UiQInspectorTabIconTextButton[SkinId="Transition"]
+{
+    image: url(:/Common/InspectorTabs/Transition);
+}
+UiQInspectorTabIconTextButton[SkinId="Transition"]:hover
+{
+    image: url(:/Common/InspectorTabs/Transition_hover);
+}
+UiQInspectorTabIconTextButton[SkinId="Transition"]:pressed
+{
+    image: url(:/Common/InspectorTabs/Transition_push);
+}
+UiQInspectorTabIconTextButton[SkinId="Transition"]:checked
+{
+    image: url(:/Common/InspectorTabs/Transition_active);
+}
+UiQInspectorTabIconTextButton[SkinId="Transition"]:disabled
+{
+    image: url(:/Common/InspectorTabs/Transition_disabled);
+}
+UiQInspectorTabIconTextButton[SkinId="Photo"]
+{
+    image: url(:/Common/InspectorTabs/Photo);
+}
+UiQInspectorTabIconTextButton[SkinId="Photo"]:hover
+{
+    image: url(:/Common/InspectorTabs/Photo_hover);
+}
+UiQInspectorTabIconTextButton[SkinId="Photo"]:pressed
+{
+    image: url(:/Common/InspectorTabs/Photo_push);
+}
+UiQInspectorTabIconTextButton[SkinId="Photo"]:checked
+{
+    image: url(:/Common/InspectorTabs/Photo_active);
+}
+UiQInspectorTabIconTextButton[SkinId="Photo"]:disabled
+{
+    image: url(:/Common/InspectorTabs/Photo_disabled);
+}
+
+UiQInspectorTabTextOnlyButton
+{
+    min-width: 44px;
+    image-position: center top;
+    background-image: none;
+    border-image: none;
+    border-style: none;
+    border-bottom: 2px solid transparent;
+    padding: 0px 10px 4px 10px;
+    color: COLOR_SMOKE_GRAY;
+    text-align: center bottom;
+    font-preset-name: FONT_PSYLOCKE;
+}
+UiQInspectorTabTextOnlyButton:hover,
+UiQInspectorTabTextOnlyButton:pressed
+{
+    padding: 0px 10px 4px 10px;
+    border-bottom-color: COLOR_SMOKE_GRAY;
+}
+UiQInspectorTabTextOnlyButton:disabled
+{
+    color: COLOR_DEFAULT_DISABLED;
+}
+UiQInspectorTabTextOnlyButton:checked
+{
+    border-left-color: COLOR_NIGHTSKY_GRAY;
+    border-right-color: COLOR_NIGHTSKY_GRAY;
+    border-bottom-color: COLOR_CORAL_RED;
+    color: white;
+}
+UiQInspectorTabTextOnlyButton:checked:disabled
+{
+    color: COLOR_DEFAULT_DISABLED;
+    border-bottom-color: transparent;
+}
+
+UiQInspectorTabIconOnlyButton
+{
+    min-width: 44px;
+    image-position: center top;
+    background-image: none;
+    border-image: none;
+    border-style: none;
+    border-bottom: 2px solid transparent;
+    padding: 0px 10px 2px 10px;
+    color: COLOR_SMOKE_GRAY;
+    text-align: center bottom;
+    font-preset-name: FONT_PSYLOCKE;
+}
+UiQInspectorTabIconOnlyButton:hover,
+UiQInspectorTabIconOnlyButton:pressed
+{
+    padding: 0px 10px 2px 10px;
+    border-bottom-color: COLOR_SMOKE_GRAY;
+}
+UiQInspectorTabIconOnlyButton:disabled
+{
+    color: COLOR_DEFAULT_DISABLED;
+}
+UiQInspectorTabIconOnlyButton:checked
+{
+    border-left-color: COLOR_NIGHTSKY_GRAY;
+    border-right-color: COLOR_NIGHTSKY_GRAY;
+    border-bottom-color: COLOR_CORAL_RED;
+    color: white;
+}
+UiQInspectorTabIconOnlyButton:checked:disabled
+{
+    color: COLOR_DEFAULT_DISABLED;
+    border-bottom-color: transparent;
+}
+
+UiQInspectorTabIconOnlyButton[SkinId="Video"]
+{
+    image: url(:/Common/InspectorTabs/Video);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Video"]:hover
+{
+    image: url(:/Common/InspectorTabs/Video_hover);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Video"]:pressed
+{
+    image: url(:/Common/InspectorTabs/Video_push);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Video"]:checked
+{
+    image: url(:/Common/InspectorTabs/Video_active);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Video"]:disabled
+{
+    image: url(:/Common/InspectorTabs/Video_disabled);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Audio"]
+{
+    image: url(:/Common/InspectorTabs/Audio);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Audio"]:hover
+{
+    image: url(:/Common/InspectorTabs/Audio_hover);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Audio"]:pressed
+{
+    image: url(:/Common/InspectorTabs/Audio_push);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Audio"]:checked
+{
+    image: url(:/Common/InspectorTabs/Audio_active);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Audio"]:disabled
+{
+    image: url(:/Common/InspectorTabs/Audio_disabled);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Image"]
+{
+    image: url(:/Common/InspectorTabs/Image);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Image"]:hover
+{
+    image: url(:/Common/InspectorTabs/Image_hover);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Image"]:pressed
+{
+    image: url(:/Common/InspectorTabs/Image_push);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Image"]:checked
+{
+    image: url(:/Common/InspectorTabs/Image_active);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Image"]:disabled
+{
+    image: url(:/Common/InspectorTabs/Image_disabled);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Effects"]
+{
+    image: url(:/Common/InspectorTabs/Effects);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Effects"]:hover
+{
+    image: url(:/Common/InspectorTabs/Effects_hover);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Effects"]:pressed
+{
+    image: url(:/Common/InspectorTabs/Effects_push);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Effects"]:checked
+{
+    image: url(:/Common/InspectorTabs/Effects_active);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Effects"]:disabled
+{
+    image: url(:/Common/InspectorTabs/Effects_disabled);
+}
+UiQInspectorTabIconOnlyButton[SkinId="File"]
+{
+    image: url(:/Common/InspectorTabs/File);
+}
+UiQInspectorTabIconOnlyButton[SkinId="File"]:hover
+{
+    image: url(:/Common/InspectorTabs/File_hover);
+}
+UiQInspectorTabIconOnlyButton[SkinId="File"]:pressed
+{
+    image: url(:/Common/InspectorTabs/File_push);
+}
+UiQInspectorTabIconOnlyButton[SkinId="File"]:checked
+{
+    image: url(:/Common/InspectorTabs/File_active);
+}
+UiQInspectorTabIconOnlyButton[SkinId="File"]:disabled
+{
+    image: url(:/Common/InspectorTabs/File_disabled);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Transition"]
+{
+    image: url(:/Common/InspectorTabs/Transition);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Transition"]:hover
+{
+    image: url(:/Common/InspectorTabs/Transition_hover);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Transition"]:pressed
+{
+    image: url(:/Common/InspectorTabs/Transition_push);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Transition"]:checked
+{
+    image: url(:/Common/InspectorTabs/Transition_active);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Transition"]:disabled
+{
+    image: url(:/Common/InspectorTabs/Transition_disabled);
+}
+
+UiQInspectorTabIconOnlyButton[SkinId="Photo"]
+{
+    image: url(:/Common/InspectorTabs/Photo);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Photo"]:hover
+{
+    image: url(:/Common/InspectorTabs/Photo_hover);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Photo"]:pressed
+{
+    image: url(:/Common/InspectorTabs/Photo_push);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Photo"]:checked
+{
+    image: url(:/Common/InspectorTabs/Photo_active);
+}
+UiQInspectorTabIconOnlyButton[SkinId="Photo"]:disabled
+{
+    image: url(:/Common/InspectorTabs/Photo_disabled);
+}
+
+UiQInspectorSubTabButtonsContainer
+{
+    min-height: 42px;
+    max-height: 42px;
+    border-style: none;
+    border-bottom: 1px solid COLOR_TINT_GRAY;
+    background-color: COLOR_PENGUIN_GRAY;
+}
+
+UiQInspectorSubTabGroupLeftButton
+{
+    min-height: 21px;
+    max-height: 21px;
+    border-style: none;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border: 1px solid COLOR_TINT_GRAY;
+    background-color: COLOR_WHALE_GRAY;
+    color: COLOR_DEFAULT;
+}
+UiQInspectorSubTabGroupLeftButton:hover,
+UiQInspectorSubTabGroupLeftButton:pressed
+{
+    padding: 0px;
+    color: white;
+}
+UiQInspectorSubTabGroupLeftButton:checked
+{
+    padding: 0px;
+    background-color: COLOR_OCTOPUS_GRAY;
+    color: white;
+}
+UiQInspectorSubTabGroupLeftButton:disabled
+{
+    background-color: COLOR_WHALE_GRAY_40;
+    border-color: COLOR_TINT_GRAY_40;
+    color: COLOR_DEFAULT_DISABLED;
+}
+UiQInspectorSubTabGroupLeftButton:checked:disabled
+{
+    background-color: COLOR_OCTOPUS_GRAY;
+    border-color: COLOR_TINT_GRAY_40;
+    color: COLOR_DEFAULT_DISABLED;
+}
+
+UiQInspectorSubTabGroupMidButton
+{
+    min-height: 21px;
+    max-height: 21px;
+    border-style: none;
+    border: 1px solid COLOR_TINT_GRAY;
+    border-left: 0px;
+    background-color: COLOR_WHALE_GRAY;
+    color: COLOR_DEFAULT;
+}
+UiQInspectorSubTabGroupMidButton:hover,
+UiQInspectorSubTabGroupMidButton:pressed
+{
+    padding: 0px;
+    color: white;
+}
+UiQInspectorSubTabGroupMidButton:checked
+{
+    padding: 0px;
+    background-color: COLOR_OCTOPUS_GRAY;
+    color: white;
+}
+UiQInspectorSubTabGroupMidButton:disabled
+{
+    background-color: COLOR_WHALE_GRAY_40;
+    border-color: COLOR_TINT_GRAY_40;
+    color: COLOR_DEFAULT_DISABLED;
+}
+UiQInspectorSubTabGroupMidButton:checked:disabled
+{
+    background-color: COLOR_OCTOPUS_GRAY;
+    border-color: COLOR_TINT_GRAY_40;
+    color: COLOR_DEFAULT_DISABLED;
+}
+
+UiQInspectorSubTabGroupRightButton
+{
+    min-height: 21px;
+    max-height: 21px;
+    border-style: none;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border: 1px solid COLOR_TINT_GRAY;
+    border-left: 0px;
+    background-color: COLOR_WHALE_GRAY;
+    padding: 0px;
+    color: COLOR_DEFAULT;
+}
+UiQInspectorSubTabGroupRightButton:hover,
+UiQInspectorSubTabGroupRightButton:pressed
+{
+    padding: 0px;
+    color: white;
+}
+UiQInspectorSubTabGroupRightButton:checked
+{
+    padding: 0px;
+    background-color: COLOR_OCTOPUS_GRAY;
+    color: white;
+}
+UiQInspectorSubTabGroupRightButton:disabled
+{
+    background-color: COLOR_WHALE_GRAY_40;
+    border-color: COLOR_TINT_GRAY_40;
+    color: COLOR_DEFAULT_DISABLED;
+}
+UiQInspectorSubTabGroupRightButton:checked:disabled
+{
+    background-color: COLOR_OCTOPUS_GRAY;
+    border-color: COLOR_TINT_GRAY_40;
+    color: COLOR_DEFAULT_DISABLED;
+}
+
+/**************************************************************/
+/*  Inspector Params Widgets                                  */
+/**************************************************************/
+UiQInspectorSectionExpandButton
+{
+    min-width: 35px;
+    max-width: 35px;
+    min-height: 16px;
+    max-height: 16px;
+    border-style: none;
+    padding: 0px;
+    color: COLOR_SMOKE_GRAY;
+}
+UiQInspectorSectionExpandButton:hover,
+UiQInspectorSectionExpandButton:pressed
+{
+    color: white;
+}
+UiQInspectorSectionExpandButton:checked
+{
+    color: COLOR_SMOKE_GRAY;
+}
+UiQInspectorSectionExpandButton:checked:hover,
+UiQInspectorSectionExpandButton:checked:pressed
+{
+    color: white;
+}
+
+UiQInspectorMoveEffectsFilterUpButton
+{
+    border-style: none;
+    image-position: center center;
+    image: url(:/Common/Widgets/SpinBoxArrowUp);
+    min-width: 11px;
+    max-width: 11px;
+    min-height: 8px;
+    max-height: 8px;
+}
+UiQInspectorMoveEffectsFilterUpButton:hover
+{
+    padding: 0px;
+    image: url(:/Common/Widgets/SpinBoxArrowUp_hover);
+}
+UiQInspectorMoveEffectsFilterUpButton:pressed
+{
+    padding: 0px;
+    image: url(:/Common/Widgets/SpinBoxArrowUp_push);
+}
+UiQInspectorMoveEffectsFilterUpButton:disabled
+{
+    image: url(:/Common/Widgets/SpinBoxArrowUp_disabled);
+}
+
+UiQInspectorMoveEffectsFilterDownButton
+{
+    border-style: none;
+    image-position: center center;
+    image: url(:/Common/Widgets/SpinBoxArrowDown);
+    min-width: 11px;
+    max-width: 11px;
+    min-height: 8px;
+    max-height: 8px;
+}
+UiQInspectorMoveEffectsFilterDownButton:hover
+{
+    padding: 0px;
+    image: url(:/Common/Widgets/SpinBoxArrowDown_hover);
+}
+UiQInspectorMoveEffectsFilterDownButton:pressed
+{
+    padding: 0px;
+    image: url(:/Common/Widgets/SpinBoxArrowDown_push);
+}
+UiQInspectorMoveEffectsFilterDownButton:disabled
+{
+    image: url(:/Common/Widgets/SpinBoxArrowDown_disabled);
+}
+
+UiQInspectorDeleteEffectButton
+{
+    min-width: 18px;
+    max-width: 18px;
+    min-height: 18px;
+    max-height: 18px;
+    border-style: none;
+    image-position: center center;
+    padding: 0px;
+    margin: 0px 5px 0px 0px;
+    image: url(:/Common/Widgets/Delete);
+}
+UiQInspectorDeleteEffectButton:hover
+{
+    padding: 0px;
+    image: url(:/Common/Widgets/Delete_hover);
+}
+UiQInspectorDeleteEffectButton:pressed
+{
+    padding: 0px;
+    image: url(:/Common/Widgets/Delete_push);
+}
+
+UiQInspectorCropOverlayButton
+{
+    min-width: 23px;
+    max-width: 23px;
+    min-height: 23px;
+    max-height: 23px;
+    border-style: none;
+    image-position: center center;
+    padding: 0px;
+    image: url(:/Photo/Inspector/CropOverlay);
+    margin-bottom: 1px;
+}
+UiQInspectorCropOverlayButton:hover
+{
+    image: url(:/Photo/Inspector/CropOverlay_hover);
+}
+UiQInspectorCropOverlayButton:pressed
+{
+    image: url(:/Photo/Inspector/CropOverlay_push);
+}
+UiQInspectorCropOverlayButton:checked
+{
+    image: url(:/Photo/Inspector/CropOverlay_active);
+}
+UiQInspectorCropOverlayButton:checked:hover
+{
+    image: url(:/Photo/Inspector/CropOverlay_active_hover);
+}
+UiQInspectorCropOverlayButton:checked:pressed
+{
+    image: url(:/Photo/Inspector/CropOverlay_active_push);
+}
+
+UiEffectParameterHeaderImp_ChildContainerExpanded
+{
+    border-style: none;
+    border-bottom: 1px solid COLOR_TINT_GRAY;
+    background-color: COLOR_PENGUIN_GRAY;
+}
+UiEffectParameterHeaderImp_ChildContainerExpanded:disabled
+{
+    border-bottom: 1px solid COLOR_TINT_GRAY;
+    background-color: COLOR_PENGUIN_GRAY;
+}
+UiFusionHeaderImp_ChildContainerExpanded,
+UiFusionHeaderImp_ChildContainerExpanded:disabled
+{
+    border-style: none;
+    background-color: COLOR_PENGUIN_GRAY;
+}
+UiFusionHeaderImp_ChildContainerNotExpanded,
+UiEffectParameterHeaderImp_ChildContainerNotExpanded
+{
+    border-style: none;
+    border-top: 1px solid COLOR_TINT_GRAY;
+    background-color: COLOR_PENGUIN_GRAY;
+}
+
+UiQInspectorAddDelKeyFrameButton
+{
+    min-width: 11px;
+    max-width: 11px;
+    min-height: 11px;
+    max-height: 11px;
+    image-position: center center;
+    border-style: none;
+    padding: 0px;
+}
+UiQInspectorAddDelKeyFrameButton:hover,
+UiQInspectorAddDelKeyFrameButton:pressed
+{
+    padding: 0px;
+}
+UiQInspectorAddDelKeyFrameButton:disabled
+{
+    image: none;
+}
+UiQInspectorAddDelKeyFrameButton[SkinId="Static"]
+{
+    image: url(:/Common/KeyFrames/KeyFrameCircle);
+}
+UiQInspectorAddDelKeyFrameButton[SkinId="Static"]:hover,
+UiQInspectorAddDelKeyFrameButton[SkinId="Static"]:pressed
+{
+    image: url(:/Common/KeyFrames/KeyFrameCircle_active);
+}
+UiQInspectorAddDelKeyFrameButton[SkinId="Static"]:checked,
+UiQInspectorAddDelKeyFrameButton[SkinId="Static"]:checked:hover,
+UiQInspectorAddDelKeyFrameButton[SkinId="Static"]:checked:pressed
+{
+    image: url(:/Common/KeyFrames/KeyFrameCircle_selected);
+}
+UiQInspectorAddDelKeyFrameButton[SkinId="Static"]:checked:disabled
+{
+    image: none;
+}
+UiQInspectorAddDelKeyFrameButton[SkinId="Dynamic"]
+{
+    image: url(:/Common/KeyFrames/KeyFrameDiamond);
+}
+UiQInspectorAddDelKeyFrameButton[SkinId="Dynamic"]:hover,
+UiQInspectorAddDelKeyFrameButton[SkinId="Dynamic"]:pressed
+{
+    image: url(:/Common/KeyFrames/KeyFrameDiamond_active);
+}
+UiQInspectorAddDelKeyFrameButton[SkinId="Dynamic"]:checked,
+UiQInspectorAddDelKeyFrameButton[SkinId="Dynamic"]:checked:hover,
+UiQInspectorAddDelKeyFrameButton[SkinId="Dynamic"]:checked:pressed
+{
+    image: url(:/Common/KeyFrames/KeyFrameDiamond_selected);
+}
+UiQInspectorAddDelKeyFrameButton[SkinId="Dynamic"]:disabled
+{
+    image: none;
+}
+UiQInspectorAddDelKeyFrameButton[SkinId="Dynamic"]:checked:disabled
+{
+    image: url(:/Common/KeyFrames/KeyFrameDiamond_disabled);
+}
+
+UiQInspectorPrevKeyFrameButton
+{
+    min-width: 11px;
+    max-width: 11px;
+    min-height: 11px;
+    max-height: 11px;
+    image-position: center center;
+    border-style: none;
+    padding: 0px;
+}
+UiQInspectorPrevKeyFrameButton:hover,
+UiQInspectorPrevKeyFrameButton:pressed
+{
+    padding: 0px;
+}
+UiQInspectorPrevKeyFrameButton:disabled
+{
+    image: none;
+}
+UiQInspectorPrevKeyFrameButton[SkinId="HasKeyFrame"]
+{
+    image: url(:/Common/Widgets/ArrowLeft);
+}
+UiQInspectorPrevKeyFrameButton[SkinId="HasKeyFrame"]:hover
+{
+    image: url(:/Common/Widgets/ArrowLeft_hover);
+}
+UiQInspectorPrevKeyFrameButton[SkinId="HasKeyFrame"]:pressed
+{
+    image: url(:/Common/Widgets/ArrowLeft_push);
+}
+UiQInspectorPrevKeyFrameButton[SkinId="HasKeyFrame"]:disabled
+{
+    image: url(:/Common/Widgets/ArrowLeft_disabled);
+}
+
+UiQInspectorNextKeyFrameButton
+{
+    min-width: 11px;
+    max-width: 11px;
+    min-height: 11px;
+    max-height: 11px;
+    image-position: center center;
+    border-style: none;
+    padding: 0px;
+}
+UiQInspectorNextKeyFrameButton:hover,
+UiQInspectorNextKeyFrameButton:pressed
+{
+    padding: 0px;
+}
+UiQInspectorNextKeyFrameButton:disabled
+{
+    image: none;
+}
+UiQInspectorNextKeyFrameButton[SkinId="HasKeyFrame"]
+{
+    image: url(:/Common/Widgets/ArrowRight);
+}
+UiQInspectorNextKeyFrameButton[SkinId="HasKeyFrame"]:hover
+{
+    image: url(:/Common/Widgets/ArrowRight_hover);
+}
+UiQInspectorNextKeyFrameButton[SkinId="HasKeyFrame"]:pressed
+{
+    image: url(:/Common/Widgets/ArrowRight_push);
+}
+UiQInspectorNextKeyFrameButton[SkinId="HasKeyFrame"]:disabled
+{
+    image: url(:/Common/Widgets/ArrowRight_disabled);
+}
+
+UiQInspectorCustomEffectButton
+{
+    min-width: 18px;
+    max-width: 18px;
+    min-height: 18px;
+    max-height: 18px;
+    border-style: none;
+    image-position: center center;
+    padding: 0px;
+    image: url(:/Common/Widgets/Custom);
+}
+UiQInspectorCustomEffectButton:hover
+{
+    padding: 0px;
+    image: url(:/Common/Widgets/Custom_hover);
+}
+UiQInspectorCustomEffectButton:pressed
+{
+    padding: 0px;
+    image: url(:/Common/Widgets/Custom_push);
+}
+UiQInspectorCustomEffectButton:disabled
+{
+    image: url(:/Common/Widgets/Custom_disabled);
+}
+
+UiQInspectorSubTabGroupLeftButton[SkinId="AlignedOnEnd"]
+{
+    image: url(:/Edit/EditInspector/TransitionEndOnClip);
+}
+UiQInspectorSubTabGroupLeftButton[SkinId="AlignedOnEnd"]:hover
+{
+    image: url(:/Edit/EditInspector/TransitionEndOnClip_Hover);
+}
+UiQInspectorSubTabGroupLeftButton[SkinId="AlignedOnEnd"]:pressed
+{
+    image: url(:/Edit/EditInspector/TransitionEndOnClip_Push);
+}
+UiQInspectorSubTabGroupLeftButton[SkinId="AlignedOnEnd"]:checked,
+UiQInspectorSubTabGroupLeftButton[SkinId="AlignedOnEnd"]:checked:hover,
+UiQInspectorSubTabGroupLeftButton[SkinId="AlignedOnEnd"]:checked:pressed
+{
+    image: url(:/Edit/EditInspector/TransitionEndOnClip_Active);
+}
+
+UiQInspectorSubTabGroupMidButton[SkinId="AlignedOnCenter"]
+{
+    image: url(:/Edit/EditInspector/TransitionCenterOnEdit);
+}
+UiQInspectorSubTabGroupMidButton[SkinId="AlignedOnCenter"]:hover
+{
+    image: url(:/Edit/EditInspector/TransitionCenterOnEdit_Hover);
+}
+UiQInspectorSubTabGroupMidButton[SkinId="AlignedOnCenter"]:pressed
+{
+    image: url(:/Edit/EditInspector/TransitionCenterOnEdit_Push);
+}
+UiQInspectorSubTabGroupMidButton[SkinId="AlignedOnCenter"]:checked,
+UiQInspectorSubTabGroupMidButton[SkinId="AlignedOnCenter"]:checked:hover,
+UiQInspectorSubTabGroupMidButton[SkinId="AlignedOnCenter"]:checked:pressed
+{
+    image: url(:/Edit/EditInspector/TransitionCenterOnEdit_Active);
+}
+
+UiQInspectorSubTabGroupRightButton[SkinId="AlignedOnStart"]
+{
+    image: url(:/Edit/EditInspector/TransitionStartOnClip);
+}
+UiQInspectorSubTabGroupRightButton[SkinId="AlignedOnStart"]:hover
+{
+    image: url(:/Edit/EditInspector/TransitionStartOnClip_Hover);
+}
+UiQInspectorSubTabGroupRightButton[SkinId="AlignedOnStart"]:pressed
+{
+    image: url(:/Edit/EditInspector/TransitionStartOnClip_Push);
+}
+UiQInspectorSubTabGroupRightButton[SkinId="AlignedOnStart"]:checked,
+UiQInspectorSubTabGroupRightButton[SkinId="AlignedOnStart"]:checked:hover,
+UiQInspectorSubTabGroupRightButton[SkinId="AlignedOnStart"]:checked:pressed
+{
+    image: url(:/Edit/EditInspector/TransitionStartOnClip_Active);
+}
+
+UiQInspectorSpeedChangeIconButton
+{
+    border-style: none;
+    background-color: transparent;
+    image-position: center center;
+    padding: 0px;
+    min-width: 25px;
+    max-width: 25px;
+    min-height: 25px;
+    max-height: 25px;
+}
+UiQInspectorSpeedChangeIconButton:pressed,
+UiQInspectorSpeedChangeIconButton:checked
+{
+    padding: 0px;
+}
+
+UiQInspectorSpeedChangeIconButton[SkinId="Forward"]
+{
+    image: url(:/Common/InspectorTabs/Forward);
+}
+UiQInspectorSpeedChangeIconButton[SkinId="Forward"]:hover
+{
+    image: url(:/Common/InspectorTabs/Forward_hover);
+}
+UiQInspectorSpeedChangeIconButton[SkinId="Forward"]:pressed
+{
+    image: url(:/Common/InspectorTabs/Forward_push);
+}
+UiQInspectorSpeedChangeIconButton[SkinId="Forward"]:checked
+{
+    image: url(:/Common/InspectorTabs/Forward_active);
+}
+
+UiQInspectorSpeedChangeIconButton[SkinId="Reverse"]
+{
+    image: url(:/Common/InspectorTabs/Reverse);
+}
+UiQInspectorSpeedChangeIconButton[SkinId="Reverse"]:checked
+{
+    image: url(:/Common/InspectorTabs/Reverse_active);
+}
+UiQInspectorSpeedChangeIconButton[SkinId="Reverse"]:hover
+{
+    image: url(:/Common/InspectorTabs/Reverse_hover);
+}
+UiQInspectorSpeedChangeIconButton[SkinId="Reverse"]:pressed
+{
+    image: url(:/Common/InspectorTabs/Reverse_push);
+}
+
+UiQInspectorSpeedChangeIconButton[SkinId="Freeze"]
+{
+    image: url(:/Common/InspectorTabs/Freeze);
+}
+UiQInspectorSpeedChangeIconButton[SkinId="Freeze"]:hover
+{
+    image: url(:/Common/InspectorTabs/Freeze_hover);
+}
+UiQInspectorSpeedChangeIconButton[SkinId="Freeze"]:pressed
+{
+    image: url(:/Common/InspectorTabs/Freeze_push);
+}
+UiQInspectorSpeedChangeIconButton[SkinId="Freeze"]:checked
+{
+    image: url(:/Common/InspectorTabs/Freeze_active);
+}
+
+UiQInspectorTextButton
+{
+    border: 1px solid COLOR_JELLYFISH_GRAY;
+    border-radius: 50%;
+    background-color: transparent;
+    color: COLOR_SQUID_GRAY;
+    min-width: 66px;
+    min-height: 20px;
+    max-height: 20px;
+    font-preset-name: FONT_DEFAULT;
+    padding: -1px 24px; /*left&right padding 25px: 1px on border*/
+}
+UiQInspectorTextButton:hover
+{
+    border-color: COLOR_SQUID_GRAY;
+    color: white;
+    padding: 0px;
+}
+UiQInspectorTextButton:pressed
+{
+    border-color: white;
+    background-color: COLOR_OCTOPUS_GRAY;
+    padding: 0px;
+}
+UiQInspectorTextButton:disabled
+{
+    color: COLOR_DEFAULT_DISABLED;
+    border-color: COLOR_JELLYFISH_GRAY_40;
+}
+
+UiQInspectorSmartReframeOverlayButton
+{
+    min-width: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    max-height: 20px;
+    padding: 0px;
+    border-style: none;
+    image: url(:/Edit/EditInspector/SmartReframeRefPoint);
+}
+UiQInspectorSmartReframeOverlayButton:hover
+{
+    padding: 0px;
+    image: url(:/Edit/EditInspector/SmartReframeRefPoint_hover);
+}
+UiQInspectorSmartReframeOverlayButton:pressed
+{
+    padding: 0px;
+    image: url(:/Edit/EditInspector/SmartReframeRefPoint_push);
+}
+UiQInspectorSmartReframeOverlayButton:checked
+{
+    image: url(:/Edit/EditInspector/SmartReframeRefPoint_active);
+}
+UiQInspectorSmartReframeOverlayButton:checked:hover
+{
+    image: url(:/Edit/EditInspector/SmartReframeRefPoint_active_hover);
+}
+UiQInspectorSmartReframeOverlayButton:checked:pressed
+{
+    image: url(:/Edit/EditInspector/SmartReframeRefPoint_active_push);
+}
+UiQInspectorSmartReframeOverlayButton:disabled
+{
+    image: url(:/Edit/EditInspector/SmartReframeRefPoint_disabled);
+}
+
+UiQInspectorOpenInFusionButton
+{
+    min-width: 23px;
+    max-width: 23px;
+    min-height: 23px;
+    max-height: 23px;
+    border-style: none;
+    image-position: center center;
+    margin: 0px 5px 0px 0px;
+    padding: 0px;
+    image: url(:/Common/InspectorTabs/OpenInFusion);
+}
+UiQInspectorOpenInFusionButton:hover
+{
+    padding: 0px;
+    image: url(:/Common/InspectorTabs/OpenInFusion_hover);
+}
+UiQInspectorOpenInFusionButton:pressed
+{
+    padding: 0px;
+    image: url(:/Common/InspectorTabs/OpenInFusion_push);
+}
+
+UiQBorderlessButton[SkinId="TextAnchor_0"]
+{
+    image: url(:/Edit/EditInspector/AlignBottom);
+}
+UiQBorderlessButton[SkinId="TextAnchor_0"]:hover,
+UiQBorderlessButton[SkinId="TextAnchor_0"]:pressed,
+UiQBorderlessButton[SkinId="TextAnchor_0"]:checked
+{
+    image: url(:/Edit/EditInspector/AlignBottom_Active);
+}
+UiQBorderlessButton[SkinId="TextAnchor_1"]
+{
+    image: url(:/Edit/EditInspector/AlignHCenter);
+}
+UiQBorderlessButton[SkinId="TextAnchor_1"]:hover,
+UiQBorderlessButton[SkinId="TextAnchor_1"]:pressed,
+UiQBorderlessButton[SkinId="TextAnchor_1"]:checked
+{
+    image: url(:/Edit/EditInspector/AlignHCenter_Active);
+}
+UiQBorderlessButton[SkinId="TextAnchor_2"]
+{
+    image: url(:/Edit/EditInspector/AlignTop);
+}
+UiQBorderlessButton[SkinId="TextAnchor_2"]:hover,
+UiQBorderlessButton[SkinId="TextAnchor_2"]:pressed,
+UiQBorderlessButton[SkinId="TextAnchor_2"]:checked
+{
+    image: url(:/Edit/EditInspector/AlignTop_Active);
+}
+UiQBorderlessButton[SkinId="TextAnchor_3"]
+{
+    image: url(:/Edit/EditInspector/AlignLeft);
+}
+UiQBorderlessButton[SkinId="TextAnchor_3"]:hover,
+UiQBorderlessButton[SkinId="TextAnchor_3"]:pressed,
+UiQBorderlessButton[SkinId="TextAnchor_3"]:checked
+{
+    image: url(:/Edit/EditInspector/AlignLeft_Active);
+}
+UiQBorderlessButton[SkinId="TextAnchor_4"]
+{
+    image: url(:/Edit/EditInspector/AlignVCenter);
+}
+UiQBorderlessButton[SkinId="TextAnchor_4"]:hover,
+UiQBorderlessButton[SkinId="TextAnchor_4"]:pressed,
+UiQBorderlessButton[SkinId="TextAnchor_4"]:checked
+{
+    image: url(:/Edit/EditInspector/AlignVCenter_Active);
+}
+UiQBorderlessButton[SkinId="TextAnchor_5"]
+{
+    image: url(:/Edit/EditInspector/AlignRight);
+}
+UiQBorderlessButton[SkinId="TextAnchor_5"]:hover,
+UiQBorderlessButton[SkinId="TextAnchor_5"]:pressed,
+UiQBorderlessButton[SkinId="TextAnchor_5"]:checked
+{
+    image: url(:/Edit/EditInspector/AlignRight_Active);
+}
+
+UiQBorderlessButton[SkinId="LineMode_0"]
+{
+    image: url(:/Edit/EditInspector/Underline);
+}
+UiQBorderlessButton[SkinId="LineMode_0"]:hover,
+UiQBorderlessButton[SkinId="LineMode_0"]:pressed,
+UiQBorderlessButton[SkinId="LineMode_0"]:checked
+{
+    image: url(:/Edit/EditInspector/Underline_On);
+}
+UiQBorderlessButton[SkinId="LineMode_1"]
+{
+    image: url(:/Edit/EditInspector/Overline);
+}
+UiQBorderlessButton[SkinId="LineMode_1"]:hover,
+UiQBorderlessButton[SkinId="LineMode_1"]:pressed,
+UiQBorderlessButton[SkinId="LineMode_1"]:checked
+{
+    image: url(:/Edit/EditInspector/Overline_On);
+}
+UiQBorderlessButton[SkinId="LineMode_2"]
+{
+    image: url(:/Edit/EditInspector/Strikethrough);
+}
+UiQBorderlessButton[SkinId="LineMode_2"]:hover,
+UiQBorderlessButton[SkinId="LineMode_2"]:pressed,
+UiQBorderlessButton[SkinId="LineMode_2"]:checked
+{
+    image: url(:/Edit/EditInspector/Strikethrough_On);
+}
+
+UiQBorderlessButton[SkinId="Vertical_0"]
+{
+    image: url(:/Edit/EditInspector/Superscript);
+}
+UiQBorderlessButton[SkinId="Vertical_0"]:hover,
+UiQBorderlessButton[SkinId="Vertical_0"]:pressed,
+UiQBorderlessButton[SkinId="Vertical_0"]:checked
+{
+    image: url(:/Edit/EditInspector/Superscript_On);
+}
+UiQBorderlessButton[SkinId="Vertical_1"]
+{
+    image: url(:/Edit/EditInspector/Subscript);
+}
+UiQBorderlessButton[SkinId="Vertical_1"]:hover,
+UiQBorderlessButton[SkinId="Vertical_1"]:pressed,
+UiQBorderlessButton[SkinId="Vertical_1"]:checked
+{
+    image: url(:/Edit/EditInspector/Subscript_On);
+}
+
+UiQBorderlessButton[SkinId="Alignment_0"]
+{
+    image: url(:/Edit/EditInspector/JustifyAlignLeft);
+}
+UiQBorderlessButton[SkinId="Alignment_0"]:hover,
+UiQBorderlessButton[SkinId="Alignment_0"]:pressed,
+UiQBorderlessButton[SkinId="Alignment_0"]:checked
+{
+    image: url(:/Edit/EditInspector/JustifyAlignLeft_On);
+}
+UiQBorderlessButton[SkinId="Alignment_1"]
+{
+    image: url(:/Edit/EditInspector/JustifyAlignCenter);
+}
+UiQBorderlessButton[SkinId="Alignment_1"]:hover,
+UiQBorderlessButton[SkinId="Alignment_1"]:pressed,
+UiQBorderlessButton[SkinId="Alignment_1"]:checked
+{
+    image: url(:/Edit/EditInspector/JustifyAlignCenter_On);
+}
+UiQBorderlessButton[SkinId="Alignment_2"]
+{
+    image: url(:/Edit/EditInspector/JustifyAlignRight);
+}
+UiQBorderlessButton[SkinId="Alignment_2"]:hover,
+UiQBorderlessButton[SkinId="Alignment_2"]:pressed,
+UiQBorderlessButton[SkinId="Alignment_2"]:checked
+{
+    image: url(:/Edit/EditInspector/JustifyAlignRight_On);
+}
+UiQBorderlessButton[SkinId="Alignment_3"]
+{
+    image: url(:/Edit/EditInspector/JustifyLastAlignLeft);
+}
+UiQBorderlessButton[SkinId="Alignment_3"]:hover,
+UiQBorderlessButton[SkinId="Alignment_3"]:pressed,
+UiQBorderlessButton[SkinId="Alignment_3"]:checked
+{
+    image: url(:/Edit/EditInspector/JustifyLastAlignLeft_On);
+}
+UiQBorderlessButton[SkinId="Alignment_4"]
+{
+    image: url(:/Edit/EditInspector/JustifyLastAlignCenter);
+}
+UiQBorderlessButton[SkinId="Alignment_4"]:hover,
+UiQBorderlessButton[SkinId="Alignment_4"]:pressed,
+UiQBorderlessButton[SkinId="Alignment_4"]:checked
+{
+    image: url(:/Edit/EditInspector/JustifyLastAlignCenter_On);
+}
+UiQBorderlessButton[SkinId="Alignment_5"]
+{
+    image: url(:/Edit/EditInspector/JustifyLastAlignRight);
+}
+UiQBorderlessButton[SkinId="Alignment_5"]:hover,
+UiQBorderlessButton[SkinId="Alignment_5"]:pressed,
+UiQBorderlessButton[SkinId="Alignment_5"]:checked
+{
+    image: url(:/Edit/EditInspector/JustifyLastAlignRight_On);
+}
+UiQBorderlessButton[SkinId="FontBrowser"]
+{
+    image: url(:/Edit/EditInspector/FontBrowser);
+}
+UiQBorderlessButton[SkinId="FontBrowser"]:hover
+{
+    image: url(:/Edit/EditInspector/FontBrowser_hover);
+}
+UiQBorderlessButton[SkinId="FontBrowser"]:pressed
+{
+    image: url(:/Edit/EditInspector/FontBrowser_push);
+}
+UiQFontBrowserTopFrame
+{
+    background-color: COLOR_ORCA_GRAY;
+    border-bottom: 1px solid COLOR_TINT_GRAY;
+    min-height: 31px;
+    max-height: 31px;
+}
+
+UiQSectionHeaderTabButton[SkinId="FontBrowser"]
+{
+    color: rgba(130, 130, 130, 1);
+}
+UiQSectionHeaderTabButton[SkinId="FontBrowser"]:checked,
+UiQSectionHeaderTabButton[SkinId="FontBrowser"]:checked:hover,
+UiQSectionHeaderTabButton[SkinId="FontBrowser"]:checked:pressed
+{
+    color: white;
+}
+
+UiQSectionHeaderIconButton[SkinId="HighContrast"]
+{
+    image: url(:/Common/Headers/HighContrast);
+}
+UiQSectionHeaderIconButton[SkinId="HighContrast"]:hover
+{
+    image: url(:/Common/Headers/HighContrast_hover);
+}
+UiQSectionHeaderIconButton[SkinId="HighContrast"]:pressed
+{
+    image: url(:/Common/Headers/HighContrast_push);
+}
+UiQSectionHeaderIconButton[SkinId="HighContrast"]:checked
+{
+    image: url(:/Common/Headers/HighContrast_active);
+}
+
+UiQInspectorParamLabel
+{
+    min-width: 130px;
+    max-width: 130px;
+    min-height: 20px;
+    max-height: 20px;
+    font-preset-name: FONT_PSYLOCKE;
+    color: COLOR_BONES_GRAY;
+}
+UiQInspectorParamLabel:disabled
+{
+    color: COLOR_DEFAULT_DISABLED;
+}
+
+UiQInspectorHighlightedParamLabel
+{
+    min-width: 130px;
+    max-width: 130px;
+    min-height: 20px;
+    max-height: 20px;
+    font-preset-name: FONT_PSYLOCKE;
+    color: white;
+}
+UiQInspectorHighlightedParamLabel:disabled
+{
+    color: COLOR_DEFAULT_DISABLED;
+}
+
+UiQInspectorEffectHeaderWidget
+{
+    min-height: 30px;
+    max-height: 30px;
+    padding: 0px 7px 0px 10px;
+    background-color: COLOR_PENGUIN_GRAY;
+}
+UiQInspectorEffectHeaderWidget[SkinId="ColorPageOFXPanelInspectorEffectHeader"]
+{
+    padding-right: 18px;
+}
+
+UiQInspectorNumericParamInvisibleSlider,
+UiQInspectorSmallParamInvisibleSlider,
+UiQInspectorParam2DInvisibleSlider_NoLink,
+UiQInspectorParam2DInvisibleSlider_Linked_X,
+UiQInspectorParam2DInvisibleSlider_Linked_Y
+{
+    min-width: 66px;
+    max-width: 66px;
+    padding-left: 2px;
+}
+UiQInspectorNumericParamInvisibleSlider[SkinSizeMode="Large"],
+UiQInspectorSmallParamInvisibleSlider[SkinSizeMode="Large"]
+{
+    min-width: 68px;
+    max-width: 68px;
+    padding-left: 2px;
+}
+
+QComboBox[SkinId="InspectorSubtitleStyleFontComboBox"],
+QComboBox[SkinId="InspectorHtmlParamFontComboBox"]
+{
+    min-width: 180px;
+    max-width: 180px;
+    min-height: 18px;
+    max-height: 18px;
+    color: COLOR_BONES_GRAY;
+    font-preset-name: FONT_PSYLOCKE;
+}
+QComboBox[SkinId="InspectorOptionsComboBox"],
+QComboBox[SkinId="InspectorOptionsRetimeAndScalingComboBox"]
+{
+    color: COLOR_BONES_GRAY;
+    min-width: 182px;
+    max-width: 182px;
+}
+QComboBox[SkinId="InspectorOptionsRetimeAndScalingComboBox"]
+{
+    font-preset-name: FONT_PSYLOCKE;
+}
+QComboBox[SkinId="InspectorImageOptionsComboBox"]
+{
+    color: COLOR_BONES_GRAY;
+}
+
+QComboBox[SkinId="InspectorSubtitleStyleFontComboBox"]:disabled,
+QComboBox[SkinId="InspectorHtmlParamFontComboBox"]:disabled,
+QComboBox[SkinId="InspectorOptionsComboBox"]:disabled,
+QComboBox[SkinId="InspectorOptionsRetimeAndScalingComboBox"]:disabled,
+QComboBox[SkinId="InspectorImageOptionsComboBox"]:disabled
+{
+    color: COLOR_DEFAULT_DISABLED;
+}
+
+UiQInspectorEffectParamHeaderSeparator
+{
+    min-width: 1px;
+    max-width: 1px;
+    min-height: 14px;
+    max-height: 14px;
+    margin: 0px 5px 0px 2px;
+    background-color: COLOR_SMOKE_GRAY_30;
+}
+
+UiQInspectorContentsContainer
+{
+    background-color: COLOR_PENGUIN_GRAY;
+}
+
+UiQInspectorTransitionDurationWidgetLabel
+{
+    color: rgb(240, 240, 240);
+}
+UiQInspectorTransitionDurationWidgetLabel:disabled
+{
+    color: COLOR_DEFAULT_DISABLED;
+}
+
+UiQInspectorEffectParametersHeader
+{
+    min-height: 37px;
+    max-height: 37px;
+    padding: 6px 2px 0px 0px;
+}
+
+UiQInspectorPointParamLabel
+{
+    min-height: 22px;
+    max-height: 22px;
+    font-preset-name: FONT_PSYLOCKE;
+    color: COLOR_BONES_GRAY;
+    padding-right: 2px;
+}
+UiQInspectorPointParamLabel[SkinSizeMode="Small"]
+{
+    min-width: 12px;
+    max-width: 12px;
+    padding-right: 0px;
+}
+UiQInspectorPointParamLabel:disabled
+{
+    color: COLOR_DEFAULT_DISABLED;
+}
+
+UiQInspectorGroupTitleLabel
+{
+    color: rgb(197, 197, 197);
+}
+UiQInspectorGroupTitleLabel:disabled
+{
+    color: COLOR_DEFAULT_DISABLED;
+}
+
+QTextEdit[SkinId="InspectorTextBox"]
+{
+    color: COLOR_SMOKE_GRAY;
+    font-preset-name: FONT_DEFAULT;
+}
+
+UiQInspectorHtmlBoxFrame
+{
+    min-height: 96px;
+    max-height: 96px;
+    padding: 4px 0 3px 0px;
+}
+
+/**************************************************************/
+/*  OpenFX (Inspector)                                        */
+/**************************************************************/
+UiOFXPluginHeaderImp_ChildContainerExpanded
+{
+    border-bottom: 1px solid COLOR_TINT_GRAY;
+    background-color: COLOR_PENGUIN_GRAY;
+}
+UiOFXPluginHeaderImp_ChildContainerExpanded:disabled
+{
+    border-bottom: 1px solid COLOR_TINT_GRAY;
+    background-color: COLOR_PENGUIN_GRAY;
+}
+UiOFXPluginHeaderImp_ChildContainerNotExpanded
+{
+    border-color: COLOR_DOLPHIN_GRAY;
+    background-color: COLOR_DOLPHIN_GRAY;
+}
+UiOFXPluginHeaderImp_ChildContainerNotExpanded:disabled
+{
+    border-color: COLOR_DOLPHIN_GRAY_40;
+    background-color: COLOR_DOLPHIN_GRAY_40;
+}
+UiQInspectorEffectsHeaderSeparator
+{
+    min-width: 1px;
+    max-width: 1px;
+    min-height: 14px;
+    max-height: 14px;
+    margin: 0px 8px;
+    background-color: COLOR_SMOKE_GRAY_30;
+}
+
+UiQInspectorOFXPluginNameLabel
+{
+    color: white;
+    font-preset-name: FONT_MAGNETO_SEMIBOLD;
+}
+UiQInspectorActiveOFXPluginNameLabel
+{
+    color: COLOR_CORAL_RED;
+    font-preset-name: FONT_MAGNETO_SEMIBOLD;
+}
+
+UiQInspectorOFXPluginEffectNameLabel
+{
+    color: rgb(240, 240, 240);
+    font-preset-name: FONT_MAGNETO_SEMIBOLD;
+}
+
+UiQInspectorOFXWidgetGenArtsButton
+{
+    border: 1px solid COLOR_JELLYFISH_GRAY;
+    border-radius: 50%;
+    background-color: transparent;
+    color: COLOR_SQUID_GRAY;
+    min-height: 22px;
+    max-height: 22px;
+    font-preset-name: FONT_DEFAULT;
+    padding: -1px 13px; /*left&right padding 14px: 1px on border*/
+}
+UiQInspectorOFXWidgetGenArtsButton:hover
+{
+    border-color: COLOR_SQUID_GRAY;
+    color: white;
+    padding: -1px 13px; /*left&right padding 14px: 1px on border*/
+}
+UiQInspectorOFXWidgetGenArtsButton:pressed
+{
+    border-color: white;
+    background-color: COLOR_OCTOPUS_GRAY;
+    padding: -1px 13px; /*left&right padding 14px: 1px on border*/
+}
+UiQInspectorOFXWidgetGenArtsButton:default:disabled
+{
+    color: COLOR_DEFAULT_DISABLED;
+    border-color: COLOR_JELLYFISH_GRAY_40;
+}
+
+UiQInspectorOFXWidgetParamLabel
+{
+    min-width: 130px;
+    max-width: 130px;
+    min-height: 20px;
+    max-height: 20px;
+    font-preset-name: FONT_PSYLOCKE;
+    color: COLOR_BONES_GRAY;
+}
+UiQInspectorOFXWidgetParamLabel:disabled
+{
+    color: COLOR_DEFAULT_DISABLED;
+}
+
+UiQInspectorOFXWidgetCoordinatesLabel
+{
+    font-preset-name: FONT_PSYLOCKE;
+    color: COLOR_BONES_GRAY;
+}
+UiQInspectorOFXWidgetCoordinatesLabel:disabled
+{
+    color: COLOR_DEFAULT_DISABLED;
+}
+
+UiQInspectorOFXWidgetNDParamLabel
+{
+    min-width: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    max-height: 20px;
+    color: COLOR_BONES_GRAY;
+    padding-right: 1px;
+    font-preset-name: FONT_PSYLOCKE;
+}
+UiQInspectorOFXWidgetNDParamLabel:disabled
+{
+    color: COLOR_DEFAULT_DISABLED;
+}
+
+QCheckBox[SkinId="InspectorOFXWidgetBooleanParam"]
+{
+    color: COLOR_BONES_GRAY;
+}
+QCheckBox[SkinId="InspectorOFXWidgetBooleanParam"]:disabled
+{
+    color: COLOR_DEFAULT_DISABLED;
+}
+
+QComboBox[SkinId="InspectorOFXOptionsComboBox"]
+{
+    color: COLOR_BONES_GRAY;
+}
+QComboBox[SkinId="InspectorOFXOptionsComboBox"]:disabled
+{
+    color: COLOR_DEFAULT_DISABLED;
+}
+
+UiQInspectorOFXWidgetPickColorButton
+{
+    border-style: none;
+    min-width: 19px;
+    max-width: 19px;
+    min-height: 25px;
+    max-height: 25px;
+    image-position: center center;
+    image: url(:/Color/Qualifier/Qual_Cursor);
+    padding: 0px;
+}
+UiQInspectorOFXWidgetPickColorButton:hover,
+UiQInspectorOFXWidgetPickColorButton:pressed
+{
+    padding: 0px;
+}
+UiQInspectorOFXWidgetPickColorButton:checked
+{
+    image: none;
+}
+UiQInspectorOFXWidgetPickColorButton:disabled
+{
+    image: url(:/Color/Qualifier/Qual_Cursor_Disabled);
+}
+
+UiQInspectorOFXWidgetGroupTitleLabel
+{
+    color: rgb(197, 197, 197);
+}
+UiQInspectorOFXWidgetGroupTitleLabel:disabled
+{
+    color: COLOR_DEFAULT_DISABLED;
+}
+
+UiQInspectorOFXWidgetCheckableTextButton
+{
+    border: 1px solid COLOR_JELLYFISH_GRAY;
+    border-radius: 50%;
+    background-color: transparent;
+    color: COLOR_SQUID_GRAY;
+    min-width: 56px;
+    min-height: 22px;
+    max-height: 22px;
+    font-preset-name: FONT_MAGNETO;
+    padding: -1px 13px; /*left&right padding 14px: 1px on border*/
+}
+UiQInspectorOFXWidgetCheckableTextButton:hover
+{
+    padding: -1px 13px; /*left&right padding 14px: 1px on border*/
+    border: 1px solid COLOR_CORAL_RED;
+    color: white;
+}
+UiQInspectorOFXWidgetCheckableTextButton:pressed
+{
+    padding: -1px 13px; /*left&right padding 14px: 1px on border*/
+    background-color: black;
+}
+UiQInspectorOFXWidgetCheckableTextButton:checked
+{
+    background-color: black;
+}
+UiQInspectorOFXWidgetCheckableTextButton:disabled
+{
+    color: COLOR_DEFAULT_DISABLED;
+    border-color: COLOR_JELLYFISH_GRAY_40;
+}
+
+/**************************************************************/
+/*  Subtitle (Inspector)                                      */
+/**************************************************************/
+UiQInspectorSubtitleContainerCaptionTimeCodeLineEdit
+{
+    min-height: 20px;
+    max-height: 20px;
+    min-width: 80px;
+    max-width: 80px;
+    font-preset-name: FONT_DEFAULT_SEMIBOLD;
+    color : white;
+    border: 1px solid COLOR_TINT_GRAY;
+    border-radius: 2px;
+    background-color: COLOR_THUNDERSTORM_GRAY;
+    selection-color: rgb(240, 240, 240);
+    selection-background-color: rgba(255, 255, 255, 50);
+}
+UiQInspectorSubtitleContainerCaptionTimeCodeLineEdit:!read-only:focus
+{
+    border-color: COLOR_CORAL_RED;
+    color: white;
+    font-preset-name: FONT_DEFAULT_SEMIBOLD;
+}
+UiQInspectorSubtitleContainerCaptionTimeCodeLineEdit:disabled
+{
+    border-color: COLOR_TINT_GRAY_40;
+    background-color: COLOR_THUNDERSTORM_GRAY_40;
+    color: COLOR_DEFAULT_DISABLED;
+}
+UiQInspectorSubtitleContainerCaptionTimeCodeLineEdit[SkinSizeMode="Large"],
+UiQInspectorSubtitleContainerCaptionTimeCodeLineEdit[SkinSizeMode="Medium"]
+{
+    min-width: 80px;
+    max-width: 80px;
+}
+UiQInspectorSubtitleContainerCaptionTimeCodeLineEdit[SkinSizeMode="Small"]
+{
+    min-width: 70px;
+    max-width: 70px;
+}
+
+UiQInspectorSubtitleContainerCaptionCharCountLabel
+{
+    font-preset-name: FONT_PSYLOCKE_SEMIBOLD;
+    padding-top: 3px;
+    color: COLOR_RAINCLOUD_GRAY;
+}
+
+UiQInspectorSubtitleContainerCaptionTimeInLabel
+{
+    image-position: center center;
+    min-width: 15px;
+    max-width: 15px;
+    min-height: 15px;
+    max-height: 15px;
+    image: url(:/Media/Filmstrip/TimeIn);
+}
+
+UiQInspectorSubtitleContainerCaptionTimeOutLabel
+{
+    image-position: center center;
+    min-width: 15px;
+    max-width: 15px;
+    min-height: 15px;
+    max-height: 15px;
+    image: url(:/Media/Filmstrip/TimeOut);
+}
+
+QTreeWidget[SkinId="InspectorSubtitleCaptionTreeWidget"]
+{
+    selection-color: white;
+    show-decoration-selected: 1; /* make the selection span the entire width of the view */
+}
+QTreeWidget[SkinId="InspectorSubtitleCaptionTreeWidget"]::item
+{
+    max-height: 53px;
+    min-height: 53px;
+    border-style: none;
+    border-right: 1px solid COLOR_TINT_GRAY;
+    border-bottom: 1px solid COLOR_TINT_GRAY;
+}
+QTreeWidget[SkinId="InspectorSubtitleCaptionTreeWidget"]::item:selected
+{
+    background-color: COLOR_OCTOPUS_GRAY;
+}
+
+QHeaderView[SkinId="InspectorSubtitleCaptionTreeWidgetHeaderView"]
+{
+    border-top: 1px solid COLOR_TINT_GRAY;
+}
+QHeaderView[SkinId="InspectorSubtitleCaptionTreeWidgetHeaderView"]::section
+{
+    border-right: 1px solid COLOR_TINT_GRAY;
+}
+
+/**************************************************************/
+/*  File (Inspector)                                          */
+/**************************************************************/
+UiQInspectorFileMetaDataContainer
+{
+    border-style: none;
+    border-bottom: 1px solid COLOR_TINT_GRAY;
+}
+
+QCheckBox[SkinId="InspectorFileTabCheckBox"]
+{
+    color: COLOR_BONES_GRAY;
+    font-preset-name: FONT_PSYLOCKE;
+}
+QCheckBox[SkinId="InspectorFileTabCheckBox"]:disabled
+{
+    color: COLOR_DEFAULT_DISABLED;
+}
+
+UiQInspectorPlayerControlContainer
+{
+    border-style: none;
+    background-color: COLOR_PENGUIN_GRAY;
+    min-height: 20px;
+    max-height: 20px;
+}
+
+UiQInspectorAudioChannelNameLabel
+{
+    min-height: 15px;
+    max-height: 15px;
+    min-width: 20px;
+    max-width: 100px;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: white;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 170);
+    font-preset-name: FONT_PUNISHER;
+}
+
+UiQAudioInspectorLinkIndicator
+{
+    min-height: 15px;
+    max-height: 15px;
+    min-width: 15px;
+    max-width: 15px;
+    image: url(:/Common/Widgets/Linked);
+}
+
+UiQInspectorAudioChannelTrimLevelFrame
+{
+    background-color: transparent;
+    border-top: 1px solid COLOR_TINT_GRAY;
+}
+
+UiQInspectorAudioChannelTrimLevel
+{
+    min-height: 15px;
+    max-height: 15px;
+    min-width: 35px;
+    max-width: 35px;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: white;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 170);
+    font-preset-name: FONT_PUNISHER;
+}
+
+QCheckBox[SkinId="InspectorChannelAudioEnableCheckBox"]
+{
+    spacing: 0px;
+}
+
+QComboBox[SkinId="InspectorAudioChannelComboBox"]
+{
+    min-height: 15px;
+    max-height: 15px;
+    min-width: 0px;
+    max-width: 150px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 3px;
+    border-width: 0px;
+    color: white;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 170);
+    font-preset-name: FONT_PUNISHER;
+}
+
+QComboBox[SkinId="InspectorAudioChannelComboBox"]::drop-down,
+QComboBox[SkinId="InspectorAudioChannelComboBox"]::down-arrow {
+    subcontrol-origin: padding;
+    subcontrol-position: center right;
+    margin: 0px 1px 0px 0px;
+    padding: 2px 2px 2px 2px;
+    right: 0px;
+    width: 11px;
+    height: 11px;
+    image-position: center center;
+    image: url(:/Common/Widgets/ArrowSmall);
+}
+
+UiQInspectorChannelAudioMuteButton
+{
+    min-height: 20px;
+    max-height: 20px;
+    min-width: 20px;
+    max-width: 20px;
+    border-radius: 4px;
+    margin-top: -2px;
+    image-position: center center;
+    image: url(:/Common/InspectorTabs/Mute);
+}
+UiQInspectorChannelAudioMuteButton:pressed
+{
+    image: url(:/Common/InspectorTabs/Mute_push);
+}
+UiQInspectorChannelAudioMuteButton:hover
+{
+    image: url(:/Common/InspectorTabs/Mute_hover);
+}
+UiQInspectorChannelAudioMuteButton:disabled
+{
+    image: url(:/Common/InspectorTabs/Mute_disabled);
+}
+UiQInspectorChannelAudioMuteButton:checked
+{
+    image: url(:/Common/InspectorTabs/Mute_active);
+}
+UiQInspectorChannelAudioMuteButton:checked:pressed
+{
+    image: url(:/Common/InspectorTabs/Mute_active_push);
+}
+UiQInspectorChannelAudioMuteButton:checked:hover
+{
+    image: url(:/Common/InspectorTabs/Mute_active_hover);
+}
+UiQInspectorChannelAudioMuteButton:checked:disabled
+{
+    image: url(:/Common/InspectorTabs/Mute_active_disabled);
+}
+
+UiQGroupLeftButton[SkinId="MetadataTag"]
+{
+    min-height: 18px;
+    max-height: 18px;
+    padding: 0px;
+}
+UiQGroupMidButton[SkinId="MetadataTag"]
+{
+    min-height: 18px;
+    max-height: 18px;
+    padding: 0px;
+}
+UiQGroupRightButton[SkinId="MetadataTag"]
+{
+    min-height: 18px;
+    max-height: 18px;
+    padding: 0px;
+}

@@ -1,0 +1,518 @@
+UiQPageSwitcher
+{
+min-height: 48px;
+max-height: 48px;
+}
+
+UiQPageSwitcherSmallSize
+{
+min-height: 32px;
+max-height: 32px;
+}
+
+UiQPageSwitcherBackground
+{
+background-color: rgb(212, 105, 134);
+border-style: none;
+border-top: 1px solid COLOR_TINT_GRAY;
+padding: 0px;
+margin: 0px;
+}
+
+UiQPageSwitcherPageTabIconTextButton
+{
+min-width: 100px;
+max-width: 100px;
+image-position: center top;
+background-image: none;
+background-color: COLOR_OCTOPUS_GRAY;
+border-style: none;
+border-left: 1px solid transparent;
+border-right: 1px solid transparent;
+border-bottom: 2px solid transparent;
+color: COLOR_DEFAULT;
+text-align: center bottom;
+padding: 0px 0px 2px 0px;
+margin: 0px;
+font-preset-name: FONT_DEFAULT;
+}
+
+UiQPageSwitcherPageTabIconOnlyButton
+{
+min-width: 100px;
+max-width: 100px;
+image-position: center top;
+background-image: none;
+background-color: COLOR_OCTOPUS_GRAY;
+border-style: none;
+border-left: 1px solid transparent;
+border-right: 1px solid transparent;
+border-bottom: 2px solid transparent;
+color: COLOR_DEFAULT;
+text-align: center bottom;
+padding: 0px 0px -2px 0px;
+margin: 0px;
+font-preset-name: FONT_DEFAULT;
+}
+
+UiQPageSwitcherPageTabIconTextButton:hover,
+UiQPageSwitcherPageTabIconTextButton:pressed,
+UiQPageSwitcherPageTabIconOnlyButton:hover,
+UiQPageSwitcherPageTabIconOnlyButton:pressed
+{
+border-bottom-color: COLOR_DEFAULT;
+}
+
+UiQPageSwitcherPageTabIconTextButton:checked,
+UiQPageSwitcherPageTabIconTextButton:checked:hover,
+UiQPageSwitcherPageTabIconTextButton:checked:pressed,
+UiQPageSwitcherPageTabIconOnlyButton:checked,
+UiQPageSwitcherPageTabIconOnlyButton:checked:hover,
+UiQPageSwitcherPageTabIconOnlyButton:checked:pressed
+{
+background-color: black;
+border-left-color: COLOR_NIGHTSKY_GRAY;
+border-right-color: COLOR_NIGHTSKY_GRAY;
+border-bottom-color: COLOR_CORAL_RED;
+color: white;
+font-preset-name: FONT_DEFAULT_SEMIBOLD;
+}
+
+UiQPageSwitcherPageTabIconTextButton[SkinId="Media"],
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Media"]
+{
+image: url(:/PageSwitcher/MediaIcon);
+}
+UiQPageSwitcherPageTabIconTextButton[SkinId="Media"]:hover,
+UiQPageSwitcherPageTabIconTextButton[SkinId="Media"]:pressed,
+UiQPageSwitcherPageTabIconTextButton[SkinId="Media"]:checked,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Media"]:hover,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Media"]:pressed,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Media"]:checked
+{
+image: url(:/PageSwitcher/MediaIconOn);
+}
+
+UiQPageSwitcherPageTabIconTextButton[SkinId="Cut"],
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Cut"]
+{
+image: url(:/PageSwitcher/FirstCutIcon);
+}
+UiQPageSwitcherPageTabIconTextButton[SkinId="Cut"]:hover,
+UiQPageSwitcherPageTabIconTextButton[SkinId="Cut"]:pressed,
+UiQPageSwitcherPageTabIconTextButton[SkinId="Cut"]:checked,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Cut"]:hover,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Cut"]:pressed,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Cut"]:checked
+{
+image: url(:/PageSwitcher/FirstCutIconOn);
+}
+
+UiQPageSwitcherPageTabIconTextButton[SkinId="Edit"],
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Edit"]
+{
+image: url(:/PageSwitcher/EditIcon);
+}
+UiQPageSwitcherPageTabIconTextButton[SkinId="Edit"]:hover,
+UiQPageSwitcherPageTabIconTextButton[SkinId="Edit"]:pressed,
+UiQPageSwitcherPageTabIconTextButton[SkinId="Edit"]:checked,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Edit"]:hover,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Edit"]:pressed,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Edit"]:checked
+{
+image: url(:/PageSwitcher/EditIconOn);
+}
+
+UiQPageSwitcherPageTabIconTextButton[SkinId="Fusion"],
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Fusion"]
+{
+image: url(:/PageSwitcher/FusionIcon);
+}
+UiQPageSwitcherPageTabIconTextButton[SkinId="Fusion"]:hover,
+UiQPageSwitcherPageTabIconTextButton[SkinId="Fusion"]:pressed,
+UiQPageSwitcherPageTabIconTextButton[SkinId="Fusion"]:checked,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Fusion"]:hover,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Fusion"]:pressed,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Fusion"]:checked
+{
+image: url(:/PageSwitcher/FusionIconOn);
+}
+
+UiQPageSwitcherPageTabIconTextButton[SkinId="Color"],
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Color"]
+{
+image: url(:/PageSwitcher/ColorIcon);
+}
+UiQPageSwitcherPageTabIconTextButton[SkinId="Color"]:hover,
+UiQPageSwitcherPageTabIconTextButton[SkinId="Color"]:pressed,
+UiQPageSwitcherPageTabIconTextButton[SkinId="Color"]:checked,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Color"]:hover,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Color"]:pressed,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Color"]:checked
+{
+image: url(:/PageSwitcher/ColorIconOn);
+}
+
+UiQPageSwitcherPageTabIconTextButton[SkinId="Fairlight"],
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Fairlight"]
+{
+image: url(:/PageSwitcher/AudioIcon);
+}
+UiQPageSwitcherPageTabIconTextButton[SkinId="Fairlight"]:hover,
+UiQPageSwitcherPageTabIconTextButton[SkinId="Fairlight"]:pressed,
+UiQPageSwitcherPageTabIconTextButton[SkinId="Fairlight"]:checked,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Fairlight"]:hover,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Fairlight"]:pressed,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Fairlight"]:checked
+{
+image: url(:/PageSwitcher/AudioIconOn);
+}
+
+UiQPageSwitcherPageTabIconTextButton[SkinId="Deliver"],
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Deliver"]
+{
+image: url(:/PageSwitcher/DeliverIcon);
+}
+UiQPageSwitcherPageTabIconTextButton[SkinId="Deliver"]:hover,
+UiQPageSwitcherPageTabIconTextButton[SkinId="Deliver"]:pressed,
+UiQPageSwitcherPageTabIconTextButton[SkinId="Deliver"]:checked,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Deliver"]:hover,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Deliver"]:pressed,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Deliver"]:checked
+{
+image: url(:/PageSwitcher/DeliverIconOn);
+}
+
+UiQPageSwitcherPageTabIconTextButton[SkinId="Photo"],
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Photo"]
+{
+image: url(:/PageSwitcher/PhotoIcon);
+}
+UiQPageSwitcherPageTabIconTextButton[SkinId="Photo"]:hover,
+UiQPageSwitcherPageTabIconTextButton[SkinId="Photo"]:pressed,
+UiQPageSwitcherPageTabIconTextButton[SkinId="Photo"]:checked,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Photo"]:hover,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Photo"]:pressed,
+UiQPageSwitcherPageTabIconOnlyButton[SkinId="Photo"]:checked
+{
+image: url(:/PageSwitcher/PhotoIconOn);
+}
+
+UiQPageSwitcherIconButton
+{
+min-width: 29px;
+max-width: 29px;
+min-height: 29px;
+max-height: 29px;
+
+border-style: none;
+background-color: transparent;
+image-position: center center;
+}
+
+UiQPageSwitcherIconButton[SkinId="RemoteMonitor"]
+{
+image: url(:/PageSwitcher/RemoteMonitoring);
+}
+UiQPageSwitcherIconButton[SkinId="RemoteMonitor"]:hover
+{
+image: url(:/PageSwitcher/RemoteMonitoring_hover);
+}
+UiQPageSwitcherIconButton[SkinId="RemoteMonitor"]:pressed
+{
+image: url(:/PageSwitcher/RemoteMonitoring_push);
+}
+
+UiQPageSwitcherIconButton[SkinId="RemoteMonitorWaiting"]
+{
+image: url(:/PageSwitcher/RemoteMonitoring_active);
+}
+UiQPageSwitcherIconButton[SkinId="RemoteMonitorWaiting"]:hover
+{
+image: url(:/PageSwitcher/RemoteMonitoring_active_hover);
+}
+UiQPageSwitcherIconButton[SkinId="RemoteMonitorWaiting"]:pressed
+{
+image: url(:/PageSwitcher/RemoteMonitoring_active_push);
+}
+
+UiQPageSwitcherIconButton[SkinId="RemoteMonitorStreaming"]
+{
+image: url(:/PageSwitcher/RemoteMonitoring_active_on);
+}
+UiQPageSwitcherIconButton[SkinId="RemoteMonitorStreaming"]:hover
+{
+image: url(:/PageSwitcher/RemoteMonitoring_active_on_hover);
+}
+UiQPageSwitcherIconButton[SkinId="RemoteMonitorStreaming"]:pressed
+{
+image: url(:/PageSwitcher/RemoteMonitoring_active_on_push);
+}
+
+UiQPageSwitcherIconButton[SkinId="Home"]
+{
+image: url(:/PageSwitcher/ProjectManagerIcon);
+}
+UiQPageSwitcherIconButton[SkinId="Home"]:hover
+{
+image: url(:/PageSwitcher/ProjectManagerIcon_hover);
+}
+UiQPageSwitcherIconButton[SkinId="Home"]:pressed
+{
+image: url(:/PageSwitcher/ProjectManagerIcon_push);
+}
+
+UiQPageSwitcherIconButton[SkinId="ProjectSettings"]
+{
+image: url(:/PageSwitcher/SettingIcon);
+}
+UiQPageSwitcherIconButton[SkinId="ProjectSettings"]:hover
+{
+image: url(:/PageSwitcher/SettingIcon_hover);
+}
+UiQPageSwitcherIconButton[SkinId="ProjectSettings"]:pressed
+{
+image: url(:/PageSwitcher/SettingIcon_push);
+}
+
+UiQPageSwitcherIconButton[SkinId="Collaboration"]
+{
+image: url(:/PageSwitcher/Collaboration);
+}
+UiQPageSwitcherIconButton[SkinId="Collaboration"]:hover
+{
+image: url(:/PageSwitcher/Collaboration_hover);
+}
+UiQPageSwitcherIconButton[SkinId="Collaboration"]:pressed
+{
+image: url(:/PageSwitcher/Collaboration_push);
+}
+UiQPageSwitcherIconButton[SkinId="Collaboration"]:checked
+{
+image: url(:/PageSwitcher/Collaboration_active);
+}
+
+UiQPageSwitcherIconButton[SkinId="Chat"]
+{
+image: url(:/PageSwitcher/Chat);
+}
+UiQPageSwitcherIconButton[SkinId="Chat"]:hover
+{
+image: url(:/PageSwitcher/Chat_hover);
+}
+UiQPageSwitcherIconButton[SkinId="Chat"]:pressed
+{
+image: url(:/PageSwitcher/Chat_push);
+}
+
+UiQPageSwitcherIconButton[SkinId="ChatWithNotification"]
+{
+image: url(:/PageSwitcher/ChatNotification);
+}
+UiQPageSwitcherIconButton[SkinId="ChatWithNotification"]:hover
+{
+image: url(:/PageSwitcher/ChatNotification_hover);
+}
+UiQPageSwitcherIconButton[SkinId="ChatWithNotification"]:pressed
+{
+image: url(:/PageSwitcher/ChatNotification_push);
+}
+
+UiQPageSwitcherIconButton[SkinId="Warning"]
+{
+image: url(:/PageSwitcher/PageWarning);
+}
+UiQPageSwitcherIconButton[SkinId="Warning"]:hover
+{
+image: url(:/PageSwitcher/PageWarning_hover);
+}
+UiQPageSwitcherIconButton[SkinId="Warning"]:pressed
+{
+image: url(:/PageSwitcher/PageWarning_push);
+}
+
+UiQPageSwitcherIconButton[SkinId="BatteryStatus"]
+{
+image: url(:/Common/ControlPanels/Battery_15);
+}
+
+UiQPageSwitcherIconButton[SkinId="CloudStorageSyncIdle"]
+{
+image: url(:/PageSwitcher/CloudStorageSyncIdle);
+}
+UiQPageSwitcherIconButton[SkinId="CloudStorageSyncIdle"]:hover
+{
+image: url(:/PageSwitcher/CloudStorageSyncIdle_hover);
+}
+UiQPageSwitcherIconButton[SkinId="CloudStorageSyncIdle"]:pressed
+{
+image: url(:/PageSwitcher/CloudStorageSyncIdle_push);
+}
+
+UiQPageSwitcherIconButton[SkinId="CloudStorageSyncOngoing"]
+{
+image: url(:/PageSwitcher/CloudStorageSyncOngoing);
+}
+UiQPageSwitcherIconButton[SkinId="CloudStorageSyncOngoing"]:hover
+{
+image: url(:/PageSwitcher/CloudStorageSyncOngoing_hover);
+}
+UiQPageSwitcherIconButton[SkinId="CloudStorageSyncOngoing"]:pressed
+{
+image: url(:/PageSwitcher/CloudStorageSyncOngoing_push);
+}
+
+UiQPageSwitcherIconButton[SkinId="CloudStorageSyncPaused"]
+{
+image: url(:/PageSwitcher/CloudStorageSyncPaused);
+}
+UiQPageSwitcherIconButton[SkinId="CloudStorageSyncPaused"]:hover
+{
+image: url(:/PageSwitcher/CloudStorageSyncPaused_hover);
+}
+UiQPageSwitcherIconButton[SkinId="CloudStorageSyncPaused"]:pressed
+{
+image: url(:/PageSwitcher/CloudStorageSyncPaused_push);
+}
+
+UiQPageSwitcherIconButton[SkinId="CloudStorageSyncWarn"]
+{
+image: url(:/PageSwitcher/CloudStorageSyncWarn);
+}
+UiQPageSwitcherIconButton[SkinId="CloudStorageSyncWarn"]:hover
+{
+image: url(:/PageSwitcher/CloudStorageSyncWarn_hover);
+}
+UiQPageSwitcherIconButton[SkinId="CloudStorageSyncWarn"]:pressed
+{
+image: url(:/PageSwitcher/CloudStorageSyncWarn_push);
+}
+
+UiQPageSwitcherIconButton[SkinId="CloudStorageSyncError"]
+{
+image: url(:/PageSwitcher/CloudStorageSyncError);
+}
+UiQPageSwitcherIconButton[SkinId="CloudStorageSyncError"]:hover
+{
+image: url(:/PageSwitcher/CloudStorageSyncError_hover);
+}
+UiQPageSwitcherIconButton[SkinId="CloudStorageSyncError"]:pressed
+{
+image: url(:/PageSwitcher/CloudStorageSyncError_push);
+}
+
+UiQPageSwitcherIconButton[SkinId="CloudStorageSyncDefault"]
+{
+image: url(:/PageSwitcher/CloudStorageSyncDefault);
+}
+UiQPageSwitcherIconButton[SkinId="CloudStorageSyncDefault"]:hover
+{
+image: url(:/PageSwitcher/CloudStorageSyncDefault_hover);
+}
+UiQPageSwitcherIconButton[SkinId="CloudStorageSyncDefault"]:pressed
+{
+image: url(:/PageSwitcher/CloudStorageSyncDefault_push);
+}
+
+UiQPageSwitcherIconButton[SkinId="ControlPanelsStatusButtonNormal"]
+{
+image: url(:/PageSwitcher/ControlPanel);
+}
+UiQPageSwitcherIconButton[SkinId="ControlPanelsStatusButtonNormal"]:hover
+{
+image: url(:/PageSwitcher/ControlPanel_hover);
+}
+UiQPageSwitcherIconButton[SkinId="ControlPanelsStatusButtonNormal"]:pressed
+{
+image: url(:/PageSwitcher/ControlPanel_push);
+}
+UiQPageSwitcherIconButton[SkinId="ControlPanelsStatusButtonNormal"]:checked
+{
+image: url(:/PageSwitcher/ControlPanel_active);
+}
+
+UiQPageSwitcherIconButton[SkinId="ControlPanelsStatusButtonWarning"]
+{
+image: url(:/PageSwitcher/ControlPanelWarning);
+}
+UiQPageSwitcherIconButton[SkinId="ControlPanelsStatusButtonWarning"]:hover
+{
+image: url(:/PageSwitcher/ControlPanelWarning_hover);
+}
+UiQPageSwitcherIconButton[SkinId="ControlPanelsStatusButtonWarning"]:pressed
+{
+image: url(:/PageSwitcher/ControlPanelWarning_push);
+}
+
+UiQPageSwitcherIconButton[SkinId="BackgroundTasksStatusNormal"]
+{
+image: url(:/PageSwitcher/BackgroundTasksNormal);
+}
+UiQPageSwitcherIconButton[SkinId="BackgroundTasksStatusNormal"]:hover
+{
+image: url(:/PageSwitcher/BackgroundTasksNormal_hover);
+}
+UiQPageSwitcherIconButton[SkinId="BackgroundTasksStatusNormal"]:pressed
+{
+image: url(:/PageSwitcher/BackgroundTasksNormal_push);
+}
+UiQPageSwitcherIconButton[SkinId="BackgroundTasksStatusNormal"]:checked
+{
+image: url(:/PageSwitcher/BackgroundTasksNormal_active);
+}
+
+UiQPageSwitcherIconButton[SkinId="BackgroundTasksStatusWarning"]
+{
+image: url(:/PageSwitcher/BackgroundTasksWarning);
+}
+UiQPageSwitcherIconButton[SkinId="BackgroundTasksStatusWarning"]:hover
+{
+image: url(:/PageSwitcher/BackgroundTasksWarning_hover);
+}
+UiQPageSwitcherIconButton[SkinId="BackgroundTasksStatusWarning"]:pressed
+{
+image: url(:/PageSwitcher/BackgroundTasksWarning_push);
+}
+
+UiQPageSwitcherIconButton[SkinId="DownloadManager"]
+{
+image: url(:/PageSwitcher/DownloadManagerIcon);
+}
+UiQPageSwitcherIconButton[SkinId="DownloadManager"]:hover
+{
+image: url(:/PageSwitcher/DownloadManagerIcon_hover);
+}
+UiQPageSwitcherIconButton[SkinId="DownloadManager"]:pressed
+{
+image: url(:/PageSwitcher/DownloadManagerIcon_push);
+}
+
+UiQPageSwitcherIconButton[SkinId="DownloadManagerWarning"]
+{
+image: url(:/PageSwitcher/DownloadManagerIconWarning);
+}
+UiQPageSwitcherIconButton[SkinId="DownloadManagerWarning"]:hover
+{
+image: url(:/PageSwitcher/DownloadManagerIconWarning_hover);
+}
+UiQPageSwitcherIconButton[SkinId="DownloadManagerWarning"]:pressed
+{
+image: url(:/PageSwitcher/DownloadManagerIconWarning_push);
+}
+
+UiQPageSwitcherIconButton[SkinId="VoiceModelGenerationOngoing"]
+{
+image: url(:/PageSwitcher/VoiceModelGenerationOngoing);
+}
+UiQPageSwitcherIconButton[SkinId="VoiceModelGenerationOngoing"]:hover
+{
+image: url(:/PageSwitcher/VoiceModelGenerationOngoing_hover);
+}
+UiQPageSwitcherIconButton[SkinId="VoiceModelGenerationOngoing"]:pressed
+{
+image: url(:/PageSwitcher/VoiceModelGenerationOngoing_push);
+}
+UiQPageSwitcherIconButton[SkinId="VoiceModelGenerationOngoing"]:checked
+{
+image: url(:/PageSwitcher/VoiceModelGenerationOngoing_active);
+}

@@ -1,0 +1,42 @@
+{
+  "recipe_sha256": "b3476361364098e955848b1d963062ba5b74ef9967f8fa3aa19227188addd07c",
+  "read_only": true,
+  "native_files_modified": false,
+  "resolve_started": false,
+  "resources_checked": 29,
+  "unchanged_resources": 25,
+  "exact_color_edits": 20,
+  "resources": [
+    {
+      "resource": ":/StyleSheet/PageSwitcher",
+      "color_edits": 1,
+      "original_disabled_rules_retained": 0,
+      "non_color_declarations_unchanged": true,
+      "non_executable_section": true
+    },
+    {
+      "resource": ":/StyleSheet/Default",
+      "color_edits": 9,
+      "original_disabled_rules_retained": 46,
+      "non_color_declarations_unchanged": true,
+      "non_executable_section": true
+    },
+    {
+      "resource": ":/StyleSheet/SoundLibrary",
+      "color_edits": 5,
+      "original_disabled_rules_retained": 1,
+      "non_color_declarations_unchanged": true,
+      "non_executable_section": true
+    },
+    {
+      "resource": ":/StyleSheet/Inspector",
+      "color_edits": 5,
+      "original_disabled_rules_retained": 62,
+      "non_color_declarations_unchanged": true,
+      "non_executable_section": true
+    }
+  ],
+  "restricted_account_refused": true,
+  "complete_application_theme": false,
+  "live_testing_pending": true
+}

@@ -1,0 +1,18 @@
+To try:
+1. Close and reopen Veil normally using your existing pin. Confirm v0.82.
+2. Save your project and close Resolve normally.
+3. Open Themes. If Cherry Blossom's Fusion skin is already installed, use Start
+   Resolve. If Original skin is installed, use Apply Theme for both layers.
+4. Check Edit, Media, Color, Deliver and Project Manager. Note which containers
+   changed and whether all text, disabled/selected states, icons and controls
+   remain readable and usable. The Fusion layer is unchanged from the working test.
+5. Close Resolve normally, then Restore Original to restore the Fusion skin and
+   disable this build's future application session state. The regular Resolve
+   shortcut always uses original main-application styling; Fusion persists until
+   Restore Original. No active session is closed, minimized or patched in place.
+
+Resolve version: 21.1.0.14; exact native executable hash is checked before startup.
+No installed Resolve files or shortcuts were changed during preparation. No Resolve
+process was created. Theme activation is initiated only from your desktop account.
+The previous v0.81 release is kept beside this release for recovery.
+

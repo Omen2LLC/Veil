@@ -1,0 +1,1119 @@
+UiQSectionHeaderIconButton[SkinId="GalleryMemories"]{image:url(:/Common/Headers/Memories);}
+UiQSectionHeaderIconButton[SkinId="GalleryMemories"]:hover{image:url(:/Common/Headers/Memories_hover);}
+UiQSectionHeaderIconButton[SkinId="GalleryMemories"]:pressed{image:url(:/Common/Headers/Memories_push);}
+UiQSectionHeaderIconButton[SkinId="GalleryMemories"]:checked{image:url(:/Common/Headers/Memories_active);}
+UiQSectionHeaderIconButton[SkinId="GalleryMemories"]:checked:hover{image:url(:/Common/Headers/Memories_active_hover);}
+UiQSectionHeaderIconButton[SkinId="GalleryMemories"]:checked:pressed{image:url(:/Common/Headers/Memories_active_push);}
+UiQColorCanvasGraphicsView{background-color:COLOR_PENGUIN_GRAY;border:none;}
+UiQColorNodeGraphFrame{min-width:490px;}
+UiQColorNodeGraphFrame[SkinSizeMode="Large"], UiQColorNodeGraphFrame[SkinSizeMode="Medium"]{min-width:370px;}
+UiQColorNodeGraphFrame[SkinSizeMode="Small"]{min-width:370px;}
+UiQSectionHeaderIconButton[SkinId="NodeGraphPointerMode"]{image:url(:/Common/Headers/Cursor);}
+UiQSectionHeaderIconButton[SkinId="Selection"]:hover{image:url(:/Common/Headers/Cursor_hover);}
+UiQSectionHeaderIconButton[SkinId="NodeGraphPointerMode"]:pressed{image:url(:/Common/Headers/Cursor_push);}
+UiQSectionHeaderIconButton[SkinId="NodeGraphPointerMode"]:checked{image:url(:/Common/Headers/Cursor_active);}
+UiQSectionHeaderIconButton[SkinId="NodeGraphHandMode"]{image:url(:/Common/Headers/HandTool);}
+UiQSectionHeaderIconButton[SkinId="NodeGraphHandMode"]:hover{image:url(:/Common/Headers/HandTool_hover);}
+UiQSectionHeaderIconButton[SkinId="NodeGraphHandMode"]:pressed{image:url(:/Common/Headers/HandTool_push);}
+UiQSectionHeaderIconButton[SkinId="NodeGraphHandMode"]:checked{image:url(:/Common/Headers/HandTool_active);}
+UiQColorNodeGraphNavigatorContainer{border-style:none;border-bottom:1px solid COLOR_TINT_GRAY;padding:0px 0px 0px 10px;background-color:COLOR_ORCA_GRAY;min-height:28px;max-height:28px;}
+UiQDefaultTextButton[SkinId="NodeGraphClipOptionsButton"]{padding:-1px 14px;}
+UiQRoundedTintGrayContainer[SkinId="NodeGraphBlackBorderFrame"]{border:1px solid black;}
+UiQListWidget[SkinId="NodeGraphLayerList"]{color:rgba(146, 146, 146, 255);font-size:12px;}
+UiQListWidget[SkinId="NodeGraphLayerList"]::item{min-height:27px;max-height:27px;}
+QFrame[SkinId="NodeGraphSeparator"]{border-style:none;border-top:1px solid black;border-bottom:1px solid black;}
+UiQListWidget[SkinId="NodeGraphTrimList"]{color:rgba(146, 146, 146, 255);font-size:12px;}
+UiQListWidget[SkinId="NodeGraphTrimList"]::item{min-height:27px;max-height:27px;}
+UiQNodeGraphListViewAddButton{border-style:none;background-color:transparent;image-position:center center;min-width:20px;max-width:20px;min-height:20px;max-height:20px;padding-left:7px;image:url(:/Common/Headers/Add);}
+UiQNodeGraphListViewAddButton:hover{image:url(:/Common/Headers/Add_hover);}
+UiQNodeGraphListViewAddButton:pressed{image:url(:/Common/Headers/Add_push);}
+UiQColorPalettePanelsContainer{background-color:#E6CED5;border-style:none;min-height:470px;max-height:470px;}
+UiQColorPalettePanelsContainer[SkinSizeMode="Large"]{min-height:470px;max-height:470px;}
+UiQColorPalettePanelsContainer[SkinSizeMode="Medium"], UiQColorPalettePanelsContainer[SkinSizeMode="Small"]{min-height:342px;max-height:342px;}
+UiQColorPalettePanelContainer{border-style:none;border-right:1px solid COLOR_TINT_GRAY;}
+UiQColorPalettePanelContainerBorderless{border-style:none;border-width:0px;}
+UiQColorPaletteMainToolBarContainer{border-style:none;border-bottom:1px solid COLOR_TINT_GRAY;min-height:50px;max-height:50px;}
+UiQColorPaletteMainToolBarContainer[SkinSizeMode="Large"]{min-height:50px;max-height:50px;}
+UiQColorPaletteMainToolBarContainer[SkinSizeMode="Medium"], UiQColorPaletteMainToolBarContainer[SkinSizeMode="Small"]{min-height:36px;max-height:36px;}
+UiQColorMainToolBarButton{border-style:none;background-color:transparent;image-position:center center;min-height:30px;max-height:30px;padding:0px;qproperty-iconSize:30px 30px;}
+UiQColorMainToolBarButton:hover, UiQColorMainToolBarButton:pressed{padding:0px;}
+UiQColorMainToolBarButton:checked{padding:0px;}
+UiQColorMainToolBarButton[SkinId="CameraRaw"]{image:url(:/Color/MainBar/CameraRaw);}
+UiQColorMainToolBarButton[SkinId="CameraRaw"]:hover{image:url(:/Color/MainBar/CameraRaw_hover);}
+UiQColorMainToolBarButton[SkinId="CameraRaw"]:pressed{image:url(:/Color/MainBar/CameraRaw_push);}
+UiQColorMainToolBarButton[SkinId="CameraRaw"]:checked{image:url(:/Color/MainBar/CameraRaw_active);}
+UiQColorMainToolBarButton[SkinId="ColorMatch"]{image:url(:/Color/MainBar/ColorMatch);}
+UiQColorMainToolBarButton[SkinId="ColorMatch"]:hover{image:url(:/Color/MainBar/ColorMatch_hover);}
+UiQColorMainToolBarButton[SkinId="ColorMatch"]:pressed{image:url(:/Color/MainBar/ColorMatch_push);}
+UiQColorMainToolBarButton[SkinId="ColorMatch"]:checked{image:url(:/Color/MainBar/ColorMatch_active);}
+UiQColorMainToolBarButton[SkinId="ColorWheels"]{image:url(:/Color/MainBar/Wheels);}
+UiQColorMainToolBarButton[SkinId="ColorWheels"]:hover{image:url(:/Color/MainBar/Wheels_hover);}
+UiQColorMainToolBarButton[SkinId="ColorWheels"]:pressed{image:url(:/Color/MainBar/Wheels_push);}
+UiQColorMainToolBarButton[SkinId="ColorWheels"]:checked{image:url(:/Color/MainBar/Wheels_active);}
+UiQColorMainToolBarButton[SkinId="HDRGrade"]{image:url(:/Color/MainBar/PrimariesHDR);}
+UiQColorMainToolBarButton[SkinId="HDRGrade"]:hover{image:url(:/Color/MainBar/PrimariesHDR_hover);}
+UiQColorMainToolBarButton[SkinId="HDRGrade"]:pressed{image:url(:/Color/MainBar/PrimariesHDR_push);}
+UiQColorMainToolBarButton[SkinId="HDRGrade"]:checked{image:url(:/Color/MainBar/PrimariesHDR_active);}
+UiQColorMainToolBarButton[SkinId="RGBMixer"]{image:url(:/Color/MainBar/RGBMix);}
+UiQColorMainToolBarButton[SkinId="RGBMixer"]:hover{image:url(:/Color/MainBar/RGBMix_hover);}
+UiQColorMainToolBarButton[SkinId="RGBMixer"]:pressed{image:url(:/Color/MainBar/RGBMix_push);}
+UiQColorMainToolBarButton[SkinId="RGBMixer"]:checked{image:url(:/Color/MainBar/RGBMix_active);}
+UiQColorMainToolBarButton[SkinId="MotionEffects"]{image:url(:/Color/MainBar/MotionFX);}
+UiQColorMainToolBarButton[SkinId="MotionEffects"]:hover{image:url(:/Color/MainBar/MotionFX_hover);}
+UiQColorMainToolBarButton[SkinId="MotionEffects"]:pressed{image:url(:/Color/MainBar/MotionFX_push);}
+UiQColorMainToolBarButton[SkinId="MotionEffects"]:checked{image:url(:/Color/MainBar/MotionFX_active);}
+UiQColorMainToolBarButton[SkinId="DolbyVision"]{image:url(:/Color/MainBar/DolbyVision);}
+UiQColorMainToolBarButton[SkinId="DolbyVision"]:hover{image:url(:/Color/MainBar/DolbyVision_hover);}
+UiQColorMainToolBarButton[SkinId="DolbyVision"]:pressed{image:url(:/Color/MainBar/DolbyVision_push);}
+UiQColorMainToolBarButton[SkinId="DolbyVision"]:checked{image:url(:/Color/MainBar/DolbyVision_active);}
+UiQColorMainToolBarButton[SkinId="HDR10Plus"]{image:url(:/Color/MainBar/HDR);}
+UiQColorMainToolBarButton[SkinId="HDR10Plus"]:hover{image:url(:/Color/MainBar/HDR_hover);}
+UiQColorMainToolBarButton[SkinId="HDR10Plus"]:pressed{image:url(:/Color/MainBar/HDR_push);}
+UiQColorMainToolBarButton[SkinId="HDR10Plus"]:checked{image:url(:/Color/MainBar/HDR_active);}
+UiQColorMainToolBarButton[SkinId="HDRVivid"]{image:url(:/Color/MainBar/HDRVivid);}
+UiQColorMainToolBarButton[SkinId="HDRVivid"]:hover{image:url(:/Color/MainBar/HDRVivid_hover);}
+UiQColorMainToolBarButton[SkinId="HDRVivid"]:pressed{image:url(:/Color/MainBar/HDRVivid_push);}
+UiQColorMainToolBarButton[SkinId="HDRVivid"]:checked{image:url(:/Color/MainBar/HDRVivid_active);}
+UiQColorMainToolBarButton[SkinId="DockedCurves"]{image:url(:/Color/MainBar/Curves);}
+UiQColorMainToolBarButton[SkinId="DockedCurves"]:hover{image:url(:/Color/MainBar/Curves_hover);}
+UiQColorMainToolBarButton[SkinId="DockedCurves"]:pressed{image:url(:/Color/MainBar/Curves_push);}
+UiQColorMainToolBarButton[SkinId="DockedCurves"]:checked{image:url(:/Color/MainBar/Curves_active);}
+UiQColorMainToolBarButton[SkinId="UndockedCurves"]{image:url(:/Color/MainBar/CurvesDock);}
+UiQColorMainToolBarButton[SkinId="UndockedCurves"]:hover{image:url(:/Color/MainBar/CurvesDock_hover);}
+UiQColorMainToolBarButton[SkinId="UndockedCurves"]:pressed{image:url(:/Color/MainBar/CurvesDock_push);}
+UiQColorMainToolBarButton[SkinId="Qualifier"]{image:url(:/Color/MainBar/Qualifier);}
+UiQColorMainToolBarButton[SkinId="Qualifier"]:hover{image:url(:/Color/MainBar/Qualifier_hover);}
+UiQColorMainToolBarButton[SkinId="Qualifier"]:pressed{image:url(:/Color/MainBar/Qualifier_push);}
+UiQColorMainToolBarButton[SkinId="Qualifier"]:checked{image:url(:/Color/MainBar/Qualifier_active);}
+UiQColorMainToolBarButton[SkinId="DockedColorMapper"]{image:url(:/Color/MainBar/ColorMapper);}
+UiQColorMainToolBarButton[SkinId="DockedColorMapper"]:hover{image:url(:/Color/MainBar/ColorMapper_hover);}
+UiQColorMainToolBarButton[SkinId="DockedColorMapper"]:pressed{image:url(:/Color/MainBar/ColorMapper_push);}
+UiQColorMainToolBarButton[SkinId="DockedColorMapper"]:checked{image:url(:/Color/MainBar/ColorMapper_active);}
+UiQColorMainToolBarButton[SkinId="UndockedColorMapper"]{image:url(:/Color/MainBar/ColorMapperDock);}
+UiQColorMainToolBarButton[SkinId="UndockedColorMapper"]:hover{image:url(:/Color/MainBar/ColorMapperDock_hover);}
+UiQColorMainToolBarButton[SkinId="UndockedColorMapper"]:pressed{image:url(:/Color/MainBar/ColorMapperDock_push);}
+UiQColorMainToolBarButton[SkinId="Window"]{image:url(:/Color/MainBar/Window);}
+UiQColorMainToolBarButton[SkinId="Window"]:hover{image:url(:/Color/MainBar/Window_hover);}
+UiQColorMainToolBarButton[SkinId="Window"]:pressed{image:url(:/Color/MainBar/Window_push);}
+UiQColorMainToolBarButton[SkinId="Window"]:checked{image:url(:/Color/MainBar/Window_active);}
+UiQColorMainToolBarButton[SkinId="Tracker"]{image:url(:/Color/MainBar/Tracker);}
+UiQColorMainToolBarButton[SkinId="Tracker"]:hover{image:url(:/Color/MainBar/Tracker_hover);}
+UiQColorMainToolBarButton[SkinId="Tracker"]:pressed{image:url(:/Color/MainBar/Tracker_push);}
+UiQColorMainToolBarButton[SkinId="Tracker"]:checked{image:url(:/Color/MainBar/Tracker_active);}
+UiQColorMainToolBarButton[SkinId="Paint"]{image:url(:/Color/MainBar/Paint);}
+UiQColorMainToolBarButton[SkinId="Paint"]:hover{image:url(:/Color/MainBar/Paint_hover);}
+UiQColorMainToolBarButton[SkinId="Paint"]:pressed{image:url(:/Color/MainBar/Paint_push);}
+UiQColorMainToolBarButton[SkinId="Paint"]:checked{image:url(:/Color/MainBar/Paint_active);}
+UiQColorMainToolBarButton[SkinId="PersonMask"]{image:url(:/Color/MainBar/PersonMask);}
+UiQColorMainToolBarButton[SkinId="PersonMask"]:hover{image:url(:/Color/MainBar/PersonMask_hover);}
+UiQColorMainToolBarButton[SkinId="PersonMask"]:pressed{image:url(:/Color/MainBar/PersonMask_push);}
+UiQColorMainToolBarButton[SkinId="PersonMask"]:checked{image:url(:/Color/MainBar/PersonMask_active);}
+UiQColorMainToolBarButton[SkinId="Blur"]{image:url(:/Color/MainBar/Blur);}
+UiQColorMainToolBarButton[SkinId="Blur"]:hover{image:url(:/Color/MainBar/Blur_hover);}
+UiQColorMainToolBarButton[SkinId="Blur"]:pressed{image:url(:/Color/MainBar/Blur_push);}
+UiQColorMainToolBarButton[SkinId="Blur"]:checked{image:url(:/Color/MainBar/Blur_active);}
+UiQColorMainToolBarButton[SkinId="Key"]{image:url(:/Color/MainBar/Key);}
+UiQColorMainToolBarButton[SkinId="Key"]:hover{image:url(:/Color/MainBar/Key_hover);}
+UiQColorMainToolBarButton[SkinId="Key"]:pressed{image:url(:/Color/MainBar/Key_push);}
+UiQColorMainToolBarButton[SkinId="Key"]:checked{image:url(:/Color/MainBar/Key_active);}
+UiQColorMainToolBarButton[SkinId="ColorSlice"]{image:url(:/Color/MainBar/ColorSlice);}
+UiQColorMainToolBarButton[SkinId="ColorSlice"]:hover{image:url(:/Color/MainBar/ColorSlice_hover);}
+UiQColorMainToolBarButton[SkinId="ColorSlice"]:pressed{image:url(:/Color/MainBar/ColorSlice_push);}
+UiQColorMainToolBarButton[SkinId="ColorSlice"]:checked{image:url(:/Color/MainBar/ColorSlice_active);}
+UiQColorMainToolBarButton[SkinId="Sizing"]{image:url(:/Color/MainBar/Sizing);}
+UiQColorMainToolBarButton[SkinId="Sizing"]:hover{image:url(:/Color/MainBar/Sizing_hover);}
+UiQColorMainToolBarButton[SkinId="Sizing"]:pressed{image:url(:/Color/MainBar/Sizing_push);}
+UiQColorMainToolBarButton[SkinId="Sizing"]:checked{image:url(:/Color/MainBar/Sizing_active);}
+UiQColorMainToolBarButton[SkinId="3D"]{image:url(:/Color/MainBar/3D);}
+UiQColorMainToolBarButton[SkinId="3D"]:hover{image:url(:/Color/MainBar/3D_hover);}
+UiQColorMainToolBarButton[SkinId="3D"]:pressed{image:url(:/Color/MainBar/3D_push);}
+UiQColorMainToolBarButton[SkinId="3D"]:checked{image:url(:/Color/MainBar/3D_active);}
+UiQColorMainToolBarButton[SkinId="Slate"]{image:url(:/Color/MainBar/DataBurn);}
+UiQColorMainToolBarButton[SkinId="Slate"]:hover{image:url(:/Color/MainBar/DataBurn_hover);}
+UiQColorMainToolBarButton[SkinId="Slate"]:pressed{image:url(:/Color/MainBar/DataBurn_push);}
+UiQColorMainToolBarButton[SkinId="Slate"]:checked{image:url(:/Color/MainBar/DataBurn_active);}
+UiQColorMainToolBarButton[SkinId="Keyframes"]{image:url(:/Color/MainBar/Keyframes);}
+UiQColorMainToolBarButton[SkinId="Keyframes"]:hover{image:url(:/Color/MainBar/Keyframes_hover);}
+UiQColorMainToolBarButton[SkinId="Keyframes"]:pressed{image:url(:/Color/MainBar/Keyframes_push);}
+UiQColorMainToolBarButton[SkinId="Keyframes"]:checked{image:url(:/Color/MainBar/Keyframes_active);}
+UiQColorMainToolBarButton[SkinId="DockedScopes"]{image:url(:/Color/MainBar/Scopes);}
+UiQColorMainToolBarButton[SkinId="DockedScopes"]:hover{image:url(:/Color/MainBar/Scopes_hover);}
+UiQColorMainToolBarButton[SkinId="DockedScopes"]:pressed{image:url(:/Color/MainBar/Scopes_push);}
+UiQColorMainToolBarButton[SkinId="DockedScopes"]:checked{image:url(:/Color/MainBar/Scopes_active);}
+UiQColorMainToolBarButton[SkinId="UndockedScopes"]{image:url(:/Color/MainBar/ScopesDock);}
+UiQColorMainToolBarButton[SkinId="UndockedScopes"]:hover{image:url(:/Color/MainBar/ScopesDock_hover);}
+UiQColorMainToolBarButton[SkinId="UndockedScopes"]:pressed{image:url(:/Color/MainBar/ScopesDock_push);}
+UiQColorMainToolBarButton[SkinId="Info"]{image:url(:/Color/MainBar/Info);}
+UiQColorMainToolBarButton[SkinId="Info"]:hover{image:url(:/Color/MainBar/Info_hover);}
+UiQColorMainToolBarButton[SkinId="Info"]:pressed{image:url(:/Color/MainBar/Info_push);}
+UiQColorMainToolBarButton[SkinId="Info"]:checked{image:url(:/Color/MainBar/Info_active);}
+UiQColorMainToolBarButton[SkinId="Slate"], UiQColorMainToolBarButton[SkinId="SlateInDSM"]{image:url(:/Color/MainBar/DataBurn);}
+UiQColorMainToolBarButton[SkinId="Slate"]:hover, UiQColorMainToolBarButton[SkinId="SlateInDSM"]:hover{image:url(:/Color/MainBar/DataBurn_hover);}
+UiQColorMainToolBarButton[SkinId="Slate"]:pressed, UiQColorMainToolBarButton[SkinId="SlateInDSM"]:pressed{image:url(:/Color/MainBar/DataBurn_push);}
+UiQColorMainToolBarButton[SkinId="Slate"]:checked, UiQColorMainToolBarButton[SkinId="SlateInDSM"]:checked{image:url(:/Color/MainBar/DataBurn_active);}
+UiQColorPaletteTabButton{border-style:none;background-color:transparent;image-position:center center;min-width:20px;max-width:20px;min-height:20px;max-height:20px;padding:0px;margin:0px;}
+UiQColorPaletteTabButton[SkinId="Wheels"]{image:url(:/Color/Common/Pri_Wheels);}
+UiQColorPaletteTabButton[SkinId="Wheels"]:hover{image:url(:/Color/Common/Pri_Wheels_hover);}
+UiQColorPaletteTabButton[SkinId="Wheels"]:pressed{image:url(:/Color/Common/Pri_Wheels_push);}
+UiQColorPaletteTabButton[SkinId="Wheels"]:checked{image:url(:/Color/Common/Pri_Wheels_active);}
+UiQColorPaletteTabButton[SkinId="Wheels"]:disabled{image:url(:/Color/Common/Pri_Wheels);}
+UiQColorPaletteTabButton[SkinId="Bars"]{image:url(:/Color/Common/Pri_Bars);}
+UiQColorPaletteTabButton[SkinId="Bars"]:hover{image:url(:/Color/Common/Pri_Bars_hover);}
+UiQColorPaletteTabButton[SkinId="Bars"]:pressed{image:url(:/Color/Common/Pri_Bars_push);}
+UiQColorPaletteTabButton[SkinId="Bars"]:checked{image:url(:/Color/Common/Pri_Bars_active);}
+UiQColorPaletteTabButton[SkinId="Bars"]:disabled{image:url(:/Color/Common/Pri_Bars);}
+UiQColorPaletteTabButton[SkinId="Log"]{image:url(:/Color/Common/Pri_Log);}
+UiQColorPaletteTabButton[SkinId="Log"]:hover{image:url(:/Color/Common/Pri_Log_hover);}
+UiQColorPaletteTabButton[SkinId="Log"]:pressed{image:url(:/Color/Common/Pri_Log_push);}
+UiQColorPaletteTabButton[SkinId="Log"]:checked{image:url(:/Color/Common/Pri_Log_active);}
+UiQColorPaletteTabButton[SkinId="Log"]:disabled{image:url(:/Color/Common/Pri_Log);}
+UiQColorPaletteTabButton[SkinId="PrimaryTrims"]{image:url(:/Color/Common/DolbyVision_PriTrims);}
+UiQColorPaletteTabButton[SkinId="PrimaryTrims"]:hover{image:url(:/Color/Common/DolbyVision_PriTrims_hover);}
+UiQColorPaletteTabButton[SkinId="PrimaryTrims"]:pressed{image:url(:/Color/Common/DolbyVision_PriTrims_push);}
+UiQColorPaletteTabButton[SkinId="PrimaryTrims"]:checked{image:url(:/Color/Common/DolbyVision_PriTrims_active);}
+UiQColorPaletteTabButton[SkinId="PrimaryTrims"]:disabled{image:url(:/Color/Common/DolbyVision_PriTrims);}
+UiQColorPaletteTabButton[SkinId="SecondaryTrims"]{image:url(:/Color/Common/DolbyVision_SecTrims);}
+UiQColorPaletteTabButton[SkinId="SecondaryTrims"]:hover{image:url(:/Color/Common/DolbyVision_SecTrims_hover);}
+UiQColorPaletteTabButton[SkinId="SecondaryTrims"]:pressed{image:url(:/Color/Common/DolbyVision_SecTrims_push);}
+UiQColorPaletteTabButton[SkinId="SecondaryTrims"]:checked{image:url(:/Color/Common/DolbyVision_SecTrims_active);}
+UiQColorPaletteTabButton[SkinId="SecondaryTrims"]:disabled{image:url(:/Color/Common/DolbyVision_SecTrims);}
+UiQColorPaletteTabButton[SkinId="Custom"]{image:url(:/Color/Common/Curves_Custom);}
+UiQColorPaletteTabButton[SkinId="Custom"]:hover{image:url(:/Color/Common/Curves_Custom_hover);}
+UiQColorPaletteTabButton[SkinId="Custom"]:pressed{image:url(:/Color/Common/Curves_Custom_push);}
+UiQColorPaletteTabButton[SkinId="Custom"]:checked{image:url(:/Color/Common/Curves_Custom_active);}
+UiQColorPaletteTabButton[SkinId="Custom"]:disabled{image:url(:/Color/Common/Curves_Custom);}
+UiQColorPaletteTabButton[SkinId="HueVsHue"]{image:url(:/Color/Common/Curves_HueVsHue);}
+UiQColorPaletteTabButton[SkinId="HueVsHue"]:hover{image:url(:/Color/Common/Curves_HueVsHue_hover);}
+UiQColorPaletteTabButton[SkinId="HueVsHue"]:pressed{image:url(:/Color/Common/Curves_HueVsHue_push);}
+UiQColorPaletteTabButton[SkinId="HueVsHue"]:checked{image:url(:/Color/Common/Curves_HueVsHue_active);}
+UiQColorPaletteTabButton[SkinId="HueVsHue"]:disabled{image:url(:/Color/Common/Curves_HueVsHue);}
+UiQColorPaletteTabButton[SkinId="HueVsSat"]{image:url(:/Color/Common/Curves_HueVsSat);}
+UiQColorPaletteTabButton[SkinId="HueVsSat"]:hover{image:url(:/Color/Common/Curves_HueVsSat_hover);}
+UiQColorPaletteTabButton[SkinId="HueVsSat"]:pressed{image:url(:/Color/Common/Curves_HueVsSat_push);}
+UiQColorPaletteTabButton[SkinId="HueVsSat"]:checked{image:url(:/Color/Common/Curves_HueVsSat_active);}
+UiQColorPaletteTabButton[SkinId="HueVsSat"]:disabled{image:url(:/Color/Common/Curves_HueVsSat);}
+UiQColorPaletteTabButton[SkinId="HueVsLum"]{image:url(:/Color/Common/Curves_HueVsLum);}
+UiQColorPaletteTabButton[SkinId="HueVsLum"]:hover{image:url(:/Color/Common/Curves_HueVsLum_hover);}
+UiQColorPaletteTabButton[SkinId="HueVsLum"]:pressed{image:url(:/Color/Common/Curves_HueVsLum_push);}
+UiQColorPaletteTabButton[SkinId="HueVsLum"]:checked{image:url(:/Color/Common/Curves_HueVsLum_active);}
+UiQColorPaletteTabButton[SkinId="HueVsLum"]:disabled{image:url(:/Color/Common/Curves_HueVsLum);}
+UiQColorPaletteTabButton[SkinId="LumVsSat"]{image:url(:/Color/Common/Curves_LumVsSat);}
+UiQColorPaletteTabButton[SkinId="LumVsSat"]:hover{image:url(:/Color/Common/Curves_LumVsSat_hover);}
+UiQColorPaletteTabButton[SkinId="LumVsSat"]:pressed{image:url(:/Color/Common/Curves_LumVsSat_push);}
+UiQColorPaletteTabButton[SkinId="LumVsSat"]:checked{image:url(:/Color/Common/Curves_LumVsSat_active);}
+UiQColorPaletteTabButton[SkinId="LumVsSat"]:disabled{image:url(:/Color/Common/Curves_LumVsSat);}
+UiQColorPaletteTabButton[SkinId="SatVsSat"]{image:url(:/Color/Common/Curves_SatVsSat);}
+UiQColorPaletteTabButton[SkinId="SatVsSat"]:hover{image:url(:/Color/Common/Curves_SatVsSat_hover);}
+UiQColorPaletteTabButton[SkinId="SatVsSat"]:pressed{image:url(:/Color/Common/Curves_SatVsSat_push);}
+UiQColorPaletteTabButton[SkinId="SatVsSat"]:checked{image:url(:/Color/Common/Curves_SatVsSat_active);}
+UiQColorPaletteTabButton[SkinId="SatVsSat"]:disabled{image:url(:/Color/Common/Curves_SatVsSat);}
+UiQColorPaletteTabButton[SkinId="SatVsLum"]{image:url(:/Color/Common/Curves_SatVsLum);}
+UiQColorPaletteTabButton[SkinId="SatVsLum"]:hover{image:url(:/Color/Common/Curves_SatVsLum_hover);}
+UiQColorPaletteTabButton[SkinId="SatVsLum"]:pressed{image:url(:/Color/Common/Curves_SatVsLum_push);}
+UiQColorPaletteTabButton[SkinId="SatVsLum"]:checked{image:url(:/Color/Common/Curves_SatVsLum_active);}
+UiQColorPaletteTabButton[SkinId="SatVsLum"]:disabled{image:url(:/Color/Common/Curves_SatVsLum);}
+UiQColorPaletteTabButton[SkinId="Chroma"]{image:url(:/Common/Headers/ColorMapperChromaWarp);}
+UiQColorPaletteTabButton[SkinId="Chroma"]:hover{image:url(:/Common/Headers/ColorMapperChromaWarp_hover);}
+UiQColorPaletteTabButton[SkinId="Chroma"]:pressed{image:url(:/Common/Headers/ColorMapperChromaWarp_push);}
+UiQColorPaletteTabButton[SkinId="Chroma"]:checked{image:url(:/Common/Headers/ColorMapperChromaWarp_active);}
+UiQColorPaletteTabButton[SkinId="Chroma"]:disabled{image:url(:/Common/Headers/ColorMapperChromaWarp_disabled);}
+UiQColorPaletteTabButton[SkinId="HueSat"]{image:url(:/Common/Headers/ColorMapperHueSat);}
+UiQColorPaletteTabButton[SkinId="HueSat"]:hover{image:url(:/Common/Headers/ColorMapperHueSat_hover);}
+UiQColorPaletteTabButton[SkinId="HueSat"]:pressed{image:url(:/Common/Headers/ColorMapperHueSat_push);}
+UiQColorPaletteTabButton[SkinId="HueSat"]:checked{image:url(:/Common/Headers/ColorMapperHueSat_active);}
+UiQColorPaletteTabButton[SkinId="HueSat"]:disabled{image:url(:/Common/Headers/ColorMapperHueSat_disabled);}
+UiQColorPaletteTabButton[SkinId="ChromaLuma"]{image:url(:/Common/Headers/ColorMapperChromaLuma);}
+UiQColorPaletteTabButton[SkinId="ChromaLuma"]:hover{image:url(:/Common/Headers/ColorMapperChromaLuma_hover);}
+UiQColorPaletteTabButton[SkinId="ChromaLuma"]:pressed{image:url(:/Common/Headers/ColorMapperChromaLuma_push);}
+UiQColorPaletteTabButton[SkinId="ChromaLuma"]:checked{image:url(:/Common/Headers/ColorMapperChromaLuma_active);}
+UiQColorPaletteTabButton[SkinId="ChromaLuma"]:disabled{image:url(:/Common/Headers/ColorMapperChromaLuma_disabled);}
+UiQColorPaletteTabButton[SkinId="HSL"]{image:url(:/Color/Common/Qual_HSL);}
+UiQColorPaletteTabButton[SkinId="HSL"]:hover{image:url(:/Color/Common/Qual_HSL_hover);}
+UiQColorPaletteTabButton[SkinId="HSL"]:pressed{image:url(:/Color/Common/Qual_HSL_push);}
+UiQColorPaletteTabButton[SkinId="HSL"]:checked{image:url(:/Color/Common/Qual_HSL_active);}
+UiQColorPaletteTabButton[SkinId="HSL"]:disabled{image:url(:/Color/Common/Qual_HSL);}
+UiQColorPaletteTabButton[SkinId="RGB"]{image:url(:/Color/Common/Qual_RGB);}
+UiQColorPaletteTabButton[SkinId="RGB"]:hover{image:url(:/Color/Common/Qual_RGB_hover);}
+UiQColorPaletteTabButton[SkinId="RGB"]:pressed{image:url(:/Color/Common/Qual_RGB_push);}
+UiQColorPaletteTabButton[SkinId="RGB"]:checked{image:url(:/Color/Common/Qual_RGB_active);}
+UiQColorPaletteTabButton[SkinId="RGB"]:disabled{image:url(:/Color/Common/Qual_RGB);}
+UiQColorPaletteTabButton[SkinId="LUM"]{image:url(:/Color/Common/Qual_LUM);}
+UiQColorPaletteTabButton[SkinId="LUM"]:hover{image:url(:/Color/Common/Qual_LUM_hover);}
+UiQColorPaletteTabButton[SkinId="LUM"]:pressed{image:url(:/Color/Common/Qual_LUM_push);}
+UiQColorPaletteTabButton[SkinId="LUM"]:checked{image:url(:/Color/Common/Qual_LUM_active);}
+UiQColorPaletteTabButton[SkinId="LUM"]:disabled{image:url(:/Color/Common/Qual_LUM);}
+UiQColorPaletteTabButton[SkinId="3D"]{image:url(:/Color/Common/Qual_3D);}
+UiQColorPaletteTabButton[SkinId="3D"]:hover{image:url(:/Color/Common/Qual_3D_hover);}
+UiQColorPaletteTabButton[SkinId="3D"]:pressed{image:url(:/Color/Common/Qual_3D_push);}
+UiQColorPaletteTabButton[SkinId="3D"]:checked{image:url(:/Color/Common/Qual_3D_active);}
+UiQColorPaletteTabButton[SkinId="3D"]:disabled{image:url(:/Color/Common/Qual_3D);}
+UiQColorPaletteTabButton[SkinId="Window"]{image:url(:/Color/Common/Tracker_Window);}
+UiQColorPaletteTabButton[SkinId="Window"]:hover{image:url(:/Color/Common/Tracker_Window_hover);}
+UiQColorPaletteTabButton[SkinId="Window"]:pressed{image:url(:/Color/Common/Tracker_Window_push);}
+UiQColorPaletteTabButton[SkinId="Window"]:checked{image:url(:/Color/Common/Tracker_Window_active);}
+UiQColorPaletteTabButton[SkinId="Blur"]:disabled{image:url(:/Color/Common/Tracker_Window);}
+UiQColorPaletteTabButton[SkinId="Stabilizer"]{image:url(:/Color/Common/Tracker_Stabilizer);}
+UiQColorPaletteTabButton[SkinId="Stabilizer"]:hover{image:url(:/Color/Common/Tracker_Stabilizer_hover);}
+UiQColorPaletteTabButton[SkinId="Stabilizer"]:pressed{image:url(:/Color/Common/Tracker_Stabilizer_push);}
+UiQColorPaletteTabButton[SkinId="Stabilizer"]:checked{image:url(:/Color/Common/Tracker_Stabilizer_active);}
+UiQColorPaletteTabButton[SkinId="Stabilizer"]:disabled{image:url(:/Color/Common/Tracker_Stabilizer);}
+UiQColorPaletteTabButton[SkinId="FX"]{image:url(:/Color/Common/Tracker_FX);}
+UiQColorPaletteTabButton[SkinId="FX"]:hover{image:url(:/Color/Common/Tracker_FX_hover);}
+UiQColorPaletteTabButton[SkinId="FX"]:pressed{image:url(:/Color/Common/Tracker_FX_push);}
+UiQColorPaletteTabButton[SkinId="FX"]:checked{image:url(:/Color/Common/Tracker_FX_active);}
+UiQColorPaletteTabButton[SkinId="FX"]:disabled{image:url(:/Color/Common/Tracker_FX);}
+UiQColorPaletteTabButton[SkinId="Blur"]{image:url(:/Color/Common/Blur_Blur);}
+UiQColorPaletteTabButton[SkinId="Blur"]:hover{image:url(:/Color/Common/Blur_Blur_hover);}
+UiQColorPaletteTabButton[SkinId="Blur"]:pressed{image:url(:/Color/Common/Blur_Blur_push);}
+UiQColorPaletteTabButton[SkinId="Blur"]:checked{image:url(:/Color/Common/Blur_Blur_active);}
+UiQColorPaletteTabButton[SkinId="Blur"]:disabled{image:url(:/Color/Common/Blur_Blur);}
+UiQColorPaletteTabButton[SkinId="Sharpen"]{image:url(:/Color/Common/Blur_Sharpen);}
+UiQColorPaletteTabButton[SkinId="Sharpen"]:hover{image:url(:/Color/Common/Blur_Sharpen_hover);}
+UiQColorPaletteTabButton[SkinId="Sharpen"]:pressed{image:url(:/Color/Common/Blur_Sharpen_push);}
+UiQColorPaletteTabButton[SkinId="Sharpen"]:checked{image:url(:/Color/Common/Blur_Sharpen_active);}
+UiQColorPaletteTabButton[SkinId="Sharpen"]:disabled{image:url(:/Color/Common/Blur_Sharpen);}
+UiQColorPaletteTabButton[SkinId="Mist"]{image:url(:/Color/Common/Blur_Mist);}
+UiQColorPaletteTabButton[SkinId="Mist"]:hover{image:url(:/Color/Common/Blur_Mist_hover);}
+UiQColorPaletteTabButton[SkinId="Mist"]:pressed{image:url(:/Color/Common/Blur_Mist_push);}
+UiQColorPaletteTabButton[SkinId="Mist"]:checked{image:url(:/Color/Common/Blur_Mist_active);}
+UiQColorPaletteTabButton[SkinId="Mist"]:disabled{image:url(:/Color/Common/Blur_Mist);}
+UiQColorPaletteTabButton[SkinId="Source"]{image:url(:/Color/Common/Sizing_Edit);}
+UiQColorPaletteTabButton[SkinId="Source"]:hover{image:url(:/Color/Common/Sizing_Edit_hover);}
+UiQColorPaletteTabButton[SkinId="Source"]:pressed{image:url(:/Color/Common/Sizing_Edit_push);}
+UiQColorPaletteTabButton[SkinId="Source"]:checked{image:url(:/Color/Common/Sizing_Edit_active);}
+UiQColorPaletteTabButton[SkinId="Source"]:disabled{image:url(:/Color/Common/Sizing_Edit);}
+UiQColorPaletteTabButton[SkinId="Edit"]{image:url(:/Color/Common/Sizing_Edit);}
+UiQColorPaletteTabButton[SkinId="Edit"]:hover{image:url(:/Color/Common/Sizing_Edit_hover);}
+UiQColorPaletteTabButton[SkinId="Edit"]:pressed{image:url(:/Color/Common/Sizing_Edit_push);}
+UiQColorPaletteTabButton[SkinId="Edit"]:checked{image:url(:/Color/Common/Sizing_Edit_active);}
+UiQColorPaletteTabButton[SkinId="Edit"]:disabled{image:url(:/Color/Common/Sizing_Edit);}
+UiQColorPaletteTabButton[SkinId="Input"]{image:url(:/Color/Common/Sizing_Input);}
+UiQColorPaletteTabButton[SkinId="Input"]:hover{image:url(:/Color/Common/Sizing_Input_hover);}
+UiQColorPaletteTabButton[SkinId="Input"]:pressed{image:url(:/Color/Common/Sizing_Input_push);}
+UiQColorPaletteTabButton[SkinId="Input"]:checked{image:url(:/Color/Common/Sizing_Input_active);}
+UiQColorPaletteTabButton[SkinId="Input"]:disabled{image:url(:/Color/Common/Sizing_Input);}
+UiQColorPaletteTabButton[SkinId="Output"]{image:url(:/Color/Common/Sizing_Output);}
+UiQColorPaletteTabButton[SkinId="Output"]:hover{image:url(:/Color/Common/Sizing_Output_hover);}
+UiQColorPaletteTabButton[SkinId="Output"]:pressed{image:url(:/Color/Common/Sizing_Output_push);}
+UiQColorPaletteTabButton[SkinId="Output"]:checked{image:url(:/Color/Common/Sizing_Output_active);}
+UiQColorPaletteTabButton[SkinId="Output"]:disabled{image:url(:/Color/Common/Sizing_Output);}
+UiQColorPaletteTabButton[SkinId="Node"]{image:url(:/Color/Common/Sizing_Node);}
+UiQColorPaletteTabButton[SkinId="Node"]:hover{image:url(:/Color/Common/Sizing_Node_hover);}
+UiQColorPaletteTabButton[SkinId="Node"]:pressed{image:url(:/Color/Common/Sizing_Node_push);}
+UiQColorPaletteTabButton[SkinId="Node"]:checked{image:url(:/Color/Common/Sizing_Node_active);}
+UiQColorPaletteTabButton[SkinId="Node"]:disabled{image:url(:/Color/Common/Sizing_Node);}
+UiQColorPaletteTabButton[SkinId="Reference"]{image:url(:/Color/Common/Sizing_Reference);}
+UiQColorPaletteTabButton[SkinId="Reference"]:hover{image:url(:/Color/Common/Sizing_Reference_hover);}
+UiQColorPaletteTabButton[SkinId="Reference"]:pressed{image:url(:/Color/Common/Sizing_Reference_push);}
+UiQColorPaletteTabButton[SkinId="Reference"]:checked{image:url(:/Color/Common/Sizing_Reference_active);}
+UiQColorPaletteTabButton[SkinId="Reference"]:disabled{image:url(:/Color/Common/Sizing_Reference);}
+UiQColorPaletteTabButton[SkinId="Stereo"]{image:url(:/Color/Common/Qual_3D);}
+UiQColorPaletteTabButton[SkinId="Stereo"]:hover{image:url(:/Color/Common/Qual_3D_hover);}
+UiQColorPaletteTabButton[SkinId="Stereo"]:pressed{image:url(:/Color/Common/Qual_3D_push);}
+UiQColorPaletteTabButton[SkinId="Stereo"]:checked{image:url(:/Color/Common/Qual_3D_active);}
+UiQColorPaletteTabButton[SkinId="Stereo"]:disabled{image:url(:/Color/Common/Qual_3D);}
+UiQColorPaletteTabButton[SkinId="Edge_Mask"]{image:url(:/Player/MainViewer/Edge_Mask);}
+UiQColorPaletteTabButton[SkinId="Edge_Mask"]:hover{image:url(:/Player/MainViewer/Edge_Mask_hover);}
+UiQColorPaletteTabButton[SkinId="Edge_Mask"]:pressed{image:url(:/Player/MainViewer/Edge_Mask_push);}
+UiQColorPaletteTabButton[SkinId="Edge_Mask"]:checked{image:url(:/Player/MainViewer/Edge_Mask_active);}
+UiQColorPaletteTabButton[SkinId="Edge_Mask"]:disabled{image:url(:/Player/MainViewer/Edge_Mask);}
+UiQColorPaletteTabButton[SkinId="Foveation"]{image:url(:/Player/MainViewer/Foveation);}
+UiQColorPaletteTabButton[SkinId="Foveation"]:hover{image:url(:/Player/MainViewer/Foveation_hover);}
+UiQColorPaletteTabButton[SkinId="Foveation"]:pressed{image:url(:/Player/MainViewer/Foveation_push);}
+UiQColorPaletteTabButton[SkinId="Foveation"]:checked{image:url(:/Player/MainViewer/Foveation_active);}
+UiQColorPaletteTabButton[SkinId="Foveation"]:disabled{image:url(:/Player/MainViewer/Foveation);}
+UiQColorPalettePanelPenguinGrayBackgroundFrame{background-color:#E6CED5;}
+UiQColorPaletteInvisibleSliderIndicator{min-height:4px;max-height:4px;min-width:32px;max-width:32px;padding-left:6px;}
+UiQColorPaletteTopToolbarFrame{padding:0px;border-style:none;border-bottom:1px solid COLOR_TINT_GRAY;background-color:COLOR_POSEIDON_GRAY;min-height:45px;max-height:45px;}
+UiQColorPaletteTopToolbarFrame[SkinSizeMode="Large"]{min-height:45px;max-height:45px;}
+UiQColorPaletteTopToolbarFrame[SkinSizeMode="Medium"], UiQColorPaletteTopToolbarFrame[SkinSizeMode="Small"]{min-height:35px;max-height:35px;}
+UiQColorPaletteTopToolbarFrameNoBackground{padding:0px;border-style:none;border-bottom:1px solid COLOR_TINT_GRAY;min-height:45px;max-height:45px;}
+UiQColorPaletteTopToolbarFrameNoBackground[SkinSizeMode="Large"]{min-height:45px;max-height:45px;}
+UiQColorPaletteTopToolbarFrameNoBackground[SkinSizeMode="Medium"], UiQColorPaletteTopToolbarFrameNoBackground[SkinSizeMode="Small"]{min-height:35px;max-height:35px;}
+UiQColorPaletteBottomToolbarFrame, UiQUnDockedColorPaletteBottomToolbarFrame{padding:0px;border-style:none;border-top:1px solid COLOR_TINT_GRAY;background-color:COLOR_POSEIDON_GRAY;min-height:45px;max-height:45px;}
+UiQColorPaletteBottomToolbarFrame[SkinSizeMode="Large"]{min-height:45px;max-height:45px;}
+UiQColorPaletteBottomToolbarFrame[SkinSizeMode="Medium"], UiQColorPaletteBottomToolbarFrame[SkinSizeMode="Small"]{min-height:35px;max-height:35px;}
+UiQColorPaletteBottomToolbarFrameNoBackground{padding:0px;border-style:none;border-top:1px solid COLOR_TINT_GRAY;min-height:45px;max-height:45px;}
+UiQColorPaletteBottomToolbarFrameNoBackground[SkinSizeMode="Large"]{min-height:45px;max-height:45px;}
+UiQColorPaletteBottomToolbarFrameNoBackground[SkinSizeMode="Medium"], UiQColorPaletteBottomToolbarFrameNoBackground[SkinSizeMode="Small"]{min-height:35px;max-height:35px;}
+BmdDavUI--UiInvisibleLabelSlider[SkinId="PrimaryColorInputLabelSlider"]{min-height:20px;max-height:20px;}
+BmdDavUI--UiInvisibleLabelSlider[SkinId="PrimaryColorInputLabelSlider"][SkinSizeMode="Large"]{min-width:38px;max-width:38px;}
+BmdDavUI--UiInvisibleLabelSlider[SkinId="PrimaryColorInputLabelSlider"][SkinSizeMode="Medium"], BmdDavUI--UiInvisibleLabelSlider[SkinId="PrimaryColorInputLabelSlider"][SkinSizeMode="Small"]{min-width:33px;max-width:33px;}
+UiQColorPaletteAutoColorPushButton{border-style:none;min-width:24px;max-width:24px;min-height:24px;max-height:24px;image:url(:/Color/Primaries/AutoColor);}
+UiQColorPaletteAutoColorPushButton:hover{image:url(:/Color/Primaries/AutoColor_hover);}
+UiQColorPaletteAutoColorPushButton:pressed{image:url(:/Color/Primaries/AutoColor_push);}
+UiQColorPaletteWhitePickerPushButton{border-style:none;min-width:20px;max-width:20px;min-height:20px;max-height:20px;image:url(:/Color/Primaries/WhitePicker);}
+UiQColorPaletteWhitePickerPushButton:hover, UiQColorPaletteWhitePickerPushButton:pressed{image:url(:/Color/Primaries/WhitePicker_hover);}
+UiQColorPaletteWhitePickerPushButton:checked{image:none;}
+UiQColorPaletteBlackPickerButton{border-style:none;min-width:20px;max-width:20px;min-height:20px;max-height:20px;image:url(:/Color/Primaries/BlackPicker);}
+UiQColorPaletteBlackPickerButton:hover, UiQColorPaletteBlackPickerButton:pressed{image:url(:/Color/Primaries/BlackPicker_hover);}
+UiQColorPaletteBlackPickerButton:checked{image:none;}
+UiQColorPaletteWhiteBalancePickerButton{border-style:none;min-width:20px;max-width:20px;min-height:20px;max-height:20px;image:url(:/Color/Primaries/WhiteBalancePicker);}
+UiQColorPaletteWhiteBalancePickerButton:hover, UiQColorPaletteWhiteBalancePickerButton:pressed{image:url(:/Color/Primaries/WhiteBalancePicker_hover);}
+UiQColorPaletteWhiteBalancePickerButton:checked{image:none;}
+UiQColorPaletteWhiteLabel{color:white;}
+UiQColorPaletteWhiteLabel:disabled{color:rgba(255, 255, 255, 104);}
+UiQColorPaletteGangLeftTop, UiQColorPaletteGangLeftBottom{border-style:none;background-color:transparent;image-position:center center;min-width:14px;max-width:14px;min-height:14px;max-height:14px;padding-left:4px;}
+UiQColorPaletteGangLeftTop{image:url(:/Common/Widgets/LinkRowArmsTop);}
+UiQColorPaletteGangLeftBottom{image:url(:/Common/Widgets/LinkRowArmsBottom);}
+UiQUnDockedColorPaletteSectionHeaderBarWithCloseButton{border-style:none;border-bottom:1px solid COLOR_TINT_GRAY;background-color:COLOR_ORCA_GRAY;padding:0px 8px 0px 3px;min-height:29px;max-height:29px;}
+UiQColorPaletteCameraRawLeftSidebar{background-color:COLOR_SEAL_GRAY;border-style:none;border-right:1px solid COLOR_TINT_GRAY;}
+UiQColorPaletteCameraRawSettingsFrameSeparator{border-style:none;border-right:1px solid COLOR_TINT_GRAY;}
+QCheckBox[SkinId="ColorPaletteCameraRaw"]{min-height:23px;max-height:23px;}
+QCheckBox[SkinId="ColorPaletteCameraRaw"][SkinSizeMode="Large"]{min-height:23px;max-height:23px;}
+QCheckBox[SkinId="ColorPaletteCameraRaw"][SkinSizeMode="Medium"], QCheckBox[SkinId="ColorPaletteCameraRaw"][SkinSizeMode="Small"]{min-height:17px;max-height:17px;}
+UiQColorPalettePrimariesSliderArrowButton{border-width:0px;padding:0px;image-position:center, center;min-width:12px;max-width:12px;min-height:8px;max-height:8px;}
+UiQColorPalettePrimariesSliderArrowButton[SkinId="Up"]{image:url(:/Color/Primaries/OffsetArrowUp);}
+UiQColorPalettePrimariesSliderArrowButton[SkinId="Up"]:hover{image:url(:/Color/Primaries/OffsetArrowUp_hover);}
+UiQColorPalettePrimariesSliderArrowButton[SkinId="Up"]:pressed{image:url(:/Color/Primaries/OffsetArrowUp_push);}
+UiQColorPalettePrimariesSliderArrowButton[SkinId="Down"]{image:url(:/Color/Primaries/OffsetArrowDown);}
+UiQColorPalettePrimariesSliderArrowButton[SkinId="Down"]:hover{image:url(:/Color/Primaries/OffsetArrowDown_hover);}
+UiQColorPalettePrimariesSliderArrowButton[SkinId="Down"]:pressed{image:url(:/Color/Primaries/OffsetArrowDown_push);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="PrimariesTemp"]{image:url(:/Color/Primaries/InputControlBarTemp);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="PrimariesTint"]{image:url(:/Color/Primaries/InputControlBarTint);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="PrimariesContrast"]{image:url(:/Color/Primaries/InputControlBarContrast);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="PrimariesPivot"]{image:url(:/Color/Primaries/InputControlBarPivot);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="PrimariesMidDetail"]{image:url(:/Color/Primaries/InputControlBarMidDetail);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="PrimariesShadow"]{image:url(:/Color/Primaries/InputControlBarShadows);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="PrimariesHighlight"]{image:url(:/Color/Primaries/InputControlBarHighlights);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="PrimariesColBoost"]{image:url(:/Color/Primaries/InputControlBarColorBoost);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="PrimariesSaturation"]{image:url(:/Color/Primaries/InputControlBarSat);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="PrimariesHue"]{image:url(:/Color/Primaries/InputControlBarHue);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="PrimariesLumMix"]{image:url(:/Color/Primaries/InputControlBarLumMix);}
+UiQColorPaletteHDRFlatViewWheelsContainer{border-style:none;border-right:1px solid COLOR_TINT_GRAY;}
+UiQSectionHeaderIconButton[SkinId="HDRExpandRight"]{image:url(:/Common/Headers/ExpandRight);}
+UiQSectionHeaderIconButton[SkinId="HDRExpandRight"]:hover{image:url(:/Common/Headers/ExpandRight_hover);}
+UiQSectionHeaderIconButton[SkinId="HDRExpandRight"]:pressed{image:url(:/Common/Headers/ExpandRight_push);}
+UiQSectionHeaderIconButton[SkinId="HDRExpandRight"]:disabled{image:url(:/Common/Headers/ExpandRight_disabled);}
+UiQSectionHeaderIconButton[SkinId="HDRExpandRight"]:checked{image:url(:/Common/Headers/ExpandLeft);}
+UiQSectionHeaderIconButton[SkinId="HDRExpandRight"]:checked:hover{image:url(:/Common/Headers/ExpandLeft_hover);}
+UiQSectionHeaderIconButton[SkinId="HDRExpandRight"]:checked:pressed{image:url(:/Common/Headers/ExpandLeft_push);}
+UiQSectionHeaderIconButton[SkinId="HDRExpandRight"]:checked:disabled{image:url(:/Common/Headers/ExpandLeft_disabled);}
+UiQSectionHeaderIconButton[SkinId="HDRExpandLeft"]{image:url(:/Common/Headers/ExpandLeft);}
+UiQSectionHeaderIconButton[SkinId="HDRExpandLeft"]:hover{image:url(:/Common/Headers/ExpandLeft_hover);}
+UiQSectionHeaderIconButton[SkinId="HDRExpandLeft"]:pressed{image:url(:/Common/Headers/ExpandLeft_push);}
+UiQSectionHeaderIconButton[SkinId="HDRExpandLeft"]:disabled{image:url(:/Common/Headers/ExpandLeft_disabled);}
+UiQSectionHeaderIconButton[SkinId="HDRExpandLeft"]:checked{image:url(:/Common/Headers/ExpandRight);}
+UiQSectionHeaderIconButton[SkinId="HDRExpandLeft"]:checked:hover{image:url(:/Common/Headers/ExpandRight_hover);}
+UiQSectionHeaderIconButton[SkinId="HDRExpandLeft"]:checked:pressed{image:url(:/Common/Headers/ExpandRight_push);}
+UiQSectionHeaderIconButton[SkinId="HDRExpandLeft"]:checked:disabled{image:url(:/Common/Headers/ExpandRight_disabled);}
+UiQSectionHeaderIconButton[SkinId="HDRColorWheels"]{image:url(:/Common/Headers/ColorWheel);}
+UiQSectionHeaderIconButton[SkinId="HDRColorWheels"]:hover{image:url(:/Common/Headers/ColorWheel_hover);}
+UiQSectionHeaderIconButton[SkinId="HDRColorWheels"]:pressed{image:url(:/Common/Headers/ColorWheel_push);}
+UiQSectionHeaderIconButton[SkinId="HDRColorWheels"]:checked{image:url(:/Common/Headers/ColorWheel_active);}
+UiQSectionHeaderIconButton[SkinId="HDRColorWheels"]:disabled{image:url(:/Common/Headers/ColorWheel_disabled);}
+UiQSectionHeaderIconButton[SkinId="HDRCurves"]{image:url(:/Common/Headers/Graph);}
+UiQSectionHeaderIconButton[SkinId="HDRCurves"]:hover{image:url(:/Common/Headers/Graph_hover);}
+UiQSectionHeaderIconButton[SkinId="HDRCurves"]:pressed{image:url(:/Common/Headers/Graph_push);}
+UiQSectionHeaderIconButton[SkinId="HDRCurves"]:checked{image:url(:/Common/Headers/Graph_active);}
+UiQSectionHeaderIconButton[SkinId="HDRCurves"]:disabled{image:url(:/Common/Headers/Graph_disabled);}
+UiQColorPaletteDualSliderInvisibleSlider{min-height:0px;}
+UiQColorPaletteHDRWheelsZoneFooterFrame{padding-top:4px;min-height:22px;max-height:22px;}
+UiQColorPaletteHDRWheelsPivotLabel{color:white;font-preset-name:FONT_ANTMAN;}
+UiQColorPaletteHDRWheelsPivotLabel:disabled{color:rgba(255, 255, 255, 104);}
+UiQColorPaletteHDRCurvesSliderContainer{min-height:31px;max-height:31px;}
+UiQColorPaletteHDRCurvesSliderContainer[SkinSizeMode="Large"]{min-height:31px;max-height:31px;}
+UiQColorPaletteHDRCurvesSliderContainer[SkinSizeMode="Medium"], UiQColorPaletteHDRCurvesSliderContainer[SkinSizeMode="Small"]{min-height:37px;max-height:37px;}
+UiQColorPaletteHDRZoneContainer{border-style:none;border-right:1px solid COLOR_TINT_GRAY;min-width:245px;max-width:245px;}
+UiQColorPaletteHDRZoneContainer[SkinSizeMode="Large"]{min-width:245px;max-width:245px;}
+UiQColorPaletteHDRZoneContainer[SkinSizeMode="Medium"], UiQColorPaletteHDRZoneContainer[SkinSizeMode="Small"]{min-width:229px;max-width:229px;}
+UiQColorPaletteHDRWheelsPreviewButton{border-style:none;image-position:center center;min-width:19px;max-width:19px;min-height:19px;max-height:19px;}
+UiQColorPaletteHDRWheelsPreviewButton[SkinId="Dark"]{image:url(:/Color/Primaries/HDR/LowRangeBtn);}
+UiQColorPaletteHDRWheelsPreviewButton[SkinId="Dark"]:hover{image:url(:/Color/Primaries/HDR/LowRangeBtn_hover);}
+UiQColorPaletteHDRWheelsPreviewButton[SkinId="Dark"]:pressed{image:url(:/Color/Primaries/HDR/LowRangeBtn_push);}
+UiQColorPaletteHDRWheelsPreviewButton[SkinId="High"]{image:url(:/Color/Primaries/HDR/HighRangeBtn);}
+UiQColorPaletteHDRWheelsPreviewButton[SkinId="High"]:hover{image:url(:/Color/Primaries/HDR/HighRangeBtn_hover);}
+UiQColorPaletteHDRWheelsPreviewButton[SkinId="High"]:pressed{image:url(:/Color/Primaries/HDR/HighRangeBtn_push);}
+UiQColorPaletteHDRWheelsPreviewButton[SkinId="Disable"]{image:none;}
+UiQColorPaletteHDRWheelSliderLabel{border-style:none;image-position:center center;min-width:12px;max-width:12px;min-height:12px;max-height:12px;}
+UiQColorPaletteHDRWheelSliderLabel[SkinId="X"]{image:url(:/Color/Primaries/HDR/ColorwheelZoneX);}
+UiQColorPaletteHDRWheelSliderLabel[SkinId="X"]:disabled{image:url(:/Color/Primaries/HDR/ColorwheelZoneX_Disabled);}
+UiQColorPaletteHDRWheelSliderLabel[SkinId="Y"]{image:url(:/Color/Primaries/HDR/ColorwheelZoneY);}
+UiQColorPaletteHDRWheelSliderLabel[SkinId="Y"]:disabled{image:url(:/Color/Primaries/HDR/ColorwheelZoneY_Disabled);}
+UiQColorPaletteHDRWheelSliderLabel[SkinId="Angle"]{image:url(:/Color/Primaries/HDR/ColorWheelZoneAngle);}
+UiQColorPaletteHDRWheelSliderLabel[SkinId="Angle"]:disabled{image:url(:/Color/Primaries/HDR/ColorWheelZoneAngle_disabled);}
+UiQColorPaletteHDRWheelSliderLabel[SkinId="Distance"]{image:url(:/Color/Primaries/HDR/ColorWheelZoneDistance);}
+UiQColorPaletteHDRWheelSliderLabel[SkinId="Distance"]:disabled{image:url(:/Color/Primaries/HDR/ColorWheelZoneDistance_disabled);}
+UiQColorPaletteHDRWheelSliderLabel[SkinId="Falloff"]{image:url(:/Color/Primaries/HDR/ColorwheelZoneFalloff);}
+UiQColorPaletteHDRWheelSliderLabel[SkinId="Falloff"]:disabled{image:url(:/Color/Primaries/HDR/ColorwheelZoneFalloff_Disabled);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="HDRTemp"], UiQColorPaletteInvisibleSliderIndicator[SkinId="HDRTint"], UiQColorPaletteInvisibleSliderIndicator[SkinId="HDRHue"], UiQColorPaletteInvisibleSliderIndicator[SkinId="HDRMidtone"], UiQColorPaletteInvisibleSliderIndicator[SkinId="HDRContrast"], UiQColorPaletteInvisibleSliderIndicator[SkinId="HDRPivot"], UiQColorPaletteInvisibleSliderIndicator[SkinId="HDRBlackOffset"]{padding-left:4px;}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="HDRTemp"]{image:url(:/Color/Primaries/InputControlBarTemp);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="HDRTint"]{image:url(:/Color/Primaries/InputControlBarTint);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="HDRHue"]{image:url(:/Color/Primaries/InputControlBarHue);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="HDRMidtone"]{image:url(:/Color/Primaries/InputControlBarMidDetail);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="HDRContrast"]{image:url(:/Color/Primaries/InputControlBarContrast);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="HDRPivot"]{image:url(:/Color/Primaries/InputControlBarPivot);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="HDRBlackOffset"]{image:url(:/Color/Primaries/InputControlBarShadows);}
+UiQColorPaletteHDRCurvesZoneButton{min-width:22px;max-width:22px;min-height:22px;max-height:22px;border-style:none;image-position:center center;margin:0px;}
+UiQColorPaletteHDRCurvesZoneButton[SkinId="Low"], UiQColorPaletteHDRCurvesZoneButton[SkinId="High"]{min-width:41px;max-width:41px;}
+UiQColorPaletteHDRCurvesZoneButton[SkinId="Low"]{image:url(:/Color/Primaries/HDR/ToggleLow_Active);}
+UiQColorPaletteHDRCurvesZoneButton[SkinId="Low"]:disabled{image:url(:/Color/Primaries/HDR/ToggleLow);}
+UiQColorPaletteHDRCurvesZoneButton[SkinId="High"]{image:url(:/Color/Primaries/HDR/ToggleHigh_Active);}
+UiQColorPaletteHDRCurvesZoneButton[SkinId="High"]:disabled{image:url(:/Color/Primaries/HDR/ToggleHigh);}
+UiQColorPaletteHDRCurvesZoneButton[SkinId="Visibility"]{image:url(:/Color/Primaries/HDR/Colorwheel);}
+UiQColorPaletteHDRCurvesZoneButton[SkinId="Visibility"]:hover{image:url(:/Color/Primaries/HDR/Colorwheel_Hover);}
+UiQColorPaletteHDRCurvesZoneButton[SkinId="Visibility"]:pressed{image:url(:/Color/Primaries/HDR/Colorwheel_Push);}
+UiQColorPaletteHDRCurvesZoneButton[SkinId="Visibility"]:checked{image:url(:/Color/Primaries/HDR/Colorwheel_Active);}
+UiQColorPaletteHDRCurvesZoneButton[SkinId="Visibility"]:checked:hover{image:url(:/Color/Primaries/HDR/Colorwheel_Active_Hover);}
+UiQColorPaletteHDRCurvesZoneButton[SkinId="Visibility"]:checked:pressed{image:url(:/Color/Primaries/HDR/Colorwheel_Active_Push);}
+UiQColorPaletteHDRCurvesZoneButton[SkinId="Visibility"]:disabled{image:url(:/Color/Primaries/HDR/Colorwheel_disabled);}
+UiQColorPaletteHDRCurvesZoneButton[SkinId="Delete"]{image:url(:/Color/Primaries/HDR/ColorwheelDelete);}
+UiQColorPaletteHDRCurvesZoneButton[SkinId="Delete"]:disabled{image:url(:/Color/Primaries/HDR/ColorwheelDelete_Disabled);}
+UiQColorPaletteHDRCurvesZoneButton[SkinId="Delete"]:hover{image:url(:/Color/Primaries/HDR/ColorwheelDelete_Hover);}
+UiQColorPaletteHDRCurvesZoneButton[SkinId="Delete"]:pressed{image:url(:/Color/Primaries/HDR/ColorwheelDelete_Push);}
+QTreeWidget[SkinId="ColorPaletteHDRCurvesZonesTreeWidget"]::item{padding:0px;border-bottom:1px solid COLOR_TINT_GRAY;}
+QTreeWidget[SkinId="ColorPaletteHDRCurvesZonesTreeWidget"]::item:selected{background-color:COLOR_THUNDERSTORM_GRAY;}
+UiQColorPaletteHDRZoneLabel{color:white;font-preset-name:FONT_DEFAULT_SEMIBOLD;}
+UiQColorPaletteHDRZoneLabel:disabled{color:rgba(255, 255, 255, 104);}
+UiQColorPaletteHDRAddNewZoneLabel{color:rgb(208, 208, 208);}
+UiQColorPaletteHDRZoneNameUnselectedLabel{color:rgba(255, 255, 255, 104);}
+UiQColorPaletteHDRZoneNameUnselectedLabel:disabled{color:COLOR_DEFAULT_DISABLED;}
+UiQGroupLeftButton[SkinId="HDRZoneLow"]{padding:-1px 0px;image:url(:/Color/Primaries/HDR/Low);}
+UiQGroupRightButton[SkinId="HDRZoneHigh"]{padding:-1px 0px;image:url(:/Color/Primaries/HDR/High);}
+QLabel[SkinId="HDRZoneName"]{color:white;}
+UiQColorPaletteMixerColorSwapButton{min-width:40px;max-width:40px;min-height:24px;max-height:24px;border-style:none;background-color:transparent;}
+UiQColorPaletteMixerColorSwapButton[SkinId="SwapRG"]{image:url(:/Color/RGBMixerAndBlur/SwapRG);}
+UiQColorPaletteMixerColorSwapButton[SkinId="SwapRG"]:checked{image:url(:/Color/RGBMixerAndBlur/SwapRG_Active);}
+UiQColorPaletteMixerColorSwapButton[SkinId="SwapGB"]{image:url(:/Color/RGBMixerAndBlur/SwapGB);}
+UiQColorPaletteMixerColorSwapButton[SkinId="SwapGB"]:checked{image:url(:/Color/RGBMixerAndBlur/SwapGB_Active);}
+UiQColorPaletteMixerColorSwapButton[SkinId="SwapBR"]{image:url(:/Color/RGBMixerAndBlur/SwapBR);}
+UiQColorPaletteMixerColorSwapButton[SkinId="SwapBR"]:checked{image:url(:/Color/RGBMixerAndBlur/SwapBR_Active);}
+UiQColorPaletteMixerColorOutputFooterFrame{padding:0px;border-style:none;min-height:46px;max-height:46px;padding-left:1px;}
+UiQColorPaletteMixerColorOutputFooterFrame[SkinSizeMode="Large"], UiQColorPaletteMixerColorOutputFooterFrame[SkinSizeMode="Medium"]{min-height:46px;max-height:46px;}
+UiQColorPaletteMixerColorOutputFooterFrame[SkinSizeMode="Small"]{min-height:31px;max-height:31px;}
+UiQColorPaletteMixerAutoNormalizeButton{border-style:none;background-color:transparent;image-position:center center;padding:0px;margin:0px;min-width:20px;max-width:20px;min-height:20px;max-height:20px;}
+UiQColorPaletteMixerAutoNormalizeButton{image:url(:/Color/RGBMixerAndBlur/AutoNormalisation);}
+UiQColorPaletteMixerAutoNormalizeButton:hover{image:url(:/Color/RGBMixerAndBlur/AutoNormalisation_Hover);}
+UiQColorPaletteMixerAutoNormalizeButton:pressed{image:url(:/Color/RGBMixerAndBlur/AutoNormalisation_Push);}
+UiQColorPaletteMixerAutoNormalizeButton:checked{image:url(:/Color/RGBMixerAndBlur/AutoNormalisation_Active);}
+UiQColorPaletteMixerAutoNormalizeButton:checked:hover{image:url(:/Color/RGBMixerAndBlur/AutoNormalisation_Active_Hover);}
+UiQColorPaletteMixerAutoNormalizeButton:checked:pressed{image:url(:/Color/RGBMixerAndBlur/AutoNormalisation_Active_Push);}
+UiQColorPaletteMotionEffectsTemporalMainFrame, UiQColorPaletteMotionEffectsSpatialNRColumnFrame{border-style:none;border-right:1px solid rgb(25, 25, 25);}
+UiQColorPaletteSubHeadingFrame, UiQColorPaletteSubHeadingHurricaneGrayTopBorderFrame{min-height:47px;max-height:47px;}
+UiQColorPaletteSubHeadingHurricaneGrayTopBorderFrame{border-style:none;border-top:1px solid COLOR_HURRICANE_GRAY;}
+UiQColorPaletteSubHeadingFrame[SkinSizeMode="Large"], UiQColorPaletteSubHeadingHurricaneGrayTopBorderFrame[SkinSizeMode="Large"]{min-height:47px;max-height:47px;}
+UiQColorPaletteSubHeadingFrame[SkinSizeMode="Medium"], UiQColorPaletteSubHeadingFrame[SkinSizeMode="Small"], UiQColorPaletteSubHeadingHurricaneGrayTopBorderFrame[SkinSizeMode="Medium"], UiQColorPaletteSubHeadingHurricaneGrayTopBorderFrame[SkinSizeMode="Small"]{min-height:27px;max-height:27px;}
+UiQColorPaletteMotionEffectsTwoRowsHighFrame{min-height:64px;max-height:64px;}
+UiQColorPaletteMotionEffectsTwoRowsHighFrame[SkinSizeMode="Large"]{min-height:64px;max-height:64px;}
+UiQColorPaletteMotionEffectsTwoRowsHighFrame[SkinSizeMode="Medium"], UiQColorPaletteMotionEffectsTwoRowsHighFrame[SkinSizeMode="Small"]{min-height:52px;max-height:52px;}
+UiQColorPaletteMotionEffectsThreeRowsHighFrame{min-height:96px;max-height:96px;}
+UiQColorPaletteMotionEffectsThreeRowsHighFrame[SkinSizeMode="Large"]{min-height:96px;max-height:96px;}
+UiQColorPaletteMotionEffectsThreeRowsHighFrame[SkinSizeMode="Medium"], UiQColorPaletteMotionEffectsThreeRowsHighFrame[SkinSizeMode="Small"]{min-height:79px;max-height:79px;}
+UiQColorPaletteDolbyVisionTrimLeftFrame{background-color:COLOR_POSEIDON_GRAY;border-style:none;border-right:1px solid COLOR_TINT_GRAY;min-width:338px;max-width:338px;}
+UiQColorPaletteDolbyVisionBottomToolbarFrame{border-style:none;border-top:1px solid COLOR_TINT_GRAY;max-height:50px;}
+UiQColorPaletteDolbyVisionAnalyzeButton{border:1px solid COLOR_JELLYFISH_GRAY;border-radius:50%;background-color:transparent;color:COLOR_SQUID_GRAY;min-width:65px;min-height:26px;max-height:26px;font-preset-name:FONT_DEFAULT;}
+UiQColorPaletteDolbyVisionAnalyzeButton:disabled{border:1px solid COLOR_JELLYFISH_GRAY;color:COLOR_JELLYFISH_GRAY;}
+UiQColorPaletteDolbyVisionSecondarySaturationFrame{border-style:none;border-right:1px solid COLOR_TINT_GRAY;}
+UiDualSliderImp[SkinId="DolbyVisionPrimaryTrimSlider"]{max-width:233px;}
+UiQColorPaletteDolbyVisionSliderColorIndicatorFrame{min-width:21px;max-width:21px;min-height:1px;max-height:1px;}
+UiQColorPaletteDolbyVisionSliderColorIndicatorFrame[SkinId="Red"]{background-color:rgb(255, 0, 0);}
+UiQColorPaletteDolbyVisionSliderColorIndicatorFrame[SkinId="Yellow"]{background-color:rgb(255, 255, 0);}
+UiQColorPaletteDolbyVisionSliderColorIndicatorFrame[SkinId="Green"]{background-color:rgb(0, 255, 0);}
+UiQColorPaletteDolbyVisionSliderColorIndicatorFrame[SkinId="Cyan"]{background-color:rgb(0, 255, 255);}
+UiQColorPaletteDolbyVisionSliderColorIndicatorFrame[SkinId="Blue"]{background-color:rgb(0, 121, 255);}
+UiQColorPaletteDolbyVisionSliderColorIndicatorFrame[SkinId="Magenta"]{background-color:rgb(255, 0, 255);}
+UiQSmallTextButton[SkinId="HDRVividAnalyzeButton"]{color:COLOR_SQUID_GRAY;min-width:65px;}
+UiQColorPaletteCurvesSelectorButton{border-style:none;background-color:transparent;image-position:center center;min-height:22px;max-height:22px;min-width:22px;max-width:22px;padding:1px;}
+UiQColorPaletteCurvesSelectorButton[SkinId="CurveSelectorY"]{image:url(:/Color/Curves/YRGB_channelBtnY);}
+UiQColorPaletteCurvesSelectorButton[SkinId="CurveSelectorY"]:hover{image:url(:/Color/Curves/YRGB_channelBtnY_hover);}
+UiQColorPaletteCurvesSelectorButton[SkinId="CurveSelectorY"]:pressed{image:url(:/Color/Curves/YRGB_channelBtnY_push);}
+UiQColorPaletteCurvesSelectorButton[SkinId="CurveSelectorY"]:checked{image:url(:/Color/Curves/YRGB_channelBtnY_active);}
+UiQColorPaletteCurvesSelectorButton[SkinId="CurveSelectorR"]{image:url(:/Color/Curves/YRGB_channelBtnR);}
+UiQColorPaletteCurvesSelectorButton[SkinId="CurveSelectorR"]:hover{image:url(:/Color/Curves/YRGB_channelBtnR_hover);}
+UiQColorPaletteCurvesSelectorButton[SkinId="CurveSelectorR"]:pressed{image:url(:/Color/Curves/YRGB_channelBtnR_push);}
+UiQColorPaletteCurvesSelectorButton[SkinId="CurveSelectorR"]:checked{image:url(:/Color/Curves/YRGB_channelBtnR_active);}
+UiQColorPaletteCurvesSelectorButton[SkinId="CurveSelectorG"]{image:url(:/Color/Curves/YRGB_channelBtnG);}
+UiQColorPaletteCurvesSelectorButton[SkinId="CurveSelectorG"]:hover{image:url(:/Color/Curves/YRGB_channelBtnG_hover);}
+UiQColorPaletteCurvesSelectorButton[SkinId="CurveSelectorG"]:pressed{image:url(:/Color/Curves/YRGB_channelBtnG_push);}
+UiQColorPaletteCurvesSelectorButton[SkinId="CurveSelectorG"]:checked{image:url(:/Color/Curves/YRGB_channelBtnG_active);}
+UiQColorPaletteCurvesSelectorButton[SkinId="CurveSelectorB"]{image:url(:/Color/Curves/YRGB_channelBtnB);}
+UiQColorPaletteCurvesSelectorButton[SkinId="CurveSelectorB"]:hover{image:url(:/Color/Curves/YRGB_channelBtnB_hover);}
+UiQColorPaletteCurvesSelectorButton[SkinId="CurveSelectorB"]:pressed{image:url(:/Color/Curves/YRGB_channelBtnB_push);}
+UiQColorPaletteCurvesSelectorButton[SkinId="CurveSelectorB"]:checked{image:url(:/Color/Curves/YRGB_channelBtnB_active);}
+QSlider[SkinId="ColorCurvesPaletteSlider_Y"]::handle:horizontal{image:url(:/Color/Curves/YRGB_intensity_Y);}
+QSlider[SkinId="ColorCurvesPaletteSlider_Red"]::handle:horizontal{image:url(:/Color/Curves/YRGB_intensity_R);}
+QSlider[SkinId="ColorCurvesPaletteSlider_Green"]::handle:horizontal{image:url(:/Color/Curves/YRGB_intensity_G);}
+QSlider[SkinId="ColorCurvesPaletteSlider_Blue"]::handle:horizontal{image:url(:/Color/Curves/YRGB_intensity_B);}
+UiQColorPaletteCurvesBottomToolbarColorButton{border-style:none;background-color:transparent;min-width:19px;max-width:19px;min-height:19px;max-height:19px;}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="blue"]{image:url(:/Color/Curves/HvH_button_B);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="blue"]:hover{image:url(:/Color/Curves/HvH_button_B_hover);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="blue"]:pressed{image:url(:/Color/Curves/HvH_button_B_push);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="cyan"]{image:url(:/Color/Curves/HvH_button_C);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="cyan"]:hover{image:url(:/Color/Curves/HvH_button_C_hover);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="cyan"]:pressed{image:url(:/Color/Curves/HvH_button_C_push);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="green"]{image:url(:/Color/Curves/HvH_button_G);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="green"]:hover{image:url(:/Color/Curves/HvH_button_G_hover);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="green"]:pressed{image:url(:/Color/Curves/HvH_button_G_push);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="magenta"]{image:url(:/Color/Curves/HvH_button_M);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="magenta"]:hover{image:url(:/Color/Curves/HvH_button_M_hover);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="magenta"]:pressed{image:url(:/Color/Curves/HvH_button_M_push);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="red"]{image:url(:/Color/Curves/HvH_button_R);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="red"]:hover{image:url(:/Color/Curves/HvH_button_R_hover);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="red"]:pressed{image:url(:/Color/Curves/HvH_button_R_push);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="yellow"]{image:url(:/Color/Curves/HvH_button_Y);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="yellow"]:hover{image:url(:/Color/Curves/HvH_button_Y_hover);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="yellow"]:pressed{image:url(:/Color/Curves/HvH_button_Y_push);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="darkGray"]{image:url(:/Color/Curves/HvS_button_B);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="darkGray"]:hover{image:url(:/Color/Curves/HvS_button_B_hover);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="darkGray"]:pressed{image:url(:/Color/Curves/HvS_button_B_push);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="lightGray"]{image:url(:/Color/Curves/HvS_button_W);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="lightGray"]:hover{image:url(:/Color/Curves/HvS_button_W_hover);}
+UiQColorPaletteCurvesBottomToolbarColorButton[SkinId="lightGray"]:pressed{image:url(:/Color/Curves/HvS_button_W_push);}
+UiQColorPaletteCurvesAdvancedModeButton{border-style:none;background-color:transparent;min-width:21px;max-width:21px;min-height:21px;max-height:21px;image:url(:/Color/Curves/bezier);}
+UiQColorPaletteCurvesAdvancedModeButton:hover{image:url(:/Color/Curves/bezier_hover);}
+UiQColorPaletteCurvesAdvancedModeButton:pressed{image:url(:/Color/Curves/bezier_push);}
+UiQColorPaletteCurvesAdvancedModeButton:checked{image:url(:/Color/Curves/bezier_active);}
+UiQColorPaletteCurvesAdvancedModeButton:checked:hover{image:url(:/Color/Curves/bezier_active_hover);}
+UiQColorPaletteCurvesAdvancedModeButton:checked:pressed{image:url(:/Color/Curves/bezier_active_push);}
+QComboBox[SkinId="ColorMapperComboBox"]::drop-down{margin:0px 3px 0px 3px;}
+UiQColorPaletteColorMapperControlsContainer{min-width:252px;max-width:252px;border-style:none;border-left:1px solid COLOR_TINT_GRAY;}
+UiQColorPaletteColorMapperIconButton{border-style:none;background-color:transparent;min-width:22px;max-width:22px;min-height:22px;max-height:22px;}
+UiQColorPaletteColorMapperIconButton[SkinId="HueResolution"]{image:url(:/Color/Secondaries/Mapper/HexGridHue);}
+UiQColorPaletteColorMapperIconButton[SkinId="SaturationResolution"]{image:url(:/Color/Secondaries/Mapper/HexGridSaturation);}
+UiQColorPaletteColorMapperIconButton[SkinId="ColorSpace"]{image:url(:/Color/Secondaries/Mapper/ColorSpace);}
+UiQColorPaletteColorMapperIconButton[SkinId="CLCtrlChroma"]{image:url(:/Color/Secondaries/Mapper/SquareGridChroma);}
+UiQColorPaletteColorMapperIconButton[SkinId="CLCtrlLuma"]{image:url(:/Color/Secondaries/Mapper/SquareGridLuma);}
+UiQColorPaletteColorMapperControlTabIdle{min-height:22px;max-height:22px;border-style:none;border-radius:3px;border:1px solid COLOR_TINT_GRAY;padding-bottom:-1px;background-color:COLOR_ORCA_GRAY;color:COLOR_SQUID_GRAY;}
+UiQColorPaletteColorMapperControlTabLeft{min-height:22px;max-height:22px;border-style:none;border-top-left-radius:3px;border-bottom-left-radius:3px;border-top-right-radius:0px;border-bottom-right-radius:0px;border:1px solid COLOR_TINT_GRAY;padding-bottom:-1px;background-color:COLOR_ORCA_GRAY;color:COLOR_SQUID_GRAY;}
+UiQColorPaletteColorMapperControlTabMid{min-height:22px;max-height:22px;border-style:none;border-right:1px solid COLOR_TINT_GRAY;border-top:1px solid COLOR_TINT_GRAY;border-bottom:1px solid COLOR_TINT_GRAY;padding-bottom:-1px;background-color:COLOR_ORCA_GRAY;color:COLOR_SQUID_GRAY;}
+UiQColorPaletteColorMapperControlTabRight{min-height:22px;max-height:22px;border-style:none;border-top-left-radius:0px;border-bottom-left-radius:0px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-right:1px solid COLOR_TINT_GRAY;border-top:1px solid COLOR_TINT_GRAY;border-bottom:1px solid COLOR_TINT_GRAY;padding-bottom:-1px;background-color:COLOR_ORCA_GRAY;color:COLOR_SQUID_GRAY;}
+UiQColorPaletteColorMapperControlTabIdle:hover, UiQColorPaletteColorMapperControlTabLeft:hover, UiQColorPaletteColorMapperControlTabMid:hover, UiQColorPaletteColorMapperControlTabRight:hover, UiQColorPaletteColorMapperControlTabIdle:pressed, UiQColorPaletteColorMapperControlTabLeft:pressed, UiQColorPaletteColorMapperControlTabMid:pressed, UiQColorPaletteColorMapperControlTabRight:pressed{background-color:COLOR_OCTOPUS_GRAY;}
+UiQColorPaletteColorMapperControlTabIdle:checked, UiQColorPaletteColorMapperControlTabLeft:checked, UiQColorPaletteColorMapperControlTabMid:checked, UiQColorPaletteColorMapperControlTabRight:checked{background-color:COLOR_OCTOPUS_GRAY;color:white;}
+UiQColorPaletteColorMapperControlTabLeft[SkinId="SelectSinglePoint"], UiQColorPaletteColorMapperControlTabMid[SkinId="SelectSinglePoint"]{image:url(:/Color/Secondaries/Mapper/SelectPoint);}
+UiQColorPaletteColorMapperControlTabLeft[SkinId="SelectSinglePoint"]:hover, UiQColorPaletteColorMapperControlTabMid[SkinId="SelectSinglePoint"]:hover{image:url(:/Color/Secondaries/Mapper/SelectPoint_hover);}
+UiQColorPaletteColorMapperControlTabLeft[SkinId="SelectSinglePoint"]:pressed, UiQColorPaletteColorMapperControlTabMid[SkinId="SelectSinglePoint"]:pressed{image:url(:/Color/Secondaries/Mapper/SelectPoint_push);}
+UiQColorPaletteColorMapperControlTabLeft[SkinId="SelectSinglePoint"]:checked, UiQColorPaletteColorMapperControlTabMid[SkinId="SelectSinglePoint"]:checked{image:url(:/Color/Secondaries/Mapper/SelectPoint_active);}
+UiQColorPaletteColorMapperControlTabMid[SkinId="DrawSelection"]{image:url(:/Color/Secondaries/Mapper/DrawSelection);}
+UiQColorPaletteColorMapperControlTabMid[SkinId="DrawSelection"]:hover{image:url(:/Color/Secondaries/Mapper/DrawSelection_hover);}
+UiQColorPaletteColorMapperControlTabMid[SkinId="DrawSelection"]:pressed{image:url(:/Color/Secondaries/Mapper/DrawSelection_push);}
+UiQColorPaletteColorMapperControlTabMid[SkinId="DrawSelection"]:checked{image:url(:/Color/Secondaries/Mapper/DrawSelection_active);}
+UiQColorPaletteColorMapperControlTabMid[SkinId="Pin"]{image:url(:/Color/Secondaries/Mapper/PinPoints);}
+UiQColorPaletteColorMapperControlTabMid[SkinId="Pin"]:hover{image:url(:/Color/Secondaries/Mapper/PinPoints_hover);}
+UiQColorPaletteColorMapperControlTabMid[SkinId="Pin"]:pressed{image:url(:/Color/Secondaries/Mapper/PinPoints_push);}
+UiQColorPaletteColorMapperControlTabMid[SkinId="Pin"]:checked{image:url(:/Color/Secondaries/Mapper/PinPoints_active);}
+UiQColorPaletteColorMapperControlTabMid[SkinId="PullPointsToSelection"]{image:url(:/Color/Secondaries/Mapper/PullPoints);}
+UiQColorPaletteColorMapperControlTabMid[SkinId="PullPointsToSelection"]:hover{image:url(:/Color/Secondaries/Mapper/PullPoints_hover);}
+UiQColorPaletteColorMapperControlTabMid[SkinId="PullPointsToSelection"]:pressed{image:url(:/Color/Secondaries/Mapper/PullPoints_push);}
+UiQColorPaletteColorMapperControlTabMid[SkinId="PullPointsToSelection"]:checked{image:url(:/Color/Secondaries/Mapper/PullPoints_active);}
+UiQColorPaletteColorMapperControlTabRight[SkinId="PushPointsFromSelection"]{image:url(:/Color/Secondaries/Mapper/PushPoints);}
+UiQColorPaletteColorMapperControlTabRight[SkinId="PushPointsFromSelection"]:hover{image:url(:/Color/Secondaries/Mapper/PushPoints_hover);}
+UiQColorPaletteColorMapperControlTabRight[SkinId="PushPointsFromSelection"]:pressed{image:url(:/Color/Secondaries/Mapper/PushPoints_push);}
+UiQColorPaletteColorMapperControlTabRight[SkinId="PushPointsFromSelection"]:checked{image:url(:/Color/Secondaries/Mapper/PushPoints_active);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="FallOffSmoothSelectionIncrease"]{image:url(:/Color/Secondaries/Mapper/SelectSoftPlus);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="FallOffSmoothSelectionIncrease"]:hover{image:url(:/Color/Secondaries/Mapper/SelectSoftPlus_hover);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="FallOffSmoothSelectionIncrease"]:pressed{image:url(:/Color/Secondaries/Mapper/SelectSoftPlus_push);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="FallOffSmoothSelectionIncrease"]:disabled{image:url(:/Color/Secondaries/Mapper/SelectSoftPlus_disabled);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="FallOffSmoothSelectionDecrease"]{image:url(:/Color/Secondaries/Mapper/SelectSoftMinus);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="FallOffSmoothSelectionDecrease"]:hover{image:url(:/Color/Secondaries/Mapper/SelectSoftMinus_hover);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="FallOffSmoothSelectionDecrease"]:pressed{image:url(:/Color/Secondaries/Mapper/SelectSoftMinus_push);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="FallOffSmoothSelectionDecrease"]:disabled{image:url(:/Color/Secondaries/Mapper/SelectSoftMinus_disabled);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="InvertSelection"]{image:url(:/Color/Secondaries/Mapper/InvertSelection);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="InvertSelection"]:hover{image:url(:/Color/Secondaries/Mapper/InvertSelection_hover);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="InvertSelection"]:pressed{image:url(:/Color/Secondaries/Mapper/InvertSelection_push);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="ConvertToPin"]{image:url(:/Color/Secondaries/Mapper/ConvertSelection);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="ConvertToPin"]:hover{image:url(:/Color/Secondaries/Mapper/ConvertSelection_hover);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="ConvertToPin"]:pressed{image:url(:/Color/Secondaries/Mapper/ConvertSelection_push);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="ResetSelectedOrPinned"], UiQColorPaletteColorMapperControlTabRight[SkinId="ResetHue"], UiQColorPaletteColorMapperControlTabRight[SkinId="ResetSat"], UiQColorPaletteColorMapperControlTabIdle[SkinId="ResetLuma"], UiQColorPaletteColorMapperControlTabRight[SkinId="ResetChroma"], UiQColorPaletteColorMapperControlTabRight[SkinId="ResetLuma"]{image:url(:/Color/Secondaries/Mapper/ResetGrid);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="ResetSelectedOrPinned"]:hover, UiQColorPaletteColorMapperControlTabRight[SkinId="ResetHue"]:hover, UiQColorPaletteColorMapperControlTabRight[SkinId="ResetSat"]:hover, UiQColorPaletteColorMapperControlTabIdle[SkinId="ResetLuma"]:hover, UiQColorPaletteColorMapperControlTabRight[SkinId="ResetChroma"]:hover, UiQColorPaletteColorMapperControlTabRight[SkinId="ResetLuma"]:hover{image:url(:/Color/Secondaries/Mapper/ResetGrid_hover);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="ResetSelectedOrPinned"]:pressed, UiQColorPaletteColorMapperControlTabRight[SkinId="ResetHue"]:pressed, UiQColorPaletteColorMapperControlTabRight[SkinId="ResetSat"]:pressed, UiQColorPaletteColorMapperControlTabIdle[SkinId="ResetLuma"]:pressed, UiQColorPaletteColorMapperControlTabRight[SkinId="ResetChroma"]:pressed, UiQColorPaletteColorMapperControlTabRight[SkinId="ResetLuma"]:pressed{image:url(:/Color/Secondaries/Mapper/ResetGrid_push);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="ResetSelectedOrPinned"]:disabled, UiQColorPaletteColorMapperControlTabRight[SkinId="ResetHue"]:disabled, UiQColorPaletteColorMapperControlTabRight[SkinId="ResetSat"]:disabled, UiQColorPaletteColorMapperControlTabIdle[SkinId="ResetLuma"]:disabled, UiQColorPaletteColorMapperControlTabRight[SkinId="ResetChroma"]:disabled, UiQColorPaletteColorMapperControlTabRight[SkinId="ResetLuma"]:disabled{image:url(:/Color/Secondaries/Mapper/ResetGrid_disabled);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="ColumnControlPointsAction"]{image:url(:/Color/Secondaries/Mapper/SelectColumn);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="ColumnControlPointsAction"]:hover{image:url(:/Color/Secondaries/Mapper/SelectColumn_hover);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="ColumnControlPointsAction"]:pressed{image:url(:/Color/Secondaries/Mapper/SelectColumn_push);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="ColumnControlPointsAction"]:disabled{image:url(:/Color/Secondaries/Mapper/SelectColumn_disabled);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="HueRingControlPinsAction"]{image:url(:/Color/Secondaries/Mapper/SelectHueRing);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="HueRingControlPinsAction"]:hover{image:url(:/Color/Secondaries/Mapper/SelectHueRing_hover);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="HueRingControlPinsAction"]:pressed{image:url(:/Color/Secondaries/Mapper/SelectHueRing_push);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="HueRingControlPinsAction"]:disabled{image:url(:/Color/Secondaries/Mapper/SelectHueRing_disabled);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="HueSaturationAllControlPointsAction"]{image:url(:/Color/Secondaries/Mapper/SelectAll);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="HueSaturationAllControlPointsAction"]:hover{image:url(:/Color/Secondaries/Mapper/SelectAll_hover);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="HueSaturationAllControlPointsAction"]:pressed{image:url(:/Color/Secondaries/Mapper/SelectAll_push);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="HueSaturationAllControlPointsAction"]:disabled{image:url(:/Color/Secondaries/Mapper/SelectAll_disabled);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="ChromaLumaAllControlPointsAction"]{image:url(:/Color/Secondaries/Mapper/SelectAllChroma);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="ChromaLumaAllControlPointsAction"]:hover{image:url(:/Color/Secondaries/Mapper/SelectAllChroma_hover);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="ChromaLumaAllControlPointsAction"]:pressed{image:url(:/Color/Secondaries/Mapper/SelectAllChroma_push);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="ChromaLumaAllControlPointsAction"]:disabled{image:url(:/Color/Secondaries/Mapper/SelectAllChroma_disabled);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="RowControlPointsAction"]{image:url(:/Color/Secondaries/Mapper/SelectRow);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="RowControlPointsAction"]:hover{image:url(:/Color/Secondaries/Mapper/SelectRow_hover);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="RowControlPointsAction"]:pressed{image:url(:/Color/Secondaries/Mapper/SelectRow_push);}
+UiQColorPaletteColorMapperControlTabIdle[SkinId="RowControlPointsAction"]:disabled{image:url(:/Color/Secondaries/Mapper/SelectRow_disabled);}
+UiQColorPaletteColorMapperControlTabLeft[SkinId="PinSurroundingColumn"]{min-width:42px;max-width:42px;image:url(:/Color/Secondaries/Mapper/AutoLockPinColumn);}
+UiQColorPaletteColorMapperControlTabLeft[SkinId="PinSurroundingColumn"]:hover{image:url(:/Color/Secondaries/Mapper/AutoLockPinColumn_hover);}
+UiQColorPaletteColorMapperControlTabLeft[SkinId="PinSurroundingColumn"]:pressed{image:url(:/Color/Secondaries/Mapper/AutoLockPinColumn_push);}
+UiQColorPaletteColorMapperControlTabLeft[SkinId="PinSurroundingColumn"]:checked{image:url(:/Color/Secondaries/Mapper/AutoLockPinColumn_active);}
+UiQColorPaletteColorMapperControlTabLeft[SkinId="PinSurroundingColumn"]:disabled{image:url(:/Color/Secondaries/Mapper/AutoLockPinColumn_disabled);}
+UiQColorPaletteColorMapperControlTabMid[SkinId="PinSurroundingRow"]{min-width:43px;max-width:43px;image:url(:/Color/Secondaries/Mapper/AutoLockPinRow);}
+UiQColorPaletteColorMapperControlTabMid[SkinId="PinSurroundingRow"]:hover{image:url(:/Color/Secondaries/Mapper/AutoLockPinRow_hover);}
+UiQColorPaletteColorMapperControlTabMid[SkinId="PinSurroundingRow"]:pressed{image:url(:/Color/Secondaries/Mapper/AutoLockPinRow_push);}
+UiQColorPaletteColorMapperControlTabMid[SkinId="PinSurroundingRow"]:checked{image:url(:/Color/Secondaries/Mapper/AutoLockPinRow_active);}
+UiQColorPaletteColorMapperControlTabMid[SkinId="PinSurroundingRow"]:disabled{image:url(:/Color/Secondaries/Mapper/AutoLockPinRow_disabled);}
+UiQColorPaletteColorMapperControlTabRight[SkinId="PinSurroundingPin"]{min-width:43px;max-width:43px;image:url(:/Color/Secondaries/Mapper/AutoLockPinSurrounding);}
+UiQColorPaletteColorMapperControlTabRight[SkinId="PinSurroundingPin"]:hover{image:url(:/Color/Secondaries/Mapper/AutoLockPinSurrounding_hover);}
+UiQColorPaletteColorMapperControlTabRight[SkinId="PinSurroundingPin"]:pressed{image:url(:/Color/Secondaries/Mapper/AutoLockPinSurrounding_push);}
+UiQColorPaletteColorMapperControlTabRight[SkinId="PinSurroundingPin"]:checked{image:url(:/Color/Secondaries/Mapper/AutoLockPinSurrounding_active);}
+UiQColorPaletteColorMapperControlTabRight[SkinId="PinSurroundingPin"]:disabled{image:url(:/Color/Secondaries/Mapper/AutoLockPinSurrounding_disabled);}
+UiQColorPaletteColorMapperControlTabLeft[SkinId="SmoothHue"], UiQColorPaletteColorMapperControlTabLeft[SkinId="SmoothSat"], UiQColorPaletteColorMapperControlTabLeft[SkinId="SmoothChroma"], UiQColorPaletteColorMapperControlTabLeft[SkinId="SmoothLuma"]{image:url(:/Color/Secondaries/Mapper/Smooth);}
+UiQColorPaletteColorMapperControlTabLeft[SkinId="SmoothHue"]:hover, UiQColorPaletteColorMapperControlTabLeft[SkinId="SmoothSat"]:hover, UiQColorPaletteColorMapperControlTabLeft[SkinId="SmoothChroma"]:hover, UiQColorPaletteColorMapperControlTabLeft[SkinId="SmoothLuma"]:hover{image:url(:/Color/Secondaries/Mapper/Smooth_hover);}
+UiQColorPaletteColorMapperControlTabLeft[SkinId="SmoothHue"]:pressed, UiQColorPaletteColorMapperControlTabLeft[SkinId="SmoothSat"]:pressed, UiQColorPaletteColorMapperControlTabLeft[SkinId="SmoothChroma"]:pressed, UiQColorPaletteColorMapperControlTabLeft[SkinId="SmoothLuma"]:pressed{image:url(:/Color/Secondaries/Mapper/Smooth_push);}
+UiQColorPaletteColorMapperControlTabLeft[SkinId="SmoothHue"]:disabled, UiQColorPaletteColorMapperControlTabLeft[SkinId="SmoothSat"]:disabled, UiQColorPaletteColorMapperControlTabLeft[SkinId="SmoothChroma"]:disabled, UiQColorPaletteColorMapperControlTabLeft[SkinId="SmoothLuma"]:disabled{image:url(:/Color/Secondaries/Mapper/Smooth_disabled);}
+UiQParameterLinkedButton[SkinId="ColorMapperParamLinked"]{min-width:20px;max-width:20px;min-height:20px;max-height:20px;}
+UiQColorPaletteColorMapperControlTabLeft[SkinId="AddStroke"]{image:url(:/Color/Secondaries/Mapper/AddStroke);}
+UiQColorPaletteColorMapperControlTabLeft[SkinId="AddStroke"]:hover{image:url(:/Color/Secondaries/Mapper/AddStroke_hover);}
+UiQColorPaletteColorMapperControlTabLeft[SkinId="AddStroke"]:pressed{image:url(:/Color/Secondaries/Mapper/AddStroke_push);}
+UiQColorPaletteColorMapperControlTabLeft[SkinId="AddStroke"]:checked{image:url(:/Color/Secondaries/Mapper/AddStroke_active);}
+UiQColorPaletteColorMapperControlTabMid[SkinId="AddStrokeDash"]{image:url(:/Color/Secondaries/Mapper/AddStrokeDash);}
+UiQColorPaletteColorMapperControlTabMid[SkinId="AddStrokeDash"]:hover{image:url(:/Color/Secondaries/Mapper/AddStrokeDash_hover);}
+UiQColorPaletteColorMapperControlTabMid[SkinId="AddStrokeDash"]:pressed{image:url(:/Color/Secondaries/Mapper/AddStrokeDash_push);}
+UiQColorPaletteColorMapperControlTabMid[SkinId="AddStrokeDash"]:checked{image:url(:/Color/Secondaries/Mapper/AddStrokeDash_active);}
+UiQColorPaletteColorMapperControlTabRight[SkinId="Delete"]{image:url(:/Color/Primaries/HDR/ColorwheelDelete);}
+UiQColorPaletteColorMapperControlTabRight[SkinId="Delete"]:disabled{background-color:rgb(38, 38, 42);image:url(:/Color/Primaries/HDR/ColorwheelDelete_Disabled);}
+UiQColorPaletteColorMapperControlTabRight[SkinId="Delete"]:hover{image:url(:/Color/Primaries/HDR/ColorwheelDelete_Hover);}
+UiQColorPaletteColorMapperControlTabRight[SkinId="Delete"]:pressed{image:url(:/Color/Primaries/HDR/ColorwheelDelete_Push);}
+UiQColorPaletteColorMapperControlTabLeft[SkinId="NormalMode"]{min-width:45px;max-width:45px;image:url(:/Color/Secondaries/Mapper/NormalMode);}
+UiQColorPaletteColorMapperControlTabLeft[SkinId="NormalMode"]:hover{image:url(:/Color/Secondaries/Mapper/NormalMode_hover);}
+UiQColorPaletteColorMapperControlTabLeft[SkinId="NormalMode"]:pressed{image:url(:/Color/Secondaries/Mapper/NormalMode_push);}
+UiQColorPaletteColorMapperControlTabLeft[SkinId="NormalMode"]:checked{image:url(:/Color/Secondaries/Mapper/NormalMode_active);}
+UiQColorPaletteColorMapperControlTabLeft[SkinId="NormalMode"]:disabled{image:url(:/Color/Secondaries/Mapper/NormalMode_disabled);}
+UiQColorPaletteColorMapperControlTabRight[SkinId="PointToPointMode"]{min-width:45px;max-width:45px;image:url(:/Color/Secondaries/Mapper/PointToPointMode);}
+UiQColorPaletteColorMapperControlTabRight[SkinId="PointToPointMode"]:hover{image:url(:/Color/Secondaries/Mapper/PointToPointMode_hover);}
+UiQColorPaletteColorMapperControlTabRight[SkinId="PointToPointMode"]:pressed{image:url(:/Color/Secondaries/Mapper/PointToPointMode_push);}
+UiQColorPaletteColorMapperControlTabRight[SkinId="PointToPointMode"]:checked{image:url(:/Color/Secondaries/Mapper/PointToPointMode_active);}
+UiQColorPaletteColorMapperControlTabRight[SkinId="PointToPointMode"]:disabled{image:url(:/Color/Secondaries/Mapper/PointToPointMode_disabled);}
+UiQColorMapperDualSliderLabel{min-height:15px;max-height:15px;font-preset-name:FONT_PSYLOCKE;}
+UiQColorMapperInvisibleLabelSlider{min-height:15px;max-height:15px;qproperty-alignment:'AlignRight | AlignVCenter';font-preset-name:FONT_PSYLOCKE;}
+UiQColorPaletteQualifierWidgetRightContainer{min-width:272px;max-width:272px;background-color:COLOR_PENGUIN_GRAY;border-left:1px solid COLOR_TINT_GRAY;}
+UiQColorPaletteQualifierWidgetRightContainer[SkinSizeMode="Large"]{min-width:272px;max-width:272px;}
+UiQColorPaletteQualifierWidgetRightContainer[SkinSizeMode="Medium"], UiQColorPaletteQualifierWidgetRightContainer[SkinSizeMode="Small"]{min-width:206px;max-width:206px;}
+UiQColorPaletteQualifierItemContainer{border-style:none;border-bottom:1px solid COLOR_TINT_GRAY;}
+UiQColorPaletteQualifierItemContainer[SkinId="Selected"]{background-color:COLOR_ORCA_GRAY;}
+UiQColorPaletteQualifierItemContainer[SkinId="UnSelected"]{background-color:COLOR_PENGUIN_GRAY;}
+UiQColorPaletteQualifier2pxJellyFishGrayLayoutVSeparator{min-width:2px;max-width:2px;background-color:COLOR_JELLYFISH_GRAY;}
+UiQColorPaletteQualifierColorFrame{border-style:none;}
+QComboBox[SkinId="ColorPaletteQualifierParamComboBox"]{min-width:100px;max-width:100px;min-height:18px;max-height:18px;font-preset-name:FONT_PSYLOCKE;}
+UiQColorPaletteQualifierParamComboBoxLabel{font-preset-name:FONT_PSYLOCKE;}
+UiQColorPaletteQualifierMatteFinesseDualSlider{min-height:25px;max-height:25px;}
+UiQColorPaletteQualifierLabel[SkinSizeMode="Large"]{min-width:66px;max-width:66px;}
+UiQColorPaletteQualifierLabel[SkinSizeMode="Medium"]{min-width:40px;max-width:40px;}
+UiQColorPaletteQualifierLabel[SkinSizeMode="Small"]{min-width:56px;max-width:56px;}
+UiQColorPaletteQualifierDualSliderLabel{min-height:15px;max-height:15px;font-preset-name:FONT_PSYLOCKE;}
+UiQColorPaletteQualifierInvisibleLabelSlider{min-height:15px;max-height:15px;qproperty-alignment:'AlignRight | AlignVCenter';font-preset-name:FONT_PSYLOCKE;}
+UiQColorPaletteQualifierInvisibleLabelSlider[SkinSizeMode="Large"]{min-height:15px;max-height:15px;}
+UiQColorPaletteQualifierInvisibleLabelSlider[SkinSizeMode="Medium"], UiQColorPaletteQualifierInvisibleLabelSlider[SkinSizeMode="Small"]{min-height:15px;max-height:15px;}
+UiQColorPaletteQualifierToolButton{min-height:24px;max-height:24px;min-width:24px;max-width:24px;border-style:none;background-color:transparent;}
+UiQColorPaletteQualifierToolButton[SkinId="Picker"]{image:url(:/Color/Qualifier/Qual_Drop);}
+UiQColorPaletteQualifierToolButton[SkinId="Picker"]:hover{image:url(:/Color/Qualifier/Qual_Drop_hover);}
+UiQColorPaletteQualifierToolButton[SkinId="Picker"]:pressed{image:url(:/Color/Qualifier/Qual_Drop_push);}
+UiQColorPaletteQualifierToolButton[SkinId="Picker"]:checked{image:url(:/Color/Qualifier/Qual_Drop_active);}
+UiQColorPaletteQualifierToolButton[SkinId="Invert"]{image:url(:/Color/Qualifier/Qual_Invert);}
+UiQColorPaletteQualifierToolButton[SkinId="Invert"]:hover{image:url(:/Color/Qualifier/Qual_Invert_hover);}
+UiQColorPaletteQualifierToolButton[SkinId="Invert"]:pressed{image:url(:/Color/Qualifier/Qual_Invert_push);}
+UiQColorPaletteQualifierToolButton[SkinId="Invert"]:checked{image:url(:/Color/Qualifier/Qual_Invert_active);}
+UiQColorPaletteQualifierToolButton[SkinId="Invert"]:checked:hover{image:url(:/Color/Qualifier/Qual_Invert_active_hover);}
+UiQColorPaletteQualifierToolButton[SkinId="Invert"]:checked:pressed{image:url(:/Color/Qualifier/Qual_Invert_active_push);}
+UiQColorPaletteQualifierToolButton[SkinId="PickerPlusColor"], UiQColorPaletteQualifierToolButton[SkinId="ForegroundStroke"]{image:url(:/Color/Qualifier/Qual_DropperPlus);}
+UiQColorPaletteQualifierToolButton[SkinId="PickerPlusColor"]:hover, UiQColorPaletteQualifierToolButton[SkinId="ForegroundStroke"]:hover{image:url(:/Color/Qualifier/Qual_DropperPlus_hover);}
+UiQColorPaletteQualifierToolButton[SkinId="PickerPlusColor"]:pressed, UiQColorPaletteQualifierToolButton[SkinId="ForegroundStroke"]:pressed{image:url(:/Color/Qualifier/Qual_DropperPlus_push);}
+UiQColorPaletteQualifierToolButton[SkinId="PickerPlusColor"]:checked, UiQColorPaletteQualifierToolButton[SkinId="ForegroundStroke"]:checked{image:url(:/Color/Qualifier/Qual_DropperPlus_active);}
+UiQColorPaletteQualifierToolButton[SkinId="PickerMinusColor"], UiQColorPaletteQualifierToolButton[SkinId="BackgroundStroke"]{image:url(:/Color/Qualifier/Qual_DropperMinus);}
+UiQColorPaletteQualifierToolButton[SkinId="PickerMinusColor"]:hover, UiQColorPaletteQualifierToolButton[SkinId="BackgroundStroke"]:hover{image:url(:/Color/Qualifier/Qual_DropperMinus_hover);}
+UiQColorPaletteQualifierToolButton[SkinId="PickerMinusColor"]:pressed, UiQColorPaletteQualifierToolButton[SkinId="BackgroundStroke"]:pressed{image:url(:/Color/Qualifier/Qual_DropperMinus_push);}
+UiQColorPaletteQualifierToolButton[SkinId="PickerMinusColor"]:checked, UiQColorPaletteQualifierToolButton[SkinId="BackgroundStroke"]:checked{image:url(:/Color/Qualifier/Qual_DropperMinus_active);}
+UiQColorPaletteQualifierToolButton[SkinId="PickerPlusSoftness"]{image:url(:/Color/Qualifier/Qual_SoftnessPlus);}
+UiQColorPaletteQualifierToolButton[SkinId="PickerPlusSoftness"]:hover{image:url(:/Color/Qualifier/Qual_SoftnessPlus_hover);}
+UiQColorPaletteQualifierToolButton[SkinId="PickerPlusSoftness"]:pressed{image:url(:/Color/Qualifier/Qual_SoftnessPlus_push);}
+UiQColorPaletteQualifierToolButton[SkinId="PickerPlusSoftness"]:checked{image:url(:/Color/Qualifier/Qual_SoftnessPlus_active);}
+UiQColorPaletteQualifierToolButton[SkinId="PickerMinusSoftness"]{image:url(:/Color/Qualifier/Qual_SoftnessMinus);}
+UiQColorPaletteQualifierToolButton[SkinId="PickerMinusSoftness"]:hover{image:url(:/Color/Qualifier/Qual_SoftnessMinus_hover);}
+UiQColorPaletteQualifierToolButton[SkinId="PickerMinusSoftness"]:pressed{image:url(:/Color/Qualifier/Qual_SoftnessMinus_push);}
+UiQColorPaletteQualifierToolButton[SkinId="PickerMinusSoftness"]:checked{image:url(:/Color/Qualifier/Qual_SoftnessMinus_active);}
+UiQColorPaletteQualifierToolButton[SkinId="ShowPaths"]{image:url(:/Color/Qualifier/Qual_ShowPath);}
+UiQColorPaletteQualifierToolButton[SkinId="ShowPaths"]:hover{image:url(:/Color/Qualifier/Qual_ShowPath_hover);}
+UiQColorPaletteQualifierToolButton[SkinId="ShowPaths"]:pressed{image:url(:/Color/Qualifier/Qual_ShowPath_push);}
+UiQColorPaletteQualifierToolButton[SkinId="ShowPaths"]:checked{image:url(:/Color/Qualifier/Qual_ShowPath_active);}
+UiQColorPaletteQualifierToolButton[SkinId="ShowPaths"]:checked:hover{image:url(:/Color/Qualifier/Qual_ShowPath_active_hover);}
+UiQColorPaletteQualifierToolButton[SkinId="ShowPaths"]:checked:pressed{image:url(:/Color/Qualifier/Qual_ShowPath_active_push);}
+UiQColorPaletteQualifierToolButton[SkinId="AutoHighlight"]{image:url(:/Color/Qualifier/Qual_AutoHighlight);}
+UiQColorPaletteQualifierToolButton[SkinId="AutoHighlight"]:hover{image:url(:/Color/Qualifier/Qual_AutoHighlight_hover);}
+UiQColorPaletteQualifierToolButton[SkinId="AutoHighlight"]:pressed{image:url(:/Color/Qualifier/Qual_AutoHighlight_push);}
+UiQColorPaletteQualifierToolButton[SkinId="AutoHighlight"]:checked{image:url(:/Color/Qualifier/Qual_AutoHighlight_active);}
+UiQColorPaletteQualifierToolButton[SkinId="AutoHighlight"]:checked:hover{image:url(:/Color/Qualifier/Qual_AutoHighlight_active_hover);}
+UiQColorPaletteQualifierToolButton[SkinId="AutoHighlight"]:checked:pressed{image:url(:/Color/Qualifier/Qual_AutoHighlight_active_push);}
+UiQColorPaletteQualifierToolButton[SkinId="AdaptiveSoftness"]{image:url(:/Color/Qualifier/Qual_AdaptiveSoftness);}
+UiQColorPaletteQualifierToolButton[SkinId="AdaptiveSoftness"]:hover{image:url(:/Color/Qualifier/Qual_AdaptiveSoftness_active);}
+UiQColorPaletteQualifierToolButton[SkinId="AdaptiveSoftness"]:pressed{image:url(:/Color/Qualifier/Qual_AdaptiveSoftness_active);}
+UiQColorPaletteQualifierToolButton[SkinId="AdaptiveSoftness"]:checked{image:url(:/Color/Qualifier/Qual_AdaptiveSoftness_active);}
+UiQColorPaletteQualifierToolButton[SkinId="AdaptiveSoftness"]:disabled{image:url(:/Color/Qualifier/Qual_AdaptiveSoftness);}
+UiQColorPaletteQualifierDeleteButton{min-width:18px;max-width:18px;min-height:18px;max-height:18px;border-style:none;image-position:center center;padding:0px;margin:0px;image:url(:/Common/Widgets/Delete);}
+UiQColorPaletteQualifierDeleteButton:hover{image:url(:/Common/Widgets/Delete_hover);}
+UiQColorPaletteQualifierDeleteButton:pressed{image:url(:/Common/Widgets/Delete_push);}
+UiQColorPaletteQualifierSliderLabel{border-style:none;image-position:center center;min-width:22px;max-width:22px;min-height:22px;max-height:22px;padding:0px;margin:0px;}
+UiQColorPaletteQualifierSliderLabel[SkinId="ChromaSoftness"]{image:url(:/Color/Qualifier/Qual_Chroma_Softness);}
+UiQColorPaletteQualifierSliderLabel[SkinId="Tolerance"]{image:url(:/Color/Qualifier/Qual_Chroma_Tolerance);}
+UiQColorPaletteQualifierSliderLabel[SkinId="Rotate"]{image:url(:/Color/Qualifier/Qual_Chroma_Rotate);}
+UiQColorPaletteQualifierSliderLabel[SkinId="Shift"]{image:url(:/Color/Qualifier/Qual_Chroma_Shift);}
+UiQColorPaletteQualifierSliderLabel[SkinId="Tilt"]{image:url(:/Color/Qualifier/Qual_Chroma_Tilt);}
+UiQColorPaletteQualifierSliderLabel[SkinId="Highlight"]{image:url(:/Color/Qualifier/Qual_Highlight);}
+UiQColorPaletteQualifierSliderLabel[SkinId="Shadow"]{image:url(:/Color/Qualifier/Qual_Shadow);}
+UiQColorPaletteQualifierSliderLabel[SkinId="LumaLowSoftness"]{image:url(:/Color/Qualifier/Qual_Luma_Low_Softness);}
+UiQColorPaletteQualifierSliderLabel[SkinId="LumaHighSoftness"]{image:url(:/Color/Qualifier/Qual_Luma_High_Softness);}
+UiQGroupLeftButton[SkinId="ColorPaletteQualifierButton"], UiQGroupMidButton[SkinId="ColorPaletteQualifierButton"], UiQGroupRightButton[SkinId="ColorPaletteQualifierButton"]{min-width:70px;max-width:70px;padding:0px;font-preset-name:FONT_PSYLOCKE;}
+UiQGroupLeftButton[SkinId="ColorPaletteQualifierButton"][SkinSizeMode="Large"], UiQGroupMidButton[SkinId="ColorPaletteQualifierButton"][SkinSizeMode="Large"], UiQGroupRightButton[SkinId="ColorPaletteQualifierButton"][SkinSizeMode="Large"]{min-width:70px;max-width:70px;padding:0px;}
+UiQGroupLeftButton[SkinId="ColorPaletteQualifierButton"][SkinSizeMode="Medium"], UiQGroupMidButton[SkinId="ColorPaletteQualifierButton"][SkinSizeMode="Medium"], UiQGroupRightButton[SkinId="ColorPaletteQualifierButton"][SkinSizeMode="Medium"], UiQGroupLeftButton[SkinId="ColorPaletteQualifierButton"][SkinSizeMode="Small"], UiQGroupMidButton[SkinId="ColorPaletteQualifierButton"][SkinSizeMode="Small"], UiQGroupRightButton[SkinId="ColorPaletteQualifierButton"][SkinSizeMode="Small"]{min-width:50px;max-width:50px;padding:0px;}
+UiQColorPaletteQualifierAdvancedKeyerRightFrame{min-width:343px;max-width:343px;background-color:COLOR_PENGUIN_GRAY;}
+UiQColorPaletteQualifierAdvancedKeyerRightFrame[SkinSizeMode="Large"]{min-width:343px;max-width:343px;}
+UiQColorPaletteQualifierAdvancedKeyerRightFrame[SkinSizeMode="Medium"], UiQColorPaletteQualifierAdvancedKeyerRightFrame[SkinSizeMode="Small"]{min-width:225px;max-width:225px;}
+UiQColorPaletteQualifierChromaMapFrame{border-style:none;min-width:150px;max-width:150px;min-height:150px;max-height:150px;margin:0px;padding:0px;}
+UiQColorPaletteQualifierChromaMapFrame[SkinSizeMode="Large"]{min-width:200px;max-width:200px;min-height:200px;max-height:200px;}
+UiQColorPaletteQualifierChromaMapFrame[SkinSizeMode="Medium"], UiQColorPaletteQualifierChromaMapFrame[SkinSizeMode="Small"]{min-width:136px;max-width:136px;min-height:136px;max-height:136px;}
+UiQColorPaletteQualifierLumaMapFrame{border-style:none;min-width:200px;max-width:200px;min-height:22px;max-height:22px;margin:0px;padding:0px;}
+UiQColorPaletteQualifierLumaMapFrame[SkinSizeMode="Large"]{min-width:200px;max-width:200px;min-height:22px;max-height:22px;}
+UiQColorPaletteQualifierLumaMapFrame[SkinSizeMode="Medium"], UiQColorPaletteQualifierLumaMapFrame[SkinSizeMode="Small"]{min-width:136px;max-width:136px;min-height:19px;max-height:19px;}
+BmdDavUI--UiInvisibleLabelSlider[SkinId="QualifierChromaLumaSlider"]{min-height:22px;max-height:22px;}
+QComboBox[SkinId="QualifierColorSpace"]{font-preset-name:FONT_PSYLOCKE;}
+UiQEmptyBannerHeadingLabel[SkinId="3DKeyerHeading"]{max-height:16777215px;}
+UiQEmptyBannerSubHeadingLabel[SkinId="3DKeyerSubHeading"]{max-height:16777215px;}
+UiQColorPaletteWindowAddWindowButton{border-width:0px 0px 0px 26px;padding:0px;text-align:left center;min-height:25px;max-height:25px;background-color:transparent;color:COLOR_DEFAULT;}
+UiQColorPaletteWindowAddWindowButton:hover, UiQColorPaletteWindowAddWindowButton:pressed{color:white;}
+UiQColorPaletteWindowAddWindowButton[SkinId="Circle"]{border-image:url(:/Color/Window/AddShapeCircle) 0px 0px 0px 26px repeat repeat;}
+UiQColorPaletteWindowAddWindowButton[SkinId="Circle"]:hover{border-image:url(:/Color/Window/AddShapeCircle_hover) 0px 0px 0px 26px repeat repeat;}
+UiQColorPaletteWindowAddWindowButton[SkinId="Circle"]:pressed{border-image:url(:/Color/Window/AddShapeCircle_push) 0px 0px 0px 26px repeat repeat;}
+UiQColorPaletteWindowAddWindowButton[SkinId="Curve"]{border-image:url(:/Color/Window/AddShapeCurve) 0px 0px 0px 26px repeat repeat;}
+UiQColorPaletteWindowAddWindowButton[SkinId="Curve"]:hover{border-image:url(:/Color/Window/AddShapeCurve_hover) 0px 0px 0px 26px repeat repeat;}
+UiQColorPaletteWindowAddWindowButton[SkinId="Curve"]:pressed{border-image:url(:/Color/Window/AddShapeCurve_push) 0px 0px 0px 26px repeat repeat;}
+UiQColorPaletteWindowAddWindowButton[SkinId="Gradient"]{border-image:url(:/Color/Window/AddShapeGradient) 0px 0px 0px 26px repeat repeat;}
+UiQColorPaletteWindowAddWindowButton[SkinId="Gradient"]:hover{border-image:url(:/Color/Window/AddShapeGradient_hover) 0px 0px 0px 26px repeat repeat;}
+UiQColorPaletteWindowAddWindowButton[SkinId="Gradient"]:pressed{border-image:url(:/Color/Window/AddShapeGradient_push) 0px 0px 0px 26px repeat repeat;}
+UiQColorPaletteWindowAddWindowButton[SkinId="Linear"]{border-image:url(:/Color/Window/AddShapeLinear) 0px 0px 0px 26px repeat repeat;}
+UiQColorPaletteWindowAddWindowButton[SkinId="Linear"]:hover{border-image:url(:/Color/Window/AddShapeLinear_hover) 0px 0px 0px 26px repeat repeat;}
+UiQColorPaletteWindowAddWindowButton[SkinId="Linear"]:pressed{border-image:url(:/Color/Window/AddShapeLinear_push) 0px 0px 0px 26px repeat repeat;}
+UiQColorPaletteWindowAddWindowButton[SkinId="Polygon"]{border-image:url(:/Color/Window/AddShapePolygon) 0px 0px 0px 26px repeat repeat;}
+UiQColorPaletteWindowAddWindowButton[SkinId="Polygon"]:hover{border-image:url(:/Color/Window/AddShapePolygon_hover) 0px 0px 0px 26px repeat repeat;}
+UiQColorPaletteWindowAddWindowButton[SkinId="Polygon"]:pressed{border-image:url(:/Color/Window/AddShapePolygon_push) 0px 0px 0px 26px repeat repeat;}
+UiQColorPaletteWindowItemContainer{border:none;border-bottom:1px solid COLOR_TINT_GRAY;}
+UiQColorPaletteWindowItemContainer[SkinId="Selected"]{background-color:COLOR_ORCA_GRAY;}
+UiQColorPaletteWindowItemContainer[SkinId="UnSelected"]{background-color:COLOR_PENGUIN_GRAY;}
+UiQColorPaletteWindowInvertMaskButton{background-color:transparent;border-style:none;image-position:center center;min-width:21px;max-width:21px;min-height:21px;max-height:21px;}
+UiQColorPaletteWindowInvertMaskButton[SkinId="WindowInvert"], UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="KeyInpInvert"], UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="QInv"], UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="OutInv"]{image:url(:/Color/Window/Invert);}
+UiQColorPaletteWindowInvertMaskButton[SkinId="WindowInvert"]:hover, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="KeyInpInvert"]:hover, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="QInv"]:hover, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="OutInv"]:hover{image:url(:/Color/Window/Invert_hover);}
+UiQColorPaletteWindowInvertMaskButton[SkinId="WindowInvert"]:pressed, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="KeyInpInvert"]:pressed, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="QInv"]:pressed, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="OutInv"]:pressed{image:url(:/Color/Window/Invert_push);}
+UiQColorPaletteWindowInvertMaskButton[SkinId="WindowInvert"]:disabled, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="KeyInpInvert"]:disabled, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="QInv"]:disabled, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="OutInv"]:disabled{image:url(:/Color/Window/Invert_disabled);}
+UiQColorPaletteWindowInvertMaskButton[SkinId="WindowInvert"]:checked, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="KeyInpInvert"]:checked, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="QInv"]:checked, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="OutInv"]:checked{image:url(:/Color/Window/Invert_active);}
+UiQColorPaletteWindowInvertMaskButton[SkinId="WindowInvert"]:checked:hover, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="KeyInpInvert"]:checked:hover, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="QInv"]:checked:hover, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="OutInv"]:checked:hover{image:url(:/Color/Window/Invert_active_hover);}
+UiQColorPaletteWindowInvertMaskButton[SkinId="WindowInvert"]:checked:pressed, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="KeyInpInvert"]:checked:pressed, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="QInv"]:checked:pressed, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="OutInv"]:checked:pressed{image:url(:/Color/Window/Invert_active_push);}
+UiQColorPaletteWindowInvertMaskButton[SkinId="WindowMask"], UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="KeyInpMaskMatte"], UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="QMaskMatte"]{image:url(:/Color/Window/Mask);}
+UiQColorPaletteWindowInvertMaskButton[SkinId="WindowMask"]:hover, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="KeyInpMaskMatte"]:hover, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="QMaskMatte"]:hover{image:url(:/Color/Window/Mask_hover);}
+UiQColorPaletteWindowInvertMaskButton[SkinId="WindowMask"]:pressed, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="KeyInpMaskMatte"]:pressed, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="QMaskMatte"]:pressed{image:url(:/Color/Window/Mask_push);}
+UiQColorPaletteWindowInvertMaskButton[SkinId="WindowMask"]:disabled, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="KeyInpMaskMatte"]:disabled, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="QMaskMatte"]:disabled{image:url(:/Color/Window/Mask_disabled);}
+UiQColorPaletteWindowInvertMaskButton[SkinId="WindowMask"]:checked, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="KeyInpMaskMatte"]:checked, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="QMaskMatte"]:checked{image:url(:/Color/Window/Mask_active);}
+UiQColorPaletteWindowInvertMaskButton[SkinId="WindowMask"]:checked:hover, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="KeyInpMaskMatte"]:checked:hover, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="QMaskMatte"]:checked:hover{image:url(:/Color/Window/Mask_active_hover);}
+UiQColorPaletteWindowInvertMaskButton[SkinId="WindowMask"]:checked:pressed, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="KeyInpMaskMatte"]:checked:pressed, UiQColorPaletteKeyNoBorderCenteredImageButton[SkinId="QMaskMatte:checked"]:pressed{image:url(:/Color/Window/Mask_active_push);}
+UiQColorPaletteWindowTrackedFlagLabel{image:url(:/Color/Window/Tracked);background-color:transparent;}
+UiQGroupRightButton[SkinId="ColorPaletteTrackerFrame"], UiQGroupLeftButton[SkinId="ColorPaletteTrackerClip"]{min-width:60px;padding:0px;}
+UiQColorPaletteTrackerTimelineFrame{border:1px solid rgb(28, 28, 33);background-color:COLOR_ORCA_GRAY;}
+UiQColorPaletteTrackerRulerContainer{border:none;border-image:url(:/Edit/Timeline/RulerBG) 0 repeat stretch;background-color:COLOR_STARFISH_GRAY;min-height:30px;max-height:30px;}
+UiQColorPaletteTrackerTrackingTimelineContainer{padding:0px 8px 0px 8px;}
+QCheckBox[SkinId="ColorPaletteTrackerInteractiveMode"]{padding-right:8px;}
+QCheckBox[SkinId="ColorPaletteTrackerPan"]{color:COLOR_EVOLVE_GREEN;}
+QCheckBox[SkinId="ColorPaletteTrackerTilt"]{color:COLOR_SEASCAPE_BLUE;}
+QCheckBox[SkinId="ColorPaletteTrackerZoom"]{color:COLOR_TOKYO_PINK;}
+QCheckBox[SkinId="ColorPaletteTrackerRotate"]{color:COLOR_ACIDIC_YELLOW;}
+QCheckBox[SkinId="ColorPaletteTrackerPerspective3D"]{color:COLOR_ULTRAMARINE_CYAN;}
+UiQColorPaletteTrackButton{border-style:none;background-color:transparent;image-position:center center;padding:0px;margin:0px;min-width:20px;max-width:20px;min-height:20px;max-height:20px;}
+UiQColorPaletteTrackButton:pressed, UiQColorPaletteTrackButton:checked{padding:0px;}
+UiQColorPaletteTrackButton[SkinId="Forward"]{image:url(:/Color/Tracker/TrackerForwards);}
+UiQColorPaletteTrackButton[SkinId="Forward"]:hover{image:url(:/Color/Tracker/TrackerForwards_hover);}
+UiQColorPaletteTrackButton[SkinId="Forward"]:pressed{image:url(:/Color/Tracker/TrackerForwards_push);}
+UiQColorPaletteTrackButton[SkinId="ForwardOneFrame"]{image:url(:/Color/Tracker/TrackerNextFrame);}
+UiQColorPaletteTrackButton[SkinId="ForwardOneFrame"]:hover{image:url(:/Color/Tracker/TrackerNextFrame_hover);}
+UiQColorPaletteTrackButton[SkinId="ForwardOneFrame"]:pressed{image:url(:/Color/Tracker/TrackerNextFrame_push);}
+UiQColorPaletteTrackButton[SkinId="Rewind"]{image:url(:/Color/Tracker/TrackerReverse);}
+UiQColorPaletteTrackButton[SkinId="Rewind"]:hover{image:url(:/Color/Tracker/TrackerReverse_hover);}
+UiQColorPaletteTrackButton[SkinId="Rewind"]:pressed{image:url(:/Color/Tracker/TrackerReverse_push);}
+UiQColorPaletteTrackButton[SkinId="RewindOneFrame"]{image:url(:/Color/Tracker/TrackerPrevFrame);}
+UiQColorPaletteTrackButton[SkinId="RewindOneFrame"]:hover{image:url(:/Color/Tracker/TrackerPrevFrame_hover);}
+UiQColorPaletteTrackButton[SkinId="RewindOneFrame"]:pressed{image:url(:/Color/Tracker/TrackerPrevFrame_push);}
+UiQColorPaletteTrackButton[SkinId="GoToTrackedAreaFirstFrame"]{image:url(:/Color/PersonMask/TrackedAreaFirstFrame);}
+UiQColorPaletteTrackButton[SkinId="GoToTrackedAreaFirstFrame"]:hover{image:url(:/Color/PersonMask/TrackedAreaFirstFrame_hover);}
+UiQColorPaletteTrackButton[SkinId="GoToTrackedAreaFirstFrame"]:pressed{image:url(:/Color/PersonMask/TrackedAreaFirstFrame_push);}
+UiQColorPaletteTrackButton[SkinId="GoToTrackedAreaLastFrame"]{image:url(:/Color/PersonMask/TrackedAreaLastFrame);}
+UiQColorPaletteTrackButton[SkinId="GoToTrackedAreaLastFrame"]:hover{image:url(:/Color/PersonMask/TrackedAreaLastFrame_hover);}
+UiQColorPaletteTrackButton[SkinId="GoToTrackedAreaLastFrame"]:pressed{image:url(:/Color/PersonMask/TrackedAreaLastFrame_push);}
+UiQColorPaletteTrackButton[SkinId="Stop"]{image:url(:/Color/Tracker/TrackerPause);}
+UiQColorPaletteTrackButton[SkinId="Stop"]:hover{image:url(:/Color/Tracker/TrackerPause_hover);}
+UiQColorPaletteTrackButton[SkinId="Stop"]:pressed{image:url(:/Color/Tracker/TrackerPause_push);}
+UiQColorPaletteTrackButton[SkinId="Bidirectional"]{image:url(:/Color/Tracker/TrackerBidirectional);}
+UiQColorPaletteTrackButton[SkinId="Bidirectional"]:checked{image:url(:/Color/Tracker/TrackerBidirectional_active);}
+UiQColorPaletteTrackButton[SkinId="Bidirectional"]:hover{image:url(:/Color/Tracker/TrackerBidirectional_hover);}
+UiQColorPaletteTrackButton[SkinId="Bidirectional"]:pressed{image:url(:/Color/Tracker/TrackerBidirectional_push);}
+UiQColorPaletteTrackButton[SkinId="GoToReferenceFrame"]{image:url(:/Color/PersonMask/TrackedAreaReferenceFrame);}
+UiQColorPaletteTrackButton[SkinId="GoToReferenceFrame"]:hover{image:url(:/Color/PersonMask/TrackedAreaReferenceFrame_hover);}
+UiQColorPaletteTrackButton[SkinId="GoToReferenceFrame"]:pressed{image:url(:/Color/PersonMask/TrackedAreaReferenceFrame_push);}
+UiQColorPaletteTrackerWindowInteractiveModeButton{border-style:none;background-color:transparent;image-position:center center;min-width:26px;max-width:26px;min-height:21px;max-height:21px;}
+UiQColorPaletteTrackerWindowInteractiveModeButton[SkinId="Insert"]{image:url(:/Color/Tracker/TrackerFill);}
+UiQColorPaletteTrackerWindowInteractiveModeButton[SkinId="Insert"]:hover{image:url(:/Color/Tracker/TrackerFill_hover);}
+UiQColorPaletteTrackerWindowInteractiveModeButton[SkinId="Insert"]:pressed{image:url(:/Color/Tracker/TrackerFill_push);}
+UiQColorPaletteTrackerWindowInteractiveModeButton[SkinId="Delete"]{image:url(:/Color/Tracker/TrackerClear);}
+UiQColorPaletteTrackerWindowInteractiveModeButton[SkinId="Delete"]:hover{image:url(:/Color/Tracker/TrackerClear_hover);}
+UiQColorPaletteTrackerWindowInteractiveModeButton[SkinId="Delete"]:pressed{image:url(:/Color/Tracker/TrackerClear_push);}
+UiQColorPaletteTrackerWindowInteractiveModeButton[SkinId="SetPoint"]{image:url(:/Color/Tracker/TrackerCursor);}
+UiQColorPaletteTrackerWindowInteractiveModeButton[SkinId="SetPoint"]:hover{image:url(:/Color/Tracker/TrackerCursor_hover);}
+UiQColorPaletteTrackerWindowInteractiveModeButton[SkinId="SetPoint"]:pressed{image:url(:/Color/Tracker/TrackerCursor_push);}
+UiQColorPaletteTrackerKeyFrameNavigationButton{border-style:none;background-color:transparent;image-position:center center;min-width:11px;max-width:11px;min-height:11px;max-height:11px;padding:0px;margin:0px;}
+UiQColorPaletteTrackerKeyFrameNavigationButton[SkinId="KeyframePrev"]{image:url(:/Common/Widgets/ArrowLeft);}
+UiQColorPaletteTrackerKeyFrameNavigationButton[SkinId="KeyframePrev"]:hover{image:url(:/Common/Widgets/ArrowLeft_hover);}
+UiQColorPaletteTrackerKeyFrameNavigationButton[SkinId="KeyframePrev"]:pressed{image:url(:/Common/Widgets/ArrowLeft_push);}
+UiQColorPaletteTrackerKeyFrameNavigationButton[SkinId="KeyframeNext"]{image:url(:/Common/Widgets/ArrowRight);}
+UiQColorPaletteTrackerKeyFrameNavigationButton[SkinId="KeyframeNext"]:hover{image:url(:/Common/Widgets/ArrowRight_hover);}
+UiQColorPaletteTrackerKeyFrameNavigationButton[SkinId="KeyframeNext"]:pressed{image:url(:/Common/Widgets/ArrowRight_push);}
+UiQColorPaletteTrackerKeyFrameNavigationButton[SkinId="KeyframePrev"]:disabled, UiQColorPaletteTrackerKeyFrameNavigationButton[SkinId="KeyframeNext"]:disabled{image:none;}
+UiQColorPaletteTrackerKeyframeAddDeleteButton{min-width:11px;max-width:11px;min-height:11px;max-height:11px;image-position:center center;border-style:none;padding:0px;margin:0px;image:url(:/Common/KeyFrames/KeyFrameDiamond);}
+UiQColorPaletteTrackerKeyframeAddDeleteButton:hover, UiQColorPaletteTrackerKeyframeAddDeleteButton:pressed{image:url(:/Common/KeyFrames/KeyFrameDiamond_active);}
+UiQColorPaletteTrackerKeyframeAddDeleteButton:disabled{image:none;}
+UiQColorPaletteTrackerKeyframeAddDeleteButton:checked, UiQColorPaletteTrackerKeyframeAddDeleteButton:checked:hover, UiQColorPaletteTrackerKeyframeAddDeleteButton:checked:pressed{image:url(:/Common/KeyFrames/KeyFrameDiamond_selected);}
+UiQColorPaletteTrackerKeyframeAddDeleteButton:checked:disabled{image:url(:/Common/KeyFrames/KeyFrameDiamond_disabled);}
+QMenu[SkinId="ColorPanelPersonMaskCategoryDropDown"]{min-width:178px;max-width:178px;}
+QMenu[SkinId="ColorPanelPersonMaskCategoryDropDown"]::item{min-width:178px;max-width:178px;padding:0px 0px 0px 8px;}
+UiQColorPaletteMagicMaskToolbarContainer{min-height:45px;max-height:45px;border-style:none;padding:0px 10px 0px 20px;border-bottom:1px solid COLOR_TINT_GRAY;background-color:COLOR_POSEIDON_GRAY;}
+UiQColorPaletteMagicMaskToolbarContainer[SkinSizeMode="Large"]{min-height:45px;max-height:45px;}
+UiQColorPaletteMagicMaskToolbarContainer[SkinSizeMode="Medium"], UiQColorPaletteMagicMaskToolbarContainer[SkinSizeMode="Small"]{min-height:35px;max-height:35px;}
+UiQColorPaletteMagicMaskInvertMaskButton{min-height:21px;max-height:21px;min-width:21px;max-width:21px;border-style:none;padding:1px 0px 2px 6px;background-color:transparent;image-position:center center;image:url(:/Color/Window/Invert);}
+UiQColorPaletteMagicMaskInvertMaskButton[SkinSizeMode="Medium"], UiQColorPaletteMagicMaskInvertMaskButton[SkinSizeMode="Small"]{padding:1px 0px 2px 0px;}
+UiQColorPaletteMagicMaskInvertMaskButton:hover{image:url(:/Color/Window/Invert_hover);}
+UiQColorPaletteMagicMaskInvertMaskButton:pressed{image:url(:/Color/Window/Invert_push);}
+UiQColorPaletteMagicMaskInvertMaskButton:checked{image:url(:/Color/Window/Invert_active);}
+UiQColorPaletteMagicMaskInvertMaskButton:checked:hover{image:url(:/Color/Window/Invert_active_hover);}
+UiQColorPaletteMagicMaskInvertMaskButton:checked:pressed{image:url(:/Color/Window/Invert_active_push);}
+UiQColorPaletteMagicMaskToggleMaskOverlayButton{min-height:21px;max-height:21px;min-width:21px;max-width:21px;border-style:none;padding:1px 0px 2px 6px;background-color:transparent;image-position:center center;image:url(:/Color/PersonMask/MaskOverlay);}
+UiQColorPaletteMagicMaskToggleMaskOverlayButton[SkinSizeMode="Medium"], UiQColorPaletteMagicMaskToggleMaskOverlayButton[SkinSizeMode="Small"]{padding:1px 0px 2px 0px;}
+UiQColorPaletteMagicMaskToggleMaskOverlayButton:hover{image:url(:/Color/PersonMask/MaskOverlay_hover);}
+UiQColorPaletteMagicMaskToggleMaskOverlayButton:pressed{image:url(:/Color/PersonMask/MaskOverlay_push);}
+UiQColorPaletteMagicMaskToggleMaskOverlayButton:checked{image:url(:/Color/PersonMask/MaskOverlay_active);}
+UiQColorPaletteMagicMaskToggleMaskOverlayButton:checked:hover{image:url(:/Color/PersonMask/MaskOverlay_active_hover);}
+UiQColorPaletteMagicMaskToggleMaskOverlayButton:checked:pressed{image:url(:/Color/PersonMask/MaskOverlay_active_push);}
+UiQColorPaletteMagicMaskRightSidebarFrame{min-width:251px;min-width:251px;border-style:none;border-left:1px solid COLOR_TINT_GRAY;}
+UiQColorPaletteMagicMaskRightSidebarFrame[SkinSizeMode="Large"]{min-width:251px;min-width:251px;}
+UiQColorPaletteMagicMaskRightSidebarFrame[SkinSizeMode="Medium"], UiQColorPaletteMagicMaskRightSidebarFrame[SkinSizeMode="Small"]{min-width:267px;min-width:267px;}
+UiQColorPaletteMagicMaskButton{min-height:24px;max-height:24px;min-width:24px;max-width:24px;border-style:none;padding:0px;background-color:transparent;image-position:center center;}
+UiQColorPaletteMagicMaskButton[SkinId="RightSidebar"]{min-height:20px;max-height:20px;min-width:20px;max-width:20px;image:url(:/Color/Scopes/ScopesSettings);}
+UiQColorPaletteMagicMaskButton[SkinId="RightSidebar"]:hover{image:url(:/Color/Scopes/ScopesSettings_hover);}
+UiQColorPaletteMagicMaskButton[SkinId="RightSidebar"]:pressed{image:url(:/Color/Scopes/ScopesSettings_push);}
+UiQColorPaletteMagicMaskButton[SkinId="RightSidebar"]:checked{image:url(:/Color/Scopes/ScopesSettings_active);}
+UiQColorPaletteMagicMaskButton[SkinId="RightSidebar"]:checked:hover{image:url(:/Color/Scopes/ScopesSettings_active_hover);}
+UiQColorPaletteMagicMaskButton[SkinId="RightSidebar"]:checked:pressed{image:url(:/Color/Scopes/ScopesSettings_active_push);}
+UiQColorPaletteMagicMaskButton[SkinId="BrushPlus"]{image:url(:/Color/PersonMask/BrushPlus);}
+UiQColorPaletteMagicMaskButton[SkinId="BrushPlus"]:hover{image:url(:/Color/PersonMask/BrushPlus_hover);}
+UiQColorPaletteMagicMaskButton[SkinId="BrushPlus"]:pressed{image:url(:/Color/PersonMask/BrushPlus_push);}
+UiQColorPaletteMagicMaskButton[SkinId="BrushPlus"]:checked{image:url(:/Color/PersonMask/BrushPlus_active);}
+UiQColorPaletteMagicMaskButton[SkinId="BrushPlus"]:disabled{image:url(:/Color/PersonMask/BrushPlus_disabled);}
+UiQColorPaletteMagicMaskButton[SkinId="BrushMinus"]{image:url(:/Color/PersonMask/BrushMinus);}
+UiQColorPaletteMagicMaskButton[SkinId="BrushMinus"]:hover{image:url(:/Color/PersonMask/BrushMinus_hover);}
+UiQColorPaletteMagicMaskButton[SkinId="BrushMinus"]:pressed{image:url(:/Color/PersonMask/BrushMinus_push);}
+UiQColorPaletteMagicMaskButton[SkinId="BrushMinus"]:checked{image:url(:/Color/PersonMask/BrushMinus_active);}
+UiQColorPaletteMagicMaskButton[SkinId="BrushMinus"]:disabled{image:url(:/Color/PersonMask/BrushMinus_disabled);}
+UiQColorPaletteMagicMaskBrushSizeMenuButton{border-style:none;background-color:transparent;image-position:left center;min-width:35px;max-width:35px;min-height:24px;max-height:24px;padding:0px 4px 0px 0px;}
+UiQColorPaletteMagicMaskBrushSizeMenuButton[SkinSizeMode="Medium"], UiQColorPaletteMagicMaskBrushSizeMenuButton[SkinSizeMode="Small"]{padding:0px 0px 0px 0px;}
+UiQColorPaletteMagicMaskBrushSizeMenuButton::menu-indicator{subcontrol-origin:content;subcontrol-position:right center;image:url(:/Common/Widgets/Arrow);}
+UiQColorPaletteMagicMaskBrushSizeMenuButton::menu-indicator:hover{image:url(:/Common/Widgets/Arrow_hover);}
+UiQColorPaletteMagicMaskBrushSizeMenuButton::menu-indicator:pressed{image:url(:/Common/Widgets/Arrow_push);}
+UiQColorPaletteMagicMaskBrushSizeMenuButton{image:url(:/Color/PersonMask/BrushSize);}
+UiQColorPaletteMagicMaskBrushSizeMenuButton:hover{image:url(:/Color/PersonMask/BrushSize_hover);}
+UiQColorPaletteMagicMaskBrushSizeMenuButton:pressed{image:url(:/Color/PersonMask/BrushSize_active);}
+UiQColorPaletteMagicMaskBrushSizeMenuButton:checked{image:url(:/Color/PersonMask/BrushSize_active);}
+UiQColorPaletteMagicMaskBrushSizeMenuButton:disabled{image:url(:/Color/PersonMask/BrushSize_disabled);}
+UiQGroupLeftButton[SkinId="MagicMaskFasterQuality"], UiQGroupRightButton[SkinId="MagicMaskBetterQuality"]{padding:0px 0px;}
+UiQGroupLeftButton[SkinId="MagicMaskFasterQuality"][SkinSizeMode="Large"], UiQGroupRightButton[SkinId="MagicMaskBetterQuality"][SkinSizeMode="Large"]{padding:0px 0px;}
+UiQGroupLeftButton[SkinId="MagicMaskFasterQuality"][SkinSizeMode="Medium"], UiQGroupLeftButton[SkinId="MagicMaskFasterQuality"][SkinSizeMode="Small"], UiQGroupRightButton[SkinId="MagicMaskBetterQuality"][SkinSizeMode="Medium"], UiQGroupRightButton[SkinId="MagicMaskBetterQuality"][SkinSizeMode="Small"]{min-width:57px;max-width:57px;padding:0px 0px;}
+UiQColorPaletteMagicMaskSmartRefineContainer{border-style:none;border-top:1px solid rgb(25, 25, 25);border-bottom:1px solid rgb(25, 25, 25);padding:2px 0px;min-height:32px;max-height:32px;}
+UiQColorPaletteMagicMaskParameterDualSlider{min-height:32px;max-height:32px;}
+UiQColorPaletteMagicMaskParameterDualSlider[SkinSizeMode="Large"]{min-height:32px;max-height:32px;}
+UiQColorPaletteMagicMaskParameterDualSlider[SkinSizeMode="Medium"], UiQColorPaletteMagicMaskParameterDualSlider[SkinSizeMode="Small"]{min-height:26x;max-height:26px;}
+UiQColorPaletteMagicMaskInvisibleLabelSlider{min-height:20px;max-height:20px;qproperty-alignment:'AlignRight | AlignVCenter';font-preset-name:FONT_PSYLOCKE;}
+UiQColorPaletteMagicMaskInvisibleLabelSlider[SkinSizeMode="Large"]{min-height:20px;max-height:20px;}
+UiQColorPaletteMagicMaskInvisibleLabelSlider[SkinSizeMode="Medium"], UiQColorPaletteMagicMaskInvisibleLabelSlider[SkinSizeMode="Small"]{min-height:16px;max-height:16px;}
+UiQColorPaletteMagicMaskParamLabel{font-preset-name:FONT_PSYLOCKE;}
+QComboBox[SkinId="PersonMaskParamComboBox"]{font-preset-name:FONT_PSYLOCKE;}
+UiQSectionHeaderIconButton[SkinId="PersonMask"]{image:url(:/Common/Headers/MagicMaskPerson);}
+UiQSectionHeaderIconButton[SkinId="PersonMask"]:hover{image:url(:/Common/Headers/MagicMaskPerson_hover);}
+UiQSectionHeaderIconButton[SkinId="PersonMask"]:pressed{image:url(:/Common/Headers/MagicMaskPerson_push);}
+UiQSectionHeaderIconButton[SkinId="PersonMask"]:checked{image:url(:/Common/Headers/MagicMaskPerson_active);}
+UiQSectionHeaderIconButton[SkinId="SmartMask"]{image:url(:/Common/Headers/MagicMaskSmart);}
+UiQSectionHeaderIconButton[SkinId="SmartMask"]:hover{image:url(:/Common/Headers/MagicMaskSmart_hover);}
+UiQSectionHeaderIconButton[SkinId="SmartMask"]:pressed{image:url(:/Common/Headers/MagicMaskSmart_push);}
+UiQSectionHeaderIconButton[SkinId="SmartMask"]:checked{image:url(:/Common/Headers/MagicMaskSmart_active);}
+UiQGroupLeftButton[SkinId="Person"], UiQGroupRightButton[SkinId="Features"]{padding:0px 20px;}
+UiQGroupLeftButton[SkinId="PersonMin"], UiQGroupRightButton[SkinId="FeaturesMin"]{padding:0px 5px;}
+UiQColorPaletteBlurFooterFrame{padding:0px;border-style:none;min-height:46px;max-height:46px;padding-left:1px;}
+UiQColorPaletteBlurFooterFrame[SkinSizeMode="Large"], UiQColorPaletteBlurFooterFrame[SkinSizeMode="Medium"]{min-height:46px;max-height:46px;}
+UiQColorPaletteBlurFooterFrame[SkinSizeMode="Small"]{min-height:31px;max-height:31px;}
+UiQLargeSidebar{background-color:COLOR_POSEIDON_GRAY;border-style:none;border-left:1px solid COLOR_TINT_GRAY;min-width:313px;max-width:313px;}
+UiQLargeSidebar[SkinSizeMode="Large"]{min-width:313px;max-width:313px;}
+UiQLargeSidebar[SkinSizeMode="Medium"], UiQLargeSidebar[SkinSizeMode="Small"]{min-width:253px;max-width:253px;}
+UiQColorPaletteKeyNoBorderCenteredImageButton{border-style:none;image-position:center center;min-width:21px;max-width:21px;min-height:21px;max-height:21px;}
+UiQColorPaletteKeyLabel{min-height:32px;max-height:32px;}
+UiQColorPaletteKeyFirstInputControlsContainer{border-style:none;}
+UiQColorPaletteKeyNonFirstInputControlsContainer, UiQColor1pxHurricaneGrayTopBorderFrame{border-style:none;border-top:1px solid COLOR_HURRICANE_GRAY;}
+UiQColorPaletteKeyControlsContainer{border-style:none;border-bottom:1px solid COLOR_HURRICANE_GRAY;}
+UiQColorPaletteKeyMixerNodeInputsContentsWidget, UiQColorPaletteKeyMixerNodeInputsScrollArea{background-color:COLOR_POSEIDON_GRAY;}
+UiQColorPaletteSizingParamLabel{min-width:60px;max-width:60px;min-height:26px;max-height:26px;padding-right:10px;}
+UiQColorPaletteSizingEditZoomLabel{min-width:47px;max-width:47px;min-height:26px;max-height:26px;padding-right:10px;}
+UiQColorPaletteSizingEditHeaderWithTopBorderFrame{min-height:28px;max-height:28px;border-style:none;margin-right:10px;border-top:1px solid COLOR_HURRICANE_GRAY;}
+UiQColorPaletteSizingEditGangBtnContainer, UiQColorPaletteMotionEffectsSpacialGangBtnContainer, UiQColorPaletteMotionEffectsTwoRowsHighFrame[SkinId="TemporalGangBtnContainer"]{min-width:18px;max-width:18px;}
+UiQColorPaletteMotionEffectsSpacialGangBtnContainer, UiQColorPaletteMotionEffectsTwoRowsHighFrame[SkinId="TemporalGangBtnContainer"]{padding:0px 0px 0px 10px;}
+UiQColorPaletteSizingEditWHInternalFrame{margin-left:5px;margin-top:30px;}
+UiQColorPaletteSizingEditWHInternalFrame[SkinSizeMode="Large"]{margin-top:30px;}
+UiQColorPaletteSizingEditWHInternalFrame[SkinSizeMode="Small"], UiQColorPaletteSizingEditWHInternalFrame[SkinSizeMode="Medium"]{margin-top:10px;}
+UiQColorPaletteSizingParamEditFlipLabel{min-width:65px;max-width:65px;min-height:26px;max-height:26px;padding-right:10px;}
+UiQColorPaletteSizingHeaderFrame{background-color:#E6CED5;border-style:none;border-right:1px solid COLOR_TINT_GRAY;}
+UiQColorPaletteSizingBlankingInternalFrame{background-color:#E6CED5;margin-left:20px;margin-top:30px;}
+UiQColorPaletteSizingBlankingInternalFrame[SkinSizeMode="Large"]{margin-top:30px;}
+UiQColorPaletteSizingBlankingInternalFrame[SkinSizeMode="Small"], UiQColorPaletteSizingBlankingInternalFrame[SkinSizeMode="Medium"]{margin-top:10px;}
+UiQColorPaletteSizingPTZRFrame{border-style:none;border-right:1px solid COLOR_TINT_GRAY;margin-left:20px;margin-top:30px;margin-bottom:20px;}
+UiQColorPaletteSizingPTZRFrame[SkinSizeMode="Large"]{margin-top:30px;margin-bottom:20px;}
+UiQColorPaletteSizingPTZRFrame[SkinSizeMode="Small"], UiQColorPaletteSizingPTZRFrame[SkinSizeMode="Medium"]{margin-top:10px;margin-bottom:10px;}
+UiQColorPaletteSizingWHFrame{border-style:none;border-right:1px solid COLOR_TINT_GRAY;}
+UiQColorPaletteSizingWHInternalFrame{margin-left:20px;margin-top:30px;}
+UiQColorPaletteSizingWHInternalFrame[SkinSizeMode="Large"]{margin-top:30px;}
+UiQColorPaletteSizingWHInternalFrame[SkinSizeMode="Small"], UiQColorPaletteSizingWHInternalFrame[SkinSizeMode="Medium"]{margin-top:10px;}
+UiQColorPalette3DLinkButton{border-style:none;background-color:transparent;image-position:center center;padding:0px;margin:0px;min-width:14px;max-width:14px;min-height:14px;max-height:14px;}
+UiQColorPalette3DLinkButton:pressed, UiQColorPalette3DLinkButton:checked{padding:0px;}
+UiQColorPalette3DLinkButton{image:url(:/Common/Widgets/Linked);}
+UiQColorPalette3DLinkButton:hover{image:url(:/Common/Widgets/Linked_hover);}
+UiQColorPalette3DLinkButton:pressed{image:url(:/Common/Widgets/Linked_push);}
+UiQColorPalette3DLinkButton:checked{image:url(:/Common/Widgets/Linked_active);}
+UiQColorPalette3DLinkButton:checked:hover{image:url(:/Common/Widgets/Linked_active_hover);}
+UiQColorPalette3DLinkButton:checked:pressed{image:url(:/Common/Widgets/Linked_active_push);}
+UiQColorPalette3DStereoButton{border-style:none;background-color:transparent;image-position:center center;padding:0px;margin:0px;min-width:28px;max-width:28px;min-height:23px;max-height:23px;}
+UiQColorPalette3DStereoButton:pressed, UiQColorPalette3DStereoButton:checked{padding:0px;}
+UiQColorPalette3DStereoButton[SkinId="CopyLeftToRight"]{image:url(:/Color/3DStereo/3D_Copy_L2R);}
+UiQColorPalette3DStereoButton[SkinId="CopyLeftToRight"]:hover{image:url(:/Color/3DStereo/3D_Copy_L2R_hover);}
+UiQColorPalette3DStereoButton[SkinId="CopyLeftToRight"]:pressed{image:url(:/Color/3DStereo/3D_Copy_L2R_push);}
+UiQColorPalette3DStereoButton[SkinId="CopyRightToLeft"]{image:url(:/Color/3DStereo/3D_Copy_R2L);}
+UiQColorPalette3DStereoButton[SkinId="CopyRightToLeft"]:hover{image:url(:/Color/3DStereo/3D_Copy_R2L_hover);}
+UiQColorPalette3DStereoButton[SkinId="CopyRightToLeft"]:pressed{image:url(:/Color/3DStereo/3D_Copy_R2L_push);}
+UiQColorPalette3DStereoButton[SkinId="AlignTransform"]{image:url(:/Color/3DStereo/3D_AlignTransform);}
+UiQColorPalette3DStereoButton[SkinId="AlignTransform"]:hover{image:url(:/Color/3DStereo/3D_AlignTransform_hover);}
+UiQColorPalette3DStereoButton[SkinId="AlignTransform"]:pressed{image:url(:/Color/3DStereo/3D_AlignTransform_push);}
+UiQColorPalette3DStereoButton[SkinId="AlignVSkew"]{image:url(:/Color/3DStereo/3D_Align);}
+UiQColorPalette3DStereoButton[SkinId="AlignVSkew"]:hover{image:url(:/Color/3DStereo/3D_Align_hover);}
+UiQColorPalette3DStereoButton[SkinId="AlignVSkew"]:pressed{image:url(:/Color/3DStereo/3D_Align_push);}
+UiQColorPalette3DStereoButton[SkinId="ColorMatchCurve"]{image:url(:/Color/3DStereo/3D_Match_Curve);}
+UiQColorPalette3DStereoButton[SkinId="ColorMatchCurve"]:hover{image:url(:/Color/3DStereo/3D_Match_Curve_hover);}
+UiQColorPalette3DStereoButton[SkinId="ColorMatchCurve"]:pressed{image:url(:/Color/3DStereo/3D_Match_Curve_push);}
+UiQColorPalette3DStereoButton[SkinId="ColorMatchPrimary"]{image:url(:/Color/3DStereo/3D_Match_Primary);}
+UiQColorPalette3DStereoButton[SkinId="ColorMatchPrimary"]:hover{image:url(:/Color/3DStereo/3D_Match_Primary_hover);}
+UiQColorPalette3DStereoButton[SkinId="ColorMatchPrimary"]:pressed{image:url(:/Color/3DStereo/3D_Match_Primary_push);}
+UiQColorPalette3DStereoButton[SkinId="ColorMatchTile"]{image:url(:/Color/3DStereo/3D_DenseMatch);}
+UiQColorPalette3DStereoButton[SkinId="ColorMatchTile"]:hover{image:url(:/Color/3DStereo/3D_DenseMatch_hover);}
+UiQColorPalette3DStereoButton[SkinId="ColorMatchTile"]:pressed{image:url(:/Color/3DStereo/3D_DenseMatch_push);}
+UiQColorPalette3DStereoButton[SkinId="SwapGrade"]{image:url(:/Color/3DStereo/3D_Swap_Grades);}
+UiQColorPalette3DStereoButton[SkinId="SwapGrade"]:hover{image:url(:/Color/3DStereo/3D_Swap_Grades_hover);}
+UiQColorPalette3DStereoButton[SkinId="SwapGrade"]:pressed{image:url(:/Color/3DStereo/3D_Swap_Grades_push);}
+UiQColorPalette3DStereoButton[SkinId="SwapShot"]{image:url(:/Color/3DStereo/3D_Swap_Eyes);}
+UiQColorPalette3DStereoButton[SkinId="SwapShot"]:hover{image:url(:/Color/3DStereo/3D_Swap_Eyes_hover);}
+UiQColorPalette3DStereoButton[SkinId="SwapShot"]:pressed{image:url(:/Color/3DStereo/3D_Swap_Eyes_push);}
+UiQColorPalette3DMeshTransformButton{border-style:none;background-color:transparent;image-position:center center;padding:0px;margin:0px;min-width:24px;max-width:24px;min-height:28px;max-height:28px;}
+UiQColorPalette3DMeshTransformButton:pressed, UiQColorPalette3DMeshTransformButton:checked{padding:0px;}
+UiQColorPalette3DMeshTransformButton[SkinId="TransformL"]{image:url(:/Color/3DStereo/3D_Float_L);}
+UiQColorPalette3DMeshTransformButton[SkinId="TransformL"]:hover{image:url(:/Color/3DStereo/3D_Float_L_hover);}
+UiQColorPalette3DMeshTransformButton[SkinId="TransformL"]:pressed{image:url(:/Color/3DStereo/3D_Float_L_push);}
+UiQColorPalette3DMeshTransformButton[SkinId="TransformL"]:checked{image:url(:/Color/3DStereo/3D_Float_L_active);}
+UiQColorPalette3DMeshTransformButton[SkinId="TransformT"]{image:url(:/Color/3DStereo/3D_Float_T);}
+UiQColorPalette3DMeshTransformButton[SkinId="TransformT"]:hover{image:url(:/Color/3DStereo/3D_Float_T_hover);}
+UiQColorPalette3DMeshTransformButton[SkinId="TransformT"]:pressed{image:url(:/Color/3DStereo/3D_Float_T_push);}
+UiQColorPalette3DMeshTransformButton[SkinId="TransformT"]:checked{image:url(:/Color/3DStereo/3D_Float_T_active);}
+UiQColorPalette3DMeshTransformButton[SkinId="TransformB"]{image:url(:/Color/3DStereo/3D_Float_B);}
+UiQColorPalette3DMeshTransformButton[SkinId="TransformB"]:hover{image:url(:/Color/3DStereo/3D_Float_B_hover);}
+UiQColorPalette3DMeshTransformButton[SkinId="TransformB"]:pressed{image:url(:/Color/3DStereo/3D_Float_B_push);}
+UiQColorPalette3DMeshTransformButton[SkinId="TransformB"]:checked{image:url(:/Color/3DStereo/3D_Float_B_active);}
+UiQColorPalette3DMeshTransformButton[SkinId="TransformR"]{image:url(:/Color/3DStereo/3D_Float_R);}
+UiQColorPalette3DMeshTransformButton[SkinId="TransformR"]:hover{image:url(:/Color/3DStereo/3D_Float_R_hover);}
+UiQColorPalette3DMeshTransformButton[SkinId="TransformR"]:pressed{image:url(:/Color/3DStereo/3D_Float_R_push);}
+UiQColorPalette3DMeshTransformButton[SkinId="TransformR"]:checked{image:url(:/Color/3DStereo/3D_Float_R_active);}
+UiQColorPalette3DHeaderButtonContainer{min-height:44px;max-height:44px;}
+UiQColorPalette3DHeaderButtonContainer[SkinSizeMode="Large"]{min-height:44px;max-height:44px;}
+UiQColorPalette3DHeaderButtonContainer[SkinSizeMode="Medium"], UiQColorPalette3DHeaderButtonContainer[SkinSizeMode="Small"]{min-height:32px;max-height:32px;}
+UiQColorPalette3DParamRowFrame{min-height:32px;max-height:32px;}
+UiQColorPalette3DParamRowFrame[SkinSizeMode="Large"]{min-height:32px;max-height:32px;}
+UiQColorPalette3DParamRowFrame[SkinSizeMode="Medium"], UiQColorPalette3DParamRowFrame[SkinSizeMode="Small"]{min-height:27px;max-height:27px;}
+UiQColorPalette3D1pxCbdFloatingHSeparator{min-height:1px;max-height:1px;background-color:COLOR_HURRICANE_GRAY;margin-top:8px;margin-bottom:8px;}
+UiQColorPalette3DParamDoubleRowFrame{min-height:64px;max-height:64px;}
+UiQColorPalette3DParamDoubleRowFrame[SkinSizeMode="Large"]{min-height:64px;max-height:64px;}
+UiQColorPalette3DParamDoubleRowFrame[SkinSizeMode="Medium"], UiQColorPalette3DParamDoubleRowFrame[SkinSizeMode="Small"]{min-height:54px;max-height:54px;}
+UiQColorPalette3DLeftElementLabel{min-width:95px;max-width:95px;}
+UiQColorPalette3DLeftElementLabel[SkinSizeMode="Large"]{min-width:95px;max-width:95px;}
+UiQColorPalette3DLeftElementLabel[SkinSizeMode="Medium"], UiQColorPalette3DLeftElementLabel[SkinSizeMode="Small"]{min-width:70px;max-width:70px;}
+UiQGroupLeftButton[SkinId="3DGroupButton"], UiQGroupRightButton[SkinId="3DGroupButton"]{padding:0px 5px;}
+UiQColorPaletteInfoDarkSysInfoLabel{color:COLOR_SMOKE_GRAY;min-height:23px;max-height:23px;font-preset-name:FONT_DEFAULT;}
+UiQColorPaletteInfoDarkSysInfoLabel[SkinSizeMode="Small"]{min-height:20px;max-height:20px;font-preset-name:FONT_DEFAULT;}
+UiQColorPaletteInfoLightSysInfoNormalLabel, UiQColorPaletteInfoLightSysInfoHighlightLabel{min-height:23px;max-height:23px;font-preset-name:FONT_DEFAULT;}
+UiQColorPaletteInfoLightSysInfoNormalLabel{color:white;}
+UiQColorPaletteInfoLightSysInfoHighlightLabel{color:COLOR_CORAL_RED;}
+UiQColorPaletteInfoLightSysInfoNormalLabel[SkinSizeMode="Small"], UiQColorPaletteInfoLightSysInfoHighlightLabel[SkinSizeMode="Small"]{min-height:20px;max-height:20px;font-preset-name:FONT_DEFAULT;}
+UiQPresetTitleFrame{background-color:COLOR_POSEIDON_GRAY;}
+UiQPresetTitleFrame[SkinSizeMode="Large"]{min-height:50px;max-height:50px;}
+UiQPresetTitleFrame[SkinSizeMode="Medium"], UiQPresetTitleFrame[SkinSizeMode="Small"]{min-height:36px;max-height:36px;}
+UiQPresetControlListFrame{background-color:COLOR_PENGUIN_GRAY;border-style:none;border-right:1px solid COLOR_TINT_GRAY;border-bottom:1px solid COLOR_TINT_GRAY;border-left:1px solid COLOR_TINT_GRAY;}
+QListWidget[SkinId="PresetList"]{background-color:COLOR_PENGUIN_GRAY;selection-background-color:COLOR_OCTOPUS_GRAY;}
+QScrollBar[SkinId="PresetListScrollBar"]{border-style:none;border-top:1px solid COLOR_TINT_GRAY;border-right:1px solid COLOR_TINT_GRAY;border-left:1px solid COLOR_TINT_GRAY;}
+UiQPresetMenuBottomBarFrame{border-style:none;border-top:1px solid COLOR_TINT_GRAY;}
+UiQPresetMenuBottomBarFrame[SizeMode="Large"], UiQPresetMenuBottomBarFrame[SizeMode="Medium"]{min-height:50px;max-height:50px;}
+UiQPresetMenuBottomBarFrame[SizeMode="Small"]{min-height:36px;max-height:36px;}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceDensity"], UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceSaturation"], UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceSubAdd"], UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceHue"], UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceHueOrigin"], UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceDeep"]{padding-left:3px;}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceDensity"]{image:url(vpath://VirtualRes/Color/ColorSlice/Density);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceSaturation"]{image:url(:/Color/Primaries/InputControlBarSat);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceSubAdd"], UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceHueOrigin"], UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceDeep"]{image:url(:/Color/Primaries/InputControlBarPivot);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceHue"]{image:url(:/Color/Primaries/InputControlBarHue);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="PrimariesPivot"]{image:url(:/Color/Primaries/InputControlBarPivot);}
+QSlider[SkinId="ColorSliceHueRed"], QSlider[SkinId="ColorSliceHueGreen"], QSlider[SkinId="ColorSliceHueBlue"], QSlider[SkinId="ColorSliceHueCyan"], QSlider[SkinId="ColorSliceHueMagenta"], QSlider[SkinId="ColorSliceHueYellow"], QSlider[SkinId="ColorSliceHueSkin"]{min-height:4px;max-height:4px;}
+QSlider[SkinId="ColorSliceHueRed"]::groove:horizontal, QSlider[SkinId="ColorSliceHueGreen"]::groove:horizontal, QSlider[SkinId="ColorSliceHueBlue"]::groove:horizontal, QSlider[SkinId="ColorSliceHueCyan"]::groove:horizontal, QSlider[SkinId="ColorSliceHueMagenta"]::groove:horizontal, QSlider[SkinId="ColorSliceHueYellow"]::groove:horizontal, QSlider[SkinId="ColorSliceHueSkin"]::groove:horizontal{margin:0px;height:2px;padding:0px -5px;border-width:1px 5px 1px 5px;}
+QSlider[SkinId="ColorSliceHueRed"]::groove:horizontal{border-image:url(:/Color/ColorSlice/SliderHueRed) 1px 5px 1px 5px stretch stretch;}
+QSlider[SkinId="ColorSliceHueGreen"]::groove:horizontal{border-image:url(:/Color/ColorSlice/SliderHueGreen) 1px 5px 1px 5px stretch stretch;}
+QSlider[SkinId="ColorSliceHueBlue"]::groove:horizontal{border-image:url(:/Color/ColorSlice/SliderHueBlue) 1px 5px 1px 5px stretch stretch;}
+QSlider[SkinId="ColorSliceHueCyan"]::groove:horizontal{border-image:url(:/Color/ColorSlice/SliderHueCyan) 1px 5px 1px 5px stretch stretch;}
+QSlider[SkinId="ColorSliceHueMagenta"]::groove:horizontal{border-image:url(:/Color/ColorSlice/SliderHueMagenta) 1px 5px 1px 5px stretch stretch;}
+QSlider[SkinId="ColorSliceHueYellow"]::groove:horizontal{border-image:url(:/Color/ColorSlice/SliderHueYellow) 1px 5px 1px 5px stretch stretch;}
+QSlider[SkinId="ColorSliceHueSkin"]::groove:horizontal{border-image:url(:/Color/ColorSlice/SliderHueSkin) 1px 5px 1px 5px stretch stretch;}
+QSlider[SkinId="ColorSliceHueRed"]::handle:horizontal, QSlider[SkinId="ColorSliceHueGreen"]::handle:horizontal, QSlider[SkinId="ColorSliceHueBlue"]::handle:horizontal, QSlider[SkinId="ColorSliceHueCyan"]::handle:horizontal, QSlider[SkinId="ColorSliceHueMagenta"]::handle:horizontal, QSlider[SkinId="ColorSliceHueYellow"]::handle:horizontal, QSlider[SkinId="ColorSliceHueSkin"]::handle:horizontal{image:none;background:white;border:1px solid black;border-radius:2px;width:2px;height:4px;margin:0px;}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceHueRed"], UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceHueGreen"], UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceHueBlue"], UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceHueCyan"], UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceHueMagenta"], UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceHueYellow"], UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceHueSkin"]{padding-left:2px;}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceHueRed"]{image:url(:/Color/ColorSlice/InputHueRed);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceHueGreen"]{image:url(:/Color/ColorSlice/InputHueGreen);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceHueBlue"]{image:url(:/Color/ColorSlice/InputHueBlue);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceHueCyan"]{image:url(:/Color/ColorSlice/InputHueCyan);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceHueMagenta"]{image:url(:/Color/ColorSlice/InputHueMagenta);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceHueYellow"]{image:url(:/Color/ColorSlice/InputHueYellow);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceHueSkin"]{image:url(:/Color/ColorSlice/InputHueSkin);}
+UiQColorPaletteInvisibleSliderIndicator[SkinId="ColorSliceOrigin"]{padding-left:2px;image:url(:/Color/Primaries/InputControlBarPivot);}
+QLabel[SkinId="ColorSliceLabel"], QLabel[SkinId="ColorSliceSatLabel"]{min-height:16px;max-height:16px;min-width:16px;max-width:16px;border:none;image-position:center center;}
+QLabel[SkinId="ColorSliceLabel"]{image:url(:/Color/ColorSlice/Density);}
+QLabel[SkinId="ColorSliceSatLabel"]{image:url(:/Color/ColorSlice/Saturation);}
+UiQSectionHeaderIconButton[SkinId="ColorSliceHighlight"]{image:url(:/Color/ColorSlice/Highlight);}
+UiQSectionHeaderIconButton[SkinId="ColorSliceHighlight"]:hover{image:url(:/Color/ColorSlice/Highlight_hover);}
+UiQSectionHeaderIconButton[SkinId="ColorSliceHighlight"]:pressed{image:url(:/Color/ColorSlice/Highlight_push);}
+UiQSectionHeaderIconButton[SkinId="ColorSliceHighlight"]:released{image:url(:/Color/ColorSlice/Highlight);}
+UiQSectionHeaderIconButton[SkinId="ColorSliceHighlight"]:checked{image:url(:/Color/ColorSlice/Highlight_active);}
+UiQSectionHeaderIconButton[SkinId="ColorSliceHighlight"]:checked:hover{image:url(:/Color/ColorSlice/Highlight_active_hover);}
+UiQSectionHeaderIconButton[SkinId="ColorSliceHighlight"]:checked:pressed{image:url(:/Color/ColorSlice/Highlight_active_push);}
+UiQSectionHeaderIconDropDownButton[SkinId="NodeGraphAddSerial"], UiQSectionHeaderIconButton[SkinId="NodeGraphAddSerial"]{image:url(:/Color/Common/Add_Serial_Node);}
+UiQSectionHeaderIconDropDownButton[SkinId="NodeGraphAddSerial"]:pressed, UiQSectionHeaderIconButton[SkinId="NodeGraphAddSerial"]:pressed{image:url(:/Color/Common/Add_Serial_Node_push);}
+UiQSectionHeaderIconDropDownButton[SkinId="NodeGraphAddSerial"]:hover, UiQSectionHeaderIconButton[SkinId="NodeGraphAddSerial"]:hover{image:url(:/Color/Common/Add_Serial_Node_hover);}
+UiQSectionHeaderIconDropDownButton[SkinId="NodeGraphAddSerial"]:checked, UiQSectionHeaderIconButton[SkinId="NodeGraphAddSerial"]:checked{image:url(:/Color/Common/Add_Serial_Node_active);}
+UiQSectionHeaderIconDropDownButton[SkinId="NodeGraphAddParallel"], UiQSectionHeaderIconButton[SkinId="NodeGraphAddParallel"]{image:url(:/Color/Common/Add_Parallel_Node);}
+UiQSectionHeaderIconDropDownButton[SkinId="NodeGraphAddParallel"]:pressed, UiQSectionHeaderIconButton[SkinId="NodeGraphAddParallel"]:pressed{image:url(:/Color/Common/Add_Parallel_Node_push);}
+UiQSectionHeaderIconDropDownButton[SkinId="NodeGraphAddParallel"]:hover, UiQSectionHeaderIconButton[SkinId="NodeGraphAddParallel"]:hover{image:url(:/Color/Common/Add_Parallel_Node_hover);}
+UiQSectionHeaderIconDropDownButton[SkinId="NodeGraphAddParallel"]:checked, UiQSectionHeaderIconButton[SkinId="NodeGraphAddParallel"]:checked{image:url(:/Color/Common/Add_Parallel_Node_active);}
+UiQSectionHeaderIconDropDownButton[SkinId="NodeGraphAddLayer"], UiQSectionHeaderIconButton[SkinId="NodeGraphAddLayer"]{image:url(:/Color/Common/Add_Layer_Node);}
+UiQSectionHeaderIconDropDownButton[SkinId="NodeGraphAddLayer"]:pressed, UiQSectionHeaderIconButton[SkinId="NodeGraphAddLayer"]:pressed{image:url(:/Color/Common/Add_Layer_Node_push);}
+UiQSectionHeaderIconDropDownButton[SkinId="NodeGraphAddLayer"]:hover, UiQSectionHeaderIconButton[SkinId="NodeGraphAddLayer"]:hover{image:url(:/Color/Common/Add_Layer_Node_hover);}
+UiQSectionHeaderIconDropDownButton[SkinId="NodeGraphAddLayer"]:checked, UiQSectionHeaderIconButton[SkinId="NodeGraphAddLayer"]:checked{image:url(:/Color/Common/Add_Layer_Node_active);}
+UiColorCanvasDropDownButton{border-style:none;background-color:transparent;image-position:left center;min-width:37px;max-width:37px;min-height:20px;max-height:20px;margin:1px 0px 0px 0px;}
+UiColorCanvasDropDownButton::menu-indicator{subcontrol-origin:content;subcontrol-position:right center;margin:-1px 0px 0px 0px;image:url(:/Common/Widgets/Arrow);}
+UiColorCanvasDropDownButton::menu-indicator:hover{image:url(:/Common/Widgets/Arrow_hover);}
+UiColorCanvasDropDownButton::menu-indicator:pressed{image:url(:/Common/Widgets/Arrow_push);}
+UiColorCanvasDropDownButton::menu-indicator:disabled{image:url(:/Common/Widgets/Arrow_disabled);}
+UiColorCanvasDropDownButton[SkinId="CursorSelected"]{image:url(:/Common/Headers/Cursor);}
+UiColorCanvasDropDownButton[SkinId="HandToolSelected"]{image:url(:/Common/Headers/HandTool);}
+UiColorCanvasDropDownButton[SkinId="GraphViewSelected"]{image:url(:/Common/Headers/Nodes);}
+UiColorCanvasDropDownButton[SkinId="ListViewSelected"]{image:url(:/Common/Headers/Layers);}
+QMenu[SkinId="UiColorCanvasDropDownMenu"]{min-width:140px;max-width:140px;}
+QMenu[SkinId="UiColorCanvasDropDownMenu"]::item{min-width:140px;max-width:140px;min-height:25px;max-height:25px;padding-left:25px;}
+UiQColorPalettePanelsContainer UiQColorPaletteWhiteLabel:enabled, UiQColorPalettePanelsContainer UiQColorPaletteHDRWheelsPivotLabel:enabled, UiQColorPalettePanelsContainer UiQColorPaletteHDRZoneLabel:enabled, UiQColorPalettePanelsContainer UiQColorPaletteHDRAddNewZoneLabel:enabled, UiQColorPalettePanelsContainer UiQColorPaletteInfoDarkSysInfoLabel:enabled, UiQColorPalettePanelsContainer UiQColorPaletteInfoLightSysInfoNormalLabel:enabled, UiQColorPalettePanelPenguinGrayBackgroundFrame UiQColorPaletteWhiteLabel:enabled, UiQColorPalettePanelPenguinGrayBackgroundFrame UiQColorPaletteHDRWheelsPivotLabel:enabled, UiQColorPalettePanelPenguinGrayBackgroundFrame UiQColorPaletteHDRZoneLabel:enabled, UiQColorPalettePanelPenguinGrayBackgroundFrame UiQColorPaletteHDRAddNewZoneLabel:enabled, UiQColorPalettePanelPenguinGrayBackgroundFrame UiQColorPaletteInfoDarkSysInfoLabel:enabled, UiQColorPalettePanelPenguinGrayBackgroundFrame UiQColorPaletteInfoLightSysInfoNormalLabel:enabled, UiQColorPaletteSizingHeaderFrame UiQColorPaletteWhiteLabel:enabled, UiQColorPaletteSizingHeaderFrame UiQColorPaletteHDRWheelsPivotLabel:enabled, UiQColorPaletteSizingHeaderFrame UiQColorPaletteHDRZoneLabel:enabled, UiQColorPaletteSizingHeaderFrame UiQColorPaletteHDRAddNewZoneLabel:enabled, UiQColorPaletteSizingHeaderFrame UiQColorPaletteInfoDarkSysInfoLabel:enabled, UiQColorPaletteSizingHeaderFrame UiQColorPaletteInfoLightSysInfoNormalLabel:enabled, UiQColorPaletteSizingBlankingInternalFrame UiQColorPaletteWhiteLabel:enabled, UiQColorPaletteSizingBlankingInternalFrame UiQColorPaletteHDRWheelsPivotLabel:enabled, UiQColorPaletteSizingBlankingInternalFrame UiQColorPaletteHDRZoneLabel:enabled, UiQColorPaletteSizingBlankingInternalFrame UiQColorPaletteHDRAddNewZoneLabel:enabled, UiQColorPaletteSizingBlankingInternalFrame UiQColorPaletteInfoDarkSysInfoLabel:enabled, UiQColorPaletteSizingBlankingInternalFrame UiQColorPaletteInfoLightSysInfoNormalLabel:enabled{color:COLOR_TINT_GRAY;}

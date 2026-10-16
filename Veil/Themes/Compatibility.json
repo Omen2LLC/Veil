@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Cherry Blossom",
+  "resolve_version": "21.1.0.14",
+  "application_support": "Build-locked Fusion skin plus session-only reviewed main Qt stylesheet surfaces",
+  "affected_resources": [
+    "Skins/Fusion.fuskin: Fusion.skin and Neutral.skin",
+    ":/StyleSheet/PageSwitcher in new owned session memory only",
+    ":/StyleSheet/Default in new owned session memory only",
+    ":/StyleSheet/SoundLibrary in new owned session memory only",
+    ":/StyleSheet/Inspector in new owned session memory only",
+    ":/StyleSheet/Common in new owned session memory only",
+    ":/StyleSheet/MediaPage in new owned session memory only",
+    ":/StyleSheet/DeliverPage in new owned session memory only",
+    ":/StyleSheet/ColorPage in new owned session memory only",
+    ":/StyleSheet/ProjectManager in new owned session memory only",
+    ":/StyleSheet/Dialogs in new owned session memory only"
+  ],
+  "live_activation_verified": true,
+  "whole_application_verified": false,
+  "restart_required": true,
+  "verified_theme_surfaces": [
+    "Fusion appearance: user said it worked very well; installed hash matches Cherry Blossom"
+  ],
+  "source_colors": [
+    "#E6CED5",
+    "#DDB0BC",
+    "#D9A0B0",
+    "#D9829B",
+    "#D46986"
+  ],
+  "approved_direction": "Petal",
+  "appearance_changes": [
+    "Pink base/panel/field fills",
+    "Rose hover, selected controls and active-view accents",
+    "Viewer surround background",
+    "Dark native text references for light surfaces"
+  ],
+  "preserved": [
+    "All 7199 other archive entries",
+    "Fonts, icons, layouts, dimensions, controls and behavior",
+    "Warning/error definitions, node sockets, category colors, cache/render indicators, footage and clip palettes"
+  ],
+  "original_backup": "Backup/Themes/Original-Fusion.fuskin; verified original digest",
+  "migration": "Known previous theme resources can be restored using the original backup; previous themes are no longer offered",
+  "limitation": "Workspace concept is illustrative. This expansion has not been observed natively. Custom paint and bitmap artwork limit coverage; no complete theme is claimed.",
+  "restore_fix": "Windows progress-file read denial previously cancelled Restore before commit. Progress is advisory; mandatory guards/results use finite read retries. Native-sharing-lock and fixture restoration tests passed; live retry remains pending.",
+  "application_live_activation_verified": false,
+  "application_scope": [
+    "Previously user-confirmed menu/page-bar accents",
+    "Shared sidebar and dialog body containers",
+    "Media pool/clone containers",
+    "Inspector content and effect header containers",
+    "Deliver render settings and queue footer",
+    "Color tool container backgrounds (grading visuals unchanged)",
+    "Project Manager database/projects/body containers"
+  ],
+  "application_unsupported": [
+    "Complete native workspace coverage",
+    "Custom-painted timelines, viewers and grading visuals",
+    "Fairlight DLL surfaces",
+    "Bitmap recoloring and icon-heavy toolbars",
+    "Operating-system dialogs and plug-in interfaces",
+    "Native descendant paint not controlled by QSS"
+  ],
+  "application_recipe": "Themes/Application/recipe.json",
+  "application_restore": "Close themed session normally; use regular Resolve shortcut. Restore Original also restores persistent Fusion skin.",
+  "application_mechanism": "Reviewed resource slots in a fresh suspended child; no installed Resolve.exe or shortcut changes",
+  "restart_behavior": "User closes normally; Apply/Start explicitly opens the themed session. No automatic close or restart of an existing session.",
+  "prior_application_live_activation_verified": true
+}

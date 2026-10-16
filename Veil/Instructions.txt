@@ -1,0 +1,7 @@
+Veil v0.84 — iridescent rebrand
+
+Open Veil.vbs to start without a console. Existing compatible Omen Studio launchers remain supported. The splash uses your original V logo and approximately 2.35:1 iridescent artwork for three seconds. The app title, icon, Settings copy and dialogs now use Veil.
+
+All palette editing, named HEX import/export, settings and reviewed Resolve integration remain from the working v0.82 release. No new experimental full-coverage theme mechanism is activated. The v0.83 coverage investigation remains separate and staged.
+
+This update does not modify Resolve installations or pinned shortcuts. Windows may cache the old pinned icon; opening Veil.vbs exposes the new window identity for pinning if desired.

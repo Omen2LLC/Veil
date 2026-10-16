@@ -1,0 +1,27 @@
+{
+  "brand": "Veil",
+  "version": "v0.84 preview",
+  "baseline": "C:\\Users\\GENESIS\\Documents\\Codex\\2026-09-25\\ca\\outputs\\Omen-Studio-v0.82-Cherry-Blossom-Workspace\\Omen Studio",
+  "original_logo_sha256": "ebc7457f32fb2fd40ba62bd3115a713f84e086219a2ab921ea57a75a634a82b2",
+  "generated_plate_sha256": "a452bf9ee72a470d4548deafa0063a57e84c2b1c5ff63a73e589eb7d579ac54d",
+  "splash_sizes": [
+    {
+      "width": 640,
+      "height": 273,
+      "logo_size": 134
+    },
+    {
+      "width": 800,
+      "height": 341,
+      "logo_size": 167
+    },
+    {
+      "width": 960,
+      "height": 409,
+      "logo_size": 200
+    }
+  ],
+  "duration_ms": 3000,
+  "resolve_theme_changes": false,
+  "native_install_changes": false
+}

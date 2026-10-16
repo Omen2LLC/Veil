@@ -1,0 +1,10 @@
+Veil named HEX
+
+; Veil named HEX
+; Palette: Console Optimized Experimental
+
+E24947 | Coral Ember
+7D1E3A | Crimson Wine
+
+Include exactly 16 RGB lines in palette display order. Each six-digit code can have an optional # prefix. Attach its color name after |. Palette title and comments use semicolon-prefixed lines. Names must be distinct and contain 1-40 visible characters.
+Veil v0.69 and later read the names automatically. Plain HEX files remain importable. Named HEX contains one RGB/base endpoint per color; use JSON to retain both custom gradient endpoints.

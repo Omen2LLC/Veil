@@ -1,0 +1,81 @@
+{
+  "original_logo_preserved": true,
+  "splash_checks": [
+    {
+      "width": 640,
+      "height": 273,
+      "logo_bbox": [
+        253,
+        39,
+        387,
+        173
+      ],
+      "wordmark_bbox": [
+        291,
+        173,
+        349,
+        216
+      ],
+      "duration_ms": 3000
+    },
+    {
+      "width": 800,
+      "height": 341,
+      "logo_bbox": [
+        317,
+        50,
+        484,
+        217
+      ],
+      "wordmark_bbox": [
+        365,
+        215,
+        436,
+        269
+      ],
+      "duration_ms": 3000
+    },
+    {
+      "width": 960,
+      "height": 409,
+      "logo_bbox": [
+        380,
+        60,
+        580,
+        260
+      ],
+      "wordmark_bbox": [
+        437,
+        258,
+        523,
+        323
+      ],
+      "duration_ms": 3000
+    },
+    {
+      "width": 320,
+      "height": 137,
+      "logo_bbox": [
+        127,
+        20,
+        194,
+        87
+      ],
+      "wordmark_bbox": [
+        144,
+        85,
+        176,
+        109
+      ],
+      "duration_ms": 3000
+    }
+  ],
+  "syntax_checked": true,
+  "legacy_and_veil_launcher_routing_passed": true,
+  "hidden_ui_title_and_settings_passed": true,
+  "palette_settings_and_theme_resources_preserved": true,
+  "actual_resolve_launched": false,
+  "theme_applied": false,
+  "pinned_shortcuts_modified": false,
+  "preview": "Offline layout rendering, not a native capture"
+}

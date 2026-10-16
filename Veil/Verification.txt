@@ -1,0 +1,19 @@
+Verification:
+- All 29 original main stylesheet sources checked; ten packaged slots modified,
+  nineteen untouched. 46 reviewed original color edits and eight scoped color-only
+  rules. Every original selector/non-color declaration and disabled-state rule is
+  preserved. Fonts, geometry and icon references are unchanged in source.
+- Strict recipe digest, compressed-slot capacity, native original bytes and
+  non-executable range checks pass. Sources are whitespace/comment compacted only.
+- 38 tests passed: 13 backend/ownership failure tests, seven coordinated
+  Apply/Restore tests, nine isolated Tk tests and nine descendant-rule guard tests.
+  Tk tests include Dark/Light and narrow windows with actions stubbed.
+- The unchanged memory helper retains its prior nine passing native fixture cases;
+  those cases were not rerun for this color-data-only update.
+- Declared dark neutral text contrast is >=5.84:1 on all five colors. This is not
+  proof that every custom native painter follows those declarations.
+- Native startup, page coverage, actual readability, interaction/playback and
+  restoration for this expansion require live user verification.
+
+Qt color inheritance is not assumed; scoped neutral-label rules are explicit:
+https://doc.qt.io/qt-6/stylesheet-syntax.html#inheritance
