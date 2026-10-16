@@ -287,6 +287,12 @@ class App(LegacyApp):
         return self.button(parent,text,command,primary=primary,polished=True,**kwargs)
     def editor_field(self,parent,variable,width=18):
         return Field(parent,self,variable,width,polished=True)
+    def pick(self,label,index):
+        from veil_color_picker import ColorPicker
+        picker=ColorPicker(self,self.safe_color(self.values[label][index].get()),
+                           self.names[label].get(),'Primary' if index==0 else 'Secondary')
+        color=picker.show()
+        if color:self.values[label][index].set(color)
     def open_editor_menu(self,trigger,entries):
         menu=getattr(self,'editor_menu',None)
         if menu and not menu.closed:menu.close()

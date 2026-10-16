@@ -1,4 +1,4 @@
-# Veil v0.96-beta
+# Veil v0.97-beta
 
 Extract the whole Windows package to a writable folder and open Veil.exe. Keep its files together. Python is bundled in the Windows package. The separate source package needs 64-bit Python 3.11+ with Tkinter.
 
