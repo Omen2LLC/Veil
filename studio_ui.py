@@ -1,5 +1,6 @@
 """Monochrome Omen workspace; Resolve transactions remain in studio_legacy."""
 import tkinter as tk
+import time
 from tkinter import ttk, messagebox, filedialog
 from pathlib import Path
 import studio_legacy as legacy
@@ -65,6 +66,9 @@ class App(LegacyApp):
             self.show_palette(self.palettes[name])
             for label,alias in zip(LABELS,self.palette_names.get(name,LABELS)):self.names[label].set(alias)
         self.loading=False;self.baseline=self.raw_snapshot()
+        self.reset_undo()
+        root.bind('<Control-z>',self.undo_shortcut)
+        root.bind('<Control-Z>',self.undo_shortcut)
         if not demo:
             self.root.after(1800,lambda:veil_update_ui.check_in_background(self))
     def styles(self):
@@ -304,12 +308,57 @@ class App(LegacyApp):
         ready=not self.busy and not self.closing
         valid=ready and self.valid(); stored=ready and not self.storage_error
         self.open_editor_menu(self.actions_button,[
+            ('New palette',self.new_palette,ready),
             ('Rename',lambda:self.start_rename(self.selection.get()),stored and self.selection.get() in self.palettes),None,
+            ('Undo  ·  Ctrl+Z',self.undo_edit,ready and bool(getattr(self,'undo_stack',[]))),None,
             ('Save',self.save,valid and stored),
             ('Save As',self.save_as,valid and stored),None,
             ('Import',self.import_palette,ready),
             ('Export',self.export_palette,valid),None,
             ('Delete',lambda:self.delete_palette(self.selection.get()),stored and self.selection.get() in self.users)])
+    def reset_undo(self):
+        self.undo_stack=[];self.undo_snapshot=self.raw_snapshot()
+        self.undo_key=None;self.undo_time=0
+    def edited(self,*args):
+        if not self.loading and hasattr(self,'undo_snapshot'):
+            state=self.raw_snapshot();now=time.monotonic();key=args[0] if args else None
+            if state!=self.undo_snapshot:
+                if key!=self.undo_key or now-self.undo_time>.65:
+                    self.undo_stack.append(self.undo_snapshot)
+                    self.undo_stack=self.undo_stack[-100:]
+                self.undo_snapshot=state;self.undo_key=key;self.undo_time=now
+        super().edited(*args)
+    def undo_shortcut(self,event=None):
+        if self.current_page=='Palettes' and self.current_tab=='Editor':
+            self.undo_edit();return 'break'
+    def undo_edit(self):
+        if self.busy or self.closing or not getattr(self,'undo_stack',[]):return
+        colors,names=self.undo_stack.pop()
+        self.loading=True
+        try:
+            for label,pair,name in zip(LABELS,colors,names):
+                for variable,color in zip(self.values[label],pair):variable.set(color)
+                self.names[label].set(name)
+        finally:self.loading=False
+        self.undo_snapshot=self.raw_snapshot();self.undo_key=None;self.undo_time=0
+        self.refresh_editor();self.set_status('Undid the last palette edit.')
+    def choose_palette(self,name):
+        before=(self.selection.get(),self.baseline)
+        super().choose_palette(name)
+        if (self.selection.get(),self.baseline)!=before:self.reset_undo()
+    def new_palette(self):
+        if self.busy or self.closing or not self.confirm_discard():return
+        name='Untitled palette';number=2
+        while name in self.palettes:
+            name=f'Untitled palette {number}';number+=1
+        self.loading=True
+        try:
+            self.selection.set(name);self.show_palette(STOCK)
+            for label in LABELS:self.names[label].set(label)
+        finally:self.loading=False
+        self.baseline=None;self.reset_undo();self.active_slot=DISPLAY_ORDER[0]
+        self.current_page='Palettes';self.current_tab='Editor';self.outlined_page='Palettes'
+        self.show_page();self.set_status('New palette. Choose your colors, then Save As to add it to the Library.')
     def editor_page(self):
         if self.selection.get() in builtin_palettes():self.selection.set('New palette')
         toolbar=self.frame(self.page_content);toolbar.pack(fill='x',pady=(0,self.p(16)))
@@ -442,6 +491,16 @@ class App(LegacyApp):
             if self.current_page=='Palettes':self.show_page()
             self.set_status('Saved '+self.selection.get()+'.','success')
         return result
+    def request_palette_name(self):
+        from veil_dialogs import PaletteDialog
+        name=self.selection.get()
+        return PaletteDialog(self,'save',name+' copy' if name in self.palettes else name,self.editor()).show()
+    def confirm_delete_palette(self,name):
+        from veil_dialogs import PaletteDialog
+        return PaletteDialog(self,'delete',name,self.palettes.get(name)).show()
+    def confirm_replace_palette(self,name):
+        from veil_dialogs import PaletteDialog
+        return PaletteDialog(self,'replace',name,self.editor()).show()
     def import_palette(self):
         try:
             path=filedialog.askopenfilename(parent=self.root,title='Import palette',filetypes=[('Palette files','*.json *.hex'),('Hex palette','*.hex'),('Palette JSON','*.json')])
@@ -451,6 +510,7 @@ class App(LegacyApp):
             self.loading=True;self.show_palette(colors)
             for label,alias in zip(LABELS,aliases):self.names[label].set(alias)
             self.selection.set(palette_name);self.loading=False;self.baseline=None
+            self.reset_undo()
             self.continue_editing();self.set_status('Imported draft. Save to keep it; Apply updates Resolve.')
         except Exception as exc:self.loading=False;self.error(exc)
     def themes(self):

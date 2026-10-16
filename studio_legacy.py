@@ -361,7 +361,7 @@ class App(ResolveActions):
         try:
             if self.storage_error:raise RuntimeError('Saved palette storage needs attention: '+self.storage_error)
             if name not in self.users:raise ValueError('Only user-saved palettes can be deleted.')
-            if not messagebox.askyesno('Delete palette',f'Delete “{name}” from your Library?\n\nThe palette currently applied to Resolve will stay active.',parent=self.root):return
+            if not self.confirm_delete_palette(name):return
             selected=self.selection.get()==name
             keep_draft=selected and self.dirty
             self.library.delete(name)
@@ -497,11 +497,17 @@ class App(ResolveActions):
         return self.save_named(self.selection.get())
     def save_as(self):
         if not self.valid():self.set_status('Fix the highlighted name or hex value before saving.','error');return False
-        name=simpledialog.askstring('Save palette as','Palette name (1–60 characters):',initialvalue=self.selection.get()+' copy',parent=self.root)
+        name=self.request_palette_name()
         if name is None:return False
         name=name.strip()
-        if name in self.users and not messagebox.askyesno('Replace saved palette',f'Replace “{name}”?',parent=self.root):return False
+        if name in self.users and not self.confirm_replace_palette(name):return False
         return self.save_named(name)
+    def request_palette_name(self):
+        return simpledialog.askstring('Save palette as','Palette name:',initialvalue=self.selection.get()+' copy',parent=self.root)
+    def confirm_delete_palette(self,name):
+        return messagebox.askyesno('Delete palette',f'Delete “{name}” from your Library?\n\nThe palette currently applied to Resolve will stay active.',parent=self.root)
+    def confirm_replace_palette(self,name):
+        return messagebox.askyesno('Replace saved palette',f'Replace “{name}”?',parent=self.root)
     def save_named(self,name):
         try:
             if self.storage_error:raise RuntimeError('Saved palette storage needs attention: '+self.storage_error)

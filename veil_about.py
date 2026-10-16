@@ -3,6 +3,7 @@ from pathlib import Path
 import tkinter as tk
 from studio_fonts import REGULAR
 from studio_version import VERSION
+from window_chrome import theme_caption
 HERE=Path(__file__).resolve().parent
 
 def show_about(app):
@@ -44,9 +45,7 @@ def show_about(app):
         logo=tk.PhotoImage(file=str(logo_path))
     else:
         logo=tk.PhotoImage(file=str(HERE/'veil-splash-logo-640.png')).subsample(2,2)
-    canvas.create_image(round(width*.5),round(height*.39),image=logo,anchor='center',tags='veil-logo')
-    canvas.create_text(round(width*.5),round(height*.71),text='Veil',fill='#F5EDED',
-                       font=(REGULAR,-max(18,round(height*.12))),anchor='center',tags='veil-wordmark')
+    canvas.create_image(round(width*.5),round(height*.5),image=logo,anchor='center',tags='veil-logo')
     splash._logo=logo
     canvas.create_text(round(width*.041),round(height*.85),anchor='nw',
                        text=VERSION.split()[0],fill='#C7C7C7',
@@ -59,6 +58,20 @@ def show_about(app):
     canvas.create_text(round(width*.5),round(height*.88),text='Theme and color palette editor for DaVinci Resolve',
                        fill='#F5EDED',font=(REGULAR,-max(10,round(height*.035))),anchor='center')
     app.about_window=splash
+    splash._canvas=canvas
+    def update_caption(*_):
+        if splash.winfo_exists():
+            theme_caption(splash,app.effective_mode()=='Dark',app.c['panel'],app.c['text'])
+    def schedule_caption(*_):
+        if splash.winfo_exists():splash.after_idle(update_caption)
+    appearance_trace=app.appearance.trace_add('write',schedule_caption)
+    splash.bind('<Map>',lambda event:schedule_caption() if event.widget is splash else None,add='+')
+    def cleanup(event):
+        if event.widget is splash:
+            app.appearance.trace_remove('write',appearance_trace)
+            if app.about_window is splash:app.about_window=None
+    splash.bind('<Destroy>',cleanup,add='+')
+    update_caption()
     def close(event=None):
         app.about_window=None
         splash.destroy()
