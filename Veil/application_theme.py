@@ -20,7 +20,7 @@ INSTALL = Path('C:/Program Files/Blackmagic Design/DaVinci Resolve')
 EXPECTED_VERSION = '21.1.0.14'
 EXPECTED_SOURCE = '0a8f20c70851e629c1753ed537801d1df0b5162ad98a5ab399e4abc7b77df236'
 # Set to the independently verified staged recipe before releasing this build.
-EXPECTED_RECIPE = 'd171269b65acaccc64d1b7f40c26dd77ba82a1cce9d7c4f0d9aa86f50f04c79a'
+EXPECTED_RECIPE = '6e26d713b0d5b78a739488a702b80c7ecba8254a18dc2f25830e4519e485f10c'
 STARTUP_TIMEOUT = 90
 COLORS = {(230, 206, 213), (221, 176, 188), (217, 160, 176),
           (217, 130, 155), (212, 105, 134)}
@@ -186,6 +186,58 @@ def _validate_edits(original, proposed, edits, added_rules=()):
             'QLineEdit[SkinId="MediaMetadataScrollAreaLineEdit"]:enabled',
         }
         declarations = [tuple(pair) for pair in rule['declarations']]
+        filmstrip_parent = 'QFrame[PseudoStyleClassName="UiQFilmstripClipInfoOuterContainer"]'
+        filmstrip_property_labels = {
+            filmstrip_parent + ' QLabel[SkinId="FilmstripClipInfoNameLabel"]:enabled',
+            filmstrip_parent + ' QLabel[SkinId="FilmstripClipInfoDuration"]:enabled',
+        }
+        header_property_label = 'QWidget[resolve_widget_style_sheet="UiQInspectorEffectHeaderWidget"] QWidget[resolve_widget_style_sheet="UiQInspectorOFXPluginNameLabel"]:enabled'
+        if selector == filmstrip_parent or selector in filmstrip_property_labels or selector == header_property_label:
+            source_blocks = dict(_qss_blocks(original))
+            target_blocks = dict(_qss_blocks(proposed))
+            if selector == filmstrip_parent:
+                approved = (declarations == [('background-color', '#DDB0BC')] and
+                            dict(source_blocks.get('UiQFilmstripClipInfoOuterContainer', [])).get('background-color') == 'COLOR_PENGUIN_GRAY')
+            elif selector in filmstrip_property_labels:
+                label = selector.split(' ', 1)[1].removesuffix(':enabled')
+                approved = (declarations == [('color', 'COLOR_TINT_GRAY')] and
+                            dict(source_blocks.get(label, [])).get('color') in ('white', 'COLOR_SMOKE_GRAY') and
+                            dict(target_blocks.get(filmstrip_parent, [])).get('background-color') == '#DDB0BC')
+            else:
+                approved = (declarations == [('color', 'COLOR_TINT_GRAY')] and
+                            dict(source_blocks.get('UiQInspectorOFXPluginNameLabel', [])).get('color') == 'white' and
+                            dict(target_blocks.get('UiQInspectorEffectHeaderWidget', [])).get('background-color') == '#E6CED5')
+            if not approved:
+                raise ApplicationThemeUnavailable('Unreviewed property-qualified surface rule.')
+            before.append((selector, declarations))
+            added_selectors.add(selector)
+            continue
+        inspector_title = ', '.join(parent + ' UiQSectionHeaderTitle:enabled' for parent in (
+            'UiQInspectorContentsContainer', 'UiQInspectorEffectHeaderWidget',
+            'UiEffectParameterHeaderImp_ChildContainerExpanded',
+            'UiEffectParameterHeaderImp_ChildContainerNotExpanded'))
+        if selector == inspector_title:
+            source_blocks = dict(_qss_blocks(original))
+            if (declarations != [('color', 'COLOR_TINT_GRAY')] or
+                    dict(source_blocks.get('UiQSectionHeaderTitle', [])).get('color') != 'white'):
+                raise ApplicationThemeUnavailable('Unreviewed Inspector header title rule.')
+            before.append((selector, declarations))
+            added_selectors.add(selector)
+            continue
+        filmstrip_labels = {
+            'UiQFilmstripClipInfoOuterContainer QLabel[SkinId="FilmstripClipInfoDuration"]:enabled',
+            'UiQFilmstripClipInfoOuterContainer QLabel[SkinId="FilmstripClipInfoNameLabel"]:enabled',
+        }
+        if selector in filmstrip_labels:
+            native = selector.split(' ', 1)[1].removesuffix(':enabled')
+            source_blocks = dict(_qss_blocks(original))
+            if (declarations != [('color', 'COLOR_TINT_GRAY')] or
+                    dict(source_blocks.get(native, [])).get('color') not in ('white', 'COLOR_SMOKE_GRAY') or
+                    dict(dict(before).get('UiQFilmstripClipInfoOuterContainer', [])).get('background-color') != '#DDB0BC'):
+                raise ApplicationThemeUnavailable('Unreviewed Media filmstrip label pair.')
+            before.append((selector, declarations))
+            added_selectors.add(selector)
+            continue
         if selector in metadata_fields:
             native_parts = {part.strip() for native_selector in original_selectors for part in native_selector.split(',')}
             if (selector.removesuffix(':enabled') not in native_parts or

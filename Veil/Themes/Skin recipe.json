@@ -3,12 +3,12 @@
   "name": "Cherry Blossom",
   "resolve_version": "21.1.0.14",
   "source_sha256": "1523e34c9626cb23627ea33b29ce89fcf04f93ffc1b4dbbc2c6524dd33cbfa76",
-  "candidate_sha256": "76aecbdfa83c367f19fcfaf2480af0c32250ebfb15b814c07f983453dd3b9eca",
+  "candidate_sha256": "232f8019ba6b08207daeb16b64095a710ef9b7f03db5344ccaf9e91eafc09599",
   "legacy_candidate_sha256": [
     "a331261b4c92fd32f2014e0a58b2bc428c9cc17d87a8fd9e4359b915e808798f",
     "019cd21fa2c8bef1dc21da289ade71f7c74a9a91631d55c5dafbf1624e6fd295",
-    "dfd01ab2d90c085571343e7c714cbba2462497951ca36baf8da0ed6a51670442",
-    "232f8019ba6b08207daeb16b64095a710ef9b7f03db5344ccaf9e91eafc09599"
+    "76aecbdfa83c367f19fcfaf2480af0c32250ebfb15b814c07f983453dd3b9eca",
+    "dfd01ab2d90c085571343e7c714cbba2462497951ca36baf8da0ed6a51670442"
   ],
   "modified_entries": {
     "Fusion.skin": [
@@ -89,6 +89,10 @@
       "Color",
       "CurveColor",
       "CurveColor",
+      "BackgroundColor",
+      "GradTopColor",
+      "GradBottomColor",
+      "HoverBorderColor",
       "BackgroundColor"
     ],
     "Neutral.skin": [
@@ -119,6 +123,9 @@
       "Color",
       "CurveColor",
       "CurveColor",
+      "BackgroundColor",
+      "GradTopColor",
+      "GradBottomColor",
       "BackgroundColor"
     ]
   }

@@ -7,6 +7,8 @@ class ThemeUnavailable(RuntimeError):pass
 REASON='Experimental Fusion skin. Additional application surfaces use a separate themed session; whole-application coverage remains unverified.'
 INSTALL=Path('C:/Program Files/Blackmagic Design/DaVinci Resolve')
 TARGET=INSTALL/'Skins/Fusion.fuskin'
+# Only the independently reviewed Step 1 candidate may be upgraded automatically.
+REVIEWED_UPGRADE_SKINS={'dfd01ab2d90c085571343e7c714cbba2462497951ca36baf8da0ed6a51670442'}
 
 def load_profile(folder):
     data=json.loads((Path(folder)/'Themes/Cherry Blossom.json').read_text(encoding='utf-8'))
@@ -33,6 +35,8 @@ def capability(folder):
         original_available=any(p.exists() and digest(p)==recipe['source_sha256'] for p in (backup,legacy))
         if current==recipe['source_sha256']:status='Original skin installed';apply=True;restore=False
         elif current==recipe['candidate_sha256']:status='Cherry Blossom installed · Fusion skin';apply=False;restore=original_available
+        elif current in REVIEWED_UPGRADE_SKINS and current in recipe.get('legacy_candidate_sha256',[]):
+            status='Step 1 Cherry Blossom installed · Step 2 upgrade available';apply=original_available;restore=original_available
         elif current in recipe.get('legacy_candidate_sha256',[]):status='Previous theme installed · restore before applying Cherry Blossom';apply=False;restore=original_available
         else:raise ThemeUnavailable('Unknown skin resource. Apply and Restore are unavailable for this installation.')
         return dict(can_apply=apply,can_restore=restore,reason=REASON,status=status,reviewed_version=recipe['resolve_version'],report=report)
@@ -61,16 +65,24 @@ def direct_operation(folder,action,progress=lambda message:None,guard=lambda:Non
             if not legacy.exists() or digest(legacy)!=recipe['source_sha256']:raise ThemeUnavailable('The original backup is unavailable. Restore the earlier test with its original helper.')
             atomic_bytes(backup,legacy.read_bytes())
     if digest(backup)!=recipe['source_sha256']:raise ThemeUnavailable('Original backup changed. Refusing to write.')
+    upgrading=action=='apply' and current in REVIEWED_UPGRADE_SKINS and current in legacy_hashes
     if action=='apply':
-        if current in legacy_hashes:raise ThemeUnavailable('Restore the previous theme first, then apply Cherry Blossom.')
+        if current in legacy_hashes and not upgrading:raise ThemeUnavailable('Restore the previous theme first, then apply Cherry Blossom.')
         guard();progress('Building and verifying the Fusion theme…')
         build_candidate(backup,candidate,load_profile(folder)['tokens'])
         if digest(candidate)!=recipe['candidate_sha256']:raise ThemeUnavailable('Generated patch differs from the reviewed candidate.')
     candidate_hash=current if action=='restore' and current in legacy_hashes else recipe['candidate_sha256']
     def checked_closed():guard();require_resolve_closed()
+    if upgrading:
+        progress('Restoring the verified original before the Step 2 upgrade…')
+        SkinTransaction(TARGET,backup,candidate,storage/'Upgrade-Restore.json',
+                        recipe['source_sha256'],current,checked_closed,progress).execute('restore')
     progress('Installing the Fusion theme…' if action=='apply' else 'Restoring the original Fusion skin…')
     tx=SkinTransaction(TARGET,backup,candidate,storage/'Transaction.json',recipe['source_sha256'],candidate_hash,checked_closed,progress)
-    return tx.execute(action)
+    try:return tx.execute(action)
+    except Exception as exc:
+        if upgrading:raise ThemeUnavailable('Step 2 upgrade did not complete. The original backup is intact. Check theme status and use Restore Original before reopening Resolve. '+str(exc)) from exc
+        raise
 
 def operate(folder,action,progress=lambda message:None):
     if action not in ('apply','restore'):raise ValueError('Unknown theme action.')

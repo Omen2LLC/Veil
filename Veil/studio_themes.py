@@ -49,9 +49,9 @@ def build_themes(app):
     panel=app.card(area.body,padding=24);panel.pack(fill='x')
     heading=app.frame(panel,app.c['panel']);heading.pack(fill='x')
     heading.columnconfigure(0,weight=1)
-    title=app.label(heading,'Cherry Blossom',size=18,bold=True,bg=app.c['panel']);title.grid(row=0,column=0,sticky='w')
+    title=app.label(heading,'Cherry Blossom · Step 3 test',size=18,bold=True,bg=app.c['panel']);title.grid(row=0,column=0,sticky='w')
     scope=app.label(heading,'Experimental · Resolve + Fusion',size=10,muted=True,bg=app.c['panel']);scope.grid(row=0,column=1,sticky='e')
-    desc=app.label(panel,'Cherry Blossom workspace test with coordinated Fusion startup. Coverage and readability remain partial.',muted=True,bg=app.c['panel'])
+    desc=app.label(panel,'Step 3 test: Inspector section headings and Media filmstrip labels, using exact native style properties. The working parameter-label and Fusion canvas changes are retained. Full-program coverage remains unverified.',muted=True,bg=app.c['panel'])
     desc.pack(fill='x',pady=(app.p(6),app.p(20)))
     preview=ThemePreview(panel,app,profile);preview.pack(fill='x');app.theme_preview=preview
     caption=app.label(panel,'Approved workspace concept · not a Resolve capture or a guarantee of complete coverage',size=9,muted=True,bg=app.c['panel'])
@@ -66,7 +66,7 @@ def build_themes(app):
         button.grid(row=0,column=STATES.index(name),padx=(0,app.p(6)),pady=(0,app.p(6)))
         app.theme_state_buttons[name]=button
     app.label(panel,'Coverage',bold=True,bg=app.c['panel']).pack(fill='x',pady=(app.p(20),app.p(6)))
-    reason=app.label(panel,'This workspace test adds petal backgrounds to shared sidebars, inspector content, Media containers, Deliver settings, Color tool containers and Project Manager bodies. Broad descendant text overrides have been removed after contrast problems in native captures. The empty Metadata panel now has directly paired colors. Native button backing and icon artwork remain intact. Custom-painted timelines, grading displays, viewers and some panels still retain Resolve’s native appearance. Live readability and behavior checks are still required.',size=10,muted=True,bg=app.c['panel'])
+    reason=app.label(panel,'This workspace test adds petal backgrounds to shared sidebars, inspector content, Media containers, Deliver settings, Color tool containers and Project Manager bodies. Broad descendant text overrides have been removed after contrast problems in native captures. The Metadata panel and enabled fields have paired colors. This staged extension also pairs the Quick Export preset header and updates Fusion Effects Library tile gradients; native checks are pending. Native button backing and icon artwork remain intact. Custom-painted timelines, grading displays, viewers and some panels still retain Resolve’s native appearance. Live readability and behavior checks are still required.',size=10,muted=True,bg=app.c['panel'])
     reason.pack(fill='x')
     def status_text(fusion,main):
         fusion_text=fusion['reason'] if fusion['status']=='Unavailable' else fusion['status']

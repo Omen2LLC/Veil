@@ -23,7 +23,11 @@
     "Color tool container backgrounds (grading visuals unchanged)",
     "Project Manager database/projects/body containers",
     "Empty Metadata panel with directly paired foreground/background",
-    "Three explicitly named enabled Metadata text fields with paired foreground/background; native disabled and selection declarations retained"
+    "Three explicitly named enabled Metadata text fields with paired foreground/background; native disabled and selection declarations retained",
+    "Quick Export preset information header, paired foreground/background test",
+    "Step 3 Media filmstrip information chrome; enabled name and duration labels paired with rose backing",
+    "Step 3 Inspector enabled parameter/group labels paired with themed panel; native disabled and highlighted states retained",
+    "Step 3 property-qualified filmstrip backing/labels and ordinary Inspector header title; active coral header state unchanged"
   ],
   "unsupported": [
     "Complete native workspace coverage",
@@ -192,11 +196,11 @@
       "original_file": "Inspector.original.bin",
       "proposed_file": "Inspector.cherry.bin",
       "original_sha256": "392d6942f9700205e6791280c726404f5d71e20f49a847f8a5f24b7812c759e2",
-      "proposed_sha256": "a2c813d8952e7467f1a795dba45ed9249e11b322866e6e19f0f295eeb24a6b90",
+      "proposed_sha256": "b5c5e52045fdfcf8daad19bf4c316f11039828b8f2900320664855956da3052c",
       "raw_original_sha256": "a4905a9bda8e3d5b8560beb908314f5e0c71614bcb587697bf9f7d550807bb41",
-      "raw_proposed_sha256": "3d58591beede1f1a8bae671c93159d7695ded347ffaecd8f692cb66fbfa6aa9a",
+      "raw_proposed_sha256": "6b646ce53713ca576f601622a36713983aa2ff7788d5788cc26488ef95f86d59",
       "original_packed_bytes": 5178,
-      "proposed_packed_bytes": 4749,
+      "proposed_packed_bytes": 4857,
       "edits": [
         {
           "selector": "UiQInspectorSubtitleContainerCaptionTimeCodeLineEdit",
@@ -253,7 +257,44 @@
           "proposed": "#E6CED5"
         }
       ],
-      "added_color_rules": [],
+      "added_color_rules": [
+        {
+          "selector": "UiQInspectorContentsContainer UiQInspectorParamLabel:enabled, UiQInspectorEffectHeaderWidget UiQInspectorParamLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQInspectorParamLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQInspectorParamLabel:enabled",
+          "declarations": [
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQInspectorContentsContainer UiQInspectorPointParamLabel:enabled, UiQInspectorEffectHeaderWidget UiQInspectorPointParamLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQInspectorPointParamLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQInspectorPointParamLabel:enabled",
+          "declarations": [
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQInspectorContentsContainer UiQInspectorGroupTitleLabel:enabled, UiQInspectorEffectHeaderWidget UiQInspectorGroupTitleLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQInspectorGroupTitleLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQInspectorGroupTitleLabel:enabled",
+          "declarations": [
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "QWidget[resolve_widget_style_sheet=\"UiQInspectorEffectHeaderWidget\"] QWidget[resolve_widget_style_sheet=\"UiQInspectorOFXPluginNameLabel\"]:enabled",
+          "declarations": [
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        }
+      ],
       "formatting": "Whitespace/comment compaction only; original parsed selectors and declarations retained except reviewed color edits"
     },
     {
@@ -264,11 +305,11 @@
       "original_file": "Common.original.bin",
       "proposed_file": "Common.cherry.bin",
       "original_sha256": "f74b4002373bce685eb6b3b502af881ca5c4210faf626c1555473cd2cd968b1c",
-      "proposed_sha256": "5cf72b979f57aeb46a28884e50ab1e3bdf1f076ee8e9666828699d517708936d",
+      "proposed_sha256": "7c704f7f392c1dd2e3e98de6a9be71a41e800aa202a324650e961ea5d38983e5",
       "raw_original_sha256": "216900972a2d3e3004080e11c3c2b84b8b1f7101eee71cab795432b4d5a03b30",
-      "raw_proposed_sha256": "f503afffdb9ede77ffb26198efeb76f563446ddb3a7fd4321fb87c630b519bbc",
+      "raw_proposed_sha256": "4e77487efb5ea1d768766828c0eca3f12b91d37909173a352c99eb68651c32d8",
       "original_packed_bytes": 9890,
-      "proposed_packed_bytes": 8228,
+      "proposed_packed_bytes": 8320,
       "edits": [
         {
           "selector": "UiQSidebar, UiQSidebarWithLeftBorder, UiQSidebarWithRightBorder",
@@ -295,7 +336,26 @@
           "proposed": "#E6CED5"
         }
       ],
-      "added_color_rules": [],
+      "added_color_rules": [
+        {
+          "selector": "UiQInspectorContentsContainer UiQParamLabel:enabled, UiQInspectorEffectHeaderWidget UiQParamLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQParamLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQParamLabel:enabled",
+          "declarations": [
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "UiQInspectorContentsContainer UiQDefaultWhiteLabel:enabled, UiQInspectorEffectHeaderWidget UiQDefaultWhiteLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQDefaultWhiteLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQDefaultWhiteLabel:enabled",
+          "declarations": [
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        }
+      ],
       "formatting": "Whitespace/comment compaction only; original parsed selectors and declarations retained except reviewed color edits"
     },
     {
@@ -306,11 +366,11 @@
       "original_file": "MediaPage.original.bin",
       "proposed_file": "MediaPage.cherry.bin",
       "original_sha256": "f6c534333ef1221b51c15458c2e8a2cc1cfbcd66d1f50dd5359e47df491c2af4",
-      "proposed_sha256": "cb7e895bac5a7ce2fbe1d3441963fe6c87327b3b02df8c30ff6f45e732ba11cd",
+      "proposed_sha256": "50437217b4a72b29ae4bfc1dd6bd66a49adbc372ea6d08daad4ee74f090773ee",
       "raw_original_sha256": "5054caecb5532ca6c1dd3511c49ed51fca4f27165786c50be87ed670bc022d88",
-      "raw_proposed_sha256": "4a3e842440a58d5a7bea2102556ca5a841f06172a81795ed63ae988f1ed4115f",
+      "raw_proposed_sha256": "977ec3ab7d42a02e7b0180d42b5587afe900af7878cfe14f051deb571e90eedf",
       "original_packed_bytes": 2034,
-      "proposed_packed_bytes": 1810,
+      "proposed_packed_bytes": 1865,
       "edits": [
         {
           "selector": "UiQMediaPoolClipViewContainer",
@@ -335,9 +395,43 @@
           "property": "background-color",
           "original": "COLOR_PENGUIN_GRAY",
           "proposed": "#E6CED5"
+        },
+        {
+          "selector": "UiQFilmstripClipInfoOuterContainer",
+          "property": "background-color",
+          "original": "COLOR_PENGUIN_GRAY",
+          "proposed": "#DDB0BC"
         }
       ],
-      "added_color_rules": [],
+      "added_color_rules": [
+        {
+          "selector": "QFrame[PseudoStyleClassName=\"UiQFilmstripClipInfoOuterContainer\"]",
+          "declarations": [
+            [
+              "background-color",
+              "#DDB0BC"
+            ]
+          ]
+        },
+        {
+          "selector": "QFrame[PseudoStyleClassName=\"UiQFilmstripClipInfoOuterContainer\"] QLabel[SkinId=\"FilmstripClipInfoNameLabel\"]:enabled",
+          "declarations": [
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        },
+        {
+          "selector": "QFrame[PseudoStyleClassName=\"UiQFilmstripClipInfoOuterContainer\"] QLabel[SkinId=\"FilmstripClipInfoDuration\"]:enabled",
+          "declarations": [
+            [
+              "color",
+              "COLOR_TINT_GRAY"
+            ]
+          ]
+        }
+      ],
       "formatting": "Whitespace/comment compaction only; original parsed selectors and declarations retained except reviewed color edits"
     },
     {
@@ -573,6 +667,35 @@
           ]
         }
       ]
+    },
+    {
+      "resource": ":/StyleSheet/QuickExport",
+      "offset": 170799183,
+      "rva": 170804303,
+      "size": 967,
+      "original_file": "QuickExport.original.bin",
+      "proposed_file": "QuickExport.cherry.bin",
+      "original_sha256": "5ad336b157422bb5c0f03b4ea04c4f02bf26d04e189babaf652aaac6c756f0ba",
+      "proposed_sha256": "83391be03819d1ebd55c39290f6218c6814a8a241655c1a5ab571c5874890031",
+      "raw_original_sha256": "e19f9f6b1bf02ef3db3a8779e9e14d821e79f404b7faf17e881aaa89639b0064",
+      "raw_proposed_sha256": "d9aa20d98d2b3361ca3342b496fc183309b7f794e3fe480e52711e32c623641f",
+      "original_packed_bytes": 963,
+      "proposed_packed_bytes": 916,
+      "edits": [
+        {
+          "selector": "UiQQuickExportPresetInfoHeaderBar",
+          "property": "background-color",
+          "original": "COLOR_PENGUIN_GRAY",
+          "proposed": "#E6CED5"
+        },
+        {
+          "selector": "UiQQuickExportPresetInfoHeaderBar",
+          "property": "color",
+          "original": "white",
+          "proposed": "COLOR_TINT_GRAY"
+        }
+      ],
+      "added_color_rules": []
     }
   ],
   "state_audit": {

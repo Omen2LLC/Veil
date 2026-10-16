@@ -112,6 +112,15 @@ def transform(payload,tokens):
     result=re.sub(rb'(?m)^(\t+CurveColor[ \t]*=[ \t]*)WhiteCol\b',curve,result)
     # The empty viewer surround is color-only; this does not recolor footage.
     result=_category(result,'Views',1,lambda b:_set(b,'BackgroundColor',nested('viewer'),edits,2))
+    # UI effect tiles use literal gradients which override FlatCol. Scope
+    # these changes to EffectsLibraryView; never alter effect/image colors.
+    def effect_tiles(block):
+        block=_set(block,'GradTopColor',nested('panel'),edits,2)
+        block=_set(block,'GradBottomColor',nested('raised'),edits,2)
+        return _set(block,'HoverBorderColor',b'TintGrayCol',edits,2)
+    result=_category(result,'EffectsLibraryView',1,effect_tiles)
+    # Step 2: change only the custom-painted Flow canvas background.
+    result=_category(result,'Flow',1,lambda b:_set(b,'BackgroundColor',nested('raised'),edits,2))
     return result,edits
 
 def build_candidate(source,destination,tokens):

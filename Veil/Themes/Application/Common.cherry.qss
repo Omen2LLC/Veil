@@ -624,3 +624,5 @@ UiQTaggedTextEditAddButton{border-style:none;background-color:none;image-positio
 UiQTaggedTextEditAddButton:hover{image:url(:/Common/Widgets/AddIcon_hover);}
 UiQTaggedTextEditAddButton:pressed, UiQTaggedTextEditAddButton:checked{image:url(:/Common/Widgets/AddIcon_push);}
 UiQTaggedTextEditAddButton:disabled{image:url(:/Common/Widgets/AddIcon_disabled);}
+UiQInspectorContentsContainer UiQParamLabel:enabled, UiQInspectorEffectHeaderWidget UiQParamLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQParamLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQParamLabel:enabled{color:COLOR_TINT_GRAY;}
+UiQInspectorContentsContainer UiQDefaultWhiteLabel:enabled, UiQInspectorEffectHeaderWidget UiQDefaultWhiteLabel:enabled, UiEffectParameterHeaderImp_ChildContainerExpanded UiQDefaultWhiteLabel:enabled, UiEffectParameterHeaderImp_ChildContainerNotExpanded UiQDefaultWhiteLabel:enabled{color:COLOR_TINT_GRAY;}

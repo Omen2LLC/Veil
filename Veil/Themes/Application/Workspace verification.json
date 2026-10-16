@@ -1,11 +1,17 @@
 {
-  "recipe_sha256": "d171269b65acaccc64d1b7f40c26dd77ba82a1cce9d7c4f0d9aa86f50f04c79a",
+  "recipe_sha256": "6e26d713b0d5b78a739488a702b80c7ecba8254a18dc2f25830e4519e485f10c",
   "checked_resources": 29,
-  "modified_resources": 11,
-  "unchanged_resources": 18,
-  "original_color_edits": 48,
-  "added_scoped_color_rules": 4,
-  "neutral_label_types": [],
+  "modified_resources": 12,
+  "unchanged_resources": 17,
+  "original_color_edits": 51,
+  "added_scoped_color_rules": 13,
+  "neutral_label_types": [
+    "UiQDefaultWhiteLabel:enabled",
+    "UiQInspectorGroupTitleLabel:enabled",
+    "UiQInspectorParamLabel:enabled",
+    "UiQInspectorPointParamLabel:enabled",
+    "UiQParamLabel:enabled"
+  ],
   "declared_foreground_contrast": {
     "#E6CED5": 13.42,
     "#DDB0BC": 10.44,
@@ -26,11 +32,11 @@
     {
       "resource": ":/StyleSheet/Common",
       "color_edits": 4,
-      "scoped_rules": 0,
+      "scoped_rules": 2,
       "original_rules": 626,
       "original_disabled_rules_unchanged": 86,
       "native_fonts_geometry_artwork_and_semantic_declarations_unchanged": true,
-      "slot_spare_bytes": 1662
+      "slot_spare_bytes": 1570
     },
     {
       "resource": ":/StyleSheet/Default",
@@ -62,20 +68,20 @@
     {
       "resource": ":/StyleSheet/Inspector",
       "color_edits": 9,
-      "scoped_rules": 0,
+      "scoped_rules": 4,
       "original_rules": 334,
       "original_disabled_rules_unchanged": 62,
       "native_fonts_geometry_artwork_and_semantic_declarations_unchanged": true,
-      "slot_spare_bytes": 429
+      "slot_spare_bytes": 321
     },
     {
       "resource": ":/StyleSheet/MediaPage",
-      "color_edits": 4,
-      "scoped_rules": 0,
+      "color_edits": 5,
+      "scoped_rules": 3,
       "original_rules": 85,
       "original_disabled_rules_unchanged": 5,
       "native_fonts_geometry_artwork_and_semantic_declarations_unchanged": true,
-      "slot_spare_bytes": 224
+      "slot_spare_bytes": 169
     },
     {
       "resource": ":/StyleSheet/Metadata",
@@ -103,6 +109,15 @@
       "original_disabled_rules_unchanged": 5,
       "native_fonts_geometry_artwork_and_semantic_declarations_unchanged": true,
       "slot_spare_bytes": 213
+    },
+    {
+      "resource": ":/StyleSheet/QuickExport",
+      "color_edits": 2,
+      "scoped_rules": 0,
+      "original_rules": 28,
+      "original_disabled_rules_unchanged": 1,
+      "native_fonts_geometry_artwork_and_semantic_declarations_unchanged": true,
+      "slot_spare_bytes": 47
     },
     {
       "resource": ":/StyleSheet/SoundLibrary",

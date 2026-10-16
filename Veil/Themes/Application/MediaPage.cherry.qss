@@ -1,7 +1,7 @@
 UiQMediaPageAudioWidgetsFrame{background-color:COLOR_POSEIDON_GRAY;}
 QLabel[SkinId="MediaPoolViewsSortMenuSortMediaByLabel"]{min-height:30px;max-height:30px;color:white;padding-left:27px;font-preset-name:FONT_DEFAULT;}
 UiQMediaPoolClipViewContainer{background-color:#E6CED5;}
-UiQFilmstripClipInfoOuterContainer{background-color:COLOR_PENGUIN_GRAY;border:none;border-bottom:1px solid rgb(10, 10, 10);}
+UiQFilmstripClipInfoOuterContainer{background-color:#DDB0BC;border:none;border-bottom:1px solid rgb(10, 10, 10);}
 UiQFilmstripClipInfoInnerContainer{border:none;border-bottom:1px solid rgb(10, 10, 10);margin:14px 0px 2px 0px;padding:0px 11px;}
 UiQFilmstripClipInfoThumbnailsFrame{border:1px solid black;}
 UiQFilmstripClipInfoFrame{min-height:23px;max-height:23px;border:none;border-top:1px solid rgb(52, 52, 52);}
@@ -83,3 +83,6 @@ UiQSectionHeaderIconButton[SkinId="MediaPoolSearchPeopleSettings"]{image:url(:/C
 UiQSectionHeaderIconButton[SkinId="MediaPoolSearchPeopleSettings"]:hover{image:url(:/Common/Headers/Settings_hover);}
 UiQSectionHeaderIconButton[SkinId="MediaPoolSearchPeopleSettings"]:pressed{image:url(:/Common/Headers/Settings_push);}
 UiQGroupLeftButton[SkinId="MediaPoolSearchLeftButton"], UiQGroupRightButton[SkinId="MediaPoolSearchRightButton"]{padding:0px 0px;min-width:90px;min-height:18px;max-height:18px;}
+QFrame[PseudoStyleClassName="UiQFilmstripClipInfoOuterContainer"]{background-color:#DDB0BC;}
+QFrame[PseudoStyleClassName="UiQFilmstripClipInfoOuterContainer"] QLabel[SkinId="FilmstripClipInfoNameLabel"]:enabled{color:COLOR_TINT_GRAY;}
+QFrame[PseudoStyleClassName="UiQFilmstripClipInfoOuterContainer"] QLabel[SkinId="FilmstripClipInfoDuration"]:enabled{color:COLOR_TINT_GRAY;}
