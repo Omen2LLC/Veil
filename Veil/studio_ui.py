@@ -118,7 +118,7 @@ class App(LegacyApp):
         self.show_page();self.sync_chrome()
     def update_caption(self):
         if not self.root.winfo_exists():return
-        self.root.title('Veil · v0.86')
+        self.root.title('Veil · v0.87')
         from window_chrome import theme_caption
         self.caption_results=theme_caption(self.root,self.effective_mode()=='Dark',self.c['panel'],self.c['text'])
     def navigate(self,page):

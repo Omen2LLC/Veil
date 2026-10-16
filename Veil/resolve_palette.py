@@ -33,6 +33,7 @@ def kernel():
         'WriteProcessMemory':([w.HANDLE,ctypes.c_void_p,ctypes.c_void_p,ctypes.c_size_t,ctypes.POINTER(ctypes.c_size_t)],w.BOOL),
         'GetProcessTimes':([w.HANDLE]+[ctypes.POINTER(w.FILETIME)]*4,w.BOOL),
         'GetExitCodeProcess':([w.HANDLE,ctypes.POINTER(w.DWORD)],w.BOOL),
+        'WaitForSingleObject':([w.HANDLE,w.DWORD],w.DWORD),
         'CloseHandle':([w.HANDLE],w.BOOL),
         'CreateMutexW':([ctypes.c_void_p,w.BOOL,w.LPCWSTR],w.HANDLE),
     }
@@ -50,8 +51,12 @@ def discover(k):
             if entry.szExeFile.lower()=='resolve.exe':pids.append(entry.th32ProcessID)
             ok=k.Process32NextW(snap,ctypes.byref(entry))
     finally:k.CloseHandle(snap)
+    # Snapshot entries may outlive exited processes when another app retains handles.
+    # Use the same read-only live-process check as the theme shutdown guard.
+    from theme_transaction import process_is_running
+    pids=[pid for pid in pids if process_is_running(k,pid)]
     if not pids:raise RuntimeError('Open Resolve and a timeline first, then Connect.')
-    if len(pids)!=1:raise RuntimeError('More than one Resolve process is running. Keep only the intended session open.')
+    if len(pids)!=1:raise RuntimeError('Multiple live Resolve processes were found (PIDs: '+', '.join(map(str,pids))+'). Close extra sessions or leftover background Resolve processes, then Connect again.')
     pid=pids[0];snap=k.CreateToolhelp32Snapshot(0x18,pid)
     if snap==ctypes.c_void_p(-1).value:raise ctypes.WinError(ctypes.get_last_error())
     entry=MODULEENTRY32W();entry.dwSize=ctypes.sizeof(entry)

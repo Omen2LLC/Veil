@@ -427,7 +427,7 @@ def capability(folder):
             observed = runtime.inspect_session(session)
             result['can_cleanup'] = observed['matches'] and observed['alive'] and not observed['visible_windows']
         if pids:
-            result.update(status='Resolve is running', reason='Save your work and close Resolve normally before starting a themed session.')
+            result.update(status='Resolve process still active (PID: '+', '.join(map(str,pids))+')', reason='Save your work and close Resolve normally. If its window is already closed, wait for shutdown; a leftover Resolve.exe background process must exit before Apply Theme or Start Resolve can run.')
         else:
             result.update(can_start=True, status='Ready ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· session-only application test',
                           reason='Supported shared interface surfaces only; complete application coverage is unverified.')
