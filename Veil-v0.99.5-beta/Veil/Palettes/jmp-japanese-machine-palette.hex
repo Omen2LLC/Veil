@@ -1,0 +1,20 @@
+; Veil named HEX
+; Palette: Jmp Japanese Machine Palette
+; Review candidate only. JSON preserves both shades; HEX import regenerates the companion.
+
+212020 | Onyx
+342B46 | Void
+4BAB48 | Shamrock
+9ECF84 | Peapod
+463D80 | Twilight
+786DEE | Ultraviolet
+87332B | Redwood
+8DBDF1 | Cloud Blue
+DA524A | Cayenne
+DB8F7D | Coral
+CBAC69 | Wheat
+D9C893 | Mooncake
+226B4B | Pine Needle
+D560CA | Bougainvillea
+B3AEBE | Lilac Ash
+DADAD4 | Eggshell

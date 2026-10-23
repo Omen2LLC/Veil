@@ -1,0 +1,2585 @@
+{
+  "schema": 2,
+  "palettes": {
+    "Afterhours": {
+      "colors": [
+        [
+          "#3B3934",
+          "#4D4B44"
+        ],
+        [
+          "#6F7479",
+          "#92999F"
+        ],
+        [
+          "#9A3B3B",
+          "#CB4D4D"
+        ],
+        [
+          "#B66610",
+          "#EF8615"
+        ],
+        [
+          "#4E8331",
+          "#66AC41"
+        ],
+        [
+          "#346187",
+          "#457FB2"
+        ],
+        [
+          "#AD647B",
+          "#E384A2"
+        ],
+        [
+          "#1B1E41",
+          "#232855"
+        ],
+        [
+          "#5E5364",
+          "#7C6D84"
+        ],
+        [
+          "#9D785E",
+          "#CF9E7C"
+        ],
+        [
+          "#0C4F29",
+          "#106836"
+        ],
+        [
+          "#8B9785",
+          "#B7C7AF"
+        ],
+        [
+          "#653824",
+          "#854A2F"
+        ],
+        [
+          "#141518",
+          "#1A1C20"
+        ],
+        [
+          "#978B2A",
+          "#C7B737"
+        ],
+        [
+          "#452134",
+          "#5B2B44"
+        ]
+      ],
+      "display_names": [
+        "Warm Slate",
+        "Storm Silver",
+        "Ember Coral",
+        "Apricot Flame",
+        "Fern Green",
+        "River Azure",
+        "Dusty Rose",
+        "Midnight Indigo",
+        "Lavender Ash",
+        "Peach Clay",
+        "Forest Jade",
+        "Pale Sage",
+        "Cedar Bark",
+        "Nightshade",
+        "Wheat Gold",
+        "Wine Plum"
+      ]
+    },
+    "Amranthus": {
+      "colors": [
+        [
+          "#964A85",
+          "#C561AF"
+        ],
+        [
+          "#A53855",
+          "#D94A70"
+        ],
+        [
+          "#BF6D63",
+          "#FB9082"
+        ],
+        [
+          "#B08C7B",
+          "#E7B8A2"
+        ],
+        [
+          "#9B8700",
+          "#CCB100"
+        ],
+        [
+          "#A06A1B",
+          "#D28B23"
+        ],
+        [
+          "#641524",
+          "#831C2F"
+        ],
+        [
+          "#5C5290",
+          "#796CBD"
+        ],
+        [
+          "#96441C",
+          "#C65A25"
+        ],
+        [
+          "#8B2731",
+          "#B73340"
+        ],
+        [
+          "#093A3C",
+          "#0C4C4F"
+        ],
+        [
+          "#BA5176",
+          "#F56A9B"
+        ],
+        [
+          "#7A3672",
+          "#A14796"
+        ],
+        [
+          "#081843",
+          "#0A2058"
+        ],
+        [
+          "#82A251",
+          "#ABD56B"
+        ],
+        [
+          "#442B67",
+          "#593988"
+        ]
+      ],
+      "display_names": [
+        "Amaranth Rose",
+        "Rose Velvet",
+        "Peach Silk",
+        "Peach Linen",
+        "Antique Gold",
+        "Amber Nectar",
+        "Garnet Shadow",
+        "Amethyst Bloom",
+        "Terracotta Ember",
+        "Crimson Bloom",
+        "Deep Lagoon",
+        "Petal Pink",
+        "Mulberry Velvet",
+        "Midnight Ink",
+        "Spring Citron",
+        "Iris Dusk"
+      ]
+    },
+    "Arcade": {
+      "colors": [
+        [
+          "#48423C",
+          "#5F574F"
+        ],
+        [
+          "#6A6F71",
+          "#8C9295"
+        ],
+        [
+          "#AD3E4A",
+          "#E45262"
+        ],
+        [
+          "#A36700",
+          "#D78800"
+        ],
+        [
+          "#3E8D41",
+          "#51B956"
+        ],
+        [
+          "#255D83",
+          "#317AAD"
+        ],
+        [
+          "#A34E7E",
+          "#D667A6"
+        ],
+        [
+          "#1A2544",
+          "#223159"
+        ],
+        [
+          "#615773",
+          "#7F7297"
+        ],
+        [
+          "#B77357",
+          "#F19772"
+        ],
+        [
+          "#02673E",
+          "#028751"
+        ],
+        [
+          "#96928D",
+          "#C6C0B9"
+        ],
+        [
+          "#823E29",
+          "#AB5236"
+        ],
+        [
+          "#151515",
+          "#1B1B1B"
+        ],
+        [
+          "#938718",
+          "#C1B220"
+        ],
+        [
+          "#601C3F",
+          "#7E2553"
+        ]
+      ],
+      "display_names": [
+        "Graphite Bark",
+        "Silver Mist",
+        "Carmine Rose",
+        "Amber Orange",
+        "Meadow Green",
+        "Lagoon Azure",
+        "Rose Candy",
+        "Midnight Indigo",
+        "Lavender Slate",
+        "Peach Cream",
+        "Evergreen",
+        "Warm Ivory",
+        "Copper Clay",
+        "Soft Charcoal",
+        "Lemon Citron",
+        "Mulberry Wine"
+      ]
+    },
+    "Bloom": {
+      "colors": [
+        [
+          "#3E9544",
+          "#52C459"
+        ],
+        [
+          "#22825F",
+          "#2DAB7D"
+        ],
+        [
+          "#21406D",
+          "#2C5490"
+        ],
+        [
+          "#002849",
+          "#003560"
+        ],
+        [
+          "#341A50",
+          "#442269"
+        ],
+        [
+          "#512865",
+          "#6A3485"
+        ],
+        [
+          "#874265",
+          "#B25785"
+        ],
+        [
+          "#B87A44",
+          "#F2A15A"
+        ],
+        [
+          "#732B77",
+          "#97399D"
+        ],
+        [
+          "#AE4158",
+          "#E55574"
+        ],
+        [
+          "#95928E",
+          "#C4C0BB"
+        ],
+        [
+          "#2D5982",
+          "#3B75AB"
+        ],
+        [
+          "#78A05E",
+          "#9ED37C"
+        ],
+        [
+          "#BC6461",
+          "#F7847F"
+        ],
+        [
+          "#2F1B12",
+          "#3E2418"
+        ],
+        [
+          "#897E40",
+          "#B4A654"
+        ]
+      ],
+      "display_names": [
+        "Fern Bright",
+        "Meadow Teal",
+        "Ocean Ink",
+        "Twilight Blue",
+        "Violet Bloom",
+        "Orchid Petal",
+        "Rose Bloom",
+        "Apricot Nectar",
+        "Fuchsia Blossom",
+        "Pink Dawn",
+        "Warm Porcelain",
+        "Lake Azure",
+        "Sprout Mint",
+        "Sunset Coral",
+        "Cocoa Night",
+        "Buttercream"
+      ]
+    },
+    "Bubblegum": {
+      "colors": [
+        [
+          "#909394",
+          "#BEC1C3"
+        ],
+        [
+          "#B95D77",
+          "#F37B9D"
+        ],
+        [
+          "#6D204F",
+          "#8F2A68"
+        ],
+        [
+          "#35114E",
+          "#461766"
+        ],
+        [
+          "#477C98",
+          "#5DA3C8"
+        ],
+        [
+          "#6A8D2A",
+          "#8CB937"
+        ],
+        [
+          "#0E5B73",
+          "#137897"
+        ],
+        [
+          "#61081B",
+          "#7F0A23"
+        ],
+        [
+          "#20844E",
+          "#2AAE66"
+        ],
+        [
+          "#032146",
+          "#042C5C"
+        ],
+        [
+          "#AF6028",
+          "#E67E35"
+        ],
+        [
+          "#A6415A",
+          "#DA5577"
+        ],
+        [
+          "#9C8011",
+          "#CDA916"
+        ],
+        [
+          "#1C1D1F",
+          "#252629"
+        ],
+        [
+          "#1B3759",
+          "#234975"
+        ],
+        [
+          "#953427",
+          "#C44433"
+        ]
+      ],
+      "display_names": [
+        "Pearl Mist",
+        "Sugar Pink",
+        "Raspberry Jam",
+        "Velvet Plum",
+        "Sky Mist",
+        "Lime Fizz",
+        "Lagoon Blue",
+        "Garnet Candy",
+        "Mint Jelly",
+        "Deep Harbor",
+        "Tangerine Pop",
+        "Candy Rose",
+        "Lemon Candy",
+        "Ink Shadow",
+        "Denim Ink",
+        "Chili Red"
+      ]
+    },
+    "Console": {
+      "colors": [
+        [
+          "#10574D",
+          "#157365"
+        ],
+        [
+          "#298D8D",
+          "#36BABA"
+        ],
+        [
+          "#3B3F7D",
+          "#4E53A5"
+        ],
+        [
+          "#2F225A",
+          "#3E2D77"
+        ],
+        [
+          "#542461",
+          "#6F3080"
+        ],
+        [
+          "#342018",
+          "#452A20"
+        ],
+        [
+          "#959595",
+          "#C4C4C4"
+        ],
+        [
+          "#5F172C",
+          "#7D1E3A"
+        ],
+        [
+          "#151515",
+          "#1B1B1B"
+        ],
+        [
+          "#645D74",
+          "#837B99"
+        ],
+        [
+          "#B36718",
+          "#EC8820"
+        ],
+        [
+          "#28688D",
+          "#3489BA"
+        ],
+        [
+          "#41923D",
+          "#56C050"
+        ],
+        [
+          "#AC3736",
+          "#E24947"
+        ],
+        [
+          "#964C93",
+          "#C564C2"
+        ],
+        [
+          "#93932F",
+          "#C1C23E"
+        ]
+      ],
+      "display_names": [
+        "Deep Jade",
+        "Lagoon Teal",
+        "Indigo Denim",
+        "Twilight Violet",
+        "Plum Velvet",
+        "Cocoa Shadow",
+        "Silver Mist",
+        "Crimson Wine",
+        "Soft Charcoal",
+        "Lavender Slate",
+        "Amber Orange",
+        "Slate Azure",
+        "Meadow Green",
+        "Coral Ember",
+        "Orchid Mauve",
+        "Olive Citron"
+      ]
+    },
+    "Dawnbringer": {
+      "colors": [
+        [
+          "#284D1B",
+          "#346524"
+        ],
+        [
+          "#9A3B3B",
+          "#CB4D4D"
+        ],
+        [
+          "#3A5080",
+          "#4C69A9"
+        ],
+        [
+          "#9F6024",
+          "#D17E30"
+        ],
+        [
+          "#55802B",
+          "#70A938"
+        ],
+        [
+          "#9C7D70",
+          "#CDA594"
+        ],
+        [
+          "#969139",
+          "#C5BF4B"
+        ],
+        [
+          "#371F2B",
+          "#492939"
+        ],
+        [
+          "#519197",
+          "#6ABFC7"
+        ],
+        [
+          "#8A9A8A",
+          "#B5CBB6"
+        ],
+        [
+          "#3B383B",
+          "#4E4A4E"
+        ],
+        [
+          "#59564A",
+          "#757161"
+        ],
+        [
+          "#653A24",
+          "#854C30"
+        ],
+        [
+          "#181623",
+          "#201D2E"
+        ],
+        [
+          "#65717A",
+          "#8595A1"
+        ],
+        [
+          "#262954",
+          "#32366F"
+        ]
+      ],
+      "display_names": [
+        "Moss Shade",
+        "Ember Rose",
+        "Cornflower",
+        "Clay Orange",
+        "Fern Leaf",
+        "Rose Clay",
+        "Harvest Gold",
+        "Wine Bark",
+        "Ice Teal",
+        "Pale Sage",
+        "Flint Stone",
+        "Olive Stone",
+        "Cedar Bark",
+        "Nightshade",
+        "Storm Silver",
+        "Indigo Night"
+      ]
+    },
+    "Flowers": {
+      "colors": [
+        [
+          "#B6617F",
+          "#EF80A7"
+        ],
+        [
+          "#8C5E7D",
+          "#B87CA4"
+        ],
+        [
+          "#4A3728",
+          "#614934"
+        ],
+        [
+          "#566848",
+          "#71895F"
+        ],
+        [
+          "#6A93A1",
+          "#8CC1D4"
+        ],
+        [
+          "#55A281",
+          "#70D5AA"
+        ],
+        [
+          "#3E575B",
+          "#527378"
+        ],
+        [
+          "#694437",
+          "#8A5A49"
+        ],
+        [
+          "#4A8374",
+          "#62AC98"
+        ],
+        [
+          "#213134",
+          "#2C4144"
+        ],
+        [
+          "#A1906D",
+          "#D4BE8F"
+        ],
+        [
+          "#6A4468",
+          "#8C5A89"
+        ],
+        [
+          "#C07D7D",
+          "#FDA4A4"
+        ],
+        [
+          "#461B1E",
+          "#5C2328"
+        ],
+        [
+          "#5E5890",
+          "#7C74BD"
+        ],
+        [
+          "#916D59",
+          "#BF8F75"
+        ]
+      ],
+      "display_names": [
+        "Rose Candy",
+        "Orchid Dust",
+        "Cocoa Ash",
+        "Sage Petal",
+        "Skyglass",
+        "Seafoam Bloom",
+        "Harbor Slate",
+        "Terracotta Dust",
+        "Aqua Mist",
+        "Twilight Teal",
+        "Cream Petal",
+        "Plum Mist",
+        "Blush Bloom",
+        "Rosewood",
+        "Periwinkle Haze",
+        "Peach Clay"
+      ]
+    },
+    "Oxygen": {
+      "colors": [
+        [
+          "#AD4D54",
+          "#E3656F"
+        ],
+        [
+          "#A96638",
+          "#DF864A"
+        ],
+        [
+          "#427049",
+          "#579460"
+        ],
+        [
+          "#77386D",
+          "#9C4A90"
+        ],
+        [
+          "#3D3E57",
+          "#505273"
+        ],
+        [
+          "#812B2B",
+          "#AA3838"
+        ],
+        [
+          "#342410",
+          "#443015"
+        ],
+        [
+          "#A69048",
+          "#DBBD5F"
+        ],
+        [
+          "#502E29",
+          "#693C36"
+        ],
+        [
+          "#191D2C",
+          "#21263A"
+        ],
+        [
+          "#766857",
+          "#9B8972"
+        ],
+        [
+          "#446D78",
+          "#59909E"
+        ],
+        [
+          "#67933E",
+          "#88C152"
+        ],
+        [
+          "#90948B",
+          "#BEC3B7"
+        ],
+        [
+          "#544E49",
+          "#6E6660"
+        ],
+        [
+          "#419A82",
+          "#56CBAB"
+        ]
+      ],
+      "display_names": [
+        "Coral Blush",
+        "Burnt Apricot",
+        "Fern Moss",
+        "Orchid Wine",
+        "Dusk Slate",
+        "Brick Rose",
+        "Cocoa Ash",
+        "Honey Gold",
+        "Cedar Wine",
+        "Ink Slate",
+        "Linen",
+        "Lake Mist",
+        "Sage Green",
+        "Cloud Sage",
+        "Warm Stone",
+        "Seafoam Jade"
+      ]
+    },
+    "Pastel Horizon": {
+      "colors": [
+        [
+          "#6A5193",
+          "#8B6BC1"
+        ],
+        [
+          "#63946D",
+          "#82C38F"
+        ],
+        [
+          "#3D498B",
+          "#5060B7"
+        ],
+        [
+          "#13576F",
+          "#197292"
+        ],
+        [
+          "#926D7F",
+          "#C08FA7"
+        ],
+        [
+          "#6C4354",
+          "#8E586F"
+        ],
+        [
+          "#BB6354",
+          "#F6826E"
+        ],
+        [
+          "#83692D",
+          "#AC8A3B"
+        ],
+        [
+          "#AA4552",
+          "#E05B6C"
+        ],
+        [
+          "#9A7B5B",
+          "#CBA278"
+        ],
+        [
+          "#728DA6",
+          "#96BADA"
+        ],
+        [
+          "#3E7596",
+          "#519AC6"
+        ],
+        [
+          "#C2768A",
+          "#FF9BB6"
+        ],
+        [
+          "#3F3361",
+          "#53437F"
+        ],
+        [
+          "#1A8578",
+          "#22AF9E"
+        ],
+        [
+          "#9C9388",
+          "#CDC2B3"
+        ]
+      ],
+      "display_names": [
+        "Iris Bloom",
+        "Sage Mist",
+        "Periwinkle",
+        "Denim Lake",
+        "Dusty Blush",
+        "Mulberry Mist",
+        "Apricot Blush",
+        "Ochre Glow",
+        "Coral Rose",
+        "Cream Peach",
+        "Cloud Blue",
+        "Skyglass",
+        "Rose Petal",
+        "Violet Dusk",
+        "Mint Teal",
+        "Pearl Mist"
+      ]
+    },
+    "Peachy Pop": {
+      "colors": [
+        [
+          "#341B10",
+          "#442415"
+        ],
+        [
+          "#745496",
+          "#996EC5"
+        ],
+        [
+          "#3A4F81",
+          "#4C68AA"
+        ],
+        [
+          "#09405D",
+          "#0C547B"
+        ],
+        [
+          "#118A64",
+          "#16B583"
+        ],
+        [
+          "#66A167",
+          "#86D487"
+        ],
+        [
+          "#BA7845",
+          "#F59E5B"
+        ],
+        [
+          "#B95E5F",
+          "#F37C7D"
+        ],
+        [
+          "#9A8C2E",
+          "#CAB83D"
+        ],
+        [
+          "#8F3733",
+          "#BC4943"
+        ],
+        [
+          "#6D3261",
+          "#8F4280"
+        ],
+        [
+          "#5F72A3",
+          "#7D96D6"
+        ],
+        [
+          "#641244",
+          "#841859"
+        ],
+        [
+          "#919393",
+          "#BFC1C1"
+        ],
+        [
+          "#1E6A61",
+          "#278C7F"
+        ],
+        [
+          "#9E4E70",
+          "#D06793"
+        ]
+      ],
+      "display_names": [
+        "Cocoa Velvet",
+        "Orchid Haze",
+        "Slate Blue",
+        "Harbor Ink",
+        "Seafoam Mint",
+        "Spring Sage",
+        "Apricot Nectar",
+        "Watermelon Blush",
+        "Lemon Butter",
+        "Coral Ember",
+        "Raspberry Jam",
+        "Cornflower Mist",
+        "Berry Wine",
+        "Pearl Mist",
+        "Lagoon Jade",
+        "Cherry Rose"
+      ]
+    },
+    "Retrobubble": {
+      "colors": [
+        [
+          "#4C8137",
+          "#64AA49"
+        ],
+        [
+          "#754231",
+          "#9A5741"
+        ],
+        [
+          "#4E392E",
+          "#674B3C"
+        ],
+        [
+          "#918725",
+          "#BFB231"
+        ],
+        [
+          "#871C18",
+          "#B2251F"
+        ],
+        [
+          "#786D64",
+          "#9E8F84"
+        ],
+        [
+          "#B98345",
+          "#F3AC5B"
+        ],
+        [
+          "#3E4561",
+          "#525B80"
+        ],
+        [
+          "#949A6B",
+          "#C3CB8D"
+        ],
+        [
+          "#C06A62",
+          "#FC8C81"
+        ],
+        [
+          "#131518",
+          "#191C20"
+        ],
+        [
+          "#511C29",
+          "#6B2536"
+        ],
+        [
+          "#1F3636",
+          "#294747"
+        ],
+        [
+          "#679696",
+          "#88C6C5"
+        ],
+        [
+          "#A35C31",
+          "#D77940"
+        ],
+        [
+          "#2E1E2E",
+          "#3D273D"
+        ]
+      ],
+      "display_names": [
+        "Leaf Green",
+        "Cedar Rust",
+        "Cocoa Rose",
+        "Lemon Cream",
+        "Brick Coral",
+        "Warm Taupe",
+        "Harvest Gold",
+        "Slatewave",
+        "Buttercream",
+        "Peach Ember",
+        "Nightglass",
+        "Garnet Wine",
+        "Deep Teal",
+        "Mistglass",
+        "Burnt Apricot",
+        "Plum Shade"
+      ]
+    },
+    "Retrocal": {
+      "colors": [
+        [
+          "#2C603A",
+          "#3A7E4C"
+        ],
+        [
+          "#5F7D35",
+          "#7DA446"
+        ],
+        [
+          "#411E21",
+          "#56272C"
+        ],
+        [
+          "#6A2547",
+          "#8C315D"
+        ],
+        [
+          "#B05464",
+          "#E76E83"
+        ],
+        [
+          "#503E43",
+          "#695158"
+        ],
+        [
+          "#A46035",
+          "#D87E46"
+        ],
+        [
+          "#3C4175",
+          "#4F559A"
+        ],
+        [
+          "#753E2B",
+          "#9A5239"
+        ],
+        [
+          "#89756B",
+          "#B49A8D"
+        ],
+        [
+          "#969383",
+          "#C6C1AD"
+        ],
+        [
+          "#A08B32",
+          "#D2B742"
+        ],
+        [
+          "#1E3E3B",
+          "#28524E"
+        ],
+        [
+          "#231A31",
+          "#2E2241"
+        ],
+        [
+          "#9B3E3E",
+          "#CC5251"
+        ],
+        [
+          "#57708D",
+          "#7394BA"
+        ]
+      ],
+      "display_names": [
+        "Garden Moss",
+        "Olive Leaf",
+        "Garnet Shade",
+        "Rosewood",
+        "Coral Blush",
+        "Cocoa Dust",
+        "Apricot Clay",
+        "Indigo Slate",
+        "Cedar Clay",
+        "Pebble Rose",
+        "Warm Linen",
+        "Harvest Gold",
+        "Deep Teal",
+        "Plum Ink",
+        "Ember Rose",
+        "Denim Mist"
+      ]
+    },
+    "VHS": {
+      "colors": [
+        [
+          "#AA5000",
+          "#E06900"
+        ],
+        [
+          "#932D04",
+          "#C23B05"
+        ],
+        [
+          "#608337",
+          "#7EAC48"
+        ],
+        [
+          "#0E6734",
+          "#138744"
+        ],
+        [
+          "#1C4770",
+          "#255D93"
+        ],
+        [
+          "#2D2257",
+          "#3B2D72"
+        ],
+        [
+          "#641B47",
+          "#84245E"
+        ],
+        [
+          "#9A8F36",
+          "#CBBC47"
+        ],
+        [
+          "#8D345B",
+          "#B94478"
+        ],
+        [
+          "#202223",
+          "#2A2D2E"
+        ],
+        [
+          "#875775",
+          "#B1739A"
+        ],
+        [
+          "#A2711D",
+          "#D59526"
+        ],
+        [
+          "#B25758",
+          "#EA7274"
+        ],
+        [
+          "#989380",
+          "#C8C1A9"
+        ],
+        [
+          "#49857D",
+          "#60AFA5"
+        ],
+        [
+          "#917483",
+          "#BF98AC"
+        ]
+      ],
+      "display_names": [
+        "Burnt Tangerine",
+        "Signal Scarlet",
+        "Olive Reel",
+        "Tape Green",
+        "Harbor Blue",
+        "Violet Shadow",
+        "Mulberry Ink",
+        "Faded Gold",
+        "Berry Static",
+        "Charcoal Frame",
+        "Mauve Tape",
+        "Amber Reel",
+        "Coral Fade",
+        "Warm Ivory",
+        "Sea Glass",
+        "Dusty Rose"
+      ]
+    },
+    "Woodspark": {
+      "colors": [
+        [
+          "#21472D",
+          "#2C5E3B"
+        ],
+        [
+          "#49773C",
+          "#609C4F"
+        ],
+        [
+          "#5B93A3",
+          "#78C2D6"
+        ],
+        [
+          "#3E5982",
+          "#5175AB"
+        ],
+        [
+          "#507281",
+          "#6996AA"
+        ],
+        [
+          "#81776D",
+          "#AA9C8F"
+        ],
+        [
+          "#6D2648",
+          "#8F325F"
+        ],
+        [
+          "#BF892B",
+          "#FBB438"
+        ],
+        [
+          "#A74744",
+          "#DC5E59"
+        ],
+        [
+          "#A45A7F",
+          "#D876A7"
+        ],
+        [
+          "#6D4650",
+          "#8F5C69"
+        ],
+        [
+          "#8E933B",
+          "#BBC14D"
+        ],
+        [
+          "#372333",
+          "#492E43"
+        ],
+        [
+          "#969083",
+          "#C5BDAC"
+        ],
+        [
+          "#414054",
+          "#56546E"
+        ],
+        [
+          "#A96A3D",
+          "#DF8C50"
+        ]
+      ],
+      "display_names": [
+        "Forest Moss",
+        "Fern Leaf",
+        "Sky Teal",
+        "Denim Slate",
+        "Lake Fog",
+        "Warm Pebble",
+        "Mulberry Rose",
+        "Apricot Gold",
+        "Coral Ember",
+        "Petal Pink",
+        "Dusty Plum",
+        "Citron Leaf",
+        "Wine Bark",
+        "Cream Linen",
+        "Violet Flint",
+        "Copper Glow"
+      ]
+    },
+    "Forest": {
+      "colors": [
+        [
+          "#898A43",
+          "#B2B369"
+        ],
+        [
+          "#B89543",
+          "#E4BE65"
+        ],
+        [
+          "#743529",
+          "#AC5A4C"
+        ],
+        [
+          "#681C1E",
+          "#8E3233"
+        ],
+        [
+          "#573D29",
+          "#825535"
+        ],
+        [
+          "#4F4B46",
+          "#766F67"
+        ],
+        [
+          "#8A8077",
+          "#B4A699"
+        ],
+        [
+          "#1F4F60",
+          "#3C6F84"
+        ],
+        [
+          "#7E5126",
+          "#A97B52"
+        ],
+        [
+          "#A29A89",
+          "#D4C9AF"
+        ],
+        [
+          "#2C3C34",
+          "#3B5547"
+        ],
+        [
+          "#996833",
+          "#CA9153"
+        ],
+        [
+          "#425D2B",
+          "#688452"
+        ],
+        [
+          "#576965",
+          "#70968E"
+        ],
+        [
+          "#4A2918",
+          "#68341A"
+        ],
+        [
+          "#212A2B",
+          "#24393B"
+        ]
+      ],
+      "display_names": [
+        "Lichen",
+        "Beeswax",
+        "Terracotta",
+        "Rowan Bark",
+        "Chestnut",
+        "Flint",
+        "Driftwood",
+        "Fjord",
+        "Tawny Hide",
+        "Parchment",
+        "Juniper",
+        "Cedar",
+        "Fern Frond",
+        "Tideglass",
+        "Clove",
+        "Hemlock"
+      ]
+    },
+    "Miyazaki": {
+      "colors": [
+        [
+          "#8E9B92",
+          "#B5C7BA"
+        ],
+        [
+          "#B2B3A3",
+          "#DCDDCA"
+        ],
+        [
+          "#368A9C",
+          "#50B9D1"
+        ],
+        [
+          "#602E25",
+          "#84463A"
+        ],
+        [
+          "#A16862",
+          "#DD928B"
+        ],
+        [
+          "#125139",
+          "#207353"
+        ],
+        [
+          "#85A02A",
+          "#A6C640"
+        ],
+        [
+          "#183351",
+          "#244367"
+        ],
+        [
+          "#1D7427",
+          "#48A14D"
+        ],
+        [
+          "#A68400",
+          "#DAB43B"
+        ],
+        [
+          "#5E5D57",
+          "#87857A"
+        ],
+        [
+          "#005771",
+          "#0984A8"
+        ],
+        [
+          "#8C825F",
+          "#BAAD82"
+        ],
+        [
+          "#282829",
+          "#353439"
+        ],
+        [
+          "#8A3D35",
+          "#C5564C"
+        ],
+        [
+          "#3D3A39",
+          "#595451"
+        ]
+      ],
+      "display_names": [
+        "Mistleaf",
+        "Ricepaper",
+        "Kingfisher",
+        "Roasted Tea",
+        "Guava",
+        "Evergreen",
+        "Lemongrass",
+        "Stormcoat",
+        "Meadowgrass",
+        "Sunflower",
+        "Fieldstone",
+        "Estuary",
+        "Oatstraw",
+        "Sootsprite",
+        "Vermilion",
+        "Walnut"
+      ]
+    },
+    "Summers Past": {
+      "colors": [
+        [
+          "#508E98",
+          "#70B9C4"
+        ],
+        [
+          "#425D85",
+          "#6083B6"
+        ],
+        [
+          "#637430",
+          "#8BA14B"
+        ],
+        [
+          "#948F34",
+          "#C3BD38"
+        ],
+        [
+          "#A38A70",
+          "#D8B38C"
+        ],
+        [
+          "#AC6844",
+          "#E68C5C"
+        ],
+        [
+          "#96162B",
+          "#CB3B4A"
+        ],
+        [
+          "#442845",
+          "#5E395F"
+        ],
+        [
+          "#9C4534",
+          "#CD6854"
+        ],
+        [
+          "#6B1B27",
+          "#92313D"
+        ],
+        [
+          "#807876",
+          "#B1A4A0"
+        ],
+        [
+          "#3E4F2F",
+          "#5E6F51"
+        ],
+        [
+          "#ACA889",
+          "#D9D4A6"
+        ],
+        [
+          "#371D23",
+          "#4E222D"
+        ],
+        [
+          "#BEA23B",
+          "#EDCD55"
+        ],
+        [
+          "#5A464E",
+          "#80656F"
+        ]
+      ],
+      "display_names": [
+        "Poolside",
+        "Cornflower",
+        "Dill",
+        "Citron",
+        "Biscuit",
+        "Cantaloupe",
+        "Cranberry",
+        "Heather",
+        "Persimmon",
+        "Oxblood",
+        "Seashell",
+        "Artichoke",
+        "Buttermilk",
+        "Blackberry",
+        "Marigold",
+        "Rosewood"
+      ]
+    },
+    "Vanilla Milkshake": {
+      "colors": [
+        [
+          "#7598B2",
+          "#98C4E4"
+        ],
+        [
+          "#7AB2A8",
+          "#9EDDD1"
+        ],
+        [
+          "#5C795D",
+          "#85A787"
+        ],
+        [
+          "#6F9F58",
+          "#8ED16C"
+        ],
+        [
+          "#A59887",
+          "#DFC5A5"
+        ],
+        [
+          "#B5775D",
+          "#E59C7E"
+        ],
+        [
+          "#CBC15D",
+          "#F5E970"
+        ],
+        [
+          "#4B3A4F",
+          "#6B5570"
+        ],
+        [
+          "#CD8425",
+          "#FBAF59"
+        ],
+        [
+          "#BBB3A1",
+          "#E8E2D3"
+        ],
+        [
+          "#C35357",
+          "#FE7C7F"
+        ],
+        [
+          "#BE74A8",
+          "#F59CDA"
+        ],
+        [
+          "#877EBD",
+          "#B1A8ED"
+        ],
+        [
+          "#2D2D2F",
+          "#39393D"
+        ],
+        [
+          "#A3AC66",
+          "#CBD67E"
+        ],
+        [
+          "#86817E",
+          "#BBB0AA"
+        ]
+      ],
+      "display_names": [
+        "Powder Blue",
+        "Seaglass",
+        "Eucalyptus",
+        "Honeydew",
+        "Shortbread",
+        "Peachskin",
+        "Custard",
+        "Wisteria",
+        "Apricot Jam",
+        "Buttercream",
+        "Watermelon",
+        "Cotton Candy",
+        "Periwinkle",
+        "Licorice",
+        "Chiffon",
+        "Almond Milk"
+      ]
+    },
+    "Island Joy": {
+      "colors": [
+        [
+          "#0F5E50",
+          "#238977"
+        ],
+        [
+          "#458A49",
+          "#5DB763"
+        ],
+        [
+          "#AFA047",
+          "#E1CD5C"
+        ],
+        [
+          "#B3724A",
+          "#F3945A"
+        ],
+        [
+          "#48294F",
+          "#67386E"
+        ],
+        [
+          "#83123E",
+          "#C02D62"
+        ],
+        [
+          "#C98E78",
+          "#F8B197"
+        ],
+        [
+          "#46B088",
+          "#58E4AF"
+        ],
+        [
+          "#C55C88",
+          "#FB84B5"
+        ],
+        [
+          "#6B6C4D",
+          "#989979"
+        ],
+        [
+          "#42474E",
+          "#646D7C"
+        ],
+        [
+          "#6FA530",
+          "#94D74B"
+        ],
+        [
+          "#2D2750",
+          "#3D3761"
+        ],
+        [
+          "#B2B2B2",
+          "#DEDEDE"
+        ],
+        [
+          "#90404F",
+          "#CB586F"
+        ],
+        [
+          "#257783",
+          "#29A9BB"
+        ]
+      ],
+      "display_names": [
+        "Jade",
+        "Spearmint",
+        "Pineapple",
+        "Papaya",
+        "Orchid Shade",
+        "Dragonfruit",
+        "Conch",
+        "Aquamarine",
+        "Flamingo",
+        "Dune",
+        "Slate",
+        "Parakeet",
+        "Aubergine",
+        "Porcelain",
+        "Hibiscus",
+        "Lagoon"
+      ]
+    },
+    "Lost Century": {
+      "colors": [
+        [
+          "#976400",
+          "#C58C32"
+        ],
+        [
+          "#745213",
+          "#9D793A"
+        ],
+        [
+          "#514D11",
+          "#716E32"
+        ],
+        [
+          "#908334",
+          "#BEAD49"
+        ],
+        [
+          "#5D8176",
+          "#86AEA2"
+        ],
+        [
+          "#31504D",
+          "#4C716D"
+        ],
+        [
+          "#5C5655",
+          "#897D79"
+        ],
+        [
+          "#9C4312",
+          "#C96C40"
+        ],
+        [
+          "#4B2840",
+          "#604457"
+        ],
+        [
+          "#7D6857",
+          "#A99380"
+        ],
+        [
+          "#5D3439",
+          "#894951"
+        ],
+        [
+          "#3F2F14",
+          "#544225"
+        ],
+        [
+          "#3D2131",
+          "#4A2E3D"
+        ],
+        [
+          "#948879",
+          "#C5AE8F"
+        ],
+        [
+          "#A6A397",
+          "#D1CBB3"
+        ],
+        [
+          "#75351F",
+          "#A75A3F"
+        ]
+      ],
+      "display_names": [
+        "Ochre",
+        "Bronze",
+        "Oliveleaf",
+        "Khaki",
+        "Agave",
+        "Patina",
+        "Pewter",
+        "Adobe",
+        "Raisin",
+        "Sandalwood",
+        "Mahogany",
+        "Truffle",
+        "Cacao",
+        "Camel",
+        "Vellum",
+        "Copperware"
+      ]
+    },
+    "Sweetie": {
+      "colors": [
+        [
+          "#7BB254",
+          "#9AE165"
+        ],
+        [
+          "#298D4B",
+          "#3ABB66"
+        ],
+        [
+          "#1A2669",
+          "#263582"
+        ],
+        [
+          "#2A4287",
+          "#3D5EC2"
+        ],
+        [
+          "#60A4A8",
+          "#6DD9E0"
+        ],
+        [
+          "#AAAAAA",
+          "#D7D7D7"
+        ],
+        [
+          "#3A506B",
+          "#597391"
+        ],
+        [
+          "#481A49",
+          "#5D275D"
+        ],
+        [
+          "#65879C",
+          "#87B1CB"
+        ],
+        [
+          "#293044",
+          "#38415D"
+        ],
+        [
+          "#AD634A",
+          "#EB815E"
+        ],
+        [
+          "#114D54",
+          "#006F79"
+        ],
+        [
+          "#C39336",
+          "#F4BE57"
+        ],
+        [
+          "#222229",
+          "#2C2E39"
+        ],
+        [
+          "#2F7CBA",
+          "#4DA8F3"
+        ],
+        [
+          "#772C39",
+          "#AA3F52"
+        ]
+      ],
+      "display_names": [
+        "Firefly",
+        "Clover",
+        "Inkstone",
+        "Ultramarine",
+        "Glacier",
+        "Chalk",
+        "Raincloud",
+        "Damson",
+        "Steel Blue",
+        "Admiral",
+        "Tangerine",
+        "Petrol",
+        "Nectar",
+        "Midnight Ink",
+        "Azure",
+        "Beetroot"
+      ]
+    },
+    "Ate": {
+      "colors": [
+        [
+          "#315F5F",
+          "#4B8989"
+        ],
+        [
+          "#379350",
+          "#4AC16A"
+        ],
+        [
+          "#9CABAB",
+          "#C8DADA"
+        ],
+        [
+          "#808AAE",
+          "#A6B4EC"
+        ],
+        [
+          "#303255",
+          "#46477F"
+        ],
+        [
+          "#2E459C",
+          "#4B6BDE"
+        ],
+        [
+          "#CC8E9F",
+          "#F6B1C3"
+        ],
+        [
+          "#BB6965",
+          "#F78D88"
+        ],
+        [
+          "#2E7DC5",
+          "#5AA7F2"
+        ],
+        [
+          "#BB5B92",
+          "#F782C5"
+        ],
+        [
+          "#643D64",
+          "#965C96"
+        ],
+        [
+          "#96A34D",
+          "#C3D36C"
+        ],
+        [
+          "#142C42",
+          "#23394E"
+        ],
+        [
+          "#AE8C73",
+          "#E9B38A"
+        ],
+        [
+          "#6163B1",
+          "#8788F5"
+        ],
+        [
+          "#9E4954",
+          "#E16877"
+        ]
+      ],
+      "display_names": [
+        "Verdigris",
+        "Spring Bud",
+        "Iceblink",
+        "Bluebell",
+        "Cobalt Dusk",
+        "Royal Blue",
+        "Blush",
+        "Salmon",
+        "Skylight",
+        "Fuchsia Silk",
+        "Amethyst",
+        "Pomelo",
+        "Abyss",
+        "Caramel",
+        "Iris",
+        "Poppy"
+      ]
+    },
+    "Magicolor": {
+      "colors": [
+        [
+          "#214625",
+          "#336538"
+        ],
+        [
+          "#643F1D",
+          "#865F3C"
+        ],
+        [
+          "#8D4A0E",
+          "#C6712D"
+        ],
+        [
+          "#454F4A",
+          "#677770"
+        ],
+        [
+          "#8C6A45",
+          "#C59460"
+        ],
+        [
+          "#84827B",
+          "#AFAB9C"
+        ],
+        [
+          "#B5AB35",
+          "#DED242"
+        ],
+        [
+          "#461F2F",
+          "#58293B"
+        ],
+        [
+          "#3A9F75",
+          "#68CEA0"
+        ],
+        [
+          "#A7A485",
+          "#D7D5B4"
+        ],
+        [
+          "#3E322A",
+          "#554333"
+        ],
+        [
+          "#822931",
+          "#BA4E54"
+        ],
+        [
+          "#731518",
+          "#99302F"
+        ],
+        [
+          "#251E1F",
+          "#32292B"
+        ],
+        [
+          "#617B34",
+          "#83A73F"
+        ],
+        [
+          "#163332",
+          "#1E4241"
+        ]
+      ],
+      "display_names": [
+        "Basil",
+        "Sienna",
+        "Marmalade",
+        "Bayleaf",
+        "Topaz",
+        "Fossil",
+        "Sulfur",
+        "Wineberry",
+        "Celadon",
+        "Champagne",
+        "Umber",
+        "Rouge",
+        "Brickdust",
+        "Charcoal",
+        "Pistachio",
+        "Spruce"
+      ]
+    },
+    "Castpixel": {
+      "colors": [
+        [
+          "#3D364A",
+          "#584D68"
+        ],
+        [
+          "#6E5B96",
+          "#967DC9"
+        ],
+        [
+          "#65172D",
+          "#8D2944"
+        ],
+        [
+          "#A3353F",
+          "#E1555F"
+        ],
+        [
+          "#908981",
+          "#C4B7A6"
+        ],
+        [
+          "#895337",
+          "#C4754B"
+        ],
+        [
+          "#C0A92F",
+          "#ECCF39"
+        ],
+        [
+          "#045C62",
+          "#208990"
+        ],
+        [
+          "#C1750A",
+          "#F5A03F"
+        ],
+        [
+          "#ADA28C",
+          "#DAD2C3"
+        ],
+        [
+          "#75B0B4",
+          "#8FDFE5"
+        ],
+        [
+          "#5FA538",
+          "#81D754"
+        ],
+        [
+          "#3C1A66",
+          "#4E2285"
+        ],
+        [
+          "#2E272E",
+          "#3E313F"
+        ],
+        [
+          "#B2619B",
+          "#ED7CCD"
+        ],
+        [
+          "#3C8CB1",
+          "#46BEF2"
+        ]
+      ],
+      "display_names": [
+        "Graphite",
+        "Hyacinth",
+        "Garnet",
+        "Candy Apple",
+        "Linen",
+        "Claypot",
+        "Daffodil",
+        "Turquoise",
+        "Amberglow",
+        "Ivory",
+        "Frostbite",
+        "Kiwi",
+        "Nightshade",
+        "Eclipse",
+        "Bubblegum Rose",
+        "Cerulean"
+      ]
+    },
+    "Nanner": {
+      "colors": [
+        [
+          "#8C5638",
+          "#B77D5F"
+        ],
+        [
+          "#9E9B5C",
+          "#C9C575"
+        ],
+        [
+          "#1E5342",
+          "#3D7F68"
+        ],
+        [
+          "#24343D",
+          "#29465A"
+        ],
+        [
+          "#686766",
+          "#959290"
+        ],
+        [
+          "#434041",
+          "#625C5E"
+        ],
+        [
+          "#6A362E",
+          "#905349"
+        ],
+        [
+          "#3F537C",
+          "#617CB2"
+        ],
+        [
+          "#2A232A",
+          "#3B2D3B"
+        ],
+        [
+          "#4D181B",
+          "#612528"
+        ],
+        [
+          "#471C46",
+          "#5B275A"
+        ],
+        [
+          "#47823B",
+          "#6AB25B"
+        ],
+        [
+          "#641D3A",
+          "#863653"
+        ],
+        [
+          "#659595",
+          "#7FC7C7"
+        ],
+        [
+          "#A09D99",
+          "#C5C4C3"
+        ],
+        [
+          "#3C2F5C",
+          "#55427F"
+        ]
+      ],
+      "display_names": [
+        "Pecan",
+        "Haystack",
+        "Malachite",
+        "Harbor",
+        "Nickel",
+        "Basalt",
+        "Cinnamon",
+        "Denim",
+        "Obsidian",
+        "Rustwood",
+        "Fig",
+        "Laurel",
+        "Briar",
+        "Robin Egg",
+        "Silver",
+        "Heliotrope"
+      ]
+    },
+    "Loop Hero": {
+      "colors": [
+        [
+          "#444624",
+          "#626439"
+        ],
+        [
+          "#474E4E",
+          "#6A7373"
+        ],
+        [
+          "#91410A",
+          "#CC6423"
+        ],
+        [
+          "#5A6829",
+          "#83973B"
+        ],
+        [
+          "#496C73",
+          "#649DA9"
+        ],
+        [
+          "#797A72",
+          "#A1A293"
+        ],
+        [
+          "#AFA30B",
+          "#D8CA0B"
+        ],
+        [
+          "#262626",
+          "#323231"
+        ],
+        [
+          "#5D949A",
+          "#92BEC4"
+        ],
+        [
+          "#ADA89E",
+          "#DBD9D3"
+        ],
+        [
+          "#323535",
+          "#434848"
+        ],
+        [
+          "#1D4D77",
+          "#4278A9"
+        ],
+        [
+          "#683809",
+          "#8F541C"
+        ],
+        [
+          "#131313",
+          "#1E1E1E"
+        ],
+        [
+          "#8A6D2F",
+          "#B5934E"
+        ],
+        [
+          "#4D1D12",
+          "#60281D"
+        ]
+      ],
+      "display_names": [
+        "Moss",
+        "Iron",
+        "Foxfire",
+        "Wasabi",
+        "Tidal",
+        "Sagebrush",
+        "Acid Gold",
+        "Pitch",
+        "Opal",
+        "Alabaster",
+        "Gunmetal",
+        "Lakebed",
+        "Saddle",
+        "Carbon",
+        "Harvest",
+        "Ember"
+      ]
+    },
+    "Jmp Japanese Machine Palette": {
+      "colors": [
+        [
+          "#544BAD",
+          "#786DEE"
+        ],
+        [
+          "#63221B",
+          "#87332B"
+        ],
+        [
+          "#9C332E",
+          "#DA524A"
+        ],
+        [
+          "#9E6759",
+          "#DB8F7D"
+        ],
+        [
+          "#A69B78",
+          "#D9C893"
+        ],
+        [
+          "#154B34",
+          "#226B4B"
+        ],
+        [
+          "#8E8996",
+          "#B3AEBE"
+        ],
+        [
+          "#281F39",
+          "#342B46"
+        ],
+        [
+          "#A03A98",
+          "#D560CA"
+        ],
+        [
+          "#B1B1AD",
+          "#DADAD4"
+        ],
+        [
+          "#75A05E",
+          "#9ECF84"
+        ],
+        [
+          "#5F8FC2",
+          "#8DBDF1"
+        ],
+        [
+          "#332A66",
+          "#463D80"
+        ],
+        [
+          "#161511",
+          "#212020"
+        ],
+        [
+          "#9B8148",
+          "#CBAC69"
+        ],
+        [
+          "#347832",
+          "#4BAB48"
+        ]
+      ],
+      "display_names": [
+        "Ultraviolet",
+        "Redwood",
+        "Cayenne",
+        "Coral",
+        "Mooncake",
+        "Pine Needle",
+        "Lilac Ash",
+        "Void",
+        "Bougainvillea",
+        "Eggshell",
+        "Peapod",
+        "Cloud Blue",
+        "Twilight",
+        "Onyx",
+        "Wheat",
+        "Shamrock"
+      ]
+    },
+    "Punolite": {
+      "colors": [
+        [
+          "#014B65",
+          "#006B90"
+        ],
+        [
+          "#142D4C",
+          "#013E7C"
+        ],
+        [
+          "#281361",
+          "#331C7A"
+        ],
+        [
+          "#391946",
+          "#512562"
+        ],
+        [
+          "#542F3B",
+          "#813D55"
+        ],
+        [
+          "#743334",
+          "#A24C4C"
+        ],
+        [
+          "#9E7E52",
+          "#CEA66D"
+        ],
+        [
+          "#156E13",
+          "#2D9E29"
+        ],
+        [
+          "#8E4A24",
+          "#BD744E"
+        ],
+        [
+          "#A6983E",
+          "#D2C469"
+        ],
+        [
+          "#2C4640",
+          "#2E685D"
+        ],
+        [
+          "#101E38",
+          "#17294D"
+        ],
+        [
+          "#1E393C",
+          "#0D4F57"
+        ],
+        [
+          "#5B8E41",
+          "#73BF4B"
+        ],
+        [
+          "#59144E",
+          "#78216A"
+        ],
+        [
+          "#0A5225",
+          "#127538"
+        ]
+      ],
+      "display_names": [
+        "Prussian",
+        "Sapphire",
+        "Grape",
+        "Byzantium",
+        "Madder",
+        "Marsala",
+        "Buckwheat",
+        "Emerald",
+        "Nutmeg",
+        "Maize",
+        "Viridian",
+        "Deepwater",
+        "Peacock",
+        "Chlorophyll",
+        "Boysenberry",
+        "Kelp"
+      ]
+    },
+    "Corruption": {
+      "colors": [
+        [
+          "#5E756B",
+          "#859F94"
+        ],
+        [
+          "#394944",
+          "#576762"
+        ],
+        [
+          "#1E253A",
+          "#2B3147"
+        ],
+        [
+          "#141814",
+          "#1E241E"
+        ],
+        [
+          "#264013",
+          "#3E592C"
+        ],
+        [
+          "#535942",
+          "#7E8565"
+        ],
+        [
+          "#BA7062",
+          "#E89180"
+        ],
+        [
+          "#8C8273",
+          "#B8AB98"
+        ],
+        [
+          "#999757",
+          "#C5C486"
+        ],
+        [
+          "#5C1B0F",
+          "#822A19"
+        ],
+        [
+          "#513714",
+          "#715124"
+        ],
+        [
+          "#133A3B",
+          "#364949"
+        ],
+        [
+          "#3E2B12",
+          "#503615"
+        ],
+        [
+          "#A4A19D",
+          "#D2CCC4"
+        ],
+        [
+          "#163016",
+          "#1C431B"
+        ],
+        [
+          "#7F6136",
+          "#B08952"
+        ]
+      ],
+      "display_names": [
+        "Wormwood",
+        "Ashen",
+        "Anthracite",
+        "Coalbed",
+        "Camouflage",
+        "Mugwort",
+        "Clay Rose",
+        "Buff",
+        "Limestone",
+        "Bloodstone",
+        "Sepia",
+        "Shale",
+        "Espresso",
+        "Bone",
+        "Underbrush",
+        "Chamois"
+      ]
+    }
+  }
+}

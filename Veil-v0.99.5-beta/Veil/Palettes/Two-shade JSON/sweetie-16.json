@@ -1,0 +1,106 @@
+{
+  "schema": 2,
+  "name": "Sweetie",
+  "labels": [
+    "Green",
+    "Teal",
+    "Blue",
+    "Purple",
+    "Pink",
+    "Tan",
+    "Brown",
+    "Apricot",
+    "Beige",
+    "Chocolate",
+    "Lime",
+    "Navy",
+    "Olive",
+    "Orange",
+    "Violet",
+    "Yellow"
+  ],
+  "colors": [
+    [
+      "#7BB254",
+      "#9AE165"
+    ],
+    [
+      "#298D4B",
+      "#3ABB66"
+    ],
+    [
+      "#1A2669",
+      "#263582"
+    ],
+    [
+      "#2A4287",
+      "#3D5EC2"
+    ],
+    [
+      "#60A4A8",
+      "#6DD9E0"
+    ],
+    [
+      "#AAAAAA",
+      "#D7D7D7"
+    ],
+    [
+      "#3A506B",
+      "#597391"
+    ],
+    [
+      "#481A49",
+      "#5D275D"
+    ],
+    [
+      "#65879C",
+      "#87B1CB"
+    ],
+    [
+      "#293044",
+      "#38415D"
+    ],
+    [
+      "#AD634A",
+      "#EB815E"
+    ],
+    [
+      "#114D54",
+      "#006F79"
+    ],
+    [
+      "#C39336",
+      "#F4BE57"
+    ],
+    [
+      "#222229",
+      "#2C2E39"
+    ],
+    [
+      "#2F7CBA",
+      "#4DA8F3"
+    ],
+    [
+      "#772C39",
+      "#AA3F52"
+    ]
+  ],
+  "display_names": [
+    "Firefly",
+    "Clover",
+    "Inkstone",
+    "Ultramarine",
+    "Glacier",
+    "Chalk",
+    "Raincloud",
+    "Damson",
+    "Steel Blue",
+    "Admiral",
+    "Tangerine",
+    "Petrol",
+    "Nectar",
+    "Midnight Ink",
+    "Azure",
+    "Beetroot"
+  ]
+}

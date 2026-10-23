@@ -1,0 +1,106 @@
+{
+  "schema": 2,
+  "name": "Ate",
+  "labels": [
+    "Green",
+    "Teal",
+    "Blue",
+    "Purple",
+    "Pink",
+    "Tan",
+    "Brown",
+    "Apricot",
+    "Beige",
+    "Chocolate",
+    "Lime",
+    "Navy",
+    "Olive",
+    "Orange",
+    "Violet",
+    "Yellow"
+  ],
+  "colors": [
+    [
+      "#315F5F",
+      "#4B8989"
+    ],
+    [
+      "#379350",
+      "#4AC16A"
+    ],
+    [
+      "#9CABAB",
+      "#C8DADA"
+    ],
+    [
+      "#808AAE",
+      "#A6B4EC"
+    ],
+    [
+      "#303255",
+      "#46477F"
+    ],
+    [
+      "#2E459C",
+      "#4B6BDE"
+    ],
+    [
+      "#CC8E9F",
+      "#F6B1C3"
+    ],
+    [
+      "#BB6965",
+      "#F78D88"
+    ],
+    [
+      "#2E7DC5",
+      "#5AA7F2"
+    ],
+    [
+      "#BB5B92",
+      "#F782C5"
+    ],
+    [
+      "#643D64",
+      "#965C96"
+    ],
+    [
+      "#96A34D",
+      "#C3D36C"
+    ],
+    [
+      "#142C42",
+      "#23394E"
+    ],
+    [
+      "#AE8C73",
+      "#E9B38A"
+    ],
+    [
+      "#6163B1",
+      "#8788F5"
+    ],
+    [
+      "#9E4954",
+      "#E16877"
+    ]
+  ],
+  "display_names": [
+    "Verdigris",
+    "Spring Bud",
+    "Iceblink",
+    "Bluebell",
+    "Cobalt Dusk",
+    "Royal Blue",
+    "Blush",
+    "Salmon",
+    "Skylight",
+    "Fuchsia Silk",
+    "Amethyst",
+    "Pomelo",
+    "Abyss",
+    "Caramel",
+    "Iris",
+    "Poppy"
+  ]
+}

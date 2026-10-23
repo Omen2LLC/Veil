@@ -1,0 +1,106 @@
+{
+  "schema": 2,
+  "name": "Vanilla Milkshake",
+  "labels": [
+    "Green",
+    "Teal",
+    "Blue",
+    "Purple",
+    "Pink",
+    "Tan",
+    "Brown",
+    "Apricot",
+    "Beige",
+    "Chocolate",
+    "Lime",
+    "Navy",
+    "Olive",
+    "Orange",
+    "Violet",
+    "Yellow"
+  ],
+  "colors": [
+    [
+      "#7598B2",
+      "#98C4E4"
+    ],
+    [
+      "#7AB2A8",
+      "#9EDDD1"
+    ],
+    [
+      "#5C795D",
+      "#85A787"
+    ],
+    [
+      "#6F9F58",
+      "#8ED16C"
+    ],
+    [
+      "#A59887",
+      "#DFC5A5"
+    ],
+    [
+      "#B5775D",
+      "#E59C7E"
+    ],
+    [
+      "#CBC15D",
+      "#F5E970"
+    ],
+    [
+      "#4B3A4F",
+      "#6B5570"
+    ],
+    [
+      "#CD8425",
+      "#FBAF59"
+    ],
+    [
+      "#BBB3A1",
+      "#E8E2D3"
+    ],
+    [
+      "#C35357",
+      "#FE7C7F"
+    ],
+    [
+      "#BE74A8",
+      "#F59CDA"
+    ],
+    [
+      "#877EBD",
+      "#B1A8ED"
+    ],
+    [
+      "#2D2D2F",
+      "#39393D"
+    ],
+    [
+      "#A3AC66",
+      "#CBD67E"
+    ],
+    [
+      "#86817E",
+      "#BBB0AA"
+    ]
+  ],
+  "display_names": [
+    "Powder Blue",
+    "Seaglass",
+    "Eucalyptus",
+    "Honeydew",
+    "Shortbread",
+    "Peachskin",
+    "Custard",
+    "Wisteria",
+    "Apricot Jam",
+    "Buttercream",
+    "Watermelon",
+    "Cotton Candy",
+    "Periwinkle",
+    "Licorice",
+    "Chiffon",
+    "Almond Milk"
+  ]
+}

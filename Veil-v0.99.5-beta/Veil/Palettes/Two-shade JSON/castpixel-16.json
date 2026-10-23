@@ -1,0 +1,106 @@
+{
+  "schema": 2,
+  "name": "Castpixel",
+  "labels": [
+    "Green",
+    "Teal",
+    "Blue",
+    "Purple",
+    "Pink",
+    "Tan",
+    "Brown",
+    "Apricot",
+    "Beige",
+    "Chocolate",
+    "Lime",
+    "Navy",
+    "Olive",
+    "Orange",
+    "Violet",
+    "Yellow"
+  ],
+  "colors": [
+    [
+      "#3D364A",
+      "#584D68"
+    ],
+    [
+      "#6E5B96",
+      "#967DC9"
+    ],
+    [
+      "#65172D",
+      "#8D2944"
+    ],
+    [
+      "#A3353F",
+      "#E1555F"
+    ],
+    [
+      "#908981",
+      "#C4B7A6"
+    ],
+    [
+      "#895337",
+      "#C4754B"
+    ],
+    [
+      "#C0A92F",
+      "#ECCF39"
+    ],
+    [
+      "#045C62",
+      "#208990"
+    ],
+    [
+      "#C1750A",
+      "#F5A03F"
+    ],
+    [
+      "#ADA28C",
+      "#DAD2C3"
+    ],
+    [
+      "#75B0B4",
+      "#8FDFE5"
+    ],
+    [
+      "#5FA538",
+      "#81D754"
+    ],
+    [
+      "#3C1A66",
+      "#4E2285"
+    ],
+    [
+      "#2E272E",
+      "#3E313F"
+    ],
+    [
+      "#B2619B",
+      "#ED7CCD"
+    ],
+    [
+      "#3C8CB1",
+      "#46BEF2"
+    ]
+  ],
+  "display_names": [
+    "Graphite",
+    "Hyacinth",
+    "Garnet",
+    "Candy Apple",
+    "Linen",
+    "Claypot",
+    "Daffodil",
+    "Turquoise",
+    "Amberglow",
+    "Ivory",
+    "Frostbite",
+    "Kiwi",
+    "Nightshade",
+    "Eclipse",
+    "Bubblegum Rose",
+    "Cerulean"
+  ]
+}
