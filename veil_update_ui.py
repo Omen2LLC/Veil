@@ -58,6 +58,7 @@ def check_in_background(app, manual: bool = False) -> None:
 
 def show_update(app, release: dict) -> None:
     window = tk.Toplevel(app.root)
+    window.withdraw()
     window.title("Veil update")
     window.configure(bg=app.c["panel"])
     window.transient(app.root)
@@ -66,9 +67,17 @@ def show_update(app, release: dict) -> None:
     body.pack(fill="both", expand=True, padx=app.p(22), pady=app.p(20))
     app.label(body, f'Veil {release["version"]} is available', size=16, bold=True,
               bg=app.c["panel"]).pack(anchor="w")
-    notes = release["notes"][:1800] or "A new stable version is ready."
-    app.label(body, notes, size=10, bg=app.c["panel"], wraplength=app.p(460),
-              justify="left").pack(anchor="w", pady=(app.p(12), app.p(20)))
+    notes = release.get("notes", "")[:10000] or "A new version is ready."
+    from studio_fonts import REGULAR
+    notes_box = tk.Text(body, height=8, width=54, wrap="word", borderwidth=0,
+                        highlightthickness=0, background=app.c["panel"],
+                        foreground=app.c["text"], font=(REGULAR,10),
+                        selectbackground=app.c["selected"], selectforeground=app.c["text"])
+    notes_box.insert("1.0", notes)
+    notes_box.configure(state="disabled")
+    notes_box.pack(fill="x", pady=(app.p(12),app.p(12)))
+    app.label(body,"Veil will download, verify, and restart to finish the update.",
+              size=10,muted=True,bg=app.c["panel"],wraplength=app.p(460)).pack(anchor="w")
     status = app.label(body, "", size=10, muted=True, bg=app.c["panel"])
     status.pack(anchor="w")
     controls = app.frame(body, app.c["panel"])
@@ -134,8 +143,16 @@ def show_update(app, release: dict) -> None:
                 pass
         threading.Thread(target=work, daemon=True, name="Veil update download").start()
 
-    app.button(controls, "Upgrade", upgrade, primary=True).pack(side="left", padx=app.p(4))
+    app.button(controls, "Install update", upgrade, primary=True).pack(side="left", padx=app.p(4))
     app.button(controls, "Later", window.destroy).pack(side="left", padx=app.p(4))
     app.button(controls, "Skip this version", skip).pack(side="left", padx=app.p(4))
     window.protocol("WM_DELETE_WINDOW", window.destroy)
+    window.update_idletasks()
+    x=max(0,app.root.winfo_rootx()+(app.root.winfo_width()-window.winfo_reqwidth())//2)
+    y=max(0,app.root.winfo_rooty()+(app.root.winfo_height()-window.winfo_reqheight())//2)
+    window.geometry(f'+{x}+{y}')
+    window.deiconify()
+    from window_chrome import theme_caption
+    theme_caption(window,app.effective_mode()=='Dark',app.c['panel'],app.c['text'])
     window.grab_set()
+    return window
