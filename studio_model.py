@@ -26,10 +26,11 @@ class PaletteLibrary:
         from palette_title_migration import migrate_titles
         migrate_titles(self.path)
         self.users=load_user_palettes(self.path)
-        self.names={}
+        self.names={};self.custom_names=set()
         if self.path.exists():
             data=json.loads(self.path.read_text(encoding='utf-8'))
             if data['schema']==2:
+                self.custom_names=set(n for n in data.get('custom_palettes',[]) if isinstance(n,str) and n in self.users)
                 self.names={name:validate_names(value.get('display_names',list(LABELS)))
                             for name,value in data['palettes'].items()}
         self.palettes={**builtin_palettes(),**self.users}
@@ -42,8 +43,10 @@ class PaletteLibrary:
         names=validate_names(names)
         users={**self.users,name:colors}
         aliases={**self.names,name:names}
-        atomic_json(self.path,dict(schema=2,palettes={n:dict(colors=c,display_names=aliases.get(n,list(LABELS)))
+        custom=(self.custom_names|{name}) & set(users)
+        atomic_json(self.path,dict(schema=2,custom_palettes=sorted(custom),palettes={n:dict(colors=c,display_names=aliases.get(n,list(LABELS)))
                     for n,c in users.items()}))
+        self.custom_names=custom
         self.users,self.names=users,aliases
         self.palettes={**builtin_palettes(),**users}
         return name
@@ -87,8 +90,10 @@ class PaletteLibrary:
             raise ValueError('This saved palette no longer exists.')
         users={n:colors for n,colors in self.users.items() if n!=name}
         aliases={n:names for n,names in self.names.items() if n!=name}
-        atomic_json(self.path,dict(schema=2,palettes={n:dict(colors=colors,display_names=aliases.get(n,list(LABELS)))
+        custom=self.custom_names & set(users)
+        atomic_json(self.path,dict(schema=2,custom_palettes=sorted(custom),palettes={n:dict(colors=colors,display_names=aliases.get(n,list(LABELS)))
                     for n,colors in users.items()}))
+        self.custom_names=custom
         self.users,self.names=users,aliases
         self.palettes={**builtin_palettes(),**users}
 
@@ -103,8 +108,10 @@ class PaletteLibrary:
         if old in builtin_palettes():return self.save(new,self.palettes[old],self.names.get(old,list(LABELS)))
         users={new if n==old else n:colors for n,colors in self.users.items()}
         aliases={new if n==old else n:names for n,names in self.names.items()}
-        atomic_json(self.path,dict(schema=2,palettes={n:dict(colors=c,display_names=aliases.get(n,list(LABELS)))
+        custom=((self.custom_names-{old})|{new}) & set(users)
+        atomic_json(self.path,dict(schema=2,custom_palettes=sorted(custom),palettes={n:dict(colors=c,display_names=aliases.get(n,list(LABELS)))
                     for n,c in users.items()}))
+        self.custom_names=custom
         self.users,self.names=users,aliases;self.palettes={**builtin_palettes(),**users}
         return new
 

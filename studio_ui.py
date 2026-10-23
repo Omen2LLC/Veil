@@ -12,6 +12,7 @@ from studio_version import VERSION
 from studio_menu import RoundedMenu
 from studio_fonts import load_fonts,REGULAR,MEDIUM,SEMIBOLD
 import veil_update_ui
+from library_presentation import origin as palette_origin
 
 HERE=Path(__file__).resolve().parent
 THEMES={
@@ -69,6 +70,8 @@ class App(LegacyApp):
             for label,alias in zip(LABELS,self.palette_names.get(name,LABELS)):self.names[label].set(alias)
         self.loading=False;self.baseline=self.raw_snapshot()
         self.reset_undo()
+        self.library_origin_filter='All'
+        self.filter.trace_add('write',self.library_query_changed)
         root.bind('<Control-z>',self.undo_shortcut)
         root.bind('<Control-Z>',self.redo_shortcut)
         root.bind('<Control-Shift-z>',self.redo_shortcut)
@@ -228,13 +231,54 @@ class App(LegacyApp):
         if self.current_tab=='Library':
             self.library_page()
         else:self.editor_page()
+    def library_query_changed(self,*args):
+        if self.alive_widget('library_area'):
+            self.render_library()
+            self.library_area.canvas.yview_moveto(0)
+            self.root.after_idle(self.finish_library_search)
+    def finish_library_search(self):
+        if self.alive_widget('library_area'):self.library_area.canvas.yview_moveto(0)
+    def palette_origin(self,name):
+        if self.library and name in self.library.custom_names:return 'Custom'
+        return palette_origin(name,self.palettes[name],self.palette_names.get(name,list(LABELS)))
+    def set_library_origin(self,value):
+        if value not in ('All','Native','Custom'):return
+        self.library_origin_filter=value
+        if self.alive_widget('library_filter_button'):
+            self.library_filter_button.configure(selected=value!='All')
+        self.library_query_changed()
+    def show_library_filter_menu(self):
+        self.open_editor_menu(self.library_filter_button,[
+            ('All palettes',lambda:self.set_library_origin('All'),True),None,
+            ('Native',lambda:self.set_library_origin('Native'),True),None,
+            ('Custom',lambda:self.set_library_origin('Custom'),True)])
+        self.editor_menu.selected={'All':0,'Native':2,'Custom':4}[self.library_origin_filter]
+        self.editor_menu.draw()
+    def palette_badge(self,card,name):
+        role=self.palette_origin(name)
+        badge=tk.Canvas(card,width=self.p(18),height=self.p(18),bg=self.c['panel'],highlightthickness=0,bd=0)
+        badge.origin=role
+        if role=='Native':
+            if not hasattr(self,'native_palette_mark'):
+                photo=tk.PhotoImage(file=str(HERE/'veil-icon.png'))
+                self.native_palette_mark=photo.subsample(max(1,round(photo.width()/self.p(18))))
+            badge.create_image(self.p(9),self.p(9),image=self.native_palette_mark)
+        else:
+            p=self.p;fill=self.c['muted']
+            badge.create_oval(p(6),p(1),p(12),p(7),fill=fill,outline='')
+            badge.create_polygon(*[p(v) for v in (3,17,3,13,4,10,7,9,11,9,14,10,15,13,15,17)],fill=fill,outline='',smooth=True)
+        badge.pack(anchor='e',pady=(self.p(2),0))
+        self.library_origins[name]=role;self.library_badges[name]=badge
+        return badge
     def library_page(self):
         toolbar=self.frame(self.page_content);toolbar.pack(fill='x',pady=(0,self.p(16)))
         self.library_toolbar=toolbar
         self.label(toolbar,'Search',size=10,muted=True).pack(side='left',padx=(0,self.p(12)))
         self.library_search=Field(toolbar,self,self.filter,width=16,defer_entry=True)
         search=self.library_search;search.pack(side='left')
-        search.entry.bind('<KeyRelease>',lambda e:self.render_library())
+        self.library_filter_button=self.editor_button(toolbar,'Filter',self.show_library_filter_menu,dropdown=True,selected=self.library_origin_filter!='All')
+        self.library_filter_button.pack(side='left',padx=self.p(10))
+        # StringVar trace covers typing, paste, clearing and programmatic edits.
         self.restore_button=self.button(toolbar,'Restore Defaults',self.restore,focus_outline=False)
         self.restore_button.pack(side='right',padx=(0,self.p(28)))
         self.workspace_apply=self.button(toolbar,'Apply Palette',lambda:self.apply_saved(self.library_selected),focus_outline=False)
@@ -260,9 +304,11 @@ class App(LegacyApp):
         for child in host.winfo_children():child.destroy()
         cols=self.library_columns or 3
         for col in range(4):host.columnconfigure(col,weight=1 if col<cols else 0,uniform='collection' if col<cols else '')
-        names=[n for n in self.visible_palettes() if self.filter.get().casefold() in n.casefold()]
-        if not names:self.label(host,'No palettes match this search.' if self.filter.get() else 'Import a palette to start your collection.',muted=True).grid(sticky='w')
-        self.library_cards={}
+        query=' '.join(self.filter.get().split()).casefold()
+        names=[n for n in self.visible_palettes() if query in ' '.join(n.split()).casefold()
+               and (self.library_origin_filter=='All' or self.palette_origin(n)==self.library_origin_filter)]
+        if not names:self.label(host,'No palettes match these filters.' if query or self.library_origin_filter!='All' else 'Import a palette to start your collection.',muted=True).grid(sticky='w')
+        self.library_cards={};self.library_origins={};self.library_badges={}
         for index,name in enumerate(names):
             card=self.card(host,padding=16);card.grid(row=index//cols,column=index%cols,sticky='nsew',padx=(0,self.p(12)),pady=(0,self.p(12)))
             swatch=tk.Canvas(card,height=self.p(72),bg=self.c['panel'],highlightthickness=0,takefocus=True,cursor='hand2')
@@ -271,8 +317,9 @@ class App(LegacyApp):
             swatch.bind('<FocusIn>',lambda e,c=swatch,n=name:self.draw_collection(c,n,True))
             swatch.bind('<FocusOut>',lambda e,c=swatch,n=name:self.draw_collection(c,n))
             title=self.label(card,name,bold=True,size=12,bg=self.c['panel'],wraplength=self.p(200));title.pack(fill='x',pady=(self.p(10),self.p(4)))
+            badge=self.palette_badge(card,name)
             card.set_active(self.palette_is_applied(name));card.set_selected(name==self.library_selected)
-            for widget in (swatch,title,card,card.back):
+            for widget in (swatch,title,badge,card,card.back):
                 widget.configure(cursor='hand2')
                 widget.bind('<Button-1>',lambda e,n=name:self.select_library(n))
             swatch.bind('<Return>',lambda e,n=name:self.select_library(n));swatch.bind('<space>',lambda e,n=name:self.select_library(n))

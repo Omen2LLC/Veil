@@ -215,6 +215,9 @@ def install_staged(archive_path: Path, tag: str, current_app: Path,
                                 previous = {name: {'colors': colors, 'display_names': list(LABELS)}
                                             for name, colors in previous.items()}
                             fresh["palettes"].update(previous)
+                            # Local provenance remains private and survives future updates.
+                            custom=set(fresh.get('custom_palettes',[]))|set(old.get('custom_palettes',[]))
+                            if custom:fresh['custom_palettes']=sorted(n for n in custom if n in fresh['palettes'])
                             (app / name).write_text(json.dumps(fresh, indent=2, ensure_ascii=False) + "\n",
                                                     encoding="utf-8")
                         except (OSError, ValueError, TypeError, KeyError) as error:

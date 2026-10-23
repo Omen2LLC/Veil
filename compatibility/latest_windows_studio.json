@@ -1,7 +1,7 @@
 {
   "source": "https://www.blackmagicdesign.com/api/support/latest-stable-version/davinci-resolve-studio/windows.json",
-  "veil_version": "v0.99.6-beta",
-  "checked_at_utc": "2026-10-23T04:27:11.242813+00:00",
+  "veil_version": "v0.99.7-beta",
+  "checked_at_utc": "2026-10-23T04:42:18.088556+00:00",
   "payload": {
     "windows": {
       "releaseId": "dfbb6e4233c144d1b328c109c7ebc11e",
