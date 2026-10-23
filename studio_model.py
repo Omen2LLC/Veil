@@ -23,6 +23,8 @@ class PaletteLibrary:
     def __init__(self,folder):
         self.folder=Path(folder)
         self.path=self.folder/'saved_palettes.json'
+        from palette_title_migration import migrate_titles
+        migrate_titles(self.path)
         self.users=load_user_palettes(self.path)
         self.names={}
         if self.path.exists():

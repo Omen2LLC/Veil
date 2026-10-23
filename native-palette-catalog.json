@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "description": "Explicitly approved Veil-native distributable palettes. Personal saved libraries are never release inputs.",
+  "palettes": {
+    "Afterhours": {
+      "distribution": "veil-native",
+      "sha256": "e8817299a44dcf62d0aeab4c43c34f9ae0b1e128acebf55a9e33157570058c21"
+    },
+    "Amranthus": {
+      "distribution": "veil-native",
+      "sha256": "9b4bea20b4dc7ba6c95b545bdc590cf87648112c1a4ac3f60362653f040103f4"
+    },
+    "Arcade": {
+      "distribution": "veil-native",
+      "sha256": "e9175a11af70ecd36285d1f6f3935680b24d05d386435529e253eaa3a5ba53bd"
+    },
+    "Bloom": {
+      "distribution": "veil-native",
+      "sha256": "31e6089fc3077c2b7585b2327ebf77b72f61f1a972cdd0bbe48e75817615c627"
+    },
+    "Bubblegum": {
+      "distribution": "veil-native",
+      "sha256": "013a8dd3c999904a7c9805eb68bd548ff41fe615d20d06b48e6a577d0a1e9fd8"
+    },
+    "Console": {
+      "distribution": "veil-native",
+      "sha256": "9220adb066e14cab9fcf4bc969b13954cd975fc8f2733030d04bf3fd7988e595"
+    },
+    "Dawnbringer": {
+      "distribution": "veil-native",
+      "sha256": "3a9689094533faa3e16c51b5bd8206dc4a88da6c7b3d4f0eb4afeb3c3a2d5d98"
+    },
+    "Flowers": {
+      "distribution": "veil-native",
+      "sha256": "5978c6059c0c794690238218ba013b27338d140a06e93e62567803d5958bfcd2"
+    },
+    "Oxygen": {
+      "distribution": "veil-native",
+      "sha256": "e154aeee45a32b09602f631f6917dd8f15f5747b6fd2e724a519596cc3245ee2"
+    },
+    "Pastel Horizon": {
+      "distribution": "veil-native",
+      "sha256": "25fe86ba94336ff7ed1254774d7a45a3ffe75e8def1522925023a9ebb7fa10b5"
+    },
+    "Peachy Pop": {
+      "distribution": "veil-native",
+      "sha256": "b045a1277f51766de1b0d14bfd1225a608c93c672bec7087f57d51348778dc62"
+    },
+    "Retrobubble": {
+      "distribution": "veil-native",
+      "sha256": "b232dfa0c2e5bbaf3a93523a5d0a98baacae5a3a4ecbf99f8d6506263ef013d7"
+    },
+    "Retrocal": {
+      "distribution": "veil-native",
+      "sha256": "c4fcc95941272f1524d29620d3840f4d8f085594fd7f8ff57d5037f59463d36c"
+    },
+    "VHS": {
+      "distribution": "veil-native",
+      "sha256": "9550a0441438ce06506435209b4b7befdda08bc26b1a7fad618057049a6729da"
+    },
+    "Woodspark": {
+      "distribution": "veil-native",
+      "sha256": "5db202b57f3ab4591206137ca10b686088bd0d47d4235bce441b794b68240b90"
+    },
+    "Forest": {
+      "distribution": "veil-native",
+      "sha256": "e322b08f15cc7df0824ee4499d399a00654f8dd9a04421a15c5c30f4b232f122"
+    },
+    "Miyazaki": {
+      "distribution": "veil-native",
+      "sha256": "08bb8ba2427b85dff2d3a53680575fa726d610a304b3fecd3e888dcd0d12fad4"
+    },
+    "Summers Past": {
+      "distribution": "veil-native",
+      "sha256": "5dc6aeee79d827ae583cb539c32553f4558c064e6a941819a645e89d236f8258"
+    },
+    "Vanilla Milkshake": {
+      "distribution": "veil-native",
+      "sha256": "b10edf72bd48d26786f60fa455ad25dabacf062b5c9c43a3b62fdac6222885ef"
+    },
+    "Island Joy": {
+      "distribution": "veil-native",
+      "sha256": "90a4a90d0f35241554495f45e8ab60ebf438fb626d4a1d574e7312e3c671b4e0"
+    },
+    "Lost Century": {
+      "distribution": "veil-native",
+      "sha256": "eb77b2ca47936e6f0feeb11f05f174be3df13b855d1468ccbb6ce991e20f601f"
+    },
+    "Sweetie": {
+      "distribution": "veil-native",
+      "sha256": "6aa0fbe1c9124c9b46c962d2ea5c98f1256935e698b3c1148c234e375162a355"
+    },
+    "Ate": {
+      "distribution": "veil-native",
+      "sha256": "5127041ae4a4ea6693a03313a4860b925c1d6aefa6186e4380d13535d617853a"
+    },
+    "Magicolor": {
+      "distribution": "veil-native",
+      "sha256": "9ca280552eb81f8c152ccb2226c7a81b10ddc68393dbbee4a1e11694e532cee4"
+    },
+    "Castpixel": {
+      "distribution": "veil-native",
+      "sha256": "4bed14b16c24b78c838b1d2b9bcceead594d9951fd8118745972f5f639a25a5b"
+    },
+    "Nanner": {
+      "distribution": "veil-native",
+      "sha256": "71c32cb877f75949f9ee1a90e68e9359faf2e6422227b7ea6e4c1527d80d576c"
+    },
+    "Punolite": {
+      "distribution": "veil-native",
+      "sha256": "af2c116fc3b1f40842a0613c796f82a018baa315eb9964aa6e5973efc82769d0"
+    },
+    "Corruption": {
+      "distribution": "veil-native",
+      "sha256": "d9152955edbdda3dedab18791a94c34de7ff9395872aaa0640bffe1d75c6305a"
+    },
+    "Neon Arcade": {
+      "distribution": "veil-native",
+      "sha256": "171c729a89fe9ae777e01df92ae7548d4fbf35da570b72ddc41939760717f8c0"
+    },
+    "Dungeon": {
+      "distribution": "veil-native",
+      "sha256": "4a092c2455209202fa6596eceaebc5995295b87f241b0d1315cbf3bcf5816af9"
+    }
+  }
+}
