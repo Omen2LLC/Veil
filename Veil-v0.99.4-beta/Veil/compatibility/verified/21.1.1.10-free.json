@@ -1,0 +1,16 @@
+{
+  "version": "21.1.1.10",
+  "edition": "free",
+  "executable_sha256": "bafcef184b6f056a93098cd5a3fe20125de2f5042f20b2f6dd98ceb7d3ef9157",
+  "project": "Veil_Free_QA_20261022",
+  "media": "two generated PNGs and generated silence WAV",
+  "checks": [
+    "Vivid: Apply readback passed for palette, fills, dots, thumbnails and names",
+    "Vivid: Restore returned every tracked component to original bytes",
+    "Soft: Apply readback passed for palette, fills, dots, thumbnails and names",
+    "Soft: Restore returned every tracked component to original bytes"
+  ],
+  "dot_records": 96,
+  "loaded_thumbnail_records": 3,
+  "status": "passed actual native memory Apply/Restore; visual verification separate"
+}

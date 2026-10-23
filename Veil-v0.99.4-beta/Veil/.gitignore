@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.log
+*-error.txt
+studio-settings.json
+veil-update.json
+*recovery.json
+Backup/
+Veil-Updates/
+.build*/
+dist/
