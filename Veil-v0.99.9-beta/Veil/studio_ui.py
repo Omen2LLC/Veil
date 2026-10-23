@@ -7,7 +7,7 @@ import studio_legacy as legacy
 from studio_legacy import App as LegacyApp,ScrollArea as LegacyScrollArea,Surface,ink
 from studio_controls import Button,Field,Pill,ColorChip,image,Scrollbar
 from palette_core import LABELS,DISPLAY_ORDER,STOCK,builtin_palettes
-from studio_model import fingerprint,APPEARANCES,PaletteLibrary
+from studio_model import fingerprint,APPEARANCES,PaletteLibrary,load_library_filter,save_library_filter
 from studio_version import VERSION
 from studio_menu import RoundedMenu
 from studio_fonts import load_fonts,REGULAR,MEDIUM,SEMIBOLD
@@ -16,6 +16,7 @@ from resize_rendering import collection_image
 from library_presentation import origin as palette_origin
 
 HERE=Path(__file__).resolve().parent
+HIDDEN_PALETTE_NAMES=frozenset(builtin_palettes())
 THEMES={
  'Dark':dict(bg='#191919',sidebar='#222222',panel='#222222',field='#303030',control='#333333',selected='#454545',border='#3D3D3D',text='#EFEFEF',muted='#B8B8B8',disabled='#999999',hover='#404040',accent='#DADADA',on_accent='#191919',focus='#E5E5E5',success='#D4D4D4',error='#EFEFEF'),
  'Light':dict(bg='#DADADA',sidebar='#E5E5E5',panel='#E5E5E5',field='#ECECEC',control='#CCCCCC',selected='#B9B9B9',border='#B5B5B5',text='#222222',muted='#535353',disabled='#646464',hover='#BFBFBF',accent='#303030',on_accent='#ECECEC',focus='#353535',success='#303030',error='#222222')}
@@ -52,6 +53,7 @@ class Panel(Surface):
     def set_active(self,active):
         if active!=self.active:self.active=active;self.draw()
     def set_selected(self,selected):
+        if self.selected==selected:return
         self.selected=selected
         fill=self.app.c['selected'] if selected else self.app.c['panel']
         for child in self.winfo_children():
@@ -77,7 +79,7 @@ class Panel(Surface):
 class App(LegacyApp):
     PAGES={'Dashboard':'home','Palettes':'palette_page','Themes':'themes','Settings':'settings'}
     def visible_palettes(self):
-        return {name:colors for name,colors in self.palettes.items() if name not in builtin_palettes()}
+        return {name:colors for name,colors in self.palettes.items() if name not in HIDDEN_PALETTE_NAMES}
     def __init__(self,root,demo=False):
         self.api_status=tk.StringVar(root,value='Not checked')
         self.api_pending=False
@@ -90,7 +92,8 @@ class App(LegacyApp):
             for label,alias in zip(LABELS,self.palette_names.get(name,LABELS)):self.names[label].set(alias)
         self.loading=False;self.baseline=self.raw_snapshot()
         self.reset_undo()
-        self.library_origin_filter='All'
+        try:self.library_origin_filter=load_library_filter(HERE)
+        except (OSError,ValueError):self.library_origin_filter='All'
         self.filter.trace_add('write',self.library_query_changed)
         root.bind('<Control-z>',self.undo_shortcut)
         root.bind('<Control-Z>',self.redo_shortcut)
@@ -263,6 +266,8 @@ class App(LegacyApp):
         return palette_origin(name,self.palettes[name],self.palette_names.get(name,list(LABELS)))
     def set_library_origin(self,value):
         if value not in ('All','Native','Custom'):return
+        try:save_library_filter(HERE,value)
+        except (OSError,ValueError) as exc:self.set_status('Could not remember filter: '+str(exc),'error')
         self.library_origin_filter=value
         if self.alive_widget('library_filter_button'):
             self.library_filter_button.configure(selected=value!='All')
@@ -271,22 +276,30 @@ class App(LegacyApp):
         self.open_editor_menu(self.library_filter_button,[
             ('All palettes',lambda:self.set_library_origin('All'),True),None,
             ('Native',lambda:self.set_library_origin('Native'),True),None,
-            ('Custom',lambda:self.set_library_origin('Custom'),True)])
-        self.editor_menu.selected={'All':0,'Native':2,'Custom':4}[self.library_origin_filter]
-        self.editor_menu.draw()
+            ('Custom',lambda:self.set_library_origin('Custom'),True)],
+            checked={'All':0,'Native':2,'Custom':4}[self.library_origin_filter])
     def palette_badge(self,card,name):
         role=self.palette_origin(name)
         badge=tk.Canvas(card,width=self.p(18),height=self.p(18),bg=self.c['panel'],highlightthickness=0,bd=0)
         badge.origin=role
-        if role=='Native':
-            if not hasattr(self,'native_palette_mark'):
-                photo=tk.PhotoImage(file=str(HERE/'veil-icon.png'))
-                self.native_palette_mark=photo.subsample(max(1,round(photo.width()/self.p(18))))
-            badge.create_image(self.p(9),self.p(9),image=self.native_palette_mark)
-        else:
-            p=self.p;fill=self.c['muted']
-            badge.create_oval(p(6),p(1),p(12),p(7),fill=fill,outline='')
-            badge.create_polygon(*[p(v) for v in (3,17,3,13,4,10,7,9,11,9,14,10,15,13,15,17)],fill=fill,outline='',smooth=True)
+        from PIL import Image,ImageDraw,ImageTk
+        size=self.p(18);key=(role,size,self.effective_mode())
+        cache=getattr(self,'_badge_photos',None)
+        if cache is None:self._badge_photos=cache={}
+        if key not in cache:
+            if role=='Native':
+                with Image.open(HERE/'veil-icon.png') as original:bitmap=original.convert('RGBA').resize((size,size),Image.Resampling.LANCZOS)
+            else:
+                factor=4;bitmap=Image.new('RGBA',(size*factor,size*factor));draw=ImageDraw.Draw(bitmap)
+                unit=size*factor/18;coords=lambda values:tuple(round(v*unit) for v in values)
+                draw.ellipse(coords((6,1,12,7)),fill=self.c['muted'])
+                draw.rounded_rectangle(coords((3,9,15,17)),radius=round(4*unit),fill=self.c['muted'])
+                draw.rectangle(coords((3,14,15,17)),fill=self.c['muted'])
+                bitmap=bitmap.resize((size,size),Image.Resampling.LANCZOS)
+            cache[key]=ImageTk.PhotoImage(bitmap,master=self.root);bitmap.close()
+        badge.photo=cache[key]
+        if role=='Native':self.native_palette_mark=badge.photo
+        badge.create_image(size/2,size/2,image=badge.photo)
         badge.pack(anchor='e',pady=(self.p(2),0))
         self.library_origins[name]=role;self.library_badges[name]=badge
         return badge
@@ -305,7 +318,7 @@ class App(LegacyApp):
         self.workspace_apply.pack(side='right',padx=(0,self.p(8)))
         self.selection_bar=self.frame(toolbar)
         self.selection_toolbar()
-        self.library_area=ScrollArea(self.page_content,self);self.library_area.pack(fill='both',expand=True)
+        self.library_area=ScrollArea(self.page_content,self);self.library_area.keep_scrollbar=True;self.library_area.pack(fill='both',expand=True)
         self.library_columns=0;self.library_area.canvas.bind('<Configure>',self.library_resize,add='+');self.render_library()
     def selection_toolbar(self):
         for child in self.selection_bar.winfo_children():child.destroy()
@@ -321,15 +334,34 @@ class App(LegacyApp):
     def render_library(self):
         if not self.alive_widget('library_area'):return
         host=self.library_area.body
-        for child in host.winfo_children():child.destroy()
+        visible=self.visible_palettes()
+        pool=getattr(host,'palette_cards',None)
+        if pool is None:host.palette_cards=pool={}
+        for name,(card,swatch,signature) in list(pool.items()):
+            current=(self.palettes.get(name),self.palette_names.get(name),self.palette_origin(name) if name in self.palettes else None)
+            if name not in visible or signature!=repr(current):card.destroy();del pool[name]
+        for child in host.winfo_children():
+            if not isinstance(child,Panel):child.destroy()
         cols=self.library_columns or 3
         for col in range(4):host.columnconfigure(col,weight=1 if col<cols else 0,uniform='collection' if col<cols else '')
         query=' '.join(self.filter.get().split()).casefold()
-        names=[n for n in self.visible_palettes() if query in ' '.join(n.split()).casefold()
+        names=[n for n in visible if query in ' '.join(n.split()).casefold()
                and (self.library_origin_filter=='All' or self.palette_origin(n)==self.library_origin_filter)]
+        for hidden,(card,swatch,signature) in pool.items():
+            if hidden not in names and card.winfo_manager():card.grid_remove()
         if not names:self.label(host,'No palettes match these filters.' if query or self.library_origin_filter!='All' else 'Import a palette to start your collection.',muted=True).grid(sticky='w')
         self.library_cards={};self.library_origins={};self.library_badges={}
         for index,name in enumerate(names):
+            if name in pool:
+                card,swatch,_=pool[name]
+                info=card.grid_info()
+                if not info or info['row']!=index//cols or info['column']!=index%cols:
+                    card.grid(row=index//cols,column=index%cols,sticky='nsew',padx=(0,self.p(12)),pady=(0,self.p(12)))
+                card.set_active(self.palette_is_applied(name));card.set_selected(name==self.library_selected)
+                self.library_cards[name]=(card,swatch)
+                badge=card.palette_badge
+                self.library_badges[name]=badge;self.library_origins[name]=badge.origin
+                continue
             card=self.card(host,padding=16);card.grid(row=index//cols,column=index%cols,sticky='nsew',padx=(0,self.p(12)),pady=(0,self.p(12)))
             swatch=tk.Canvas(card,height=self.p(72),bg=self.c['panel'],highlightthickness=0,takefocus=True,cursor='hand2')
             swatch.pack(fill='x');swatch.bind('<Configure>',lambda e,c=swatch,n=name:self.draw_collection(c,n))
@@ -337,13 +369,14 @@ class App(LegacyApp):
             swatch.bind('<FocusIn>',lambda e,c=swatch,n=name:self.draw_collection(c,n,True))
             swatch.bind('<FocusOut>',lambda e,c=swatch,n=name:self.draw_collection(c,n))
             title=self.label(card,name,bold=True,size=12,bg=self.c['panel'],wraplength=self.p(200));title.pack(fill='x',pady=(self.p(10),self.p(4)))
-            badge=self.palette_badge(card,name)
+            badge=self.palette_badge(card,name);card.palette_badge=badge
             card.set_active(self.palette_is_applied(name));card.set_selected(name==self.library_selected)
             for widget in (swatch,title,badge,card,card.back):
                 widget.configure(cursor='hand2')
                 widget.bind('<Button-1>',lambda e,n=name:self.select_library(n))
             swatch.bind('<Return>',lambda e,n=name:self.select_library(n));swatch.bind('<space>',lambda e,n=name:self.select_library(n))
             self.library_cards[name]=(card,swatch)
+            pool[name]=(card,swatch,repr((self.palettes.get(name),self.palette_names.get(name),self.palette_origin(name))))
     def library_widget_visible(self,widget):
         area=getattr(self,'library_area',None)
         if area is None or not area.winfo_exists() or widget.master is not area.body and widget.master.master is not area.body:return True
@@ -380,10 +413,10 @@ class App(LegacyApp):
                            self.names[label].get(),'Primary' if index==0 else 'Secondary')
         color=picker.show()
         if color:self.values[label][index].set(color)
-    def open_editor_menu(self,trigger,entries):
+    def open_editor_menu(self,trigger,entries,checked=None):
         menu=getattr(self,'editor_menu',None)
         if menu and not menu.closed:menu.close()
-        self.editor_menu=RoundedMenu(self,trigger,entries)
+        self.editor_menu=RoundedMenu(self,trigger,entries,checked=checked)
     def show_palette_menu(self):
         enabled=not self.busy and not self.closing
         self.open_editor_menu(self.palette_selector,[(name,lambda n=name:self.choose_palette(n),enabled) for name in self.visible_palettes()])
@@ -438,9 +471,23 @@ class App(LegacyApp):
         self.undo_snapshot=self.raw_snapshot();self.undo_key=None;self.undo_time=0
         self.refresh_editor();self.set_status(message)
     def choose_palette(self,name):
-        before=(self.selection.get(),self.baseline)
-        super().choose_palette(name)
-        if (self.selection.get(),self.baseline)!=before:self.reset_undo()
+        # Keep the existing editor and entry variables while switching palettes.
+        if self.current_page=='Palettes' and self.current_tab=='Editor' and self.alive_widget('palette_selector'):
+            if name!=self.selection.get() and not self.confirm_discard():return
+            if self.rename_open:self.cancel_rename()
+            if name==self.selection.get():return
+            self.loading=True
+            try:
+                self.selection.set(name);self.show_palette(self.palettes[name])
+                for label,alias in zip(LABELS,self.palette_names.get(name,LABELS)):self.names[label].set(alias)
+            finally:self.loading=False
+            self.baseline=self.raw_snapshot();self.reset_undo()
+            self.palette_selector.configure(text=name);self.refresh_editor()
+            self.set_status('Editing '+name+'. Save, then apply it from the Library.')
+        else:
+            before=(self.selection.get(),self.baseline)
+            super().choose_palette(name)
+            if (self.selection.get(),self.baseline)!=before:self.reset_undo()
     def new_palette(self):
         if self.busy or self.closing or not self.confirm_discard():return
         name='Untitled palette';number=2
@@ -580,10 +627,18 @@ class App(LegacyApp):
                 self.set_status(self.export_feedback(path),'success')
         except Exception as exc:self.error(exc)
     def save_named(self,name):
+        previous=self.library_selected
         result=super().save_named(name)
         if result:
             self.library_selected=self.selection.get()
-            if self.current_page=='Palettes':self.show_page()
+            if self.current_page=='Palettes' and self.current_tab=='Library':
+                for current in (previous,self.library_selected):
+                    if current in self.library_cards:
+                        card,swatch=self.library_cards[current]
+                        card.set_selected(current==self.library_selected)
+                        self.draw_collection(swatch,current,swatch==self.root.focus_get())
+            if self.current_page=='Palettes' and self.current_tab=='Editor' and self.alive_widget('palette_selector'):
+                self.palette_selector.configure(text=self.selection.get())
             self.set_status('Saved '+self.selection.get()+'.','success')
         return result
     def request_palette_name(self):
