@@ -88,6 +88,11 @@ def main():
             load_fonts(root)
             app=App(root,demo=True)
             root.update_idletasks()
+            # Exercise the bundled image dependency and final preview render too.
+            app.navigate('Themes')
+            root.update_idletasks()
+            app.theme_preview.draw()
+            app.theme_preview.render(True)
             if app.storage_error or app.preference_error:
                 raise RuntimeError(app.storage_error or app.preference_error)
         finally:
