@@ -1,0 +1,106 @@
+{
+  "schema": 2,
+  "name": "Forest",
+  "labels": [
+    "Green",
+    "Teal",
+    "Blue",
+    "Purple",
+    "Pink",
+    "Tan",
+    "Brown",
+    "Apricot",
+    "Beige",
+    "Chocolate",
+    "Lime",
+    "Navy",
+    "Olive",
+    "Orange",
+    "Violet",
+    "Yellow"
+  ],
+  "colors": [
+    [
+      "#898A43",
+      "#B2B369"
+    ],
+    [
+      "#B89543",
+      "#E4BE65"
+    ],
+    [
+      "#743529",
+      "#AC5A4C"
+    ],
+    [
+      "#681C1E",
+      "#8E3233"
+    ],
+    [
+      "#573D29",
+      "#825535"
+    ],
+    [
+      "#4F4B46",
+      "#766F67"
+    ],
+    [
+      "#8A8077",
+      "#B4A699"
+    ],
+    [
+      "#1F4F60",
+      "#3C6F84"
+    ],
+    [
+      "#7E5126",
+      "#A97B52"
+    ],
+    [
+      "#A29A89",
+      "#D4C9AF"
+    ],
+    [
+      "#2C3C34",
+      "#3B5547"
+    ],
+    [
+      "#996833",
+      "#CA9153"
+    ],
+    [
+      "#425D2B",
+      "#688452"
+    ],
+    [
+      "#576965",
+      "#70968E"
+    ],
+    [
+      "#4A2918",
+      "#68341A"
+    ],
+    [
+      "#212A2B",
+      "#24393B"
+    ]
+  ],
+  "display_names": [
+    "Lichen",
+    "Beeswax",
+    "Terracotta",
+    "Rowan Bark",
+    "Chestnut",
+    "Flint",
+    "Driftwood",
+    "Fjord",
+    "Tawny Hide",
+    "Parchment",
+    "Juniper",
+    "Cedar",
+    "Fern Frond",
+    "Tideglass",
+    "Clove",
+    "Hemlock"
+  ]
+}

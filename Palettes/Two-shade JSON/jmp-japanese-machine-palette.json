@@ -1,0 +1,106 @@
+{
+  "schema": 2,
+  "name": "Jmp Japanese Machine Palette",
+  "labels": [
+    "Green",
+    "Teal",
+    "Blue",
+    "Purple",
+    "Pink",
+    "Tan",
+    "Brown",
+    "Apricot",
+    "Beige",
+    "Chocolate",
+    "Lime",
+    "Navy",
+    "Olive",
+    "Orange",
+    "Violet",
+    "Yellow"
+  ],
+  "colors": [
+    [
+      "#544BAD",
+      "#786DEE"
+    ],
+    [
+      "#63221B",
+      "#87332B"
+    ],
+    [
+      "#9C332E",
+      "#DA524A"
+    ],
+    [
+      "#9E6759",
+      "#DB8F7D"
+    ],
+    [
+      "#A69B78",
+      "#D9C893"
+    ],
+    [
+      "#154B34",
+      "#226B4B"
+    ],
+    [
+      "#8E8996",
+      "#B3AEBE"
+    ],
+    [
+      "#281F39",
+      "#342B46"
+    ],
+    [
+      "#A03A98",
+      "#D560CA"
+    ],
+    [
+      "#B1B1AD",
+      "#DADAD4"
+    ],
+    [
+      "#75A05E",
+      "#9ECF84"
+    ],
+    [
+      "#5F8FC2",
+      "#8DBDF1"
+    ],
+    [
+      "#332A66",
+      "#463D80"
+    ],
+    [
+      "#161511",
+      "#212020"
+    ],
+    [
+      "#9B8148",
+      "#CBAC69"
+    ],
+    [
+      "#347832",
+      "#4BAB48"
+    ]
+  ],
+  "display_names": [
+    "Ultraviolet",
+    "Redwood",
+    "Cayenne",
+    "Coral",
+    "Mooncake",
+    "Pine Needle",
+    "Lilac Ash",
+    "Void",
+    "Bougainvillea",
+    "Eggshell",
+    "Peapod",
+    "Cloud Blue",
+    "Twilight",
+    "Onyx",
+    "Wheat",
+    "Shamrock"
+  ]
+}
