@@ -5,6 +5,7 @@ import hashlib
 import json
 import struct
 from pathlib import Path
+from resolve_profiles import select_profile
 from palette_core import (STOCK,RGB_OFFSETS,atomic_json,compatible_partial,
                           encode_palette,palette_from_blob,validate_palette)
 
@@ -110,9 +111,9 @@ class PaletteSession:
         self.profiles={}
         additional=self.folder/'compatibility_profiles.json'
         if additional.is_file():
-            for version,profile in json.loads(additional.read_text(encoding='utf-8')).items():
-                if version in ACTIVE_RESOLVE_BUILDS and profile.get('native_verified') is True and profile.get('version')==version:
-                    self.profiles[version]=profile
+            for key,profile in json.loads(additional.read_text(encoding='utf-8')).items():
+                if isinstance(profile,dict) and profile.get('version') in ACTIVE_RESOLVE_BUILDS and profile.get('native_verified') is True:
+                    self.profiles[key]=profile
         self.signature=self.profiles.get('21.1.1.10',{'version':'21.1.1.10'})
         self.recovery=self.folder/'session_recovery.json'
         self.k=kernel();self.handle=None;self.writable=writable
@@ -123,15 +124,12 @@ class PaletteSession:
         self.pid,self.base,path=discover(self.k)
         self.version=file_version(path)
         profiles=getattr(self,'profiles',{self.signature['version']:self.signature})
-        if self.version not in profiles:
-            raise UnsupportedResolveVersion(self.version,', '.join(sorted(profiles)))
-        self.signature=profiles[self.version]
+        if self.version not in ACTIVE_RESOLVE_BUILDS:
+            raise UnsupportedResolveVersion(self.version,', '.join(sorted(ACTIVE_RESOLVE_BUILDS)))
+        with Path(path).open('rb') as executable:
+            digest=hashlib.file_digest(executable,'sha256').hexdigest()
+        self.signature=select_profile(profiles,self.version,digest,ACTIVE_RESOLVE_BUILDS)
         require_supported_version(self.version,self.signature)
-        expected_hash=self.signature.get('executable_sha256')
-        if expected_hash:
-            with Path(path).open('rb') as executable:
-                if hashlib.file_digest(executable,'sha256').hexdigest()!=expected_hash:
-                    raise RuntimeError('Resolve executable hash differs from the verified profile. No changes made.')
         self.handle=self.k.OpenProcess(0x1010|(0x28 if self.writable else 0),False,self.pid)
         if not self.handle:
             raise RuntimeError('Windows denied access to Resolve. Run this app locally, using the same Windows account and privilege level as Resolve.')

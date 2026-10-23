@@ -55,7 +55,10 @@ class DotPalette:
             if s.read(addr,8)!=struct.pack('<Q',expected):raise RuntimeError('Dot ownership changed; restart Resolve.')
         if s.read(int(dot['data'],16),120)!=bytes.fromhex(dot['header']):raise RuntimeError('Dot resource changed; restart Resolve.')
         for field,header,offset in (('platform','platform_header',28),('image_data','image_header',68)):
-            current=bytearray(s.read(int(im[field],16),96));old=bytearray.fromhex(im[header])
+            # QRasterPlatformPixmap is 0x50 bytes in the verified Qt5 build.
+            # Bytes after its embedded QImage belong to another allocation.
+            size=80 if field=='platform' else 96
+            current=bytearray(s.read(int(im[field],16),size));old=bytearray.fromhex(im[header])[:size]
             if field=='image_data':
                 # QImageData's atomic reference count changes while Qt paints.
                 refs=struct.unpack_from('<i',current)[0]

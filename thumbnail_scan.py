@@ -49,7 +49,7 @@ def scan(session):
                 image=dict(slot=hex(slot),platform=hex(platform))
                 dot['images'].append(image)
                 try:
-                    platform_header=read(platform,96)
+                    platform_header=read(platform,80)
                     image['platform_header']=platform_header.hex()
                     width,height,depth=struct.unpack_from('<iii',platform_header,8)
                     image.update(width=width,height=height,depth=depth)
@@ -65,7 +65,7 @@ def scan(session):
                     if not width*4<=stride<=width*4+64 or nbytes!=stride*height or nbytes>16384 or fmt not in (4,5,6,17,18):
                         raise ValueError('Unconfirmed pixel format or buffer size')
                     payload=b''.join(read(pixels+i,min(4096,nbytes-i)) for i in range(0,nbytes,4096))
-                    if read(platform,96)!=platform_header or read(image_data,96)!=image_header:
+                    if read(platform,80)!=platform_header or read(image_data,96)!=image_header:
                         raise ValueError('Image changed during read')
                     image.update(format=fmt,stride=stride,dpr=dpr,pixels=hex(pixels),pixel_bytes=payload.hex(),validated=True)
                 except (OSError,ValueError,struct.error) as exc:

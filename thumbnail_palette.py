@@ -57,7 +57,7 @@ class ThumbnailPalette:
                 raise RuntimeError('Thumbnail ownership changed; restart Resolve.')
         if s.read(int(dot['data'], 16), 120) != bytes.fromhex(dot['header']):
             raise RuntimeError('Thumbnail resource changed; restart Resolve.')
-        platform = s.read(int(im['platform'], 16), 96)
+        platform = s.read(int(im['platform'], 16), 80)
         original_platform = bytes.fromhex(im['platform_header'])
         if (platform[:8] != original_platform[:8] or
             platform[8:20] != original_platform[8:20] or

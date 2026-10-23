@@ -135,5 +135,93 @@
     "native_verified": true,
     "verified_on": "2026-10-15",
     "verification_sha256": "31995f79fcc912e521a98dd8309f4bc7ba2df804240f65e3d2ad94de53324047"
+  },
+  "21.1.1.10-free": {
+    "status": "verified native Apply/Restore on disposable generated-media project",
+    "version": "21.1.1.10",
+    "executable_sha256": "bafcef184b6f056a93098cd5a3fe20125de2f5042f20b2f6dd98ceb7d3ef9157",
+    "function_rva": 92295312,
+    "length": 3619,
+    "sha256": "caaf49c54ddc1e430c8088e37b6425198364d735def42a1f97b2a1ee69d70396",
+    "table_slot_rva": 453258712,
+    "relocation_evidence": {
+      "status": "offline function derivation plus read-only component checks and native Apply/Restore passed",
+      "functions": {
+        "palette": 92295312,
+        "default_resolver": 36554800,
+        "video_function": 38145152,
+        "audio_function": 37954912,
+        "menu_helper": 36471088,
+        "composite_cache": 36469728
+      }
+    },
+    "default_fills": {
+      "RESOLVER_RVA": 36554800,
+      "RESOLVER_SIZE": 568,
+      "RESOLVER_SHA256": "8a77eeade7f504ed1c29037fc2d5f225774105d1dd290b3f4000ed27de2570ac",
+      "INSTRUCTION_RVAS": [
+        36554975,
+        36554987,
+        36555025,
+        36555032
+      ],
+      "VIDEO_CALLSITE_RVA": 38145963,
+      "VIDEO_CALLSITE": "458b8dc0020000450fb6c78bd3488d4df7e86fb8e7ff",
+      "VIDEO_FUNCTION_RVA": 38145152,
+      "VIDEO_VTABLE_ENTRY_RVA": 126347152,
+      "AUDIO_CALLSITE_RVA": 37955407,
+      "AUDIO_CALLSITE": "8bbec0020000488bcee833ecffff448bcf440fb6c08bd3488d4c2478e8c0a0eaff",
+      "AUDIO_FUNCTION_RVA": 37954912,
+      "AUDIO_VTABLE_ENTRY_RVA": 126334832
+    },
+    "menu_names": {
+      "SOURCE_RVAS": {
+        "Green": 36471130,
+        "Teal": 36471142,
+        "Blue": 36471154,
+        "Purple": 36471163,
+        "Pink": 36471172,
+        "Tan": 36471181,
+        "Brown": 36471190,
+        "Apricot": 36471199,
+        "Beige": 36471208,
+        "Chocolate": 36471217,
+        "Lime": 36471226,
+        "Navy": 36471235,
+        "Olive": 36471244,
+        "Orange": 36471253,
+        "Violet": 36471262,
+        "Yellow": 36471271
+      },
+      "SOURCE_STOCK": {
+        "Green": "4c8d053b2e4105",
+        "Teal": "4c8d05a76f5905",
+        "Blue": "4c8d052b2e4105",
+        "Purple": "4c8d05e6ef5105",
+        "Pink": "4c8d05d5ef5105",
+        "Tan": "4c8d05886f5905",
+        "Brown": "4c8d05836f5905",
+        "Apricot": "4c8d05826f5905",
+        "Beige": "4c8d05816f5905",
+        "Chocolate": "4c8d05806f5905",
+        "Lime": "4c8d05836f5905",
+        "Navy": "4c8d05826f5905",
+        "Olive": "4c8d05816f5905",
+        "Orange": "4c8d057cef5105",
+        "Violet": "4c8d05776f5905",
+        "Yellow": "4c8d05c6aa4405"
+      },
+      "HELPER_RVA": 36471088,
+      "HELPER_SIGNATURE": "40534883ec40ffc2488bd983fa100f87"
+    },
+    "dot_cache": {
+      "instruction_rva": 36470066,
+      "instruction": "488b05cfdcca18",
+      "table_rva": 452418056
+    },
+    "native_verified": true,
+    "edition": "free",
+    "verified_on": "2026-10-22",
+    "verification_sha256": "060f491cbd40ffe1d960ac1ce380f56d785d7b74e5c829372ab69314ddf6d4ea"
   }
 }
