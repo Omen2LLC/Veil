@@ -1,4 +1,4 @@
-# Veil v0.99.8-beta
+# Veil v0.99.9-beta
 
 Extract the whole Windows package to a writable folder and open Veil.exe. Keep its files together. Python is bundled in the Windows package. The separate source package needs 64-bit Python 3.11+ with Tkinter.
 
@@ -77,3 +77,30 @@ metadata checked2026-10-23 remains21.1.1.10. No new native Apply/Restore claimed
 Resize rendering batches palette swatches, caches corner masks, skips position-only redraws and paints off-screen library cards when they become visible. Automated desktop resize medians: library392ms to138ms (about65% reduction), dashboard55ms to40ms, editor142ms to122ms; Settings about41ms. Physical mouse-drag feel remains a manual check; no60fps guarantee. Exact palette endpoints/alpha edges retained; intermediate gradient pixels may differ by at most one RGB level.
 
 Cherry Blossom preview now keeps one loaded source and one canvas image item, scales continuously at the actual available width, coalesces live resize work, and applies a final high-quality render after resizing settles. Its scroll gutter stays stable to prevent layout oscillation. Source execution additionally needs Pillow12.3.0 (requirements-runtime.txt); Windows packages bundle it and its license automatically.
+
+# Veil v0.99.9-beta
+
+Faster library and editor interactions, persistent filter checkmarks, scrollable
+palette menus and exact-size antialiased Native/Custom badges.
+
+Comparable disposable Tk benchmarks versus0.99.8 (100 samples,50 saves) show
+large reductions in library refresh, save feedback and editor switching. The
+bundled PERFORMANCE_REPORT.md contains final P95 measurements and limitations.
+Menus support wheel, arrows, Home/End and Page
+navigation, remain within the owner and keep the selected palette unchanged
+until a choice is confirmed. Filter choice survives restarts and appearance
+changes; unchanged cards/editor widgets are retained instead of rebuilt.
+
+All30 approved Native palettes and existing colors/names remain intact. User
+palettes/settings stay private and survive updates. Python/Pillow are bundled.
+Install only when you choose; Upgrade/Later/Skip and rollback are preserved.
+
+Performance acceptance is partial: complete filter refresh still sometimes
+exceeds50ms. Native click-to-visible Apply timing,100 Media Pool cycles and
+Text/Text+ slot13 mapping have NOT been newly verified. Logical icon captures
+at100/125/150/200% are not physical Windows DPI testing. No60fps/flicker-free
+guarantee. See bundled performance report and pending test protocol.
+
+Exact Free/Studio21.1.1.10 native backend/profiles are unchanged; retired
+21.1.0.14 remains disabled. Official Studio metadata rechecked2026-10-23 still
+reports21.1.1.10. No new Resolve launch or native memory writes performed.

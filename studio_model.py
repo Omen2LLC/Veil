@@ -149,4 +149,22 @@ def load_preferences(folder):
 
 def save_preferences(folder,mode):
     if mode not in APPEARANCES:raise ValueError('Choose Dark or Light.')
-    atomic_json(Path(folder)/'studio-settings.json',dict(schema=1,appearance=mode))
+    update_preferences(folder,appearance=mode)
+
+def update_preferences(folder,**changes):
+    path=Path(folder)/'studio-settings.json'
+    data=json.loads(path.read_text(encoding='utf-8')) if path.exists() else {'schema':1}
+    if not isinstance(data,dict):raise ValueError('Settings must be a JSON object.')
+    data.update(changes);atomic_json(path,data)
+
+def load_library_filter(folder):
+    path=Path(folder)/'studio-settings.json'
+    if not path.exists():return 'All'
+    data=json.loads(path.read_text(encoding='utf-8'))
+    if not isinstance(data,dict):raise ValueError('Settings must be a JSON object.')
+    value=data.get('library_filter','All')
+    return value if value in ('All','Native','Custom') else 'All'
+
+def save_library_filter(folder,value):
+    if value not in ('All','Native','Custom'):raise ValueError('Unknown palette filter.')
+    update_preferences(folder,library_filter=value)

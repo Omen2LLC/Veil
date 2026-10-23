@@ -20,24 +20,40 @@ def clip_rounded(widget,width,height,radius):
     if not user.SetWindowRgn(widget.winfo_id(),region,True):gdi.DeleteObject(region)
 
 class RoundedMenu:
-    def __init__(self, app, trigger, entries):
-        self.app=app; self.trigger=trigger; self.entries=entries; self.closed=False
+    def __init__(self, app, trigger, entries, checked=None):
+        self.app=app; self.trigger=trigger; self.entries=entries; self.closed=False; self.checked=checked; self.offset=0
         self.font=Font(family=REGULAR,size=11); self.margin=app.p(8); self.row_height=app.p(34)
-        self.width=max(trigger.winfo_width(),max((self.font.measure(e[0])+app.p(40) for e in entries if e),default=0))
+        self.width=max(trigger.winfo_width(),max((self.font.measure(e[0])+app.p(48 if checked is not None else 40) for e in entries if e),default=0))
         self.rows=[]; y=self.margin
         for entry in entries:
             height=self.row_height if entry else app.p(9)
             self.rows.append((y,y+height,entry)); y+=height
-        self.height=y+self.margin; self.selected=next((i for i,e in enumerate(entries) if e and e[2]),None)
+        self.content_height=y+self.margin; self.height=self.content_height; self.selected=next((i for i,e in enumerate(entries) if e and e[2]),None)
         # Keep menus in the existing native window. Separate override-redirect
         # Windows popups can lose focus or map behind their owner when opened.
+        available=max(2,app.root.winfo_width()-app.p(16))
+        self.width=min(self.width,available)
         self.window=tk.Frame(app.root,bg=app.c['bg'],bd=0,highlightthickness=0)
+        x=trigger.winfo_rootx()-app.root.winfo_rootx()
+        trigger_y=trigger.winfo_rooty()-app.root.winfo_rooty()
+        below=app.root.winfo_height()-trigger_y-trigger.winfo_height()-app.p(12)
+        above=trigger_y-app.p(12)
+        down=self.content_height<=below or below>=above
+        self.height=max(2,min(self.content_height,max(above,below)))
+        y=trigger_y+trigger.winfo_height()+app.p(4) if down else trigger_y-self.height-app.p(4)
+        y=max(app.p(4),min(y,app.root.winfo_height()-self.height-app.p(4)))
+        x=max(app.p(4),min(x,app.root.winfo_width()-self.width-app.p(4)))
         self.canvas=tk.Canvas(self.window,width=self.width,height=self.height,bg=app.c['bg'],bd=0,highlightthickness=0,takefocus=True)
         self.canvas.pack(); self.photos=[]
-        x=trigger.winfo_rootx()-app.root.winfo_rootx()
-        y=trigger.winfo_rooty()-app.root.winfo_rooty()+trigger.winfo_height()+app.p(4)
-        x=max(0,min(x,app.root.winfo_width()-self.width))
-        self.window.place(x=x,y=y,width=self.width,height=min(self.height,max(app.p(60),app.root.winfo_height()-y-app.p(8))))
+        self.window.place(x=x,y=y,width=self.width,height=self.height)
+        self.background_ready=False
+        self.canvas.bind('<MouseWheel>',self.wheel)
+        self.canvas.bind('<Button-4>',lambda e:self.scroll(-1))
+        self.canvas.bind('<Button-5>',lambda e:self.scroll(1))
+        self.canvas.bind('<Home>',lambda e:self.jump(False))
+        self.canvas.bind('<End>',lambda e:self.jump(True))
+        self.canvas.bind('<Prior>',lambda e:self.page(-1))
+        self.canvas.bind('<Next>',lambda e:self.page(1))
         self.window.bind('<Configure>',self.clip_corners)
         self.canvas.bind('<Motion>',self.motion); self.canvas.bind('<Button-1>',self.click)
         # A local Tk grab sends clicks outside the popup to the Toplevel, not
@@ -55,21 +71,59 @@ class RoundedMenu:
         if not self.closed and event.widget is self.window:
             clip_rounded(self.window,event.width,event.height,self.app.p(12))
     def draw(self):
-        c=self.app.c; p=self.app.p; self.canvas.delete('all'); self.photos=[]
-        self.photos.append(image(self.width,self.height,c['border'],radius=p(12)))
-        self.canvas.create_image(0,0,image=self.photos[-1],anchor='nw')
-        self.photos.append(image(self.width-2,self.height-2,c['panel'],radius=p(11)))
-        self.canvas.create_image(1,1,image=self.photos[-1],anchor='nw')
+        c=self.app.c; p=self.app.p
+        self.canvas.delete('rows')
+        if not self.background_ready:
+            self.photos=[image(self.width,self.height,c['border'],radius=p(12)),
+                         image(max(2,self.width-2),max(2,self.height-2),c['panel'],radius=p(11)),
+                         image(max(2,self.width-2*self.margin),self.row_height,c['hover'],radius=p(7))]
+            self.canvas.create_image(0,0,image=self.photos[0],anchor='nw')
+            self.canvas.create_image(1,1,image=self.photos[1],anchor='nw')
+            self.background_ready=True
         for i,(top,bottom,entry) in enumerate(self.rows):
+            top-=self.offset;bottom-=self.offset
+            # Only complete rows are interactive/rendered; preserve corner padding.
+            if top<self.margin or bottom>self.height-self.margin:continue
             if not entry:
-                self.canvas.create_line(p(14),(top+bottom)/2,self.width-p(14),(top+bottom)/2,fill=c['border']); continue
+                self.canvas.create_line(p(14),(top+bottom)/2,self.width-p(14),(top+bottom)/2,fill=c['border'],tags='rows');continue
             text,command,enabled=entry
-            if i==self.selected and enabled:
-                self.photos.append(image(self.width-2*self.margin,bottom-top,c['hover'],radius=p(7)))
-                self.canvas.create_image(self.margin,top,image=self.photos[-1],anchor='nw')
-            self.canvas.create_text(p(18),(top+bottom)/2,text=text,font=self.font,anchor='w',fill=c['text'] if enabled else c['disabled'])
+            if i==self.selected and enabled:self.canvas.create_image(self.margin,top,image=self.photos[2],anchor='nw',tags='rows')
+            # Elide unusually long labels without expanding beyond the owner.
+            available=max(0,self.width-p(48 if self.checked is not None else 36));label=text
+            while label and self.font.measure(label)>available:label=label[:-1]
+            if label!=text:label=label[:-1]+'…'
+            self.canvas.create_text(p(18),(top+bottom)/2,text=label,font=self.font,anchor='w',fill=c['text'] if enabled else c['disabled'],tags='rows')
+            if i==self.checked:
+                mid=(top+bottom)/2
+                self.canvas.create_line(self.width-p(25),mid,self.width-p(22),mid+p(3),self.width-p(17),mid-p(3),fill=c['text'],width=max(1,p(1.5)),capstyle='round',joinstyle='round',tags=('rows','checkmark'))
+        if self.content_height>self.height:
+            track=self.height-2*self.margin
+            thumb=max(p(14),track*self.height/self.content_height)
+            top=self.margin+(track-thumb)*self.offset/(self.content_height-self.height)
+            self.canvas.create_line(self.width-p(5),top,self.width-p(5),top+thumb,fill=c['muted'],width=max(2,p(2)),capstyle='round',tags='rows')
+    def scroll(self,steps):
+        previous=self.offset
+        self.offset=max(0,min(self.content_height-self.height,self.offset+steps*self.row_height))
+        if self.offset!=previous:self.selected=None
+        self.draw();return 'break'
+    def wheel(self,event):
+        if event.delta:return self.scroll(-event.delta/120)
+        return 'break'
+    def ensure_visible(self):
+        if self.selected is None:return
+        top,bottom,_=self.rows[self.selected]
+        if top-self.offset<self.margin:self.offset=top-self.margin
+        elif bottom-self.offset>self.height-self.margin:self.offset=bottom-self.height+self.margin
+        self.offset=max(0,min(self.content_height-self.height,self.offset))
+    def jump(self,last):
+        enabled=[i for i,e in enumerate(self.entries) if e and e[2]]
+        if enabled:self.selected=enabled[-1 if last else 0];self.ensure_visible();self.draw()
+        return 'break'
+    def page(self,step):
+        for _ in range(max(1,(self.height-2*self.margin)//self.row_height-1)):self.move(step)
+        return 'break'
     def motion(self,event):
-        selected=next((i for i,(a,b,e) in enumerate(self.rows) if a<=event.y<b and e and e[2]),None)
+        selected=next((i for i,(a,b,e) in enumerate(self.rows) if self.margin<=event.y<self.height-self.margin and a<=event.y+self.offset<b and a-self.offset>=self.margin and b-self.offset<=self.height-self.margin and e and e[2]),None)
         if selected!=self.selected:self.selected=selected; self.draw()
     def click(self,event):
         if not (0<=event.x<self.width and 0<=event.y<self.height):self.close(); return 'break'
@@ -81,8 +135,12 @@ class RoundedMenu:
     def move(self,step):
         enabled=[i for i,e in enumerate(self.entries) if e and e[2]]
         if enabled:
+            if self.selected not in enabled:
+                visible=[i for i in enabled if self.rows[i][0]-self.offset>=self.margin and self.rows[i][1]-self.offset<=self.height-self.margin]
+                self.selected=(visible or enabled)[0 if step>0 else -1]
+                self.ensure_visible();self.draw();return 'break'
             current=enabled.index(self.selected) if self.selected in enabled else (-1 if step>0 else 0)
-            self.selected=enabled[(current+step)%len(enabled)]; self.draw()
+            self.selected=enabled[(current+step)%len(enabled)]; self.ensure_visible(); self.draw()
         return 'break'
     def invoke(self):
         if self.selected is not None:

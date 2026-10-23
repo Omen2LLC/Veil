@@ -88,6 +88,12 @@ def main():
             load_fonts(root)
             app=App(root,demo=True)
             root.update_idletasks()
+            # Exercise packaged library badges without changing saved filters.
+            origin_filter=app.library_origin_filter
+            app.library_origin_filter='All'
+            app.navigate('Palettes')
+            root.update_idletasks()
+            app.library_origin_filter=origin_filter
             # Exercise the bundled image dependency and final preview render too.
             app.navigate('Themes')
             root.update_idletasks()
