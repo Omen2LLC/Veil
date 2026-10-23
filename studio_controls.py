@@ -5,24 +5,40 @@ import tkinter as tk
 from studio_fonts import REGULAR,MEDIUM,SEMIBOLD
 
 def rgb(color):return tuple(int(color[i:i+2],16) for i in (1,3,5))
-@lru_cache(maxsize=256)
+@lru_cache(maxsize=192)
+def rounded_edges(width,height,radius):
+    result=[]
+    for y in range(height):
+        edge=[]
+        if not radius<=y+.5<=height-radius:
+            for x in list(range(math.ceil(radius)))+list(range(max(math.ceil(radius),width-math.ceil(radius)),width)):
+                cx=min(max(x+.5,radius),width-radius);cy=min(max(y+.5,radius),height-radius)
+                alpha=round(255*max(0,min(1,radius+.5-math.hypot(x+.5-cx,y+.5-cy))))
+                edge.append((x*4+3,alpha))
+        result.append(tuple(edge))
+    return tuple(result)
+
+@lru_cache(maxsize=1024)
 def rounded_png(width,height,left,right,radius):
     width=max(1,width);height=max(1,height);radius=min(radius,width/2,height/2)
-    a,b=rgb(left),rgb(right);rows=[];opaque=bytearray()
-    for x in range(width):
-        t=x/max(1,width-1);opaque.extend((*[round(u+(v-u)*t) for u,v in zip(a,b)],255))
-    for y in range(height):
-        if radius<=y+.5<=height-radius:
-            rows.append(b'\0'+opaque);continue
-        row=bytearray(opaque)
-        for x in list(range(math.ceil(radius)))+list(range(max(math.ceil(radius),width-math.ceil(radius)),width)):
-            cx=min(max(x+.5,radius),width-radius);cy=min(max(y+.5,radius),height-radius)
-            distance=math.hypot(x+.5-cx,y+.5-cy)
-            alpha=round(255*max(0,min(1,radius+.5-distance)))
-            row[x*4+3]=alpha
-        rows.append(b'\0'+row)
+    a,b=rgb(left),rgb(right)
+    if a==b:opaque=bytes((*a,255))*width
+    else:
+        denominator=max(1,width-1);half=denominator//2
+        ar,ag,ab=a;dr,dg,db=[v-u for u,v in zip(a,b)]
+        opaque=bytes(channel for x in range(width) for channel in (
+            (ar*denominator+dr*x+half)//denominator,
+            (ag*denominator+dg*x+half)//denominator,
+            (ab*denominator+db*x+half)//denominator,255))
+    rows=[]
+    for edge in rounded_edges(width,height,radius):
+        if not edge:rows.append(b'\0'+opaque)
+        else:
+            row=bytearray(opaque)
+            for offset,alpha in edge:row[offset]=alpha
+            rows.append(b'\0'+row)
     def chunk(kind,data):return struct.pack('>I',len(data))+kind+data+struct.pack('>I',zlib.crc32(kind+data)&0xffffffff)
-    return b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>IIBBBBB',width,height,8,6,0,0,0))+chunk(b'IDAT',zlib.compress(b''.join(rows)))+chunk(b'IEND',b'')
+    return b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>IIBBBBB',width,height,8,6,0,0,0))+chunk(b'IDAT',zlib.compress(b''.join(rows),1))+chunk(b'IEND',b'')
 
 def image(width,height,left,right=None,radius=10):
     return tk.PhotoImage(data=rounded_png(int(width),int(height),left,right or left,radius))
@@ -36,11 +52,16 @@ def surface_background(parent,app):
 
 class Scrollbar(tk.Canvas):
     """Slim rounded scroll thumb; supports dragging, paging and keyboard focus."""
+    def size_changed(self,event):
+        size=(event.width,event.height)
+        if getattr(self,'_last_size',None)==size:return
+        self._last_size=size;self.draw(event)
+
     def __init__(self,parent,app,command):
         self.app=app;self.command=command;self.first=0.;self.last=1.
         self.hover=False;self.focused=False;self.drag_offset=None;self.images=[]
         super().__init__(parent,width=app.p(16),bg=app.c['bg'],highlightthickness=0,bd=0,takefocus=True)
-        self.bind('<Configure>',self.draw)
+        self.bind('<Configure>',self.size_changed)
         self.bind('<Enter>',lambda e:self.toggle('hover',True))
         self.bind('<Leave>',lambda e:self.toggle('hover',False))
         self.bind('<FocusIn>',lambda e:self.toggle('focused',True))
@@ -82,6 +103,11 @@ class Scrollbar(tk.Canvas):
     def scroll(self,amount,unit):self.command('scroll',amount,unit);return 'break'
 
 class Button(tk.Canvas):
+    def size_changed(self,event):
+        size=(event.width,event.height)
+        if getattr(self,'_last_size',None)==size:return
+        self._last_size=size;self.draw(event)
+
     def __init__(self,parent,app,text,command,primary=False,selected=False,compact=False,navigation=False,**kwargs):
         self.app=app;self.text=text;self.command=command;self.primary=primary;self.selected=selected
         self.state=kwargs.pop('state','normal');self.hover=False;self.focused=False
@@ -91,7 +117,7 @@ class Button(tk.Canvas):
         width=self.font.measure(text)+app.p(24)+(app.p(16) if self.dropdown else 0);height=app.p(34 if compact else 38)
         super().__init__(parent,width=width,height=height,bg=surface_background(parent,app),highlightthickness=0,bd=0,
             takefocus=self.state!='disabled',cursor='hand2')
-        self.bind('<Configure>',self.draw);self.bind('<Enter>',lambda e:self.toggle('hover',True))
+        self.bind('<Configure>',self.size_changed);self.bind('<Enter>',lambda e:self.toggle('hover',True))
         self.bind('<Leave>',lambda e:self.toggle('hover',False));self.bind('<FocusIn>',lambda e:self.toggle('focused',True))
         self.bind('<FocusOut>',lambda e:self.toggle('focused',False))
         self.bind('<Button-1>',self.activate);self.bind('<Return>',self.activate);self.bind('<space>',self.activate)
@@ -129,6 +155,11 @@ class Button(tk.Canvas):
             self.create_line(x-self.app.p(3),y-self.app.p(2),x,y+self.app.p(1),x+self.app.p(3),y-self.app.p(2),fill=foreground,width=self.app.p(1.5),capstyle='round',joinstyle='round')
 
 class Field(tk.Frame):
+    def size_changed(self,event):
+        size=(event.width,event.height)
+        if getattr(self,'_last_size',None)==size:return
+        self._last_size=size;self.draw(event)
+
     def __init__(self,parent,app,variable,width=18,polished=False,defer_entry=False):
         outside=surface_background(parent,app)
         super().__init__(parent,bg=outside)
@@ -138,7 +169,7 @@ class Field(tk.Frame):
             insertbackground=app.c['text'],selectbackground=app.c['selected'],selectforeground=app.c['text'],
             font=(REGULAR,11),bd=0,relief='flat',highlightthickness=0)
         self.entry.pack(fill='x',expand=True,padx=app.p(12),pady=app.p(9))
-        self.focused=False;self.bind('<Configure>',self.draw)
+        self.focused=False;self.bind('<Configure>',self.size_changed)
         if defer_entry:
             self.tk.call('raise',self.back._w)
             self.bind('<Map>',lambda event:self.after_idle(self.reveal_entry) if event.widget is self else None,add='+')
@@ -160,11 +191,16 @@ class Field(tk.Frame):
         self.back.create_image(inset,inset,image=self.images[-1],anchor='nw')
 
 class Pill(tk.Canvas):
+    def size_changed(self,event):
+        size=(event.width,event.height)
+        if getattr(self,'_last_size',None)==size:return
+        self._last_size=size;self.draw(event)
+
     def __init__(self,parent,app,left,right,height=32,command=None):
         self.app=app;self.left=left;self.right=right;self.command=command;self.selected=False;self.focused=False
         super().__init__(parent,height=app.p(height),width=app.p(140),bg=surface_background(parent,app),highlightthickness=0,
             takefocus=bool(command),cursor='hand2' if command else '')
-        self.bind('<Configure>',self.draw)
+        self.bind('<Configure>',self.size_changed)
         self.bind('<Destroy>',lambda e:setattr(self,'images',[]))
         if command:
             self.bind('<Button-1>',self.activate);self.bind('<Return>',self.activate);self.bind('<space>',self.activate)
@@ -183,6 +219,11 @@ class Pill(tk.Canvas):
 
 class ColorChip(Pill):
     """Endpoint preview with the same picker action as its labeled control."""
+    def size_changed(self,event):
+        size=(event.width,event.height)
+        if getattr(self,'_last_size',None)==size:return
+        self._last_size=size;self.draw(event)
+
     def __init__(self,*args,label='Pick color',**kwargs):
         super().__init__(*args,**kwargs);self.accessible_name=label;self.hint=None;self.hint_job=None
         self.bind('<Enter>',lambda e:self.schedule_hint())

@@ -12,6 +12,7 @@ from studio_version import VERSION
 from studio_menu import RoundedMenu
 from studio_fonts import load_fonts,REGULAR,MEDIUM,SEMIBOLD
 import veil_update_ui
+from resize_rendering import collection_image
 from library_presentation import origin as palette_origin
 
 HERE=Path(__file__).resolve().parent
@@ -23,10 +24,25 @@ class NullControl:
     def configure(self,**kwargs):pass
 class ScrollArea(LegacyScrollArea):
     def __init__(self,parent,app):
+        self.app=app;self._visible_job=None
         super().__init__(parent,app)
+        self.bind('<Destroy>',self.cancel_visible_job,add='+')
         self.bar.destroy()
         self.bar=Scrollbar(self,app,self.canvas.yview)
         self.bar.grid(row=0,column=1,sticky='ns')
+
+    def cancel_visible_job(self,event):
+        if event.widget is self and self._visible_job is not None:
+            self.after_cancel(self._visible_job);self._visible_job=None
+    def scroll_changed(self,first,last):
+        if getattr(self,'keep_scrollbar',False):
+            self.bar.set(first,last);self.bar.grid()
+        else:super().scroll_changed(first,last)
+        if getattr(self.app,'library_area',None) is self and self._visible_job is None:
+            self._visible_job=self.after_idle(self.paint_visible)
+    def paint_visible(self):
+        self._visible_job=None
+        if self.winfo_exists():self.app.redraw_visible_library()
 
 class Panel(Surface):
     def __init__(self,*args,**kwargs):
@@ -42,7 +58,11 @@ class Panel(Surface):
             if child is not self.back:child.configure(bg=fill)
         self.draw()
     def draw(self,event=None):
+        if not self.app.library_widget_visible(self):return
         w,h=max(2,self.back.winfo_width()),max(2,self.back.winfo_height())
+        signature=(w,h,self.active,self.selected,self.editor_surface,self.app.effective_mode())
+        if getattr(self,'_paint_signature',None)==signature:return
+        self._paint_signature=signature
         self.back.delete('all');self.photos=[]
         inset=self.app.p(2) if self.active else self.app.p(1) if self.editor_surface else 0
         if self.editor_surface and not self.active:
@@ -324,7 +344,20 @@ class App(LegacyApp):
                 widget.bind('<Button-1>',lambda e,n=name:self.select_library(n))
             swatch.bind('<Return>',lambda e,n=name:self.select_library(n));swatch.bind('<space>',lambda e,n=name:self.select_library(n))
             self.library_cards[name]=(card,swatch)
+    def library_widget_visible(self,widget):
+        area=getattr(self,'library_area',None)
+        if area is None or not area.winfo_exists() or widget.master is not area.body and widget.master.master is not area.body:return True
+        top=widget.winfo_rooty();start=area.canvas.winfo_rooty()
+        return top+widget.winfo_height()>=start and top<=start+area.canvas.winfo_height()
+    def redraw_visible_library(self):
+        for name,(card,swatch) in getattr(self,'library_cards',{}).items():
+            if card.winfo_exists() and self.library_widget_visible(card):
+                card.draw();self.draw_collection(swatch,name,swatch==self.root.focus_get())
     def draw_collection(self,canvas,name,focused=False):
+        if not self.library_widget_visible(canvas):return
+        signature=(canvas.winfo_width(),canvas.winfo_height(),name,focused,canvas.cget('bg'),tuple(tuple(pair) for pair in self.palettes[name]))
+        if getattr(canvas,'_paint_signature',None)==signature:return
+        canvas._paint_signature=signature
         w,h=max(2,canvas.winfo_width()),canvas.winfo_height();canvas.delete('all');canvas.photos=[]
         if focused:
             canvas.photos.append(image(w,h,self.c['focus'],radius=self.p(10)))
@@ -332,11 +365,9 @@ class App(LegacyApp):
             inset=self.p(2)
             canvas.photos.append(image(max(2,w-2*inset),max(2,h-2*inset),canvas.cget('bg'),radius=self.p(8)))
             canvas.create_image(inset,inset,image=canvas.photos[-1],anchor='nw')
-        for index,label in enumerate(DISPLAY_ORDER):
-            row,col=divmod(index,8);pw=(w-self.p(12))/8;ph=self.p(19)
-            left,right=self.palettes[name][LABELS.index(label)]
-            canvas.photos.append(image(max(2,pw-self.p(3)),ph,left,right,radius=ph/2))
-            canvas.create_image(self.p(7)+col*pw,self.p(9)+row*self.p(27),image=canvas.photos[-1],anchor='nw')
+        pairs=[self.palettes[name][LABELS.index(label)] for label in DISPLAY_ORDER]
+        canvas.photos.append(collection_image(w,h,pairs,self.scale))
+        canvas.create_image(0,0,image=canvas.photos[-1],anchor='nw')
     def palette_is_applied(self,name):
         return self.applied is not None and self.applied_name==name and fingerprint(self.palettes[name],self.palette_names.get(name,list(LABELS)))==self.applied
     def editor_button(self,parent,text,command,primary=False,**kwargs):

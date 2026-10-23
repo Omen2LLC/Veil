@@ -9,7 +9,7 @@ import subprocess
 import sys
 import threading
 import tkinter as tk
-from tkinter import messagebox
+from veil_update_notice import show_notice
 
 from palette_core import atomic_json
 from studio_version import VERSION
@@ -41,13 +41,13 @@ def check_in_background(app, manual: bool = False) -> None:
                 return
             if problem:
                 if manual:
-                    messagebox.showinfo("Veil updates", "Could not check for updates. " + problem, parent=app.root)
+                    show_notice(app,"Could not check for updates",problem)
                 return
             if release and (manual or release["version"] != _skipped(app)):
                 show_update(app, release)
             elif manual:
                 channel = "beta or stable" if '-beta' in VERSION else "stable"
-                messagebox.showinfo("Veil updates", f"No newer {channel} release is available.", parent=app.root)
+                show_notice(app,"You are up to date",f"Veil {VERSION}\nNo newer {channel} release is available.")
         try:
             app.root.after(0, complete)
         except tk.TclError:
@@ -113,7 +113,7 @@ def show_update(app, release: dict) -> None:
                     return
                 if error:
                     status.configure(text="Update could not be prepared.")
-                    messagebox.showerror("Veil update", error, parent=window)
+                    show_notice(app,"Update could not be prepared",error,parent=window)
                     for child in controls.winfo_children():
                         child.configure(state="normal")
                     return

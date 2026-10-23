@@ -1,6 +1,7 @@
 """Read-only Cherry Blossom Fusion concept for the beta interface."""
 from pathlib import Path
 import tkinter as tk
+from PIL import Image,ImageTk
 
 
 ASSETS = Path(__file__).resolve().parent / 'Themes' / 'Fusion-preview'
@@ -22,24 +23,49 @@ def preview_photo(max_width, max_height=None):
 
 
 class ThemePreview(tk.Canvas):
-    def __init__(self, parent, app):
-        self.app = app
-        self.photo = None
-        self.asset_width = None
-        super().__init__(parent, height=app.p(420), bg=app.c['panel'],
-                         highlightthickness=0, bd=0, takefocus=False)
-        self.bind('<Configure>', self.draw)
+    """Stable image item; coalesced live sizing plus a final quality render."""
+    def __init__(self,parent,app):
+        self.app=app;self.photo=None;self.asset_width=None
+        self._frame_job=None;self._quality_job=None;self._target_width=None
+        with Image.open(ASSETS/'1536.png') as source:self._source=source.convert('RGB')
+        super().__init__(parent,height=app.p(420),bg=app.c['panel'],highlightthickness=0,bd=0,takefocus=False)
+        self.image_item=self.create_image(0,0,anchor='n')
+        self.bind('<Configure>',self.draw)
+        self.bind('<Destroy>',self.dispose,add='+')
 
-    def draw(self, event=None):
-        width = max(2, self.winfo_width())
-        asset = preview_asset(width)
-        if int(asset.stem) != self.asset_width:
-            self.photo = tk.PhotoImage(file=str(asset))
-            self.asset_width = int(asset.stem)
-        if int(self.cget('height')) != self.photo.height():
-            self.configure(height=self.photo.height())
-        self.delete('all')
-        self.create_image(width / 2, 0, image=self.photo, anchor='n')
+    def draw(self,event=None):
+        width=max(2,self.winfo_width())
+        if width==self._target_width:return
+        self._target_width=width
+        height=max(1,round(width*self._source.height/self._source.width))
+        if int(self.cget('height'))!=height:self.configure(height=height)
+        if self._frame_job is None:self._frame_job=self.after(16,self.render_frame)
+        if self._quality_job is not None:self.after_cancel(self._quality_job)
+        self._quality_job=self.after(120,self.render_final)
+
+    def render_frame(self):
+        self._frame_job=None;self.render(False)
+
+    def render_final(self):
+        self._quality_job=None;self.render(True)
+
+    def render(self,quality):
+        if not self.winfo_exists():return
+        width=self._target_width
+        height=max(1,round(width*self._source.height/self._source.width))
+        method=Image.Resampling.LANCZOS if quality else Image.Resampling.BILINEAR
+        with self._source.resize((width,height),method) as resized:
+            photo=ImageTk.PhotoImage(resized,master=self)
+        self.itemconfigure(self.image_item,image=photo)
+        self.coords(self.image_item,width/2,0)
+        self.photo=photo;self.asset_width=width
+
+    def dispose(self,event):
+        if event.widget is not self:return
+        for job in (self._frame_job,self._quality_job):
+            if job is not None:self.after_cancel(job)
+        self._frame_job=self._quality_job=None
+        self.photo=None;self._source.close()
 
 
 def build_themes(app):
@@ -47,6 +73,7 @@ def build_themes(app):
     from studio_ui import ScrollArea
 
     area = ScrollArea(app.page_content, app)
+    area.keep_scrollbar=True
     area.pack(fill='both', expand=True)
     panel = app.card(area.body, padding=24)
     panel.pack(fill='x')
